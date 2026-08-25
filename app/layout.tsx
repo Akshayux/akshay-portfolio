@@ -1,1 +1,12 @@
-import type {Metadata} from 'next';import './globals.css';export const metadata:Metadata={title:'Akshay Venkata Narayana — Product Designer',description:'Independent product designer and UX strategist creating thoughtful digital experiences.'};export default function RootLayout({children}:Readonly<{children:React.ReactNode}>){return <html lang="en"><body>{children}</body></html>}
+import type {Metadata} from 'next';
+import Motion from './motion';
+import './globals.css';
+
+export const metadata:Metadata={
+  title:{default:'Akshay Venkata Narayana — Product Designer',template:'%s — Akshay Venkata Narayana'},
+  description:'Product designer and UX strategist creating clear, connected digital experiences across complex systems.',
+};
+
+export default function RootLayout({children}:Readonly<{children:React.ReactNode}>){
+  return <html lang="en"><body><Motion>{children}</Motion></body></html>;
+}

@@ -1,14 +1,61 @@
-'use client';
-import {useEffect,useRef} from 'react';
-const skills=['Design systems','Experience design','Storytelling','User research','Problem solving','Strategy','Product design','AI tools'];
-const quotes=[['Maya Chen','VP, Product','Akshay makes complex products feel obvious. The final experience was sharp, human, and incredibly effective.'],['Jon Bell','Founder, Northstar','A strategic thinker with exceptional craft. Every decision came back to the user and the business.'],['Priya Shah','Head of Growth','The work changed how our team thinks about design — and lifted activation in the process.'],['Sam Wilson','CEO, Forma','Fast, thoughtful and deeply collaborative. Akshay brought clarity to an ambiguous, high-stakes challenge.']];
-export default function Home(){const root=useRef<HTMLElement>(null);useEffect(()=>{const n=root.current;if(!n)return;const o=new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting&&e.target.classList.add('is-visible')),{threshold:.12});n.querySelectorAll('.reveal').forEach(e=>o.observe(e));const m=(e:PointerEvent)=>{n.style.setProperty('--mx',`${(e.clientX/innerWidth-.5)*18}px`);n.style.setProperty('--my',`${(e.clientY/innerHeight-.5)*18}px`)};addEventListener('pointermove',m,{passive:true});return()=>{o.disconnect();removeEventListener('pointermove',m)}} ,[]);return <main ref={root}>
-<nav className="nav shell"><div><strong>Based in</strong><span>London, UK</span></div><a className="pill dark-pill" href="/contact">Get in touch <b>↗</b></a></nav>
-<section className="hero shell"><div className="hero-statement"><p className="hero-opener"><i/> Product designer · London</p><h1>I design<br/><strong>clarity.</strong></h1><div className="hero-bottom"><p>Thoughtful digital products for complex systems.</p><a className="hero-link" href="#work">Selected work <b>↘</b></a></div></div><div className="portrait parallax"><img src="/akshay-portrait.jpg" alt="Akshay, product designer"/><i>✦</i><small>Available for select projects</small></div></section>
-<section className="identity reveal"><span className="available"><i/> Open to select opportunities</span><div className="id-card"><img src="/akshay-portrait.jpg" alt="Akshay Venkata Narayana"/><div><strong>AKSHAY VENKATA NARAYANA</strong><small>Product Designer · UX Strategist</small></div><b>☰</b></div></section>
-<section id="work" className="work shell reveal"><div className="section-kicker"><span>Selected case studies</span><a href="/work/luxtj">All case studies ↗</a></div><article className="case-card"><div className="case-art"><div className="browser"><div className="browser-top"><i/><i/><i/></div><div className="browser-body"><aside/><div className="screen"><div className="screen-title"/><div className="trip-grid"><span/><span/><span/><span/></div></div></div></div></div><div className="case-copy"><div className="case-head"><b>CASE STUDY · 02</b><em>12 min read</em></div><div className="tags"><span>Product design</span><span>End to end</span><span>Web + Mobile</span></div><h2>LUXTJ — BRINGING LUXURY TRAVEL TO THE WEB</h2><p>A year-long, end-to-end redesign of a luxury travel platform — from research and product strategy to a polished booking experience.</p><a className="pill" href="/work/luxtj">View case study <b>↗</b></a></div></article></section>
-<section className="skills shell reveal"><div className="skills-center"><h3>What I bring to the table</h3><p>Ideas into experiences worth remembering.</p></div>{skills.map((s,i)=><span key={s} className={`skill s${i}`}>{s}</span>)}</section>
-<section id="about" className="about shell reveal"><div className="about-copy"><span className="eyebrow">About me</span><h2>Designing with curiosity,<br/>clarity, and care.</h2><p>I&apos;m Akshay — a product designer and UX strategist passionate about crafting meaningful digital experiences. I work where user needs, business goals, and elegant systems meet.</p><div className="stats"><div><b>5+</b><span>Years experience</span></div><div><b>24</b><span>Projects shipped</span></div><div><b>12</b><span>Happy clients</span></div></div><a className="pill outline" href="#contact">More about me <b>↗</b></a></div><div className="about-photo parallax"><img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1100&q=85" alt="Designer exploring the landscape"/><span>Curious by nature ↗</span></div></section>
-<section className="endorse shell reveal"><span className="eyebrow">Kind words</span><h2>Endorsed by industry leaders<br/>and brilliant collaborators.</h2><div className="quote-grid">{quotes.map(([n,r,q])=><article className="quote" key={n}><b>★★★★★</b><p>{q}</p><div><span>{n}</span><small>{r}</small></div></article>)}<article className="metric dark"><small>Average client satisfaction</small><strong>98%</strong><span>Across 12 engagements</span></article><article className="metric"><small>Growth after redesign</small><strong>2.4×</strong><span>Median product impact</span></article></div></section>
-<section id="contact" className="contact shell reveal"><div><span>LET&apos;S CONNECT</span><h2>Have a product idea<br/>or design challenge?</h2></div><div><p>I&apos;m open to product design roles, UX projects, and meaningful collaborations.</p><a className="pill" href="/contact">Say hello <b>↗</b></a></div></section><footer className="shell">© 2026 AKSHAY VENKATA NARAYANA — PRODUCT DESIGNER / UX STRATEGIST <a href="#">Back to top ↑</a></footer>
+import {ConnectPanel,IdentityCard,PageFooter,ProjectCard,SiteHeader} from './components';
+
+const skills=[
+  ['Design Systems','skill-one'],['User Research','skill-two'],['Strategy','skill-three'],
+  ['Experience Design','skill-four'],['Story telling','skill-five'],['Problem Solving','skill-six'],
+  ['Problem Solving','skill-seven'],['Problem Solving','skill-eight'],['AI Tools','skill-nine'],
+];
+
+const testimonials=[
+  ['Sarah Johnson','CEO','His design skills are unmatched. He transformed my ideas into a high-performing, visually striking website.'],
+  ['Sarah Johnson','CEO','His design skills are unmatched. He transformed my ideas into a high-performing, visually striking website.'],
+  ['Sarah Johnson','CEO','His design skills are unmatched. He transformed my ideas into a high-performing, visually striking website.'],
+  ['Sarah Johnson','CEO','His design skills are unmatched. He transformed my ideas into a high-performing, visually striking website.'],
+];
+
+export default function Home(){return <main className="home-page">
+  <SiteHeader/>
+  <section className="home-hero" aria-labelledby="home-title">
+    <span className="hero-im">I&apos;m</span>
+    <h1 id="home-title"><span>PRODUCT</span><span>DESIGNER</span></h1>
+    <div className="hero-portrait parallax-card"><img src="/akshay-portrait.jpg" alt="Akshay, Product Designer"/><small>©</small></div>
+    <div className="hero-hand" aria-hidden="true">♨</div>
+    <p className="hero-summary">4.5+ years turning ambiguous problems into products<br/>people can actually use.</p>
+    <IdentityCard/>
+  </section>
+
+  <section className="home-work page-shell" id="work">
+    <div className="list-heading"><span>Selected casestudies</span><a href="/work">All Case studies</a></div>
+    <div className="home-card-stack"><i/><i/><ProjectCard index={2} laptop/></div>
+  </section>
+
+  <section className="skill-orbit page-shell reveal" aria-labelledby="skills-title">
+    <div className="orbit-center"><h2 id="skills-title">What I bring to the table</h2><p>Ideas into experiences worth remembering</p></div>
+    {skills.map(([label,position],i)=><span className={`orbit-pill ${position}`} key={`${label}-${i}`}>{label}</span>)}
+  </section>
+
+  <section className="home-about page-shell reveal">
+    <div className="home-about-copy"><h2>About me</h2><p>Hi, I&apos;m Akshay — a product designer and UX Strategist<br/>passionate about crafting meaningful and impactful digital<br/>experiences.</p>
+      <div className="home-stats"><div><b>4.5</b><span>Years of Experience</span></div><div><b>20+</b><span>Completed Projects</span></div><div><b>10+</b><span>Clients</span></div></div>
+      <div className="home-contact"><p><strong>Call Today :</strong><br/>+44 7810120379</p><p><strong>Email :</strong><br/>akshayv2310@gmail.com</p></div>
+      <div className="social-row"><a href="https://www.linkedin.com" aria-label="LinkedIn">in</a><a href="https://www.instagram.com" aria-label="Instagram">◎</a><a href="https://x.com" aria-label="X">𝕏</a></div>
+      <a className="round-link outline-link" href="/about">View my story <b>↗</b></a>
+    </div>
+    <div className="stonehenge parallax-card"><img src="/figma/home/raw-02.jpeg" alt="Akshay visiting Stonehenge"/></div>
+  </section>
+
+  <section className="testimonials page-shell reveal">
+    <div className="dot-map" aria-hidden="true"/>
+    <h2>Endorsed by industry leaders and colleagues</h2><p>Words from those who&apos;ve worked alongside me</p>
+    <div className="testimonial-grid">
+      <article className="testimonial-card testimonial-a"><strong>★★★★★</strong><p>{testimonials[0][2]}</p><div><span className="avatar">SJ</span><b>{testimonials[0][0]}<small>{testimonials[0][1]}</small></b></div></article>
+      <article className="testimonial-card testimonial-b"><strong>★★★★★</strong><p>{testimonials[1][2]}</p><div><span className="avatar">SJ</span><b>{testimonials[1][0]}<small>{testimonials[1][1]}</small></b></div></article>
+      <article className="testimonial-metric metric-right"><small>I&apos;ve worked with 10+ happy clients</small><b>98%</b><span>Satisfaction Rate</span></article>
+      <article className="testimonial-metric metric-left"><small>My work helped clients grow their revenue<br/>by 200%</small><b>200%</b><span>Growth</span></article>
+      <article className="testimonial-card testimonial-c"><strong>★★★★★</strong><p>{testimonials[2][2]}</p><div><span className="avatar">SJ</span><b>{testimonials[2][0]}<small>{testimonials[2][1]}</small></b></div></article>
+      <article className="testimonial-card testimonial-d"><strong>★★★★★</strong><p>{testimonials[3][2]}</p><div><span className="avatar">SJ</span><b>{testimonials[3][0]}<small>{testimonials[3][1]}</small></b></div></article>
+    </div>
+  </section>
+
+  <div className="page-shell home-connect"><ConnectPanel/><PageFooter/></div>
 </main>}
