@@ -1,60 +1,93 @@
 import type {ReactNode} from 'react';
 import Link from 'next/link';
+import {profile} from './data';
 
-export function SiteHeader({showContact=true}:{showContact?:boolean}){
+export function Arrow(){return <span aria-hidden="true">↗</span>}
+
+export function SiteHeader(){
   return <header className="site-header">
-    <Link className="location" href="/"><strong>Based in</strong><span>United Kingdom</span></Link>
-    {showContact&&<a className="round-link round-link-dark magnetic" href="/contact">Get in touch <b>↗</b></a>}
+    <div className="shell header-inner">
+      <Link className="brand" href="/" aria-label="Akshay Venkata Narayana, home">
+        <span>AVN</span><strong>Akshay Venkata Narayana</strong>
+      </Link>
+      <nav className="primary-nav" aria-label="Primary navigation">
+        <Link href="/work">Work</Link>
+        <Link href="/about">About</Link>
+        <Link href="/contact">Contact</Link>
+      </nav>
+      <a className="header-action" href={`mailto:${profile.email}?subject=Resume%20request`}>Request résumé <Arrow/></a>
+    </div>
   </header>;
 }
 
-export function IdentityCard({light=false}:{light?:boolean}){
-  return <div className={`identity-wrap ${light?'identity-light':''}`}>
-    <span className="availability"><i/> Open to New Opportunities</span>
-    <nav className="identity-card" aria-label="Primary navigation">
-      <img src="/akshay-portrait.jpg" alt="Akshay Venkata Narayana"/>
-      <Link className="identity-name" href="/"><strong>AKSHAY VENKATA NARAYANA</strong><span>Product Designer | User Experience Designer</span></Link>
-      <div className="identity-menu">
-        <span>Navigate</span>
-        <div className="menu-lines"><i/><i/></div>
-        <div className="identity-links"><Link href="/">Home</Link><a href="/work">Work</a><a href="/about">About</a><a href="/contact">Contact</a></div>
-      </div>
-    </nav>
+export function Status(){
+  return <span className="status"><i/> Open to product design roles · UK</span>;
+}
+
+export function Button({href,children,secondary=false}:{href:string;children:ReactNode;secondary?:boolean}){
+  const internal=href.startsWith('/');
+  const className=`button ${secondary?'button-secondary':''}`;
+  if(internal)return <Link className={className} href={href}>{children}</Link>;
+  return <a className={className} href={href}>{children}</a>;
+}
+
+export function SectionHead({eyebrow,title,copy,action}:{eyebrow:string;title:string;copy?:string;action?:ReactNode}){
+  return <div className="section-head reveal">
+    <div><span className="eyebrow">{eyebrow}</span><h2>{title}</h2>{copy&&<p>{copy}</p>}</div>
+    {action&&<div className="section-action">{action}</div>}
   </div>;
 }
 
-export function ConnectPanel({inverse=false}:{inverse?:boolean}){
-  return <section className={`connect-panel reveal ${inverse?'connect-inverse':''}`}>
-    <div><span>LET&apos;S CONNECT</span><h2>Have a product idea or design<br/>challenge?</h2></div>
-    <div><p>I&apos;m open to product design roles, UX Design roles, freelance<br/>projects and meaningful collaborations.</p><a className={`round-link ${inverse?'round-link-dark':''}`} href="/contact">Say Hello <b>↗</b></a></div>
-  </section>;
+export function ProofStrip(){
+  return <dl className="proof-strip reveal" aria-label="Career summary">
+    <div><dt>{profile.years}</dt><dd>Years designing products</dd></div>
+    <div><dt>{profile.projects}</dt><dd>Projects completed</dd></div>
+    <div><dt>{profile.clients}</dt><dd>Client collaborations</dd></div>
+    <div><dt>End-to-end</dt><dd>From framing to handoff</dd></div>
+  </dl>;
 }
 
-export function PageFooter(){return <footer className="page-footer">© 2026 AKSHAY VENKATA NARAYANA- PRODUCT DESIGNER/UX DESIGNER</footer>;}
-
-export function ProjectVisual({laptop=false}:{laptop?:boolean}){
-  if(laptop)return <div className="project-visual project-laptop"><img src="/figma/home/raw-01.png" alt="LUXTJ Extranet shown on a laptop"/></div>;
-  return <div className="project-visual project-monitors">
-    <img className="monitor-back monitor-a" src="/figma/home/raw-04.png" alt="LUXTJ booking detail"/>
-    <img className="monitor-back monitor-b" src="/figma/home/raw-05.png" alt="LUXTJ search experience"/>
-    <img className="monitor-front" src="/figma/home/raw-07.png" alt="LUXTJ customer website"/>
-  </div>;
-}
-
-export function ProjectCard({index=1,laptop=false,identity=false}:{index?:number;laptop?:boolean;identity?:boolean}){
-  return <article className={`project-card reveal ${laptop?'home-project-card':''}`}>
-    <ProjectVisual laptop={laptop}/>
-    <div className="project-copy">
-      <div className="project-meta"><b>CASE STUDY-{String(index).padStart(2,'0')}</b><span>12 m read</span></div>
-      <div className="tag-row"><i>Product Design</i><i>End to end</i><i>Sole designer</i><i>Web + Extranet</i></div>
-      <h3>LUXTJ — BRINGING A LUXURY TRAVEL APP TO THE WEB</h3>
-      <p>A year-long, end-to-end design of LuxTJ across both mobile and web — home, travel calendar, and bucket list — designed as one connected experience and launching together as a single product.</p>
-      <a className="round-link project-link" href="/work/luxtj">View casestudy <b>↗</b></a>
+export function ProjectFeature({compact=false}:{compact?:boolean}){
+  return <article className={`project-feature reveal ${compact?'project-feature-compact':''}`} data-tilt>
+    <Link className="project-media" href="/work/luxtj" aria-label="Read the LUXTJ case study">
+      <img src="/figma/case-17.png" alt="LUXTJ luxury-travel booking website"/>
+      <span>Featured case study</span>
+    </Link>
+    <div className="project-body">
+      <div className="project-index"><span>01 / LUXTJ</span><span>12 min read</span></div>
+      <h3>Making a complex travel booking journey feel clear and connected.</h3>
+      <p>I designed the customer website and partner extranet as one ecosystem—connecting discovery, comparison, booking and fulfilment.</p>
+      <dl className="project-facts">
+        <div><dt>Role</dt><dd>Lead Product Designer</dd></div>
+        <div><dt>Scope</dt><dd>Research, UX, UI, system</dd></div>
+        <div><dt>Timeline</dt><dd>12 months</dd></div>
+      </dl>
+      <Link className="text-link" href="/work/luxtj">Read case study <Arrow/></Link>
     </div>
-    {identity&&<IdentityCard/>}
   </article>;
 }
 
-export function SectionTitle({eyebrow,title,copy}:{eyebrow:string;title:string;copy?:ReactNode}){
-  return <div className="section-title reveal"><span>{eyebrow}</span><h2>{title}</h2>{copy&&<div className="section-title-copy">{copy}</div>}</div>;
+export function ExperiencePreview({company,role,summary,meta}:{company:string;role:string;summary:string;meta:string}){
+  return <article className="experience-preview reveal">
+    <span>{meta}</span><h3>{company}</h3><strong>{role}</strong><p>{summary}</p>
+  </article>;
+}
+
+export function ContactPanel(){
+  return <section className="contact-cta shell reveal">
+    <span className="eyebrow">Next step</span>
+    <div><h2>Have a role or a problem worth solving?</h2><p>I&apos;m open to full-time product design roles, selected freelance projects and thoughtful collaborations.</p></div>
+    <Button href="/contact">Start a conversation <Arrow/></Button>
+  </section>;
+}
+
+export function SiteFooter(){
+  return <footer className="site-footer"><div className="shell">
+    <p>© 2026 {profile.name}</p>
+    <div><a href={`mailto:${profile.email}`}>Email</a><a href="https://www.linkedin.com" target="_blank" rel="noreferrer">LinkedIn</a><a href="#top">Back to top ↑</a></div>
+  </div></footer>;
+}
+
+export function PageFrame({children}:{children:ReactNode}){
+  return <main id="top"><SiteHeader/>{children}<ContactPanel/><SiteFooter/></main>;
 }

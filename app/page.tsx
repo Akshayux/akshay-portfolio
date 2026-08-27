@@ -1,61 +1,53 @@
-import {ConnectPanel,IdentityCard,PageFooter,ProjectCard,SiteHeader} from './components';
+import Link from 'next/link';
+import {Arrow,Button,ExperiencePreview,PageFrame,ProjectFeature,ProofStrip,SectionHead,Status} from './components';
+import {capabilities,experience} from './data';
 
-const skills=[
-  ['Design Systems','skill-one'],['User Research','skill-two'],['Strategy','skill-three'],
-  ['Experience Design','skill-four'],['Story telling','skill-five'],['Problem Solving','skill-six'],
-  ['Problem Solving','skill-seven'],['Problem Solving','skill-eight'],['AI Tools','skill-nine'],
-];
-
-const testimonials=[
-  ['Sarah Johnson','CEO','His design skills are unmatched. He transformed my ideas into a high-performing, visually striking website.'],
-  ['Sarah Johnson','CEO','His design skills are unmatched. He transformed my ideas into a high-performing, visually striking website.'],
-  ['Sarah Johnson','CEO','His design skills are unmatched. He transformed my ideas into a high-performing, visually striking website.'],
-  ['Sarah Johnson','CEO','His design skills are unmatched. He transformed my ideas into a high-performing, visually striking website.'],
-];
-
-export default function Home(){return <main className="home-page">
-  <SiteHeader/>
-  <section className="home-hero" aria-labelledby="home-title">
-    <span className="hero-im">I&apos;m</span>
-    <h1 id="home-title"><span>PRODUCT</span><span>DESIGNER</span></h1>
-    <div className="hero-portrait parallax-card"><img src="/akshay-portrait.jpg" alt="Akshay, Product Designer"/><small>©</small></div>
-    <div className="hero-hand" aria-hidden="true">♨</div>
-    <p className="hero-summary">4.5+ years turning ambiguous problems into products<br/>people can actually use.</p>
-    <IdentityCard/>
-  </section>
-
-  <section className="home-work page-shell" id="work">
-    <div className="list-heading"><span>Selected casestudies</span><a href="/work">All Case studies</a></div>
-    <div className="home-card-stack"><i/><i/><ProjectCard index={2} laptop/></div>
-  </section>
-
-  <section className="skill-orbit page-shell reveal" aria-labelledby="skills-title">
-    <div className="orbit-center"><h2 id="skills-title">What I bring to the table</h2><p>Ideas into experiences worth remembering</p></div>
-    {skills.map(([label,position],i)=><span className={`orbit-pill ${position}`} key={`${label}-${i}`}>{label}</span>)}
-  </section>
-
-  <section className="home-about page-shell reveal">
-    <div className="home-about-copy"><h2>About me</h2><p>Hi, I&apos;m Akshay — a product designer and UX Strategist<br/>passionate about crafting meaningful and impactful digital<br/>experiences.</p>
-      <div className="home-stats"><div><b data-count="4.5" data-decimals="1">4.5</b><span>Years of Experience</span></div><div><b data-count="20" data-suffix="+">20+</b><span>Completed Projects</span></div><div><b data-count="10" data-suffix="+">10+</b><span>Clients</span></div></div>
-      <div className="home-contact"><p><strong>Call Today :</strong><br/>+44 7810120379</p><p><strong>Email :</strong><br/>akshayv2310@gmail.com</p></div>
-      <div className="social-row"><a href="https://www.linkedin.com" aria-label="LinkedIn">in</a><a href="https://www.instagram.com" aria-label="Instagram">◎</a><a href="https://x.com" aria-label="X">𝕏</a></div>
-      <a className="round-link outline-link" href="/about">View my story <b>↗</b></a>
+export default function Home(){return <PageFrame>
+  <section className="hero shell">
+    <div className="hero-copy">
+      <Status/>
+      <span className="eyebrow hero-eyebrow">Product designer · complex digital systems</span>
+      <h1>I turn complexity into products people can use with confidence.</h1>
+      <p>4.5+ years designing across luxury travel, enterprise SaaS, AI tools and mobile products—from problem framing to developer handoff.</p>
+      <div className="hero-actions"><Button href="/work">View selected work <Arrow/></Button><Button href="/about" secondary>About me</Button></div>
     </div>
-    <div className="stonehenge parallax-card"><img src="/figma/home/raw-02.jpeg" alt="Akshay visiting Stonehenge"/></div>
-  </section>
-
-  <section className="testimonials page-shell reveal">
-    <div className="dot-map" aria-hidden="true"/>
-    <h2>Endorsed by industry leaders and colleagues</h2><p>Words from those who&apos;ve worked alongside me</p>
-    <div className="testimonial-grid">
-      <article className="testimonial-card testimonial-a"><strong>★★★★★</strong><p>{testimonials[0][2]}</p><div><span className="avatar">SJ</span><b>{testimonials[0][0]}<small>{testimonials[0][1]}</small></b></div></article>
-      <article className="testimonial-card testimonial-b"><strong>★★★★★</strong><p>{testimonials[1][2]}</p><div><span className="avatar">SJ</span><b>{testimonials[1][0]}<small>{testimonials[1][1]}</small></b></div></article>
-      <article className="testimonial-metric metric-right"><small>I&apos;ve worked with 10+ happy clients</small><b data-count="98" data-suffix="%">98%</b><span>Satisfaction Rate</span></article>
-      <article className="testimonial-metric metric-left"><small>My work helped clients grow their revenue<br/>by 200%</small><b data-count="200" data-suffix="%">200%</b><span>Growth</span></article>
-      <article className="testimonial-card testimonial-c"><strong>★★★★★</strong><p>{testimonials[2][2]}</p><div><span className="avatar">SJ</span><b>{testimonials[2][0]}<small>{testimonials[2][1]}</small></b></div></article>
-      <article className="testimonial-card testimonial-d"><strong>★★★★★</strong><p>{testimonials[3][2]}</p><div><span className="avatar">SJ</span><b>{testimonials[3][0]}<small>{testimonials[3][1]}</small></b></div></article>
+    <div className="hero-visual reveal" data-parallax>
+      <div className="portrait-frame"><img src="/akshay-portrait.jpg" alt="Akshay Venkata Narayana, Product Designer"/></div>
+      <div className="portrait-note"><span>Currently based in</span><strong>United Kingdom</strong></div>
+      <div className="portrait-mark" aria-hidden="true">AVN</div>
     </div>
   </section>
 
-  <div className="page-shell home-connect"><ConnectPanel/><PageFooter/></div>
-</main>}
+  <section className="shell scan-summary" aria-labelledby="scan-title">
+    <div className="scan-intro reveal"><span className="eyebrow">30-second overview</span><h2 id="scan-title">The essentials, without the portfolio theatre.</h2><p>I frame ambiguous problems, simplify multi-step journeys and build reusable systems that make delivery clearer for product and engineering teams.</p></div>
+    <ProofStrip/>
+  </section>
+
+  <section className="section shell" id="selected-work">
+    <SectionHead eyebrow="Selected work" title="One detailed case study. No duplicate projects." copy="Start with the summary. Go deeper when you want to inspect the decisions, trade-offs and system behind the screens." action={<Link className="text-link" href="/work">All work <Arrow/></Link>}/>
+    <ProjectFeature/>
+  </section>
+
+  <section className="section shell">
+    <SectionHead eyebrow="More experience" title="Breadth across products, not made-up case studies." copy="A concise view of recent work. Detailed artefacts can be discussed in an interview where confidentiality allows."/>
+    <div className="experience-preview-grid">
+      {experience.slice(0,3).map(item=><ExperiencePreview key={item.company} company={item.company} role={item.role} summary={item.summary} meta={item.date}/>) }
+    </div>
+    <Link className="text-link section-bottom-link" href="/about#experience">View full experience <Arrow/></Link>
+  </section>
+
+  <section className="section shell approach">
+    <SectionHead eyebrow="How I work" title="Clear thinking before polished pixels."/>
+    <div className="approach-grid">
+      <article className="reveal"><span>01</span><h3>Frame the right problem</h3><p>Connect user behaviour, business goals and delivery constraints before committing to a solution.</p></article>
+      <article className="reveal"><span>02</span><h3>Make decisions visible</h3><p>Use flows, prototypes and clear rationale so teams can evaluate trade-offs together.</p></article>
+      <article className="reveal"><span>03</span><h3>Design for the system</h3><p>Resolve the happy path, edge cases and reusable patterns engineers need to ship confidently.</p></article>
+    </div>
+    <div className="capability-row reveal">{capabilities.map(item=><span key={item}>{item}</span>)}</div>
+  </section>
+
+  <section className="section shell about-preview">
+    <div className="about-preview-image reveal" data-parallax><img src="/figma/about-photo-v2.png" alt="Akshay by the coast"/></div>
+    <div className="about-preview-copy reveal"><span className="eyebrow">A little context</span><h2>A product designer who is comfortable in the messy middle.</h2><p>I&apos;m pursuing a Master&apos;s in Design in the UK while working across product strategy, UX and interface systems. I care about the part between a good idea and a product that actually holds together.</p><blockquote>“Good design removes the thinking users should never have to do.”</blockquote><Link className="text-link" href="/about">More about me <Arrow/></Link></div>
+  </section>
+</PageFrame>}

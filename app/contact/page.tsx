@@ -1,30 +1,24 @@
 import type {Metadata} from 'next';
-import {IdentityCard,PageFooter,SiteHeader} from '../components';
+import {Arrow,Button,SiteFooter,SiteHeader,Status} from '../components';
+import {profile} from '../data';
 
 export const metadata:Metadata={title:'Contact',description:'Contact Akshay about product design roles, UX projects and meaningful collaborations.'};
 
-export default function ContactPage(){return <main className="contact-page">
-  <SiteHeader showContact={false}/>
-  <section className="contact-panel page-shell reveal">
-    <h1>CONTACT</h1>
-    <div className="contact-layout">
-      <div className="contact-intro">
-        <small>Disciplines</small><h2>Product Designer<br/>UX Strategist</h2>
-        <p>Looking for full-time roles where I can work on products that evolve, not just launch and leave. Also taking on freelance projects. Spent 4.5 years designing for different clients every few months. Want to work on something that grows and evolves over time, where I can see how decisions play out and iterate based on what actually happens. I&apos;ve worked across finance, tech, and manufacturing, designing systems that needed to make sense to both technical and non-technical audiences. Ready for somewhere I can dig deeper instead of moving on every few months.</p>
-        <p>Based in united kingdom. Looking for On-site, remote,<br/>or hybrid. Put me anywhere with WiFi and a problem worth solving.</p>
-        <div className="contact-actions"><a href="mailto:akshayv2310@gmail.com?subject=Resume%20request">Resume</a><a href="https://www.linkedin.com" target="_blank" rel="noreferrer"><b>in</b> LinkedIn</a></div>
-      </div>
-      <form className="contact-form" action="mailto:akshayv2310@gmail.com" method="post" encType="text/plain">
-        <label>First Name *<input name="firstName" placeholder="First name" required/></label>
-        <label>Last Name *<input name="lastName" placeholder="Last name" required/></label>
-        <label>Email Address *<input name="email" type="email" placeholder="email@company.com" required/></label>
-        <label>Phone Number<input name="phone" type="tel" placeholder="07000-000000"/></label>
-        <label className="full-field">Enquiry Type *<select name="type" required defaultValue=""><option value="" disabled>Select one...</option><option>Full-time role</option><option>Freelance project</option><option>Collaboration</option></select></label>
-        <label className="full-field">Message *<textarea name="message" placeholder="Your message" required/></label>
-        <button type="submit">Send Message <span>↗</span></button>
-      </form>
+export default function ContactPage(){return <main id="top" className="contact-page">
+  <SiteHeader/>
+  <section className="contact-hero shell">
+    <div className="contact-heading reveal"><Status/><span className="eyebrow">Contact</span><h1>Let&apos;s talk about the product, not just the position.</h1></div>
+    <div className="contact-content reveal">
+      <p>I&apos;m looking for a full-time product design role where I can stay close to a product, learn from what ships and improve it over time. I&apos;m also open to selected freelance work and meaningful collaborations.</p>
+      <div className="contact-primary"><span>Best way to reach me</span><a href={`mailto:${profile.email}`}>{profile.email} <Arrow/></a><small>I usually reply within two working days.</small></div>
+      <div className="contact-buttons"><Button href={`mailto:${profile.email}?subject=Product%20design%20opportunity`}>Email me <Arrow/></Button><Button href={`mailto:${profile.email}?subject=Resume%20request`} secondary>Request résumé</Button></div>
     </div>
-    <IdentityCard/>
   </section>
-  <PageFooter/>
+  <section className="contact-details shell reveal">
+    <div><span>Location</span><strong>United Kingdom</strong><p>Open to on-site, hybrid and remote roles.</p></div>
+    <div><span>Disciplines</span><strong>Product Design · UX Strategy</strong><p>Complex systems, web products and mobile experiences.</p></div>
+    <div><span>Elsewhere</span><a href="https://www.linkedin.com" target="_blank" rel="noreferrer">LinkedIn <Arrow/></a><p>Professional background and updates.</p></div>
+  </section>
+  <section className="contact-close shell reveal"><p>If you include the role, team, product challenge and expected timeline, I can give you a useful response faster.</p></section>
+  <SiteFooter/>
 </main>}
