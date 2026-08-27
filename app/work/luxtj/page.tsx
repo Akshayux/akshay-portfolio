@@ -1,4 +1,5 @@
 import type {Metadata} from 'next';
+import Link from 'next/link';
 
 export const metadata:Metadata={title:'LUXTJ Case Study',description:'Turning complex luxury trip planning into one clear booking journey — an end-to-end LUXTJ product design case study.'};
 
@@ -21,7 +22,7 @@ const supporting=[
   ['04','Package confirmation','A clear booking state connects selected products, price and the next required action without hiding important detail.','/figma/case-12.png'],
 ];
 
-function CaseHeader(){return <header className="case-header"><a href="/" className="case-mini-id"><img src="/akshay-portrait.jpg" alt="Akshay"/><span><b>AKSHAY VENKATA NARAYANA</b><small>Product Designer | User Experience Designer</small></span></a><a className="case-menu" href="/work" aria-label="Back to work">⌂</a></header>;}
+function CaseHeader(){return <header className="case-header"><Link href="/" className="case-mini-id"><img src="/akshay-portrait.jpg" alt="Akshay"/><span><b>AKSHAY VENKATA NARAYANA</b><small>Product Designer | User Experience Designer</small></span></Link><a className="case-menu" href="/work" aria-label="Back to work">⌂</a></header>;}
 function Kicker({children}:{children:React.ReactNode}){return <span className="case-kicker">{children}</span>;}
 
 export default function LuxtjPage(){return <main className="case-page">

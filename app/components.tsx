@@ -1,8 +1,9 @@
 import type {ReactNode} from 'react';
+import Link from 'next/link';
 
 export function SiteHeader({showContact=true}:{showContact?:boolean}){
   return <header className="site-header">
-    <a className="location" href="/"><strong>Based in</strong><span>United Kingdom</span></a>
+    <Link className="location" href="/"><strong>Based in</strong><span>United Kingdom</span></Link>
     {showContact&&<a className="round-link round-link-dark magnetic" href="/contact">Get in touch <b>↗</b></a>}
   </header>;
 }
@@ -12,11 +13,11 @@ export function IdentityCard({light=false}:{light?:boolean}){
     <span className="availability"><i/> Open to New Opportunities</span>
     <nav className="identity-card" aria-label="Primary navigation">
       <img src="/akshay-portrait.jpg" alt="Akshay Venkata Narayana"/>
-      <a className="identity-name" href="/"><strong>AKSHAY VENKATA NARAYANA</strong><span>Product Designer | User Experience Designer</span></a>
+      <Link className="identity-name" href="/"><strong>AKSHAY VENKATA NARAYANA</strong><span>Product Designer | User Experience Designer</span></Link>
       <div className="identity-menu">
         <span>Navigate</span>
         <div className="menu-lines"><i/><i/></div>
-        <div className="identity-links"><a href="/">Home</a><a href="/work">Work</a><a href="/about">About</a><a href="/contact">Contact</a></div>
+        <div className="identity-links"><Link href="/">Home</Link><a href="/work">Work</a><a href="/about">About</a><a href="/contact">Contact</a></div>
       </div>
     </nav>
   </div>;

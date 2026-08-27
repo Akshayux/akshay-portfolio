@@ -36,7 +36,7 @@ export default function Home(){return <main className="home-page">
 
   <section className="home-about page-shell reveal">
     <div className="home-about-copy"><h2>About me</h2><p>Hi, I&apos;m Akshay — a product designer and UX Strategist<br/>passionate about crafting meaningful and impactful digital<br/>experiences.</p>
-      <div className="home-stats"><div><b>4.5</b><span>Years of Experience</span></div><div><b>20+</b><span>Completed Projects</span></div><div><b>10+</b><span>Clients</span></div></div>
+      <div className="home-stats"><div><b data-count="4.5" data-decimals="1">4.5</b><span>Years of Experience</span></div><div><b data-count="20" data-suffix="+">20+</b><span>Completed Projects</span></div><div><b data-count="10" data-suffix="+">10+</b><span>Clients</span></div></div>
       <div className="home-contact"><p><strong>Call Today :</strong><br/>+44 7810120379</p><p><strong>Email :</strong><br/>akshayv2310@gmail.com</p></div>
       <div className="social-row"><a href="https://www.linkedin.com" aria-label="LinkedIn">in</a><a href="https://www.instagram.com" aria-label="Instagram">◎</a><a href="https://x.com" aria-label="X">𝕏</a></div>
       <a className="round-link outline-link" href="/about">View my story <b>↗</b></a>
@@ -50,8 +50,8 @@ export default function Home(){return <main className="home-page">
     <div className="testimonial-grid">
       <article className="testimonial-card testimonial-a"><strong>★★★★★</strong><p>{testimonials[0][2]}</p><div><span className="avatar">SJ</span><b>{testimonials[0][0]}<small>{testimonials[0][1]}</small></b></div></article>
       <article className="testimonial-card testimonial-b"><strong>★★★★★</strong><p>{testimonials[1][2]}</p><div><span className="avatar">SJ</span><b>{testimonials[1][0]}<small>{testimonials[1][1]}</small></b></div></article>
-      <article className="testimonial-metric metric-right"><small>I&apos;ve worked with 10+ happy clients</small><b>98%</b><span>Satisfaction Rate</span></article>
-      <article className="testimonial-metric metric-left"><small>My work helped clients grow their revenue<br/>by 200%</small><b>200%</b><span>Growth</span></article>
+      <article className="testimonial-metric metric-right"><small>I&apos;ve worked with 10+ happy clients</small><b data-count="98" data-suffix="%">98%</b><span>Satisfaction Rate</span></article>
+      <article className="testimonial-metric metric-left"><small>My work helped clients grow their revenue<br/>by 200%</small><b data-count="200" data-suffix="%">200%</b><span>Growth</span></article>
       <article className="testimonial-card testimonial-c"><strong>★★★★★</strong><p>{testimonials[2][2]}</p><div><span className="avatar">SJ</span><b>{testimonials[2][0]}<small>{testimonials[2][1]}</small></b></div></article>
       <article className="testimonial-card testimonial-d"><strong>★★★★★</strong><p>{testimonials[3][2]}</p><div><span className="avatar">SJ</span><b>{testimonials[3][0]}<small>{testimonials[3][1]}</small></b></div></article>
     </div>
