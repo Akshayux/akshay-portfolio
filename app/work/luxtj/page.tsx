@@ -32,7 +32,7 @@ export default function LuxtjPage(){return <main id="top" className="case-page">
   <aside className="case-toc" aria-label="Case study contents"><span>On this page</span><a href="#overview">Overview</a><a href="#problem">Problem</a><a href="#role">My role</a><a href="#decisions">Decisions</a><a href="#system">System</a><a href="#outcomes">Outcomes</a></aside>
 
   <section className="case-hero shell" id="overview">
-    <div className="case-hero-copy reveal"><CaseKicker>LUXTJ · Product design case study</CaseKicker><h1>Turning complex trip planning into one clear booking journey.</h1><p>I designed LUXTJ&apos;s customer website and partner extranet as a connected product ecosystem—bringing flights, hotels, travellers, pricing and trip details into a journey that feels calm enough for premium travel.</p></div>
+    <div className="case-hero-copy reveal"><CaseKicker>LUXTJ · Product & UX case study</CaseKicker><h1 data-parallax-layer data-parallax-speed="10">Turning complex trip planning into one clear booking journey.</h1><p>I designed LUXTJ&apos;s customer website and partner extranet as a connected product ecosystem—bringing flights, hotels, travellers, pricing and trip details into a journey that feels calm enough for premium travel.</p></div>
     <dl className="case-summary reveal">
       <div><dt>Role</dt><dd>Lead Product Designer</dd></div><div><dt>Scope</dt><dd>Product thinking, UX, UI, design system</dd></div><div><dt>Timeline</dt><dd>12 months</dd></div><div><dt>Team</dt><dd>Founder, product and engineering</dd></div><div><dt>Surfaces</dt><dd>Customer web + partner extranet</dd></div><div><dt>Read time</dt><dd>12 minutes</dd></div>
     </dl>

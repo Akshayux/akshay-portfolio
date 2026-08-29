@@ -2,12 +2,12 @@ import type {Metadata} from 'next';
 import {PageFrame,ProjectFeature,SectionHead} from '../components';
 import {experience} from '../data';
 
-export const metadata:Metadata={title:'Work',description:'Selected product design work by Akshay Venkata Narayana, with role, scope, decisions and outcomes made easy to scan.'};
+export const metadata:Metadata={title:'Work',description:'Selected Product and UX Design work by Akshay Venkata Narayana, with role, scope, decisions and outcomes made easy to scan.'};
 
 export default function WorkPage(){return <PageFrame>
   <section className="page-hero shell reveal">
     <span className="eyebrow">Work / 2022—2026</span>
-    <h1>A closer look at how I solve product problems.</h1>
+    <h1 data-parallax-layer data-parallax-speed="10">A closer look at how I solve product problems.</h1>
     <p>One detailed case study, followed by a concise archive of the other products and teams I&apos;ve worked with.</p>
   </section>
 

@@ -35,6 +35,7 @@ export default function Motion({children}:{children:ReactNode}){
     cleanups.push(()=>intro.stop());
 
     const parallaxItems=Array.from(document.querySelectorAll<HTMLElement>('[data-parallax] img'));
+    const parallaxLayers=Array.from(document.querySelectorAll<HTMLElement>('[data-parallax-layer]'));
     let frame=0;
     const updateParallax=()=>{
       parallaxItems.forEach((image,index)=>{
@@ -42,6 +43,13 @@ export default function Motion({children}:{children:ReactNode}){
         if(rect.bottom<0||rect.top>window.innerHeight)return;
         const delta=(rect.top+rect.height/2-window.innerHeight/2)/window.innerHeight;
         image.style.transform=`translate3d(0, ${delta*(index%2?18:-18)}px, 0) scale(1.035)`;
+      });
+      parallaxLayers.forEach(layer=>{
+        const rect=layer.getBoundingClientRect();
+        if(rect.bottom<0||rect.top>window.innerHeight)return;
+        const speed=Number(layer.dataset.parallaxSpeed||10);
+        const delta=(rect.top+rect.height/2-window.innerHeight/2)/window.innerHeight;
+        layer.style.translate=`0 ${delta*speed}px`;
       });
       frame=0;
     };
@@ -84,6 +92,7 @@ export default function Motion({children}:{children:ReactNode}){
       window.removeEventListener('scroll',onScroll);
       document.removeEventListener('click',onNavigate,true);
       if(frame)cancelAnimationFrame(frame);
+      parallaxLayers.forEach(layer=>{layer.style.translate=''})
       root.classList.remove('motion-ready');
     };
   },[reduceMotion]);

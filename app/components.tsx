@@ -8,20 +8,20 @@ export function SiteHeader(){
   return <header className="site-header">
     <div className="shell header-inner">
       <Link className="brand" href="/" aria-label="Akshay Venkata Narayana, home">
-        <strong>AKSHAY V.</strong><span>Product designer</span>
+        <strong>AKSHAY V.</strong><span>Product & UX designer</span>
       </Link>
       <nav className="primary-nav" aria-label="Primary navigation">
         <Link href="/work">Work</Link>
         <Link href="/about">About</Link>
         <Link href="/contact">Contact</Link>
       </nav>
-      <a className="header-action" href={`mailto:${profile.email}`}>Email me <Arrow/></a>
+      <Link className="header-action" href="/resume">View résumé <Arrow/></Link>
     </div>
   </header>;
 }
 
 export function Status(){
-  return <span className="status"><i/> Available for product design roles</span>;
+  return <span className="status"><i/> Available for Product & UX roles</span>;
 }
 
 export function Button({href,children,secondary=false}:{href:string;children:ReactNode;secondary?:boolean}){
@@ -50,7 +50,7 @@ export function ProofStrip(){
 export function ProjectFeature({compact=false}:{compact?:boolean}){
   return <article className={`project-feature reveal ${compact?'project-feature-compact':''}`} data-tilt>
     <div className="project-topline"><span>Selected work / 01</span><span>Luxury travel · Web + Extranet</span></div>
-    <Link className="project-media" href="/work/luxtj" aria-label="Read the LUXTJ case study">
+    <Link className="project-media" href="/work/luxtj" aria-label="Read the LUXTJ case study" data-parallax>
       <img src="/figma/case-17.png" alt="LUXTJ luxury-travel booking website"/>
     </Link>
     <div className="project-body">
@@ -75,15 +75,15 @@ export function ExperiencePreview({company,role,summary,meta}:{company:string;ro
 export function ContactPanel(){
   return <section className="contact-cta shell reveal">
     <span className="eyebrow">Get in touch</span>
-    <div><h2>Let&apos;s make<br/><em>something clear.</em></h2><p>Have a product role, a complex workflow or an interesting idea? I&apos;d like to hear about it.</p></div>
+    <div><h2>Let&apos;s make<br/><em>something clear.</em></h2><p>Have a Product or UX role, a complex workflow or an interesting idea? I&apos;d like to hear about it.</p></div>
     <Button href="/contact">Say hello <Arrow/></Button>
   </section>;
 }
 
 export function SiteFooter(){
   return <footer className="site-footer"><div className="shell">
-    <p>© 2026 {profile.name} · United Kingdom</p>
-    <div><a href={`mailto:${profile.email}`}>Email</a><a href="https://www.linkedin.com" target="_blank" rel="noreferrer">LinkedIn</a><a href="#top">Back to top ↑</a></div>
+    <p>© 2026 {profile.name} · Product & UX Designer</p>
+    <div><Link href="/resume">Résumé</Link><a href={`mailto:${profile.email}`}>Email</a><a href="https://linkedin.com/in/akshayproductdesigner" target="_blank" rel="noreferrer">LinkedIn</a><a href="#top">Back to top ↑</a></div>
   </div></footer>;
 }
 

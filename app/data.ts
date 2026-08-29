@@ -1,21 +1,29 @@
 export const profile = {
   name: 'Akshay Venkata Narayana',
   shortName: 'Akshay',
-  role: 'Product Designer',
+  role: 'Product & UX Designer',
   location: 'United Kingdom',
   email: 'akshayv2310@gmail.com',
   phone: '+44 7810120379',
-  years: '4.5+',
+  years: '5+',
   projects: '20+',
   clients: '10+',
 };
 
 export const experience = [
   {
+    company: 'Free UK Genealogy',
+    role: 'Volunteer UX Designer',
+    place: 'United Kingdom',
+    date: 'Jul 2026 — Present',
+    summary: 'Supporting the user experience of a free, volunteer-powered family-history service.',
+    contribution: 'Improving journeys, information structure and interface clarity across the service.',
+  },
+  {
     company: 'The View Magazine CIC',
     role: 'Volunteer UX/UI Designer',
     place: 'United Kingdom',
-    date: 'Dec 2025 — Present',
+    date: 'Dec 2025 — Feb 2026',
     summary: 'A mobile-first magazine experience that makes current and archived issues easier to discover and read.',
     contribution: 'Information architecture, issue discovery, archive flow and responsive reading experience.',
   },
