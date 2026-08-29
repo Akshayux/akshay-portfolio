@@ -4,28 +4,44 @@ import {useState} from 'react';
 
 const rounds=[
   {
-    prompt:'A patient has submitted a care request. Which status reduces uncertainty?',
-    context:'Healthcare · waiting state',
-    options:['Request received','Request received · clinician review by 11:20'],
+    prompt:'Your pizza is running late. Which update would you rather receive?',
+    context:'Food delivery',
+    options:['Your order is delayed','Your order is 20 min late · Wait or cancel for a refund'],
     answer:1,
-    principle:'A useful status confirms success and answers the next question: what happens now, and when?',
-    law:'Visibility of system status',
+    principle:'A helpful update says what happened, how long it may take and what you can do next.',
+    lesson:'Useful, not vague',
   },
   {
-    prompt:'An admin selects “Remove team member”. Which confirmation is safer?',
-    context:'Enterprise software · permissions',
-    options:['Yes / No','Keep access / Remove access'],
-    answer:1,
-    principle:'Actions should name their outcome. Recognition is faster and safer than remembering what “yes” refers to.',
-    law:'Error prevention',
+    prompt:'You are removing a photo. Which confirmation feels safer?',
+    context:'Photos',
+    options:['Keep photo / Delete from this phone','No / Yes'],
+    answer:0,
+    principle:'Buttons that name the outcome prevent a quick tap from becoming a permanent mistake.',
+    lesson:'Say what the button does',
   },
   {
-    prompt:'A public-service form has twelve fields. What should the first step ask for?',
-    context:'Digital service · form design',
-    options:['All 12 fields at once','Only what is needed to begin'],
+    prompt:'You need a train ticket quickly. Where should the machine begin?',
+    context:'Train tickets',
+    options:['Show every ticket type and rule','Ask where and when you want to travel'],
     answer:1,
-    principle:'Progressive disclosure lowers the initial effort while keeping the full task available when it becomes relevant.',
-    law:'Progressive disclosure',
+    principle:'Starting with the question you can answer makes a complicated choice feel manageable.',
+    lesson:'One useful step at a time',
+  },
+  {
+    prompt:'An app sends too many alerts. Which setting gives you better control?',
+    context:'Notifications',
+    options:['Turn off every notification','Choose delivery, offers and account updates separately'],
+    answer:1,
+    principle:'People should be able to keep useful alerts without accepting all the noisy ones too.',
+    lesson:'Control without all-or-nothing',
+  },
+  {
+    prompt:'You are starting a free trial. Which button feels more honest?',
+    context:'Subscriptions',
+    options:['Start free trial','Start 7-day trial · £8.99/month after'],
+    answer:1,
+    principle:'Showing the future cost before the tap creates confidence and avoids an unpleasant surprise later.',
+    lesson:'No hidden consequences',
   },
 ];
 
@@ -46,10 +62,15 @@ export default function UXGame(){
     setRound(value=>value+1);setChoice(null);
   };
   const restart=()=>{setRound(0);setChoice(null);setScore(0)};
+  const result=score===rounds.length
+    ?{title:'Everyday clarity champion',copy:'You spotted every moment where a small detail could save time, worry or regret.'}
+    :score>=3
+      ?{title:'Friction finder',copy:'You notice when an everyday experience could be clearer, calmer or more honest.'}
+      :{title:'Curious explorer',copy:'There is rarely one perfect answer—but asking what feels clearer is a great place to start.'};
 
   if(finished)return <div className="ux-game-card ux-game-result" aria-live="polite">
-    <span className="game-count">Complete</span>
-    <div><strong>{score}/{rounds.length}</strong><h3>{score===rounds.length?'You spotted every friction point.':'Good instincts. Small words shape big decisions.'}</h3><p>The point is not to memorise UX laws. It is to make the safer, clearer path feel obvious in any product.</p></div>
+    <span className="game-count">Your result</span>
+    <div><strong>{score}/{rounds.length}</strong><h3>{result.title}</h3><p>{result.copy}</p></div>
     <button type="button" onClick={restart}>Play again ↻</button>
   </div>;
 
@@ -60,6 +81,6 @@ export default function UXGame(){
     <div className="game-options">
       {item.options.map((option,index)=><button type="button" key={option} onClick={()=>select(index)} disabled={choice!==null} className={choice!==null&&index===item.answer?'is-correct':choice===index?'is-wrong':''}><span>{String.fromCharCode(65+index)}</span>{option}</button>)}
     </div>
-    {choice!==null&&<div className="game-feedback" aria-live="polite"><span>{choice===item.answer?'Good call':'A clearer option'}</span><p>{item.principle}</p><small>{item.law}</small><button type="button" onClick={next}>{round===rounds.length-1?'See result':'Next question'} →</button></div>}
+    {choice!==null&&<div className="game-feedback" aria-live="polite"><span>{choice===item.answer?'Nice choice':'Another way'}</span><p>{item.principle}</p><small>{item.lesson}</small><button type="button" onClick={next}>{round===rounds.length-1?'See my result':'Next moment'} →</button></div>}
   </div>;
 }

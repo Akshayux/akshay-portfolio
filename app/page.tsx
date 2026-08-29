@@ -38,8 +38,8 @@ export default function Home(){return <PageFrame>
   </section>
 
   <section className="home-game shell">
-    <div className="editorial-heading reveal"><span>03</span><div><small>A tiny UX game</small><h2>Three decisions. Which one creates less friction?</h2></div></div>
-    <div className="game-layout"><div className="game-intro reveal"><p>UX decisions travel across industries. Try three moments from healthcare, enterprise software and everyday digital services.</p><span>No design jargon required.<br/>About 45 seconds.</span></div><div className="reveal"><UXGame/></div></div>
+    <div className="editorial-heading reveal"><span>03</span><div><small>A tiny everyday game</small><h2>You use products all day. Which option feels better?</h2></div></div>
+    <div className="game-layout"><div className="game-intro reveal"><p>Five familiar moments—from a late pizza to a free trial. Pick the option you&apos;d genuinely want to see.</p><span>No design knowledge needed.<br/>About one minute.</span></div><div className="reveal"><UXGame/></div></div>
   </section>
 
   <section className="home-experience shell">
