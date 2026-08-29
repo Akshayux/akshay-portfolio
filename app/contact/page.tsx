@@ -7,9 +7,9 @@ export const metadata:Metadata={title:'Contact',description:'Contact Akshay abou
 export default function ContactPage(){return <main id="top" className="contact-page">
   <SiteHeader/>
   <section className="contact-hero shell">
-    <div className="contact-heading reveal"><Status/><span className="eyebrow">Contact</span><h1>Let&apos;s talk about the product, not just the position.</h1></div>
+    <div className="contact-heading reveal"><Status/><span className="eyebrow">Contact</span><h1>Say hello.<br/>Tell me what you&apos;re building.</h1></div>
     <div className="contact-content reveal">
-      <p>I&apos;m looking for a full-time product design role where I can stay close to a product, learn from what ships and improve it over time. I&apos;m also open to selected freelance work and meaningful collaborations.</p>
+      <p>I&apos;m looking for a product design role where I can stay close to the work, learn from what ships and improve it over time. I&apos;m also open to selected freelance projects.</p>
       <div className="contact-primary"><span>Best way to reach me</span><a href={`mailto:${profile.email}`}>{profile.email} <Arrow/></a><small>I usually reply within two working days.</small></div>
       <div className="contact-buttons"><Button href={`mailto:${profile.email}?subject=Product%20design%20opportunity`}>Email me <Arrow/></Button><Button href={`mailto:${profile.email}?subject=Resume%20request`} secondary>Request résumé</Button></div>
     </div>

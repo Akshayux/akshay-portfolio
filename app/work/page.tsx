@@ -6,9 +6,9 @@ export const metadata:Metadata={title:'Work',description:'Selected product desig
 
 export default function WorkPage(){return <PageFrame>
   <section className="page-hero shell reveal">
-    <span className="eyebrow">Selected work</span>
-    <h1>Product work for people who want the summary—and the scrutiny.</h1>
-    <p>Each project starts with role, scope and context. The detailed case study then shows the problem, the decisions I owned, the trade-offs and what I would measure next.</p>
+    <span className="eyebrow">Work / 2022—2026</span>
+    <h1>A closer look at how I solve product problems.</h1>
+    <p>One detailed case study, followed by a concise archive of the other products and teams I&apos;ve worked with.</p>
   </section>
 
   <section className="section shell work-feature">
@@ -16,7 +16,7 @@ export default function WorkPage(){return <PageFrame>
   </section>
 
   <section className="section shell">
-    <SectionHead eyebrow="Experience snapshots" title="Other product contexts I have worked in." copy="These projects are kept concise because a useful portfolio should be accurate about the evidence it can show."/>
+    <SectionHead eyebrow="Project archive" title="Other product contexts I&apos;ve worked in." copy="Enterprise software, editorial products and mobile experiences across full-time, contract and freelance roles."/>
     <div className="work-snapshot-list">
       {experience.filter(item=>!item.company.startsWith('LUXTJ')).map((item,index)=><article className="work-snapshot reveal" key={item.company}>
         <span>{String(index+2).padStart(2,'0')}</span>
