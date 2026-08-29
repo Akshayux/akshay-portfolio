@@ -77,12 +77,25 @@ export function ProjectCard({index,title,label,description,image,href,tags}:{ind
 
 export function TestimonialsSection(){
   return <section className="testimonials shell">
-    <div className="editorial-heading reveal"><span>05</span><div><small>Testimonials</small><h2>References from people I&apos;ve designed with.</h2></div></div>
-    <div className="testimonial-panel reveal">
-      <div className="testimonial-mark" aria-hidden="true">“</div>
-      <blockquote><p>Akshay has approached that process with patience, openness, and a genuine willingness to make the product better. What stands out most to me, however, is the person behind the work. With Akshay, you are dealing with a genuinely good human being—sincere, dependable, humble, and someone who wants to give his best.</p><footer><strong>Hoomba Roy Choudhury</strong><span>Founder, Travel Jaunts & LUXTJ · Client</span></footer></blockquote>
-      <div className="testimonial-aside"><span className="eyebrow">Verified client recommendation</span><p>Worked together across the LUXTJ website, mobile app and extranet.</p><a className="text-link" href="https://linkedin.com/in/akshayproductdesigner" target="_blank" rel="noreferrer">View on LinkedIn <Arrow/></a></div>
+    <div className="editorial-heading reveal"><span>05</span><div><small>Testimonials</small><h2>What clients and collaborators say.</h2></div></div>
+    <div className="testimonial-grid">
+      <article className="testimonial-card testimonial-card-featured reveal">
+        <header><span className="testimonial-avatar">HC</span><small>Client perspective</small></header>
+        <blockquote>“Akshay has approached that process with patience, openness, and a genuine willingness to make the product better. With Akshay, you are dealing with a genuinely good human being—sincere, dependable and humble.”</blockquote>
+        <footer><strong>Hoomba Roy Choudhury</strong><span>Founder, Travel Jaunts & LUXTJ</span><small>Website · Mobile app · Extranet</small></footer>
+      </article>
+      <article className="testimonial-card reveal">
+        <header><span className="testimonial-avatar">PM</span><small>Engineering perspective</small></header>
+        <blockquote>“He is a thoughtful UX Designer who understands user needs and works well with developers to turn ideas into practical solutions. Akshay was always easy to work with, open to feedback, and clear in communicating his design decisions.”</blockquote>
+        <footer><strong>Palash Makhijja</strong><span>Senior Software Engineer</span><small>Simpo.com · CMIS School CRM</small></footer>
+      </article>
+      <article className="testimonial-card reveal">
+        <header><span className="testimonial-avatar">DK</span><small>Development perspective</small></header>
+        <blockquote>“Working with him was always smooth and collaborative. He communicated his ideas clearly, was open to feedback, and worked closely with the development team to make sure the designs were practical and delivered as intended.”</blockquote>
+        <footer><strong>Dhruvi Kapdi</strong><span>Senior Flutter Developer</span><small>LUXTJ mobile application</small></footer>
+      </article>
     </div>
+    <div className="testimonial-footer reveal"><p>Recommendations across client and engineering collaboration. Design-peer quotes are published only after the wording and attribution are approved.</p><a className="text-link" href="https://linkedin.com/in/akshayproductdesigner" target="_blank" rel="noreferrer">View recommendations <Arrow/></a></div>
   </section>;
 }
 
