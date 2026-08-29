@@ -1,5 +1,5 @@
 import type {Metadata} from 'next';
-import {Arrow,Button,PageFrame,ProofStrip,SectionHead,Status} from '../components';
+import {Arrow,Button,PageFrame,ProofStrip,SectionHead,Status,TestimonialsSection} from '../components';
 import {capabilities,experience} from '../data';
 
 export const metadata:Metadata={title:'About',description:'About Akshay Venkata Narayana — Product and UX Designer working across complex digital systems, currently based in the UK.'};
@@ -12,9 +12,12 @@ export default function AboutPage(){return <PageFrame>
 
   <section className="shell about-proof"><ProofStrip/></section>
 
-  <section className="section shell origin-section">
-    <span className="eyebrow reveal">From computer science to UX</span>
-    <div className="origin-layout"><h2 className="reveal">I learned how software works. Then I became curious about why it often doesn&apos;t work for people.</h2><div className="reveal"><p>My Bachelor&apos;s degree in Computer Science gave me a foundation in logic, systems and technology. But while building software, I kept noticing a different kind of problem: a product can function perfectly and still leave people confused.</p><p>That curiosity pulled me towards UX. I started studying behaviour, research, information architecture and interaction design—then moved fully into designing digital products. The technical background still helps me ask better questions, understand constraints and work closely with engineers.</p><strong>Today I sit comfortably between both worlds: human behaviour and technical systems.</strong></div></div>
+  <section className="section shell about-dual-section">
+    <span className="eyebrow reveal">Two sides of me</span>
+    <div className="about-dual-grid">
+      <article className="about-dual-card about-designer reveal"><span>01 / As a UX designer</span><h2>Human behaviour, with a technical backbone.</h2><p>My Bachelor&apos;s in Computer Science taught me how software is structured. UX taught me to ask whether that structure makes sense to the person using it.</p><p>Today I work across research, product thinking, information architecture, interaction design and detailed UI—staying close to engineers and making edge cases part of the core journey.</p><strong>I sit comfortably between people, business needs and technical systems.</strong></article>
+      <article className="about-dual-card about-person reveal"><span>02 / When I&apos;m not doing UX</span><h2>I collect experiences, not only references.</h2><p>Travel and photography keep me observant. Fitness gives me discipline. Games make me notice systems, feedback and motivation from a completely different angle.</p><p>I also enjoy UX events and conversations with other designers—the kind where a small detail turns into a much bigger idea.</p><div><span>Travel</span><span>Fitness</span><span>Photography</span><span>Gaming</span><span>UX community</span></div></article>
+    </div>
   </section>
 
   <section className="section shell belief-section">
@@ -43,5 +46,5 @@ export default function AboutPage(){return <PageFrame>
     <div><h2>Polish cannot rescue a fuzzy problem.</h2><p>Early in my career, I reached for the final interface too quickly. Now I spend more time understanding the situation, making assumptions visible and connecting each design decision to a real purpose.</p></div>
   </section>
 
-  <section className="section shell outside-section reveal"><span className="eyebrow">Away from the screen</span><div><h2>Travel keeps me curious. Fitness keeps me disciplined.</h2><p>I enjoy travel, photography, gaming and UX conferences. They give me new references, keep me observant and remind me that people experience the world in very different ways.</p><div><span>Travel</span><span>Fitness</span><span>Photography</span><span>Gaming</span><span>UX community</span></div></div></section>
+  <TestimonialsSection/>
 </PageFrame>}

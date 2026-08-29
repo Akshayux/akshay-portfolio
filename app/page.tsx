@@ -1,6 +1,6 @@
 import Link from 'next/link';
-import {Arrow,PageFrame,ProjectFeature,ProofStrip,Status} from './components';
-import {experience} from './data';
+import {Arrow,PageFrame,ProjectCard,ProjectFeature,ProofStrip,Status,TestimonialsSection} from './components';
+import {experience,featuredProjects} from './data';
 import UXGame from './ux-game';
 
 export default function Home(){return <PageFrame>
@@ -21,6 +21,10 @@ export default function Home(){return <PageFrame>
   <section className="featured-work shell" id="selected-work">
     <div className="editorial-heading reveal"><span>01</span><div><small>Selected work</small><h2>Designing the whole journey, not a collection of screens.</h2></div></div>
     <ProjectFeature/>
+    <div className="more-work-heading reveal"><span>More selected work</span><Link className="text-link" href="/work">See all work <Arrow/></Link></div>
+    <div className="project-card-grid">
+      {featuredProjects.slice(1).map(project=><ProjectCard key={project.title} {...project}/>)}
+    </div>
   </section>
 
   <section className="home-proof shell"><ProofStrip/></section>
@@ -35,7 +39,7 @@ export default function Home(){return <PageFrame>
 
   <section className="home-game shell">
     <div className="editorial-heading reveal"><span>03</span><div><small>A tiny UX game</small><h2>Three decisions. Which one creates less friction?</h2></div></div>
-    <div className="game-layout"><div className="game-intro reveal"><p>This is the kind of detail I care about: clear language, visible consequences and just enough choice at the right moment.</p><span>No design jargon required.<br/>About 45 seconds.</span></div><div className="reveal"><UXGame/></div></div>
+    <div className="game-layout"><div className="game-intro reveal"><p>UX decisions travel across industries. Try three moments from healthcare, enterprise software and everyday digital services.</p><span>No design jargon required.<br/>About 45 seconds.</span></div><div className="reveal"><UXGame/></div></div>
   </section>
 
   <section className="home-experience shell">
@@ -45,4 +49,6 @@ export default function Home(){return <PageFrame>
     </div>
     <Link className="text-link" href="/about#experience">Full experience <Arrow/></Link>
   </section>
+
+  <TestimonialsSection/>
 </PageFrame>}

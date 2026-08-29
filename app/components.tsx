@@ -1,6 +1,6 @@
 import type {ReactNode} from 'react';
 import Link from 'next/link';
-import {profile} from './data';
+import {profile,socials} from './data';
 
 export function Arrow(){return <span aria-hidden="true">↗</span>}
 
@@ -49,7 +49,7 @@ export function ProofStrip(){
 
 export function ProjectFeature({compact=false}:{compact?:boolean}){
   return <article className={`project-feature reveal ${compact?'project-feature-compact':''}`} data-tilt>
-    <div className="project-topline"><span>Selected work / 01</span><span>Luxury travel · Web + Extranet</span></div>
+    <div className="project-topline"><span>Selected work / 01</span><span>Luxury travel · Customer experience</span></div>
     <Link className="project-media" href="/work/luxtj" aria-label="Read the LUXTJ case study" data-parallax>
       <img src="/figma/case-17.png" alt="LUXTJ luxury-travel booking website"/>
     </Link>
@@ -64,6 +64,26 @@ export function ProjectFeature({compact=false}:{compact?:boolean}){
       <Link className="project-arrow" href="/work/luxtj" aria-label="Read LUXTJ case study"><Arrow/></Link>
     </div>
   </article>;
+}
+
+export function ProjectCard({index,title,label,description,image,href,tags}:{index:string;title:string;label:string;description:string;image:string;href:string;tags:string[]}){
+  return <article className="project-card reveal" data-tilt>
+    <Link className="project-card-media" href={href} aria-label={`Read the ${title} case study`} data-parallax>
+      <img src={image} alt={`${title} project interface`}/><span>{index}</span>
+    </Link>
+    <div className="project-card-copy"><small>{label}</small><h3>{title}</h3><p>{description}</p><div>{tags.map(tag=><span key={tag}>{tag}</span>)}</div><Link href={href} aria-label={`Read the ${title} case study`}><Arrow/></Link></div>
+  </article>;
+}
+
+export function TestimonialsSection(){
+  return <section className="testimonials shell">
+    <div className="editorial-heading reveal"><span>05</span><div><small>Testimonials</small><h2>References from people I&apos;ve designed with.</h2></div></div>
+    <div className="testimonial-panel reveal">
+      <div className="testimonial-mark" aria-hidden="true">“</div>
+      <blockquote><p>Akshay has approached that process with patience, openness, and a genuine willingness to make the product better. What stands out most to me, however, is the person behind the work. With Akshay, you are dealing with a genuinely good human being—sincere, dependable, humble, and someone who wants to give his best.</p><footer><strong>Hoomba Roy Choudhury</strong><span>Founder, Travel Jaunts & LUXTJ · Client</span></footer></blockquote>
+      <div className="testimonial-aside"><span className="eyebrow">Verified client recommendation</span><p>Worked together across the LUXTJ website, mobile app and extranet.</p><a className="text-link" href="https://linkedin.com/in/akshayproductdesigner" target="_blank" rel="noreferrer">View on LinkedIn <Arrow/></a></div>
+    </div>
+  </section>;
 }
 
 export function ExperiencePreview({company,role,summary,meta}:{company:string;role:string;summary:string;meta:string}){
@@ -83,7 +103,7 @@ export function ContactPanel(){
 export function SiteFooter(){
   return <footer className="site-footer"><div className="shell">
     <p>© 2026 {profile.name} · Product & UX Designer</p>
-    <div><Link href="/resume">Résumé</Link><a href={`mailto:${profile.email}`}>Email</a><a href="https://linkedin.com/in/akshayproductdesigner" target="_blank" rel="noreferrer">LinkedIn</a><a href="#top">Back to top ↑</a></div>
+    <div><Link href="/resume">Résumé</Link><a href={`mailto:${profile.email}`}>Email</a>{socials.map(item=><a key={item.label} href={item.href} target="_blank" rel="noreferrer">{item.label}</a>)}<a href="#top">Back to top ↑</a></div>
   </div></footer>;
 }
 

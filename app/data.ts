@@ -10,6 +10,43 @@ export const profile = {
   clients: '10+',
 };
 
+export const socials = [
+  {label: 'LinkedIn', href: 'https://linkedin.com/in/akshayproductdesigner'},
+  {label: 'Behance', href: 'https://www.behance.net/akshayv7'},
+  {label: 'Medium', href: 'https://medium.com/@akshayv2310'},
+  {label: 'Instagram', href: 'https://www.instagram.com/akshayv2310/'},
+];
+
+export const featuredProjects = [
+  {
+    index: '01',
+    title: 'LUXTJ',
+    label: 'Luxury travel · Customer experience',
+    description: 'A connected journey for discovering, comparing, planning and booking luxury travel.',
+    image: '/figma/case-17.png',
+    href: '/work/luxtj',
+    tags: ['Product design', 'Web', 'Travel'],
+  },
+  {
+    index: '02',
+    title: 'LUXTJ Extranet',
+    label: 'Luxury travel · Partner operations',
+    description: 'The operational product behind listings, bookings, staff, offers and payments.',
+    image: '/figma/case-1.png',
+    href: '/work/luxtj-extranet',
+    tags: ['UX design', 'Enterprise', 'Design system'],
+  },
+  {
+    index: '03',
+    title: 'ScotCare',
+    label: 'University project · Digital health',
+    description: 'An evidence-informed care-navigation concept designed around safety, clarity and continuity.',
+    image: '/scotcare/overview.png',
+    href: '/work/scotcare',
+    tags: ['Research', 'Service design', 'Mobile'],
+  },
+];
+
 export const experience = [
   {
     company: 'Free UK Genealogy',

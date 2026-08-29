@@ -1,6 +1,6 @@
 import type {Metadata} from 'next';
 import {Arrow,Button,SiteFooter,SiteHeader,Status} from '../components';
-import {profile} from '../data';
+import {profile,socials} from '../data';
 
 export const metadata:Metadata={title:'Contact',description:'Contact Akshay about product design roles, UX projects and meaningful collaborations.'};
 
@@ -17,7 +17,7 @@ export default function ContactPage(){return <main id="top" className="contact-p
   <section className="contact-details shell reveal">
     <div><span>Location</span><strong>United Kingdom</strong><p>Open to on-site, hybrid and remote roles.</p></div>
     <div><span>Disciplines</span><strong>Product Design · UX Design</strong><p>Complex systems, web products and mobile experiences.</p></div>
-    <div><span>Elsewhere</span><a href="https://linkedin.com/in/akshayproductdesigner" target="_blank" rel="noreferrer">LinkedIn <Arrow/></a><p>Professional background and updates.</p></div>
+    <div><span>Elsewhere</span><div className="contact-socials">{socials.map(item=><a key={item.label} href={item.href} target="_blank" rel="noreferrer">{item.label} <Arrow/></a>)}</div><p>Work, writing and life outside the screen.</p></div>
   </section>
   <section className="contact-close shell reveal"><p>If you include the role, team, product challenge and expected timeline, I can give you a useful response faster.</p></section>
   <SiteFooter/>
