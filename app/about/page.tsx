@@ -6,7 +6,7 @@ export const metadata:Metadata={title:'About',description:'About Akshay Venkata 
 
 export default function AboutPage(){return <PageFrame>
   <section className="about-hero shell">
-    <div className="about-hero-copy reveal"><Status/><span className="eyebrow">About Akshay</span><h1 data-parallax-layer data-parallax-speed="10">I ask why before drawing what.</h1><p>I&apos;m a Product and UX Designer based in the UK. I work on complex digital products—from travel booking and enterprise tools to public-interest platforms and mobile apps.</p><div className="hero-actions"><Button href="/resume">View résumé <Arrow/></Button><Button href="/work" secondary>View work</Button></div></div>
+    <div className="about-hero-copy reveal"><Status/><span className="eyebrow">About Akshay</span><h1 data-parallax-layer data-parallax-speed="10">I ask why before drawing what.</h1><p>I&apos;m a Product and UX Designer based in the UK. I work on complex digital products—from travel booking and enterprise tools to public-interest platforms and mobile apps.</p><div className="hero-actions"><Button href="/resume">View resume</Button><Button href="/work" secondary>View work</Button></div></div>
     <div className="about-hero-image reveal" data-parallax><img src="/figma/about-photo-v2.png" alt="Akshay standing beside the coast"/></div>
   </section>
 

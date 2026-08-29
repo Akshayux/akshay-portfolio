@@ -15,7 +15,7 @@ export function SiteHeader(){
         <Link href="/about">About</Link>
         <Link href="/contact">Contact</Link>
       </nav>
-      <Link className="header-action" href="/resume">View résumé <Arrow/></Link>
+      <Link className="header-action" href="/resume">View resume</Link>
     </div>
   </header>;
 }
@@ -103,7 +103,7 @@ export function ContactPanel(){
 export function SiteFooter(){
   return <footer className="site-footer"><div className="shell">
     <p>© 2026 {profile.name} · Product & UX Designer</p>
-    <div><Link href="/resume">Résumé</Link><a href={`mailto:${profile.email}`}>Email</a>{socials.map(item=><a key={item.label} href={item.href} target="_blank" rel="noreferrer">{item.label}</a>)}<a href="#top">Back to top ↑</a></div>
+    <div><Link href="/resume">Resume</Link><a href={`mailto:${profile.email}`}>Email</a>{socials.map(item=><a key={item.label} href={item.href} target="_blank" rel="noreferrer">{item.label}</a>)}<a href="#top">Back to top ↑</a></div>
   </div></footer>;
 }
 
