@@ -94,6 +94,11 @@ export function TestimonialsSection(){
         <blockquote>“Working with him was always smooth and collaborative. He communicated his ideas clearly, was open to feedback, and worked closely with the development team to make sure the designs were practical and delivered as intended.”</blockquote>
         <footer><strong>Dhruvi Kapdi</strong><span>Senior Flutter Developer</span><small>LUXTJ mobile application</small></footer>
       </article>
+      <article className="testimonial-card testimonial-card-wide reveal">
+        <header><span className="testimonial-avatar">HV</span><small>UX leadership perspective</small></header>
+        <blockquote>“I had the opportunity to work closely with Akshay at Proficon Labs. What stood out was his strong sense of ownership, clear UX thinking, and ability to tell the story behind his design decisions in a way that made complex problems easier to understand. He is dependable, collaborative, open to feedback, and genuinely cares about creating better user experiences. I would highly recommend Akshay to any team looking for a skilled UX/Product Designer who can take ownership and contribute meaningfully to a product.”</blockquote>
+        <footer><strong>Harish Vithan</strong><span>UX Manager · Proficon Labs</span><small>Product design · Product strategy</small></footer>
+      </article>
     </div>
     <div className="testimonial-footer reveal"><p>Recommendations across client and engineering collaboration. Design-peer quotes are published only after the wording and attribution are approved.</p><a className="text-link" href="https://linkedin.com/in/akshayproductdesigner" target="_blank" rel="noreferrer" data-cursor-label="Open">View recommendations <Arrow/></a></div>
   </section>;
