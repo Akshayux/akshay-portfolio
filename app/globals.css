@@ -175,7 +175,7 @@ p{color:var(--muted)}
 .hero-label{display:block;margin-bottom:72px;font-size:11px;color:var(--muted)}
 .hero h1{font-size:clamp(76px,8.2vw,126px);line-height:.87;font-weight:650;letter-spacing:-.075em;max-width:980px}
 .hero h1 em{font-family:var(--accent-font);font-weight:520;font-style:normal;letter-spacing:-.072em;color:var(--accent)}
-.contact-cta h2 em{font-family:Georgia,"Times New Roman",serif;font-weight:400;letter-spacing:-.07em;color:var(--accent)}
+.contact-cta h2 em{font-family:var(--accent-font);font-weight:520;font-style:normal;letter-spacing:-.072em;color:var(--accent)}
 .hero-intro{display:grid;grid-template-columns:minmax(300px,560px);align-items:start;gap:26px;margin-top:52px}
 .hero-intro>p{font-size:18px;line-height:1.5;color:var(--ink)}
 .hero-intro>div{display:flex;gap:24px;align-items:center;padding-bottom:4px}
