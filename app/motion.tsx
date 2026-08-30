@@ -1,14 +1,54 @@
 'use client';
 
-import {useEffect,type ReactNode} from 'react';
-import {animate,motion,useReducedMotion,useScroll,useSpring} from 'motion/react';
+import {useEffect,useRef,useState,type ReactNode} from 'react';
+import {animate,motion,useMotionValue,useReducedMotion,useScroll,useSpring} from 'motion/react';
 
 const ease=[0.22,1,0.36,1] as const;
 
+function splitIntoRevealWords(element:HTMLElement){
+  if(element.dataset.textSplit==='true')return Array.from(element.querySelectorAll<HTMLElement>('.text-reveal-word'));
+  const textNodes:Text[]=[];
+  const walker=document.createTreeWalker(element,NodeFilter.SHOW_TEXT,{acceptNode(node){
+    const parent=node.parentElement;
+    if(!node.textContent?.trim()||parent?.closest('[aria-hidden="true"]'))return NodeFilter.FILTER_REJECT;
+    return NodeFilter.FILTER_ACCEPT;
+  }});
+  while(walker.nextNode())textNodes.push(walker.currentNode as Text);
+  textNodes.forEach(node=>{
+    const fragment=document.createDocumentFragment();
+    node.textContent?.split(/(\s+)/).forEach(part=>{
+      if(!part)return;
+      if(/^\s+$/.test(part)){fragment.appendChild(document.createTextNode(part));return;}
+      const word=document.createElement('span');
+      word.className='text-reveal-word';
+      word.textContent=part;
+      fragment.appendChild(word);
+    });
+    node.parentNode?.replaceChild(fragment,node);
+  });
+  element.dataset.textSplit='true';
+  return Array.from(element.querySelectorAll<HTMLElement>('.text-reveal-word'));
+}
+
 export default function Motion({children}:{children:ReactNode}){
   const reduceMotion=useReducedMotion();
+  const [preloaderPhase,setPreloaderPhase]=useState<'waiting'|'leaving'|'hidden'>('waiting');
   const {scrollYProgress}=useScroll();
   const progress=useSpring(scrollYProgress,{stiffness:130,damping:30,mass:.28});
+  const cursorX=useMotionValue(-100);
+  const cursorY=useMotionValue(-100);
+  const smoothCursorX=useSpring(cursorX,{stiffness:520,damping:34,mass:.34});
+  const smoothCursorY=useSpring(cursorY,{stiffness:520,damping:34,mass:.34});
+  const cursorRef=useRef<HTMLDivElement>(null);
+
+  useEffect(()=>{
+    const root=document.documentElement;
+    if(reduceMotion){setPreloaderPhase('hidden');return;}
+    root.classList.add('preloader-open');
+    const leave=window.setTimeout(()=>setPreloaderPhase('leaving'),420);
+    const hide=window.setTimeout(()=>{setPreloaderPhase('hidden');root.classList.remove('preloader-open')},1370);
+    return()=>{window.clearTimeout(leave);window.clearTimeout(hide);root.classList.remove('preloader-open')};
+  },[reduceMotion]);
 
   useEffect(()=>{
     const root=document.documentElement;
@@ -31,8 +71,44 @@ export default function Motion({children}:{children:ReactNode}){
 
     const intro=animate('.hero-copy > *, .page-hero > *, .about-hero-copy > *, .contact-heading > *, .case-hero-copy > *',
       {opacity:[0,1],y:[28,0]},
-      {duration:.72,delay:(index)=>.06+index*.065,ease});
+      {duration:.72,delay:(index)=>.78+index*.065,ease});
     cleanups.push(()=>intro.stop());
+
+    const introHeading=document.querySelector<HTMLElement>('h1');
+    if(introHeading){
+      const introWords=splitIntoRevealWords(introHeading);
+      const wordIntro=animate(introWords,{opacity:[.08,1],filter:['blur(8px)','blur(0px)'],y:[16,0]},
+        {duration:.72,delay:(index)=>.82+Math.min(index*.045,.5),ease});
+      cleanups.push(()=>wordIntro.stop());
+    }
+
+    const textRevealSelector=[
+      '.editorial-heading h2','.home-about-copy .large-copy','.testimonial-card blockquote',
+      '.case-section h2','.case-closing h2','.contact-cta h2','.about-dual-card h2',
+      '.belief-layout h2','.contact-close p','.reflection-section h2'
+    ].join(',');
+    const revealGroups=Array.from(document.querySelectorAll<HTMLElement>(textRevealSelector)).map(element=>({
+      element,words:splitIntoRevealWords(element)
+    }));
+    let textFrame=0;
+    const updateTextReveal=()=>{
+      const viewport=window.innerHeight;
+      revealGroups.forEach(({element,words})=>{
+        const rect=element.getBoundingClientRect();
+        if(rect.top>viewport*1.15)return;
+        const start=viewport*.9;
+        const end=viewport*.24;
+        const progress=Math.max(0,Math.min(1,(start-rect.top)/(start-end)));
+        const last=Math.max(words.length-1,1);
+        words.forEach((word,index)=>{
+          const local=Math.max(0,Math.min(1,progress*1.5-(index/last)*.5));
+          word.style.setProperty('--word-reveal',String(local));
+        });
+      });
+      textFrame=0;
+    };
+    const scheduleTextReveal=()=>{if(!textFrame)textFrame=requestAnimationFrame(updateTextReveal)};
+    updateTextReveal();
 
     const parallaxItems=Array.from(document.querySelectorAll<HTMLElement>('[data-parallax] img'));
     const parallaxLayers=Array.from(document.querySelectorAll<HTMLElement>('[data-parallax-layer]'));
@@ -53,9 +129,10 @@ export default function Motion({children}:{children:ReactNode}){
       });
       frame=0;
     };
-    const onScroll=()=>{if(!frame)frame=requestAnimationFrame(updateParallax)};
+    const onScroll=()=>{if(!frame)frame=requestAnimationFrame(updateParallax);scheduleTextReveal()};
     updateParallax();
     window.addEventListener('scroll',onScroll,{passive:true});
+    window.addEventListener('resize',scheduleTextReveal,{passive:true});
 
     const tilts=Array.from(document.querySelectorAll<HTMLElement>('[data-tilt]'));
     tilts.forEach(card=>{
@@ -86,20 +163,50 @@ export default function Motion({children}:{children:ReactNode}){
     };
     document.addEventListener('click',onNavigate,true);
 
+    const cursor=cursorRef.current;
+    const onPointerMove=(event:PointerEvent)=>{
+      if(event.pointerType==='touch')return;
+      cursorX.set(event.clientX-19);
+      cursorY.set(event.clientY-19);
+      cursor?.classList.add('is-visible');
+      const target=event.target as Element|null;
+      cursor?.classList.toggle('is-interactive',Boolean(target?.closest('a,button,input,textarea,select,[role="button"]')));
+    };
+    const onPointerDown=()=>cursor?.classList.add('is-pressed');
+    const onPointerUp=()=>cursor?.classList.remove('is-pressed');
+    const onPointerLeave=()=>cursor?.classList.remove('is-visible','is-interactive','is-pressed');
+    window.addEventListener('pointermove',onPointerMove,{passive:true});
+    window.addEventListener('pointerdown',onPointerDown,{passive:true});
+    window.addEventListener('pointerup',onPointerUp,{passive:true});
+    document.documentElement.addEventListener('mouseleave',onPointerLeave);
+
     return()=>{
       observer.disconnect();
       cleanups.forEach(cleanup=>cleanup());
       window.removeEventListener('scroll',onScroll);
+      window.removeEventListener('resize',scheduleTextReveal);
+      window.removeEventListener('pointermove',onPointerMove);
+      window.removeEventListener('pointerdown',onPointerDown);
+      window.removeEventListener('pointerup',onPointerUp);
+      document.documentElement.removeEventListener('mouseleave',onPointerLeave);
       document.removeEventListener('click',onNavigate,true);
       if(frame)cancelAnimationFrame(frame);
+      if(textFrame)cancelAnimationFrame(textFrame);
       parallaxLayers.forEach(layer=>{layer.style.translate=''})
       root.classList.remove('motion-ready');
     };
   },[reduceMotion]);
 
   return <>
+    {preloaderPhase!=='hidden'&&<div className={`site-preloader ${preloaderPhase==='leaving'?'is-leaving':''}`} aria-hidden="true">
+      <div className="preloader-panels"><i/><i/><i/><i/><i/></div>
+      <div className="preloader-signature"><strong>AKSHAY V.</strong><span>Product + UX</span></div>
+    </div>}
     <motion.div className="scroll-progress" style={{scaleX:progress}} aria-hidden="true"/>
-    <motion.div className="page-curtain" initial={{scaleY:1}} animate={{scaleY:0}} transition={{duration:reduceMotion?0:.58,ease:[.76,0,.24,1]}} aria-hidden="true"/>
+    <motion.div className="page-curtain" initial={{scaleY:0}} animate={{scaleY:0}} transition={{duration:0}} aria-hidden="true"/>
+    <motion.div ref={cursorRef} className="custom-cursor" style={{x:smoothCursorX,y:smoothCursorY}} aria-hidden="true">
+      <span className="cursor-shell"><i/><b>↗</b></span>
+    </motion.div>
     {children}
   </>;
 }

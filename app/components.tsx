@@ -27,8 +27,9 @@ export function Status(){
 export function Button({href,children,secondary=false}:{href:string;children:ReactNode;secondary?:boolean}){
   const internal=href.startsWith('/');
   const className=`button ${secondary?'button-secondary':''}`;
-  if(internal)return <Link className={className} href={href}>{children}</Link>;
-  return <a className={className} href={href}>{children}</a>;
+  const content=<><span className="button-label"><span>{children}</span><span aria-hidden="true">{children}</span></span><span className="button-icon" aria-hidden="true"><Arrow/></span></>;
+  if(internal)return <Link className={className} href={href}>{content}</Link>;
+  return <a className={className} href={href}>{content}</a>;
 }
 
 export function SectionHead({eyebrow,title,copy,action}:{eyebrow:string;title:string;copy?:string;action?:ReactNode}){
@@ -109,7 +110,7 @@ export function ContactPanel(){
   return <section className="contact-cta shell reveal">
     <span className="eyebrow">Get in touch</span>
     <div><h2>Let&apos;s make<br/><em>something clear.</em></h2><p>Have a Product or UX role, a complex workflow or an interesting idea? I&apos;d like to hear about it.</p></div>
-    <Button href="/contact">Say hello <Arrow/></Button>
+    <Button href="/contact">Say hello</Button>
   </section>;
 }
 
