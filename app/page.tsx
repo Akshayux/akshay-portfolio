@@ -28,8 +28,10 @@ export default function Home(){return <PageFrame>
     </div>
   </section>
 
+  <TestimonialsSection index="02"/>
+
   <section className="home-about shell">
-    <div className="editorial-heading reveal"><span>02</span><div><small>About me</small><h2>I came to UX by following the questions code couldn&apos;t answer.</h2></div></div>
+    <div className="editorial-heading reveal"><span>03</span><div><small>About me</small><h2>I came to UX by following the questions code couldn&apos;t answer.</h2></div></div>
     <div className="home-about-layout">
       <div className="home-about-image reveal" data-parallax><img src="/figma/about-photo-v2.png" alt="Akshay by the coast"/><span>Outside the screen / UK</span></div>
       <div className="home-about-copy reveal">
@@ -46,11 +48,6 @@ export default function Home(){return <PageFrame>
     </div>
   </section>
 
-  <section className="home-game shell">
-    <div className="editorial-heading reveal"><span>03</span><div><small>A tiny everyday game</small><h2>You use products all day. Which option feels better?</h2></div></div>
-    <div className="game-layout"><div className="game-intro reveal"><p>Five familiar moments—from a late pizza to a free trial. Pick the option you&apos;d genuinely want to see.</p><span>No design knowledge needed.<br/>About one minute.</span></div><div className="reveal"><UXGame/></div></div>
-  </section>
-
   <section className="home-experience shell">
     <div className="editorial-heading reveal"><span>04</span><div><small>Recent experience</small><h2>A few places I&apos;ve been useful.</h2></div></div>
     <div className="simple-experience">
@@ -59,5 +56,8 @@ export default function Home(){return <PageFrame>
     <Link className="text-link" href="/about#experience" data-cursor-label="Jump">Full experience <Arrow/></Link>
   </section>
 
-  <TestimonialsSection/>
+  <section className="home-game shell">
+    <div className="editorial-heading reveal"><span>05</span><div><small>A tiny everyday game</small><h2>You use products all day. Which option feels better?</h2></div></div>
+    <div className="game-layout"><div className="game-intro reveal"><p>Five familiar moments—from a late pizza to a free trial. Pick the option you&apos;d genuinely want to see.</p><span>No design knowledge needed.<br/>About one minute.</span></div><div className="reveal"><UXGame/></div></div>
+  </section>
 </PageFrame>}
