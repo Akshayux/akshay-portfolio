@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import {Arrow,PageFrame,ProjectCard,ProjectFeature,ProofStrip,Status,TestimonialsSection} from './components';
+import {Arrow,PageFrame,ProjectCard,ProjectFeature,Status,TestimonialsSection} from './components';
 import {experience,featuredProjects} from './data';
 import RecruiterBrief from './recruiter-brief';
 import UXGame from './ux-game';
@@ -27,8 +27,6 @@ export default function Home(){return <PageFrame>
       {featuredProjects.slice(1).map(project=><ProjectCard key={project.title} {...project}/>)}
     </div>
   </section>
-
-  <section className="home-proof shell"><ProofStrip/></section>
 
   <section className="home-about shell">
     <div className="editorial-heading reveal"><span>02</span><div><small>About me</small><h2>I like the messy part—when the problem is still taking shape.</h2></div></div>
