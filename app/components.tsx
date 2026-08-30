@@ -78,9 +78,9 @@ export function ProjectCard({index,title,label,description,outcome,image,href,ta
 
 export function TestimonialsSection(){
   return <section className="testimonials shell">
-    <div className="editorial-heading reveal"><span>05</span><div><small>Testimonials</small><h2>What clients and collaborators say.</h2></div></div>
+    <div className="editorial-heading testimonial-heading reveal"><span>05</span><div><small>Results + recommendations</small><h2>Results that speak.<br/>People who saw the work.</h2><p>Selected LUXTJ outcomes alongside recommendations from the people who worked closely with me.</p></div></div>
     <TestimonialsReveal/>
-    <div className="testimonial-footer reveal"><p>Recommendations across client and engineering collaboration. Design-peer quotes are published only after the wording and attribution are approved.</p><a className="text-link" href="https://linkedin.com/in/akshayproductdesigner" target="_blank" rel="noreferrer" data-cursor-label="Open">View recommendations <Arrow/></a></div>
+    <div className="testimonial-footer reveal"><p>Product outcomes and attributed recommendations are presented separately for clarity.</p><a className="text-link" href="https://linkedin.com/in/akshayproductdesigner" target="_blank" rel="noreferrer" data-cursor-label="Open">View recommendations <Arrow/></a></div>
   </section>;
 }
 
