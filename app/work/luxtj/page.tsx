@@ -76,11 +76,25 @@ const process=[
   ['05','Learn again','Compare behaviour after redesign and carry the lesson forward.'],
 ] as const;
 
+const principles=[
+  ['01','Explain before asking','Introduce the value of a new feature before asking people to complete a form.'],
+  ['02','Keep context close','Keep dates, travellers, selections and price visible while decisions are being made.'],
+  ['03','Prioritise the next decision','Put the evidence needed now first; keep deeper detail available progressively.'],
+  ['04','Design the recovery','Make edits, missing information and changed plans understandable and recoverable.'],
+] as const;
+
+const supporting=[
+  ['/figma/case-4.png','Flight selection','Shared patterns make duration, stops and fare conditions easier to compare.'],
+  ['/figma/case-7.png','Hotel discovery','Filters, map context and richer results support a confident shortlist.'],
+  ['/figma/case-12.png','Room selection','Policies, inclusions, price and the next action stay connected.'],
+  ['/figma/case-18.png','Travel Calendar','Saved ideas become a useful plan instead of a dead-end list.'],
+] as const;
+
 function CaseKicker({children}:{children:React.ReactNode}){return <span className="eyebrow case-eyebrow">{children}</span>}
 
 export default function LuxtjPage(){return <main id="top" className="case-page luxtj-case">
   <SiteHeader/>
-  <aside className="case-toc" aria-label="Case study contents"><span>On this page</span><a href="#overview">Overview</a><a href="#failure">First failure</a><a href="#process">Process</a><a href="#redesigns">Redesigns</a><a href="#learning">Learning</a></aside>
+  <aside className="case-toc" aria-label="Case study contents"><span>On this page</span><a href="#overview">Overview</a><a href="#ecosystem">Ecosystem</a><a href="#failure">First failure</a><a href="#architecture">Architecture</a><a href="#process">Process</a><a href="#redesigns">Redesigns</a><a href="#learning">Learning</a></aside>
 
   <section className="case-hero shell" id="overview">
     <div className="case-hero-copy reveal"><CaseKicker>LUXTJ · Luxury travel website</CaseKicker><h1 data-parallax-layer data-parallax-speed="10">From messy ideas to a product people could understand.</h1><p>The first version looked complete, but people struggled to understand key features and finish important journeys. I used that failure to redesign the product around learnability, decision speed and confidence.</p></div>
@@ -98,6 +112,8 @@ export default function LuxtjPage(){return <main id="top" className="case-page l
     <div><strong>+70%</strong><span>Social-profile engagement</span></div>
   </section>
 
+  <section className="case-section case-wide ecosystem-section reveal" id="ecosystem"><CaseKicker>The product I was shaping</CaseKicker><h2>One travel idea. Several moments that had to feel like one journey.</h2><div className="ecosystem-cards"><article><img src="/figma/case-11.png" alt="LUXTJ mobile application"/><span>Mobile app</span><h3>Inspiration in the pocket</h3><p>Discover destinations, save ideas and return when a trip becomes real.</p></article><article><img src="/figma/case-19.png" alt="LUXTJ customer website"/><span>Customer website</span><h3>Space to compare and plan</h3><p>Explore, evaluate and assemble a complex trip with more context.</p></article><article><img src="/figma/case-1.png" alt="LUXTJ partner extranet"/><span>Partner extranet</span><h3>Operations behind the promise</h3><p>Manage content, availability, pricing and bookings behind the customer experience.</p></article></div></section>
+
   <section className="case-section case-narrow lux-origin" id="failure">
     <div className="case-split"><div className="reveal"><CaseKicker>The uncomfortable start</CaseKicker><h2>My first mistake was designing for completeness before comprehension.</h2></div><div className="reveal"><p>The initial product tried to expose the richness of luxury travel immediately. In practice, that richness became work. New concepts looked like forms, checkout became an information wall, and profile options appeared without a reason to begin.</p><blockquote><small>What changed my direction</small>A finished-looking screen can still fail if a person cannot explain what it is for, what to do first or what happens next.</blockquote></div></div>
     <div className="lux-assumption-grid reveal">
@@ -106,6 +122,10 @@ export default function LuxtjPage(){return <main id="top" className="case-page l
       <article><span>The design shift</span><p>Move from screen completeness to progressive understanding and decision support.</p></article>
     </div>
   </section>
+
+  <section className="case-section case-narrow architecture reveal" id="architecture"><CaseKicker>Journey architecture</CaseKicker><h2>Every screen had to answer the next important question.</h2><div className="decision-table"><div><b>What was happening</b><b>Question left open</b><b>Design response</b></div><div><span>Disconnected search screens</span><span>What have I already chosen?</span><span>Persistent trip context</span></div><div><span>Dense result cards</span><span>What makes this right for me?</span><span>Progressive hierarchy</span></div><div><span>Totals appeared late</span><span>What will this decision cost?</span><span>Running price and consequences</span></div><div><span>Errors at submission</span><span>How do I recover?</span><span>Inline validation and editable review</span></div></div></section>
+
+  <section className="case-section case-narrow reveal"><CaseKicker>Working principles</CaseKicker><h2>Four rules kept the product coherent as it grew.</h2><div className="principle-grid">{principles.map(([number,title,copy])=><article key={number}><span>{number}</span><h3>{title}</h3><p>{copy}</p></article>)}</div></section>
 
   <section className="case-section case-wide lux-process" id="process">
     <div className="case-section-heading reveal"><CaseKicker>How I worked through the mess</CaseKicker><h2>Failure became a repeatable design loop.</h2><p>I stopped treating each weak screen as an isolated UI issue. The same loop helped me find the underlying behaviour, redesign the journey and learn from the result.</p></div>
@@ -136,6 +156,8 @@ export default function LuxtjPage(){return <main id="top" className="case-page l
   <section className="case-section case-narrow lux-contribution">
     <div className="case-split"><div className="reveal"><CaseKicker>My contribution</CaseKicker><h2>I carried the work from ambiguity into delivery.</h2></div><div className="reveal"><p>I clarified the product idea, studied user behaviour, mapped journeys, explored patterns, redesigned the information hierarchy and worked with developers to resolve edge cases before implementation.</p><div className="responsibility-grid"><article><span>Product framing</span><p>Converted loosely defined travel ideas into clear user problems and measurable questions.</p></article><article><span>Research & synthesis</span><p>Combined observed friction, comparative analysis and behavioural patterns into design direction.</p></article><article><span>UX & interface</span><p>Redesigned core flows, page hierarchy, component behaviour, validation and recovery states.</p></article><article><span>Design to delivery</span><p>Maintained a shared library across three platforms and worked closely with engineering through handoff.</p></article></div></div></div>
   </section>
+
+  <section className="case-section case-wide reveal"><CaseKicker>Supporting journeys</CaseKicker><h2>The smaller states carried real product risk too.</h2><div className="support-grid">{supporting.map(([image,title,copy],index)=><article key={title}><img src={image} alt={title}/><span>{String(index+1).padStart(2,'0')}</span><h3>{title}</h3><p>{copy}</p></article>)}</div></section>
 
   <section className="case-section case-wide system-section"><div className="case-section-heading reveal"><CaseKicker>Making the learning reusable</CaseKicker><h2>The redesign became a shared product language.</h2><p>The same principles—progressive disclosure, persistent context, visible consequences and clear recovery—were carried into reusable patterns across customer web, mobile and the partner extranet.</p></div><div className="system-images reveal"><img src="/figma/case-16.png" alt="LUXTJ hotel comparison component pattern"/><img src="/figma/case-20.png" alt="LUXTJ website interface system"/></div></section>
 
