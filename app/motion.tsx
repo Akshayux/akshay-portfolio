@@ -84,7 +84,7 @@ export default function Motion({children}:{children:ReactNode}){
 
     const textRevealSelector=[
       '.editorial-heading h2','.home-about-copy .large-copy','.testimonial-card blockquote',
-      '.case-section h2','.case-closing h2','.contact-cta h2','.about-dual-card h2',
+      '.case-section h2','.case-closing h2','.about-dual-card h2',
       '.belief-layout h2','.contact-close p','.reflection-section h2'
     ].join(',');
     const revealGroups=Array.from(document.querySelectorAll<HTMLElement>(textRevealSelector)).map(element=>({
