@@ -4,6 +4,19 @@ import {useEffect,useRef,useState,type ReactNode} from 'react';
 import {animate,motion,useMotionValue,useReducedMotion,useScroll,useSpring} from 'motion/react';
 
 const ease=[0.22,1,0.36,1] as const;
+const cursorInterests=[
+  {name:'design',label:'Design'},
+  {name:'travel',label:'Travel'},
+  {name:'gaming',label:'Gaming'},
+  {name:'fitness',label:'Fitness'},
+] as const;
+
+function CursorInterestIcon({name}:{name:(typeof cursorInterests)[number]['name']}){
+  if(name==='travel')return <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"><path d="M22 2 9.4 14.6"/><path d="m22 2-7.6 20-4.2-8.2L2 9.6 22 2Z"/></svg>;
+  if(name==='gaming')return <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"><path d="M8 8h8a6 6 0 0 1 5.5 8.4l-.7 1.6a2.5 2.5 0 0 1-4 1l-2-2h-5.6l-2 2a2.5 2.5 0 0 1-4-1l-.7-1.6A6 6 0 0 1 8 8Z"/><path d="M7 11v4M5 13h4M16.5 12h.01M18.5 14h.01"/></svg>;
+  if(name==='fitness')return <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"><path d="M7 12h10M3.5 9v6M6 7.5v9M18 7.5v9M20.5 9v6"/></svg>;
+  return <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"><path d="m4 20 4.7-1.2L20 7.5 16.5 4 5.2 15.3 4 20Z"/><path d="m14.8 5.7 3.5 3.5M5.2 15.3l3.5 3.5"/></svg>;
+}
 
 function splitIntoRevealWords(element:HTMLElement){
   if(element.dataset.textSplit==='true')return Array.from(element.querySelectorAll<HTMLElement>('.text-reveal-word'));
@@ -39,6 +52,7 @@ function mutedRevealColor(primary:string){
 export default function Motion({children}:{children:ReactNode}){
   const reduceMotion=useReducedMotion();
   const [preloaderPhase,setPreloaderPhase]=useState<'waiting'|'leaving'|'hidden'>('waiting');
+  const [cursorInterest,setCursorInterest]=useState(0);
   const {scrollYProgress}=useScroll();
   const progress=useSpring(scrollYProgress,{stiffness:130,damping:30,mass:.28});
   const cursorX=useMotionValue(-100);
@@ -46,6 +60,12 @@ export default function Motion({children}:{children:ReactNode}){
   const smoothCursorX=useSpring(cursorX,{stiffness:520,damping:34,mass:.34});
   const smoothCursorY=useSpring(cursorY,{stiffness:520,damping:34,mass:.34});
   const cursorRef=useRef<HTMLDivElement>(null);
+
+  useEffect(()=>{
+    if(reduceMotion)return;
+    const cycle=window.setInterval(()=>setCursorInterest(current=>(current+1)%cursorInterests.length),1900);
+    return()=>window.clearInterval(cycle);
+  },[reduceMotion]);
 
   useEffect(()=>{
     const root=document.documentElement;
@@ -182,8 +202,8 @@ export default function Motion({children}:{children:ReactNode}){
     const cursor=cursorRef.current;
     const onPointerMove=(event:PointerEvent)=>{
       if(event.pointerType==='touch')return;
-      cursorX.set(event.clientX-19);
-      cursorY.set(event.clientY-19);
+      cursorX.set(event.clientX-26);
+      cursorY.set(event.clientY-26);
       cursor?.classList.add('is-visible');
       const target=event.target as Element|null;
       cursor?.classList.toggle('is-interactive',Boolean(target?.closest('a,button,input,textarea,select,[role="button"]')));
@@ -221,7 +241,8 @@ export default function Motion({children}:{children:ReactNode}){
     <motion.div className="scroll-progress" style={{scaleX:progress}} aria-hidden="true"/>
     <motion.div className="page-curtain" initial={{scaleY:0}} animate={{scaleY:0}} transition={{duration:0}} aria-hidden="true"/>
     <motion.div ref={cursorRef} className="custom-cursor" style={{x:smoothCursorX,y:smoothCursorY}} aria-hidden="true">
-      <span className="cursor-shell"><i/><b>↗</b></span>
+      <span className="cursor-shell"><span className="cursor-interest" key={cursorInterests[cursorInterest].name}><CursorInterestIcon name={cursorInterests[cursorInterest].name}/></span><b>↗</b></span>
+      <small className="cursor-interest-label" key={`${cursorInterests[cursorInterest].name}-label`}>{cursorInterests[cursorInterest].label}</small>
     </motion.div>
     {children}
   </>;
