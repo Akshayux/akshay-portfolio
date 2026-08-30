@@ -6,6 +6,7 @@
   --line:rgba(20,20,20,.16);
   --accent:#3655f5;
   --accent-deep:#243fc7;
+  --accent-font:Inter,"Helvetica Neue",Helvetica,Arial,sans-serif;
   --white:#fff;
   --radius:8px;
   --shadow:0 24px 70px rgba(20,22,18,.10);
@@ -163,7 +164,7 @@ p{color:var(--muted)}
 .hero-copy{max-width:none;align-self:center}
 .hero-label{display:block;margin-bottom:72px;font-size:11px;color:var(--muted)}
 .hero h1{font-size:clamp(76px,8.2vw,126px);line-height:.87;font-weight:650;letter-spacing:-.075em;max-width:980px}
-.hero h1 em{font-family:"Iowan Old Style","Palatino Linotype","Book Antiqua",Palatino,serif;font-weight:400;font-style:italic;letter-spacing:-.055em;color:var(--accent)}
+.hero h1 em{font-family:var(--accent-font);font-weight:520;font-style:normal;letter-spacing:-.072em;color:var(--accent)}
 .contact-cta h2 em{font-family:Georgia,"Times New Roman",serif;font-weight:400;letter-spacing:-.07em;color:var(--accent)}
 .hero-intro{display:grid;grid-template-columns:minmax(300px,560px);align-items:start;gap:26px;margin-top:52px}
 .hero-intro>p{font-size:18px;line-height:1.5;color:var(--ink)}
@@ -223,7 +224,9 @@ p{color:var(--muted)}
 .home-about-copy{padding-top:8px;max-width:700px}
 .home-about-copy .large-copy{font-size:clamp(27px,2.6vw,39px);line-height:1.27;letter-spacing:-.04em;color:var(--ink);margin-bottom:34px}
 .home-about-copy>p:not(.large-copy){font-size:16px;max-width:590px}
-.home-about-copy blockquote{font-family:Georgia,"Times New Roman",serif;font-size:clamp(28px,3vw,44px);font-style:italic;line-height:1.22;color:var(--accent-deep);margin:72px 0 54px}
+.home-about-copy blockquote{font-family:var(--accent-font);font-size:clamp(28px,3vw,44px);font-style:normal;font-weight:520;line-height:1.22;letter-spacing:-.045em;color:var(--accent-deep);margin:72px 0 54px}
+
+.eyebrow,.portrait-mark,.project-body .text-link,.experience-preview strong,.editorial-heading>span,.simple-experience div p,.ux-game-result strong,.contact-cta .button,.work-snapshot strong,.timeline-title strong,.resume-heading>div:first-child>span,.resume-experience strong,.decision-card>div>span{font-family:var(--accent-font);font-style:normal}
 .simple-experience{border-top:1px solid var(--line);margin-bottom:40px}
 .simple-experience article{display:grid;grid-template-columns:190px 1fr 1.2fr;gap:36px;align-items:start;padding:29px 0;border-bottom:1px solid var(--line)}
 .simple-experience time{font-size:10px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);padding-top:4px}
