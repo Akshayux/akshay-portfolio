@@ -41,10 +41,10 @@ export function SectionHead({eyebrow,title,copy,action}:{eyebrow:string;title:st
 
 export function ProofStrip(){
   return <dl className="proof-strip reveal" aria-label="Career summary">
-    <div><dt>{profile.years}</dt><dd>years of experience</dd></div>
-    <div><dt>{profile.projects}</dt><dd>projects completed</dd></div>
-    <div><dt>{profile.clients}</dt><dd>client collaborations</dd></div>
-    <div><dt>UK</dt><dd>currently based</dd></div>
+    <div><dt data-count="5" data-suffix="+">{profile.years}</dt><dd>years of experience</dd></div>
+    <div><dt data-count="20" data-suffix="+">{profile.projects}</dt><dd>projects completed</dd></div>
+    <div><dt data-count="10" data-suffix="+">{profile.clients}</dt><dd>client collaborations</dd></div>
+    <div><dt><span>U</span><span>K</span></dt><dd>currently based</dd></div>
   </dl>;
 }
 

@@ -82,6 +82,7 @@ export default function Motion({children}:{children:ReactNode}){
     if(reduceMotion){
       root.classList.add('reduce-motion');
       document.querySelectorAll('.reveal').forEach(item=>item.classList.add('is-visible'));
+      document.querySelectorAll('.proof-strip').forEach(item=>item.classList.add('is-animated'));
       return()=>root.classList.remove('motion-ready','reduce-motion');
     }
 
@@ -94,6 +95,29 @@ export default function Motion({children}:{children:ReactNode}){
       });
     },{threshold:.08,rootMargin:'0px 0px -7%'});
     document.querySelectorAll('.reveal').forEach(item=>observer.observe(item));
+
+    const proofStrip=document.querySelector<HTMLElement>('.proof-strip');
+    let proofObserver:IntersectionObserver|undefined;
+    if(proofStrip){
+      proofObserver=new IntersectionObserver(entries=>{
+        const entry=entries[0];
+        if(!entry?.isIntersecting)return;
+        proofStrip.classList.add('is-animated');
+        proofStrip.querySelectorAll<HTMLElement>('dt[data-count]').forEach((stat,index)=>{
+          const target=Number(stat.dataset.count||0);
+          const suffix=stat.dataset.suffix||'';
+          const counter=animate(0,target,{
+            duration:1.15,
+            delay:.12+index*.11,
+            ease,
+            onUpdate:value=>{stat.textContent=`${Math.round(value)}${suffix}`},
+          });
+          cleanups.push(()=>counter.stop());
+        });
+        proofObserver?.disconnect();
+      },{threshold:.34,rootMargin:'0px 0px -8%'});
+      proofObserver.observe(proofStrip);
+    }
 
     const intro=animate('.hero-copy > *, .page-hero > *, .about-hero-copy > *, .contact-heading > *, .case-hero-copy > *',
       {opacity:[0,1],y:[28,0]},
@@ -218,6 +242,7 @@ export default function Motion({children}:{children:ReactNode}){
 
     return()=>{
       observer.disconnect();
+      proofObserver?.disconnect();
       cleanups.forEach(cleanup=>cleanup());
       window.removeEventListener('scroll',onScroll);
       window.removeEventListener('resize',scheduleTextReveal);
