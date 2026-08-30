@@ -1,6 +1,7 @@
 import type {ReactNode} from 'react';
 import Link from 'next/link';
 import {profile,socials} from './data';
+import TestimonialsCarousel from './testimonials-carousel';
 
 export function Arrow(){return <span aria-hidden="true">↗</span>}
 
@@ -78,28 +79,7 @@ export function ProjectCard({index,title,label,description,outcome,image,href,ta
 export function TestimonialsSection(){
   return <section className="testimonials shell">
     <div className="editorial-heading reveal"><span>05</span><div><small>Testimonials</small><h2>What clients and collaborators say.</h2></div></div>
-    <div className="testimonial-grid">
-      <article className="testimonial-card testimonial-card-featured reveal">
-        <header><span className="testimonial-avatar">HC</span><small>Client perspective</small></header>
-        <blockquote>“Akshay has approached that process with patience, openness, and a genuine willingness to make the product better. With Akshay, you are dealing with a genuinely good human being—sincere, dependable and humble.”</blockquote>
-        <footer><strong>Hooma Roy Choudhury</strong><span>Founder, Travel Jaunts & LUXTJ</span><small>Website · Mobile app · Extranet</small></footer>
-      </article>
-      <article className="testimonial-card reveal">
-        <header><span className="testimonial-avatar">PM</span><small>Engineering perspective</small></header>
-        <blockquote>“He is a thoughtful UX Designer who understands user needs and works well with developers to turn ideas into practical solutions. Akshay was always easy to work with, open to feedback, and clear in communicating his design decisions.”</blockquote>
-        <footer><strong>Palash Makhijja</strong><span>Senior Software Engineer</span><small>Simpo.com · CMIS School CRM</small></footer>
-      </article>
-      <article className="testimonial-card reveal">
-        <header><span className="testimonial-avatar">DK</span><small>Development perspective</small></header>
-        <blockquote>“Working with him was always smooth and collaborative. He communicated his ideas clearly, was open to feedback, and worked closely with the development team to make sure the designs were practical and delivered as intended.”</blockquote>
-        <footer><strong>Dhruvi Kapdi</strong><span>Senior Flutter Developer</span><small>LUXTJ mobile application</small></footer>
-      </article>
-      <article className="testimonial-card testimonial-card-wide reveal">
-        <header><span className="testimonial-avatar">HV</span><small>UX leadership perspective</small></header>
-        <blockquote>“I had the opportunity to work closely with Akshay at Proficon Labs. What stood out was his strong sense of ownership, clear UX thinking, and ability to tell the story behind his design decisions in a way that made complex problems easier to understand. He is dependable, collaborative, open to feedback, and genuinely cares about creating better user experiences. I would highly recommend Akshay to any team looking for a skilled UX/Product Designer who can take ownership and contribute meaningfully to a product.”</blockquote>
-        <footer><strong>Harish Vithan</strong><span>UX Manager · Proficon Labs</span><small>Product design · Product strategy</small></footer>
-      </article>
-    </div>
+    <TestimonialsCarousel/>
     <div className="testimonial-footer reveal"><p>Recommendations across client and engineering collaboration. Design-peer quotes are published only after the wording and attribution are approved.</p><a className="text-link" href="https://linkedin.com/in/akshayproductdesigner" target="_blank" rel="noreferrer" data-cursor-label="Open">View recommendations <Arrow/></a></div>
   </section>;
 }
