@@ -14,7 +14,7 @@ const testimonials: Testimonial[] = [
     name: 'Hooma Roy Choudhury',
     role: 'Founder · Travel Jaunts & LUXTJ',
     perspective: 'Client perspective',
-    quote: 'Akshay has approached that process with patience, openness, and a genuine willingness to make the product better. With Akshay, you are dealing with a genuinely good human being—sincere, dependable and humble.',
+    quote: 'When you are building something from the ground up, talent alone is not enough. You need people who care, adapt, take ownership and go beyond what was expected—Akshay is one of those people. Across the LUXTJ website, app and extranet, he stayed remarkably accommodating as ideas and requirements evolved, approaching every rethink with patience, openness and a genuine willingness to make the product better. He is sincere, dependable and humble, with the attitude, integrity and willingness to go the extra mile that are much harder to find. I would recommend him without hesitation.',
   },
   {
     name: 'Harish Vithan',
