@@ -70,7 +70,7 @@ export default function UXGame(){
 
   if(finished)return <div className="ux-game-card ux-game-result" aria-live="polite">
     <span className="game-count">Your result</span>
-    <div><strong>{score}/{rounds.length}</strong><h3>{result.title}</h3><p>{result.copy}</p></div>
+    <div><strong>{score}/{rounds.length}</strong><h3>{result.title}</h3><p>{result.copy}</p><p className="game-payoff">The pattern behind every choice: make the next step obvious, honest and calmer.</p></div>
     <button type="button" onClick={restart}>Play again ↻</button>
   </div>;
 

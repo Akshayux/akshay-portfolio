@@ -6,8 +6,6 @@ export const profile = {
   email: 'akshayv2310@gmail.com',
   phone: '+44 7810120379',
   years: '5+',
-  projects: '20+',
-  clients: '10+',
 };
 
 export const socials = [
@@ -23,6 +21,7 @@ export const featuredProjects = [
     title: 'LUXTJ',
     label: 'Luxury travel · Customer experience',
     description: 'A connected journey for discovering, comparing, planning and booking luxury travel.',
+    outcome: 'Made the high-stakes moments—hotel choice, checkout and profile setup—easier to understand and complete.',
     image: '/figma/case-17.png',
     href: '/work/luxtj',
     tags: ['Product design', 'Web', 'Travel'],
@@ -32,6 +31,7 @@ export const featuredProjects = [
     title: 'LUXTJ Extranet',
     label: 'Luxury travel · Partner operations',
     description: 'The operational product behind listings, bookings, staff, offers and payments.',
+    outcome: 'Brought scattered partner tasks into one workspace so teams could manage the trip behind the promise.',
     image: '/figma/case-1.png',
     href: '/work/luxtj-extranet',
     tags: ['UX design', 'Enterprise', 'Design system'],
@@ -41,6 +41,7 @@ export const featuredProjects = [
     title: 'ScotCare',
     label: 'University project · Digital health',
     description: 'An evidence-informed care-navigation concept designed around safety, clarity and continuity.',
+    outcome: 'Gives people a safer way to understand what happens next while they wait for human care.',
     image: '/scotcare/overview.png',
     href: '/work/scotcare',
     tags: ['Research', 'Service design', 'Mobile'],

@@ -34,7 +34,7 @@ export default function Home(){return <PageFrame>
     <div className="editorial-heading reveal"><span>02</span><div><small>About me</small><h2>I like the messy part—when the problem is still taking shape.</h2></div></div>
     <div className="home-about-layout">
       <div className="home-about-image reveal" data-parallax><img src="/figma/about-photo-v2.png" alt="Akshay by the coast"/><span>Outside the screen / UK</span></div>
-      <div className="home-about-copy reveal"><p className="large-copy">I work across product strategy, UX and interface design. My job is to find the structure hidden inside a complicated problem—and make it feel natural to everyone else.</p><p>I&apos;ve designed for luxury travel, enterprise software, AI tools, editorial platforms and mobile products. I&apos;m currently pursuing a Master&apos;s in Design in the UK.</p><blockquote>Good design should feel considered,<br/>not complicated.</blockquote><Link className="text-link" href="/about">Read my story <Arrow/></Link></div>
+      <div className="home-about-copy reveal"><p className="large-copy">On LUXTJ, I watched people spend almost two minutes trying to understand a bucket-list form. The interface looked finished, but the journey had no clear starting point. I learned to test for comprehension before polishing the pixels.</p><p>I&apos;m currently pursuing a Master&apos;s in Design in the UK, and I bring that same habit—ask why, make the next step obvious—to every project.</p><blockquote>Good design should feel considered,<br/>not complicated.</blockquote><Link className="text-link" href="/about">Read my story <Arrow/></Link></div>
     </div>
   </section>
 

@@ -214,7 +214,7 @@ p{color:var(--muted)}
 .hero-visual .status{position:absolute;right:-10px;top:22px;margin:0;background:var(--paper);border:0;border-radius:0;padding:9px 11px;color:var(--ink)}
 .hero-foot{grid-column:1/-1;display:flex;justify-content:space-between;padding-top:25px;border-top:1px solid var(--line);font-size:10px;text-transform:uppercase;letter-spacing:.09em;color:var(--muted)}
 .home-proof{padding:42px 0 116px}
-.proof-strip{position:relative;grid-template-columns:repeat(4,1fr);border-color:var(--ink)}
+.proof-strip{position:relative;grid-template-columns:repeat(2,1fr);border-color:var(--ink)}
 .proof-strip>div{position:relative;padding:24px 20px 25px}
 .proof-strip dt{font-size:31px;font-weight:600;font-variant-numeric:tabular-nums}
 .proof-strip dt span{display:inline-block}
@@ -244,7 +244,7 @@ p{color:var(--muted)}
 .project-body{padding:42px 38px 32px;min-height:570px;position:relative}
 .project-index{display:none}
 .project-body h3{font-size:clamp(56px,5.2vw,78px);margin:0 0 20px}
-.project-body>p{font-size:16px;line-height:1.5;color:#b8b8b3;max-width:420px}
+.project-body>p{font-size:16px;line-height:1.5;color:#b8b8b3;max-width:420px}.project-body>.project-outcome{margin-top:22px;color:var(--white);font-size:18px;line-height:1.42;font-weight:600}
 .project-facts{margin:48px 0 80px}
 .project-facts>div{grid-template-columns:55px 1fr;padding:12px 0}
 .project-arrow{position:absolute;right:28px;bottom:28px;width:62px;height:62px;border:1px solid #4d4d49;border-radius:50%;display:grid;place-items:center;color:var(--white);font-size:22px;transition:background .25s,border-color .25s,transform .25s}
@@ -260,7 +260,7 @@ p{color:var(--muted)}
 .project-card-copy{position:relative;min-height:285px;padding:30px 76px 28px 28px}
 .project-card-copy small{font-size:9px;text-transform:uppercase;letter-spacing:.09em;color:var(--muted)}
 .project-card-copy h3{font-size:clamp(35px,3.5vw,52px);margin:28px 0 14px}
-.project-card-copy p{font-size:14px;max-width:460px}
+.project-card-copy p{font-size:14px;max-width:460px}.project-card-copy>.project-outcome{margin-top:18px;color:var(--ink);font-size:15px;line-height:1.42;font-weight:650}
 .project-card-copy>div{display:flex;flex-wrap:wrap;gap:6px;margin-top:30px}
 .project-card-copy>div span{padding:6px 8px;border:1px solid var(--line);font-size:9px;text-transform:uppercase;letter-spacing:.05em}
 .project-card-copy>a{position:absolute;right:26px;bottom:26px;width:44px;height:44px;display:grid;place-items:center;border:1px solid var(--ink);border-radius:50%;transition:background .2s,color .2s,transform .2s}
@@ -297,7 +297,7 @@ p{color:var(--muted)}
 .game-options button.is-correct{background:#173723;border-color:#4cb874}.game-options button.is-wrong{background:#442221;border-color:#c86460}.game-options button:disabled{cursor:default}
 .game-feedback{margin-top:28px;padding:24px;background:var(--accent);color:var(--white);border-radius:3px;display:grid;grid-template-columns:110px 1fr auto;gap:18px;align-items:start}
 .game-feedback>span,.game-feedback small{font-size:9px;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,.72)}.game-feedback p{font-size:13px;color:var(--white)}.game-feedback button,.ux-game-result>button{border:0;background:none;color:var(--white);font-size:11px;font-weight:700;cursor:pointer;padding:0;border-bottom:1px solid rgba(255,255,255,.7)}
-.ux-game-result{display:grid;grid-template-columns:120px 1fr;gap:34px;align-content:center}.ux-game-result .game-count{font-size:9px;text-transform:uppercase;letter-spacing:.08em;color:#9e9e98}.ux-game-result strong{font-size:72px;line-height:1;color:var(--accent)}.ux-game-result h3{font-size:38px;margin:18px 0}.ux-game-result p{max-width:520px}.ux-game-result>button{position:absolute;right:42px;bottom:42px}
+.ux-game-result{display:grid;grid-template-columns:120px 1fr;gap:34px;align-content:center}.ux-game-result .game-count{font-size:9px;text-transform:uppercase;letter-spacing:.08em;color:#9e9e98}.ux-game-result strong{font-size:72px;line-height:1;color:var(--accent)}.ux-game-result h3{font-size:38px;margin:18px 0}.ux-game-result p{max-width:520px}.ux-game-result .game-payoff{margin-top:20px;color:rgba(255,255,255,.72);font-size:13px}.ux-game-result>button{position:absolute;right:42px;bottom:42px}
 
 /* Testimonials */
 .testimonials{padding:130px 0;border-top:1px solid var(--ink)}
@@ -632,7 +632,7 @@ p{color:var(--muted)}
   .site-header{height:68px}.header-inner{grid-template-columns:auto 1fr auto;gap:12px}.brand strong{display:block;font-size:11px}.brand>span{display:none}.primary-nav{display:flex;justify-self:center;gap:12px;padding:0;border:0;background:none}.primary-nav a{font-size:9px}.header-action{display:flex;font-size:9px;white-space:nowrap}
   .hero{min-height:0;padding:58px 0 30px;grid-template-columns:1fr;grid-template-rows:auto auto auto;gap:48px}.hero-label{margin-bottom:42px}.hero h1{font-size:clamp(58px,17vw,78px);line-height:.88}.hero-intro{margin-top:38px}.hero-intro>p{font-size:16px}.hero-intro>div{gap:16px}.recruiter-trigger{width:100%;margin-top:4px}.hero-visual{justify-self:stretch;width:100%;padding:0}.portrait-frame{height:min(128vw,610px)}.portrait-note{left:0;bottom:18px}.hero-visual .status{right:0;top:16px}.hero-foot{grid-column:1;padding-top:20px}
   .recruiter-overlay{padding:8px;place-items:stretch}.recruiter-dialog{max-height:calc(100svh - 16px)}.recruiter-brief-head{min-height:500px;padding:88px 24px 34px}.recruiter-brief-head h2{font-size:51px}.recruiter-brief-head p{font-size:16px}.recruiter-brief-head>button{right:18px;top:18px}.recruiter-rationale{display:block;padding:48px 24px}.recruiter-rationale>span{display:block;margin-bottom:22px}.recruiter-rationale h3{font-size:31px}.recruiter-rationale p{font-size:15px}.recruiter-proof{grid-template-columns:1fr 1fr}.recruiter-proof>div{min-height:125px;padding:18px}.recruiter-proof>div:nth-child(2){border-right:0}.recruiter-proof>div:nth-child(-n+2){border-bottom:1px solid rgba(255,255,255,.25)}.recruiter-proof strong{font-size:29px}.recruiter-intro,.recruiter-contribution,.recruiter-difference,.recruiter-table{padding:68px 24px}.recruiter-intro{display:block}.recruiter-intro h3{font-size:42px;margin:22px 0}.recruiter-intro p{font-size:16px}.recruiter-why-grid{grid-template-columns:1fr;margin-top:36px}.recruiter-why-grid article,.recruiter-why-grid article:not(:first-child){min-height:0;padding:24px 0;border-right:0;border-bottom:1px solid var(--line)}.recruiter-why-grid strong{margin:32px 0 10px}.recruiter-why-grid p{font-size:13px}.recruiter-contribution>div,.recruiter-difference>div,.recruiter-table>div{display:block;margin-bottom:38px}.recruiter-contribution h3,.recruiter-difference h3,.recruiter-table h3{font-size:39px;margin-top:20px}.recruiter-contribution ol,.recruiter-difference-grid{grid-template-columns:1fr}.recruiter-contribution li,.recruiter-contribution li:nth-child(even){min-height:0;padding:70px 0 26px;border-right:0}.recruiter-contribution li:nth-child(even)::before{left:0}.recruiter-difference-grid article,.recruiter-difference-grid article:nth-child(even){min-height:0;padding:24px 0 30px;border-right:0}.recruiter-difference-grid strong{margin-top:45px}.recruiter-table dl>div{grid-template-columns:1fr;gap:5px}.recruiter-actions{padding:36px 24px}.recruiter-actions>div:last-child{width:100%;align-items:flex-start;flex-direction:column;gap:18px}.recruiter-actions a:first-child{width:100%;display:flex;justify-content:space-between}
-  .home-proof{padding:30px 0 84px}.proof-strip>div:first-child{padding-left:12px}.proof-strip dt{font-size:25px}
+  .home-proof{padding:30px 0 84px}.proof-strip>div{border-bottom:0}.proof-strip>div:first-child{padding-left:12px}.proof-strip dt{font-size:25px}
   .featured-work,.home-about,.home-experience{padding:88px 0}.editorial-heading{grid-template-columns:34px 1fr;gap:12px;margin-bottom:44px}.editorial-heading h2{font-size:43px}
   .project-feature{border-radius:3px}.project-topline{height:50px;padding:0 14px}.project-topline span:last-child{display:none}.project-media{padding:38px 16px;min-height:330px}.project-body{padding:29px 22px;min-height:470px}.project-body h3{font-size:58px;margin:0 0 18px}.project-body>p{font-size:15px}.project-facts{margin:40px 0 70px}.project-arrow{right:22px;bottom:22px;width:56px;height:56px}
   .home-about-layout{grid-template-columns:1fr;gap:48px}.home-about-image{height:min(125vw,620px)}.home-about-copy .large-copy{font-size:29px}.home-about-copy blockquote{margin:52px 0 42px;font-size:31px}

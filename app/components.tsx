@@ -42,8 +42,6 @@ export function SectionHead({eyebrow,title,copy,action}:{eyebrow:string;title:st
 export function ProofStrip(){
   return <dl className="proof-strip reveal" aria-label="Career summary">
     <div><dt data-count="5" data-suffix="+">{profile.years}</dt><dd>years of experience</dd></div>
-    <div><dt data-count="20" data-suffix="+">{profile.projects}</dt><dd>projects completed</dd></div>
-    <div><dt data-count="10" data-suffix="+">{profile.clients}</dt><dd>client collaborations</dd></div>
     <div><dt><span>U</span><span>K</span></dt><dd>currently based</dd></div>
   </dl>;
 }
@@ -57,6 +55,7 @@ export function ProjectFeature({compact=false}:{compact?:boolean}){
     <div className="project-body">
       <h3>LUXTJ</h3>
       <p>One connected experience for discovering, planning and booking luxury travel.</p>
+      <p className="project-outcome">Made the high-stakes moments—hotel choice, checkout and profile setup—easier to understand and complete.</p>
       <dl className="project-facts">
         <div><dt>Role</dt><dd>Lead product designer</dd></div>
         <div><dt>Work</dt><dd>Product thinking, UX, UI and design system</dd></div>
@@ -67,12 +66,12 @@ export function ProjectFeature({compact=false}:{compact?:boolean}){
   </article>;
 }
 
-export function ProjectCard({index,title,label,description,image,href,tags}:{index:string;title:string;label:string;description:string;image:string;href:string;tags:string[]}){
+export function ProjectCard({index,title,label,description,outcome,image,href,tags}:{index:string;title:string;label:string;description:string;outcome:string;image:string;href:string;tags:string[]}){
   return <article className="project-card reveal">
     <Link className="project-card-media" href={href} aria-label={`Read the ${title} case study`} data-parallax>
       <img src={image} alt={`${title} project interface`}/><span>{index}</span>
     </Link>
-    <div className="project-card-copy"><small>{label}</small><h3>{title}</h3><p>{description}</p><div>{tags.map(tag=><span key={tag}>{tag}</span>)}</div><Link href={href} aria-label={`Read the ${title} case study`}><Arrow/></Link></div>
+    <div className="project-card-copy"><small>{label}</small><h3>{title}</h3><p>{description}</p><p className="project-outcome">{outcome}</p><div>{tags.map(tag=><span key={tag}>{tag}</span>)}</div><Link href={href} aria-label={`Read the ${title} case study`}><Arrow/></Link></div>
   </article>;
 }
 
