@@ -58,7 +58,7 @@ const chapters=[
     question:'How can profile creation feel like progress rather than administration?',
     failed:'Profile interest was close to zero. Multiple pages and features were presented at once, with no obvious first step and no visible reason to complete them.',
     investigated:'I studied the existing behaviour, mapped where people stopped and explored the trigger–action–reward ideas in Hooked. The opportunity was to create momentum, not add another reminder.',
-    changed:'I introduced one clear starting point, showed visible progress and used useful travel-personalisation outcomes to create curiosity about what completing the profile would unlock.',
+    changed:'I introduced one clear starting point, showed visible progress and used a trigger–action–reward structure to surface genuine travel-personalisation value, not manufacture urgency.',
     result:'+70%',
     resultLabel:'time spent in the social profile experience',
     lesson:'Engagement grows when every small action reveals a meaningful next benefit.',
@@ -112,6 +112,11 @@ export default function LuxtjPage(){return <main id="top" className="case-page l
     <div><strong>+70%</strong><span>Social-profile engagement</span></div>
   </section>
 
+  <section className="lux-skim case-wide reveal" aria-label="LUXTJ case study at a glance">
+    <div><CaseKicker>At a glance</CaseKicker><small>90-second summary</small></div>
+    <ul><li><b>The problem</b><p>The first version asked people to interpret forms, dense checkout and an unstructured profile before showing value.</p></li><li><b>What I changed</b><p>I rebuilt four journeys around one clear starting point, progressive disclosure and the next decision.</p></li><li><b>What resulted</b><p>People understood Bucket List in 30–50 sec, checkout completed 22% faster and profile engagement rose 70%.</p></li></ul>
+  </section>
+
   <section className="case-section case-wide ecosystem-section reveal" id="ecosystem"><CaseKicker>The product I was shaping</CaseKicker><h2>One travel idea. Several moments that had to feel like one journey.</h2><div className="ecosystem-cards"><article><img src="/figma/case-11.png" alt="LUXTJ mobile application"/><span>Mobile app</span><h3>Inspiration in the pocket</h3><p>Discover destinations, save ideas and return when a trip becomes real.</p></article><article><img src="/figma/case-19.png" alt="LUXTJ customer website"/><span>Customer website</span><h3>Space to compare and plan</h3><p>Explore, evaluate and assemble a complex trip with more context.</p></article><article><img src="/figma/case-1.png" alt="LUXTJ partner extranet"/><span>Partner extranet</span><h3>Operations behind the promise</h3><p>Manage content, availability, pricing and bookings behind the customer experience.</p></article></div></section>
 
   <section className="case-section case-narrow lux-origin" id="failure">
@@ -125,11 +130,10 @@ export default function LuxtjPage(){return <main id="top" className="case-page l
 
   <section className="case-section case-narrow architecture reveal" id="architecture"><CaseKicker>Journey architecture</CaseKicker><h2>Every screen had to answer the next important question.</h2><div className="decision-table"><div><b>What was happening</b><b>Question left open</b><b>Design response</b></div><div><span>Disconnected search screens</span><span>What have I already chosen?</span><span>Persistent trip context</span></div><div><span>Dense result cards</span><span>What makes this right for me?</span><span>Progressive hierarchy</span></div><div><span>Totals appeared late</span><span>What will this decision cost?</span><span>Running price and consequences</span></div><div><span>Errors at submission</span><span>How do I recover?</span><span>Inline validation and editable review</span></div></div></section>
 
-  <section className="case-section case-narrow reveal"><CaseKicker>Working principles</CaseKicker><h2>Four rules kept the product coherent as it grew.</h2><div className="principle-grid">{principles.map(([number,title,copy])=><article key={number}><span>{number}</span><h3>{title}</h3><p>{copy}</p></article>)}</div></section>
-
   <section className="case-section case-wide lux-process" id="process">
     <div className="case-section-heading reveal"><CaseKicker>How I worked through the mess</CaseKicker><h2>Failure became a repeatable design loop.</h2><p>I stopped treating each weak screen as an isolated UI issue. The same loop helped me find the underlying behaviour, redesign the journey and learn from the result.</p></div>
     <ol className="lux-process-list reveal">{process.map(([number,title,copy])=><li key={number}><span>{number}</span><h3>{title}</h3><p>{copy}</p></li>)}</ol>
+    <div className="lux-process-outcome reveal"><div><CaseKicker>What came out of the loop</CaseKicker><h3>Four rules kept the product coherent as it grew.</h3></div><div className="principle-grid">{principles.map(([number,title,copy])=><article key={number}><span>{number}</span><h3>{title}</h3><p>{copy}</p></article>)}</div></div>
   </section>
 
   <section className="case-section case-wide lux-redesigns" id="redesigns">
