@@ -1,7 +1,7 @@
 import type {ReactNode} from 'react';
 import Link from 'next/link';
 import {profile,socials} from './data';
-import TestimonialsCarousel from './testimonials-carousel';
+import TestimonialsReveal from './testimonials-reveal';
 
 export function Arrow(){return <span aria-hidden="true">↗</span>}
 
@@ -79,7 +79,7 @@ export function ProjectCard({index,title,label,description,outcome,image,href,ta
 export function TestimonialsSection(){
   return <section className="testimonials shell">
     <div className="editorial-heading reveal"><span>05</span><div><small>Testimonials</small><h2>What clients and collaborators say.</h2></div></div>
-    <TestimonialsCarousel/>
+    <TestimonialsReveal/>
     <div className="testimonial-footer reveal"><p>Recommendations across client and engineering collaboration. Design-peer quotes are published only after the wording and attribution are approved.</p><a className="text-link" href="https://linkedin.com/in/akshayproductdesigner" target="_blank" rel="noreferrer" data-cursor-label="Open">View recommendations <Arrow/></a></div>
   </section>;
 }
