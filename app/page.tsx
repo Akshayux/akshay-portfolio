@@ -29,10 +29,20 @@ export default function Home(){return <PageFrame>
   </section>
 
   <section className="home-about shell">
-    <div className="editorial-heading reveal"><span>02</span><div><small>About me</small><h2>I like the messy part—when the problem is still taking shape.</h2></div></div>
+    <div className="editorial-heading reveal"><span>02</span><div><small>About me</small><h2>I came to UX by following the questions code couldn&apos;t answer.</h2></div></div>
     <div className="home-about-layout">
       <div className="home-about-image reveal" data-parallax><img src="/figma/about-photo-v2.png" alt="Akshay by the coast"/><span>Outside the screen / UK</span></div>
-      <div className="home-about-copy reveal"><p className="large-copy">On LUXTJ, I watched people spend almost two minutes trying to understand a bucket-list form. The interface looked finished, but the journey had no clear starting point. I learned to test for comprehension before polishing the pixels.</p><p>I&apos;m currently pursuing a Master&apos;s in Design in the UK, and I bring that same habit—ask why, make the next step obvious—to every project.</p><blockquote>Good design should feel considered,<br/>not complicated.</blockquote><Link className="text-link" href="/about" data-cursor-label="View">Read my story <Arrow/></Link></div>
+      <div className="home-about-copy reveal">
+        <p className="large-copy">My computer science degree taught me how digital systems are built. I became more interested in what happened on the other side of the screen—why a logical flow could still confuse someone, or why a useful feature went untouched.</p>
+        <p>That curiosity moved me into Product and UX Design. For more than five years, I&apos;ve worked with founders, engineers and stakeholders across travel, enterprise and service products—turning early ideas, constraints and edge cases into journeys people can actually follow.</p>
+        <dl className="designer-story" aria-label="My path into product and UX design">
+          <div><dt>Foundation</dt><dd>Computer science</dd></div>
+          <div><dt>Practice</dt><dd>Product &amp; UX design</dd></div>
+          <div><dt>Today</dt><dd>Master&apos;s in Design · UK</dd></div>
+        </dl>
+        <blockquote>I don&apos;t start with screens.<br/>I start with what people need to understand.</blockquote>
+        <Link className="text-link" href="/about" data-cursor-label="View">More about how I work <Arrow/></Link>
+      </div>
     </div>
   </section>
 
