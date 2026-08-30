@@ -49,7 +49,7 @@ export function ProofStrip(){
 }
 
 export function ProjectFeature({compact=false}:{compact?:boolean}){
-  return <article className={`project-feature reveal ${compact?'project-feature-compact':''}`} data-tilt>
+  return <article className={`project-feature reveal ${compact?'project-feature-compact':''}`}>
     <div className="project-topline"><span>Selected work / 01</span><span>Luxury travel · Customer experience</span></div>
     <Link className="project-media" href="/work/luxtj" aria-label="Read the LUXTJ case study" data-parallax>
       <img src="/figma/case-17.png" alt="LUXTJ luxury-travel booking website"/>
@@ -68,7 +68,7 @@ export function ProjectFeature({compact=false}:{compact?:boolean}){
 }
 
 export function ProjectCard({index,title,label,description,image,href,tags}:{index:string;title:string;label:string;description:string;image:string;href:string;tags:string[]}){
-  return <article className="project-card reveal" data-tilt>
+  return <article className="project-card reveal">
     <Link className="project-card-media" href={href} aria-label={`Read the ${title} case study`} data-parallax>
       <img src={image} alt={`${title} project interface`}/><span>{index}</span>
     </Link>
