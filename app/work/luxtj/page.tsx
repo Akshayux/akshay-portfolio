@@ -94,7 +94,7 @@ function CaseKicker({children}:{children:React.ReactNode}){return <span classNam
 
 export default function LuxtjPage(){return <main id="top" className="case-page luxtj-case">
   <SiteHeader/>
-  <aside className="case-toc" aria-label="Case study contents"><span>On this page</span><a href="#overview">Overview</a><a href="#ecosystem">Ecosystem</a><a href="#failure">First failure</a><a href="#architecture">Architecture</a><a href="#process">Process</a><a href="#redesigns">Redesigns</a><a href="#learning">Learning</a></aside>
+  <aside className="case-toc" aria-label="Case study contents"><span>On this page</span><a href="#overview" data-cursor-label="Jump">Overview</a><a href="#ecosystem" data-cursor-label="Jump">Ecosystem</a><a href="#failure" data-cursor-label="Jump">First failure</a><a href="#architecture" data-cursor-label="Jump">Architecture</a><a href="#process" data-cursor-label="Jump">Process</a><a href="#redesigns" data-cursor-label="Jump">Redesigns</a><a href="#learning" data-cursor-label="Jump">Learning</a></aside>
 
   <section className="case-hero shell" id="overview">
     <div className="case-hero-copy reveal"><CaseKicker>LUXTJ · Luxury travel website</CaseKicker><h1 data-parallax-layer data-parallax-speed="10">From messy ideas to a product people could understand.</h1><p>The first version looked complete, but people struggled to understand key features and finish important journeys. I used that failure to redesign the product around learnability, decision speed and confidence.</p></div>
@@ -170,6 +170,6 @@ export default function LuxtjPage(){return <main id="top" className="case-page l
     <p className="lux-evidence-note reveal"><strong>Evidence note.</strong> Figures shown here reflect project observations and product data available during the work. Where exact instrumentation was limited, I describe the result directionally rather than inventing precision.</p>
   </section>
 
-  <section className="case-closing shell reveal"><span>Next</span><h2>Want to talk through the messy middle?</h2><p>I can walk through the failed directions, research choices, alternatives and delivery decisions in a portfolio conversation.</p><div><Link href="/work">← All work</Link><Link href="/contact">Start a conversation <Arrow/></Link></div></section>
+  <section className="case-closing shell reveal"><span>Next</span><h2>Want to talk through the messy middle?</h2><p>I can walk through the failed directions, research choices, alternatives and delivery decisions in a portfolio conversation.</p><div><Link href="/work" data-cursor-label="Back">← All work</Link><Link href="/contact" data-cursor-label="Open">Start a conversation <Arrow/></Link></div></section>
   <SiteFooter/>
 </main>}

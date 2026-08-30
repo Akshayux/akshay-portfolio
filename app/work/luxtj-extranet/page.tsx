@@ -24,7 +24,7 @@ function Kicker({children}:{children:React.ReactNode}){return <span className="e
 
 export default function ExtranetPage(){return <main id="top" className="case-page extranet-case">
   <SiteHeader/>
-  <aside className="case-toc" aria-label="Case study contents"><span>On this page</span><a href="#overview">Overview</a><a href="#challenge">Challenge</a><a href="#scope">Scope</a><a href="#system">System</a><a href="#delivery">Delivery</a></aside>
+  <aside className="case-toc" aria-label="Case study contents"><span>On this page</span><a href="#overview" data-cursor-label="Jump">Overview</a><a href="#challenge" data-cursor-label="Jump">Challenge</a><a href="#scope" data-cursor-label="Jump">Scope</a><a href="#system" data-cursor-label="Jump">System</a><a href="#delivery" data-cursor-label="Jump">Delivery</a></aside>
 
   <section className="case-hero shell" id="overview">
     <div className="case-hero-copy reveal"><Kicker>LUXTJ Extranet · Product & UX case study</Kicker><h1 data-parallax-layer data-parallax-speed="10">Designing the operations behind a luxury trip.</h1><p>The extranet connects the customer promise to the partner work required to fulfil it—from listing content and availability to bookings, offers, staff and payments.</p></div>
@@ -47,6 +47,6 @@ export default function ExtranetPage(){return <main id="top" className="case-pag
 
   <section className="case-section case-narrow" id="delivery"><div className="case-split"><div className="reveal"><Kicker>Design to delivery</Kicker><h2>Resolve ambiguity before it becomes rework.</h2></div><div className="reveal"><p>I worked closely with stakeholders and developers to turn business requirements into clear, implementation-ready designs. Reviews focused on behaviour, missing states and edge cases—not only visual matching.</p><h3 className="measure-title">What the handoff made explicit</h3><ul className="measure-list"><li>Role, status and permission states</li><li>Validation and recovery behaviour</li><li>Empty, loading and incomplete states</li><li>Responsive component behaviour</li></ul></div></div></section>
 
-  <section className="case-closing shell reveal"><span>Next case study</span><h2>ScotCare: designing from panic to plan.</h2><p>An evidence-informed university project about safer, clearer care navigation in Scotland.</p><div><Link href="/work">← All work</Link><Link href="/work/scotcare">Read ScotCare <Arrow/></Link></div></section>
+  <section className="case-closing shell reveal"><span>Next case study</span><h2>ScotCare: designing from panic to plan.</h2><p>An evidence-informed university project about safer, clearer care navigation in Scotland.</p><div><Link href="/work" data-cursor-label="Back">← All work</Link><Link href="/work/scotcare" data-cursor-label="View">Read ScotCare <Arrow/></Link></div></section>
   <SiteFooter/>
 </main>}

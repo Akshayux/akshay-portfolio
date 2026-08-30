@@ -9,7 +9,7 @@ export default function Home(){return <PageFrame>
     <div className="hero-copy">
       <span className="hero-label">Product & UX Designer · United Kingdom</span>
       <h1 data-parallax-layer data-parallax-speed="12">Complex products,<br/><em>made clear.</em></h1>
-      <div className="hero-intro"><p>I&apos;m Akshay. I turn complicated workflows, systems and ideas into digital products people understand and enjoy using.</p><div><Link className="text-link" href="/work">See my work <Arrow/></Link><RecruiterBrief/></div></div>
+      <div className="hero-intro"><p>I&apos;m Akshay. I turn complicated workflows, systems and ideas into digital products people understand and enjoy using.</p><div><Link className="text-link" href="/work" data-cursor-label="View">See my work <Arrow/></Link><RecruiterBrief/></div></div>
     </div>
     <div className="hero-visual reveal" data-parallax>
       <div className="portrait-frame"><img src="/akshay-portrait.jpg" alt="Akshay Venkata Narayana, Product Designer"/></div>
@@ -22,7 +22,7 @@ export default function Home(){return <PageFrame>
   <section className="featured-work shell" id="selected-work">
     <div className="editorial-heading reveal"><span>01</span><div><small>Selected work</small><h2>Designing the whole journey, not a collection of screens.</h2></div></div>
     <ProjectFeature/>
-    <div className="more-work-heading reveal"><span>More selected work</span><Link className="text-link" href="/work">See all work <Arrow/></Link></div>
+    <div className="more-work-heading reveal"><span>More selected work</span><Link className="text-link" href="/work" data-cursor-label="View">See all work <Arrow/></Link></div>
     <div className="project-card-grid">
       {featuredProjects.slice(1).map(project=><ProjectCard key={project.title} {...project}/>)}
     </div>
@@ -32,7 +32,7 @@ export default function Home(){return <PageFrame>
     <div className="editorial-heading reveal"><span>02</span><div><small>About me</small><h2>I like the messy part—when the problem is still taking shape.</h2></div></div>
     <div className="home-about-layout">
       <div className="home-about-image reveal" data-parallax><img src="/figma/about-photo-v2.png" alt="Akshay by the coast"/><span>Outside the screen / UK</span></div>
-      <div className="home-about-copy reveal"><p className="large-copy">On LUXTJ, I watched people spend almost two minutes trying to understand a bucket-list form. The interface looked finished, but the journey had no clear starting point. I learned to test for comprehension before polishing the pixels.</p><p>I&apos;m currently pursuing a Master&apos;s in Design in the UK, and I bring that same habit—ask why, make the next step obvious—to every project.</p><blockquote>Good design should feel considered,<br/>not complicated.</blockquote><Link className="text-link" href="/about">Read my story <Arrow/></Link></div>
+      <div className="home-about-copy reveal"><p className="large-copy">On LUXTJ, I watched people spend almost two minutes trying to understand a bucket-list form. The interface looked finished, but the journey had no clear starting point. I learned to test for comprehension before polishing the pixels.</p><p>I&apos;m currently pursuing a Master&apos;s in Design in the UK, and I bring that same habit—ask why, make the next step obvious—to every project.</p><blockquote>Good design should feel considered,<br/>not complicated.</blockquote><Link className="text-link" href="/about" data-cursor-label="View">Read my story <Arrow/></Link></div>
     </div>
   </section>
 
@@ -46,7 +46,7 @@ export default function Home(){return <PageFrame>
     <div className="simple-experience">
       {experience.slice(0,4).map(item=><article className="reveal" key={item.company}><time>{item.date}</time><div><h3>{item.company}</h3><p>{item.role}</p></div><p>{item.summary}</p></article>)}
     </div>
-    <Link className="text-link" href="/about#experience">Full experience <Arrow/></Link>
+    <Link className="text-link" href="/about#experience" data-cursor-label="Jump">Full experience <Arrow/></Link>
   </section>
 
   <TestimonialsSection/>

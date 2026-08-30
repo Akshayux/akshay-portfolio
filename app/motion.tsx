@@ -5,10 +5,10 @@ import {animate,motion,useMotionValue,useReducedMotion,useScroll,useSpring} from
 
 const ease=[0.22,1,0.36,1] as const;
 const cursorInterests=[
-  {name:'design',label:'Design'},
-  {name:'travel',label:'Travel'},
-  {name:'gaming',label:'Gaming'},
-  {name:'fitness',label:'Fitness'},
+  {name:'design'},
+  {name:'travel'},
+  {name:'gaming'},
+  {name:'fitness'},
 ] as const;
 
 function CursorInterestIcon({name}:{name:(typeof cursorInterests)[number]['name']}){
@@ -53,6 +53,7 @@ export default function Motion({children}:{children:ReactNode}){
   const reduceMotion=useReducedMotion();
   const [preloaderPhase,setPreloaderPhase]=useState<'waiting'|'leaving'|'hidden'>('waiting');
   const [cursorInterest,setCursorInterest]=useState(0);
+  const [cursorLabel,setCursorLabel]=useState('');
   const {scrollYProgress}=useScroll();
   const progress=useSpring(scrollYProgress,{stiffness:130,damping:30,mass:.28});
   const cursorX=useMotionValue(-100);
@@ -60,6 +61,7 @@ export default function Motion({children}:{children:ReactNode}){
   const smoothCursorX=useSpring(cursorX,{stiffness:520,damping:34,mass:.34});
   const smoothCursorY=useSpring(cursorY,{stiffness:520,damping:34,mass:.34});
   const cursorRef=useRef<HTMLDivElement>(null);
+  const cursorTargetRef=useRef<HTMLElement|null>(null);
 
   useEffect(()=>{
     if(reduceMotion)return;
@@ -224,18 +226,29 @@ export default function Motion({children}:{children:ReactNode}){
     document.addEventListener('click',onNavigate,true);
 
     const cursor=cursorRef.current;
+    const findCursorTarget=(node:EventTarget|null)=>node instanceof Element?node.closest<HTMLElement>('[data-cursor-label]'):null;
+    const setCursorTarget=(node:EventTarget|null)=>{
+      const next=findCursorTarget(node);
+      if(cursorTargetRef.current===next)return;
+      cursorTargetRef.current=next;
+      setCursorLabel(next?.dataset.cursorLabel??'');
+      cursor?.classList.toggle('is-interactive',Boolean(next));
+    };
     const onPointerMove=(event:PointerEvent)=>{
       if(event.pointerType==='touch')return;
       cursorX.set(event.clientX-21);
       cursorY.set(event.clientY-21);
       cursor?.classList.add('is-visible');
-      const target=event.target as Element|null;
-      cursor?.classList.toggle('is-interactive',Boolean(target?.closest('a,button,input,textarea,select,[role="button"]')));
+      setCursorTarget(event.target);
     };
+    const onPointerOver=(event:PointerEvent)=>{if(event.pointerType!=='touch')setCursorTarget(event.target)};
+    const onPointerOut=(event:PointerEvent)=>{if(event.pointerType!=='touch')setCursorTarget(event.relatedTarget)};
     const onPointerDown=()=>cursor?.classList.add('is-pressed');
     const onPointerUp=()=>cursor?.classList.remove('is-pressed');
-    const onPointerLeave=()=>cursor?.classList.remove('is-visible','is-interactive','is-pressed');
+    const onPointerLeave=()=>{cursor?.classList.remove('is-visible','is-interactive','is-pressed');cursorTargetRef.current=null;setCursorLabel('');};
     window.addEventListener('pointermove',onPointerMove,{passive:true});
+    document.addEventListener('pointerover',onPointerOver,{passive:true});
+    document.addEventListener('pointerout',onPointerOut,{passive:true});
     window.addEventListener('pointerdown',onPointerDown,{passive:true});
     window.addEventListener('pointerup',onPointerUp,{passive:true});
     document.documentElement.addEventListener('mouseleave',onPointerLeave);
@@ -247,6 +260,8 @@ export default function Motion({children}:{children:ReactNode}){
       window.removeEventListener('scroll',onScroll);
       window.removeEventListener('resize',scheduleTextReveal);
       window.removeEventListener('pointermove',onPointerMove);
+      document.removeEventListener('pointerover',onPointerOver);
+      document.removeEventListener('pointerout',onPointerOut);
       window.removeEventListener('pointerdown',onPointerDown);
       window.removeEventListener('pointerup',onPointerUp);
       document.documentElement.removeEventListener('mouseleave',onPointerLeave);
@@ -265,9 +280,9 @@ export default function Motion({children}:{children:ReactNode}){
     </div>}
     <motion.div className="scroll-progress" style={{scaleX:progress}} aria-hidden="true"/>
     <motion.div className="page-curtain" initial={{scaleY:0}} animate={{scaleY:0}} transition={{duration:0}} aria-hidden="true"/>
-    <motion.div ref={cursorRef} className="custom-cursor" style={{x:smoothCursorX,y:smoothCursorY}} aria-hidden="true">
+      <motion.div ref={cursorRef} className="custom-cursor" style={{x:smoothCursorX,y:smoothCursorY}} aria-hidden="true">
       <span className="cursor-shell"><span className="cursor-interest" key={cursorInterests[cursorInterest].name}><CursorInterestIcon name={cursorInterests[cursorInterest].name}/></span><b>↗</b></span>
-      <small className="cursor-interest-label" key={`${cursorInterests[cursorInterest].name}-label`}>{cursorInterests[cursorInterest].label}</small>
+      <small className={`cursor-context-label ${cursorLabel?'is-set':''}`}>{cursorLabel}</small>
     </motion.div>
     {children}
   </>;

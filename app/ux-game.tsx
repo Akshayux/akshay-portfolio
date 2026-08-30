@@ -71,7 +71,7 @@ export default function UXGame(){
   if(finished)return <div className="ux-game-card ux-game-result" aria-live="polite">
     <span className="game-count">Your result</span>
     <div><strong>{score}/{rounds.length}</strong><h3>{result.title}</h3><p>{result.copy}</p><p className="game-payoff">The pattern behind every choice: make the next step obvious, honest and calmer.</p></div>
-    <button type="button" onClick={restart}>Play again ↻</button>
+    <button type="button" onClick={restart} data-cursor-label="Replay">Play again ↻</button>
   </div>;
 
   return <div className="ux-game-card">
@@ -79,8 +79,8 @@ export default function UXGame(){
     <div className="game-meta"><span>{item.context}</span><span>{String(round+1).padStart(2,'0')} / {String(rounds.length).padStart(2,'0')}</span></div>
     <h3>{item.prompt}</h3>
     <div className="game-options">
-      {item.options.map((option,index)=><button type="button" key={option} onClick={()=>select(index)} disabled={choice!==null} className={choice!==null&&index===item.answer?'is-correct':choice===index?'is-wrong':''}><span>{String.fromCharCode(65+index)}</span>{option}</button>)}
+      {item.options.map((option,index)=><button type="button" key={option} onClick={()=>select(index)} disabled={choice!==null} data-cursor-label="Pick" className={choice!==null&&index===item.answer?'is-correct':choice===index?'is-wrong':''}><span>{String.fromCharCode(65+index)}</span>{option}</button>)}
     </div>
-    {choice!==null&&<div className="game-feedback" aria-live="polite"><span>{choice===item.answer?'Nice choice':'Another way'}</span><p>{item.principle}</p><small>{item.lesson}</small><button type="button" onClick={next}>{round===rounds.length-1?'See my result':'Next moment'} →</button></div>}
+    {choice!==null&&<div className="game-feedback" aria-live="polite"><span>{choice===item.answer?'Nice choice':'Another way'}</span><p>{item.principle}</p><small>{item.lesson}</small><button type="button" onClick={next} data-cursor-label="Next">{round===rounds.length-1?'See my result':'Next moment'} →</button></div>}
   </div>;
 }

@@ -8,7 +8,7 @@ export const metadata:Metadata={title:'Resume',description:'Resume of Akshay Ven
 export default function ResumePage(){return <main id="top" className="resume-page">
   <SiteHeader/>
   <article className="resume-sheet shell">
-    <header className="resume-heading reveal"><div><span>Resume · 2026</span><h1>{profile.name}</h1><p>Product & UX Designer</p></div><div className="resume-contact"><a href={`mailto:${profile.email}`}>{profile.email}</a><a href="tel:+447810120379">{profile.phone}</a><a href="https://linkedin.com/in/akshayproductdesigner" target="_blank" rel="noreferrer">LinkedIn ↗</a><span>Edinburgh, United Kingdom</span><ResumeActions/></div></header>
+    <header className="resume-heading reveal"><div><span>Resume · 2026</span><h1>{profile.name}</h1><p>Product & UX Designer</p></div><div className="resume-contact"><a href={`mailto:${profile.email}`} data-cursor-label="Email">{profile.email}</a><a href="tel:+447810120379" data-cursor-label="Call">{profile.phone}</a><a href="https://linkedin.com/in/akshayproductdesigner" target="_blank" rel="noreferrer" data-cursor-label="Open">LinkedIn ↗</a><span>Edinburgh, United Kingdom</span><ResumeActions/></div></header>
 
     <section className="resume-section resume-summary"><h2>Profile</h2><p>Product and UX Designer with 5+ years of experience turning complex requirements into clear user journeys, scalable design systems and production-ready interfaces. Experienced across AI, SaaS, enterprise platforms, luxury travel, public-interest services and mobile products. Comfortable working from research and information architecture through interaction design, visual design and developer handoff.</p></section>
 
