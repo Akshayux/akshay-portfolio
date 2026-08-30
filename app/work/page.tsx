@@ -1,6 +1,7 @@
 import type {Metadata} from 'next';
-import {PageFrame,ProjectCard,ProjectFeature,SectionHead} from '../components';
+import {PageFrame,SectionHead} from '../components';
 import {experience,featuredProjects} from '../data';
+import ProjectCarousel from '../project-carousel';
 
 export const metadata:Metadata={title:'Work',description:'Selected Product and UX Design work by Akshay Venkata Narayana, with role, scope, decisions and outcomes made easy to scan.'};
 
@@ -12,10 +13,7 @@ export default function WorkPage(){return <PageFrame>
   </section>
 
   <section className="section shell work-feature">
-    <ProjectFeature compact/>
-    <div className="project-card-grid work-project-grid">
-      {featuredProjects.slice(1).map(project=><ProjectCard key={project.title} {...project}/>)}
-    </div>
+    <ProjectCarousel projects={featuredProjects}/>
   </section>
 
   <section className="section shell">

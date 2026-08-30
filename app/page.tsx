@@ -1,6 +1,7 @@
 import Link from 'next/link';
-import {Arrow,PageFrame,ProjectCard,ProjectFeature,ProofStrip,Status,TestimonialsSection} from './components';
+import {Arrow,PageFrame,ProofStrip,Status,TestimonialsSection} from './components';
 import {experience,featuredProjects} from './data';
+import ProjectCarousel from './project-carousel';
 import UXGame from './ux-game';
 
 export default function Home(){return <PageFrame>
@@ -20,11 +21,8 @@ export default function Home(){return <PageFrame>
 
   <section className="featured-work shell" id="selected-work">
     <div className="editorial-heading reveal"><span>01</span><div><small>Selected work</small><h2>Designing the whole journey, not a collection of screens.</h2></div></div>
-    <ProjectFeature/>
-    <div className="more-work-heading reveal"><span>More selected work</span><Link className="text-link" href="/work">See all work <Arrow/></Link></div>
-    <div className="project-card-grid">
-      {featuredProjects.slice(1).map(project=><ProjectCard key={project.title} {...project}/>)}
-    </div>
+    <ProjectCarousel projects={featuredProjects}/>
+    <div className="more-work-heading reveal"><span>Three detailed case studies</span><Link className="text-link" href="/work">See all work <Arrow/></Link></div>
   </section>
 
   <section className="home-proof shell"><ProofStrip/></section>

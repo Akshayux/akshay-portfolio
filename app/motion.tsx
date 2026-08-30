@@ -30,6 +30,12 @@ function splitIntoRevealWords(element:HTMLElement){
   return Array.from(element.querySelectorAll<HTMLElement>('.text-reveal-word'));
 }
 
+function mutedRevealColor(primary:string){
+  const channels=primary.match(/[\d.]+/g)?.slice(0,3).map(Number)??[20,20,20];
+  const luminance=channels[0]*.299+channels[1]*.587+channels[2]*.114;
+  return luminance>155?'rgba(255,255,255,.24)':'rgba(20,20,20,.22)';
+}
+
 export default function Motion({children}:{children:ReactNode}){
   const reduceMotion=useReducedMotion();
   const [preloaderPhase,setPreloaderPhase]=useState<'waiting'|'leaving'|'hidden'>('waiting');
@@ -77,9 +83,12 @@ export default function Motion({children}:{children:ReactNode}){
     const introHeading=document.querySelector<HTMLElement>('h1');
     if(introHeading){
       const introWords=splitIntoRevealWords(introHeading);
-      const wordIntro=animate(introWords,{opacity:[.08,1],filter:['blur(8px)','blur(0px)'],y:[16,0]},
-        {duration:.72,delay:(index)=>.82+Math.min(index*.045,.5),ease});
-      cleanups.push(()=>wordIntro.stop());
+      const wordIntros=introWords.map((word,index)=>{
+        const primary=getComputedStyle(word).color;
+        return animate(word,{color:[mutedRevealColor(primary),primary],y:[12,0]},
+          {duration:.72,delay:.82+Math.min(index*.045,.5),ease});
+      });
+      cleanups.push(()=>wordIntros.forEach(animation=>animation.stop()));
     }
 
     const textRevealSelector=[
@@ -87,9 +96,15 @@ export default function Motion({children}:{children:ReactNode}){
       '.case-section h2','.case-closing h2','.about-dual-card h2',
       '.belief-layout h2','.contact-close p','.reflection-section h2'
     ].join(',');
-    const revealGroups=Array.from(document.querySelectorAll<HTMLElement>(textRevealSelector)).map(element=>({
-      element,words:splitIntoRevealWords(element)
-    }));
+    const revealGroups=Array.from(document.querySelectorAll<HTMLElement>(textRevealSelector)).map(element=>{
+      const words=splitIntoRevealWords(element);
+      words.forEach(word=>{
+        const primary=getComputedStyle(word).color;
+        word.style.setProperty('--word-primary',primary);
+        word.style.setProperty('--word-muted',mutedRevealColor(primary));
+      });
+      return{element,words};
+    });
     let textFrame=0;
     const updateTextReveal=()=>{
       const viewport=window.innerHeight;
@@ -103,6 +118,7 @@ export default function Motion({children}:{children:ReactNode}){
         words.forEach((word,index)=>{
           const local=Math.max(0,Math.min(1,progress*1.5-(index/last)*.5));
           word.style.setProperty('--word-reveal',String(local));
+          word.style.setProperty('--word-muted-share',`${(1-local)*100}%`);
         });
       });
       textFrame=0;
