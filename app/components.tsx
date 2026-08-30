@@ -83,7 +83,7 @@ export function TestimonialsSection(){
       <article className="testimonial-card testimonial-card-featured reveal">
         <header><span className="testimonial-avatar">HC</span><small>Client perspective</small></header>
         <blockquote>“Akshay has approached that process with patience, openness, and a genuine willingness to make the product better. With Akshay, you are dealing with a genuinely good human being—sincere, dependable and humble.”</blockquote>
-        <footer><strong>Hoomba Roy Choudhury</strong><span>Founder, Travel Jaunts & LUXTJ</span><small>Website · Mobile app · Extranet</small></footer>
+        <footer><strong>Hooma Roy Choudhury</strong><span>Founder, Travel Jaunts & LUXTJ</span><small>Website · Mobile app · Extranet</small></footer>
       </article>
       <article className="testimonial-card reveal">
         <header><span className="testimonial-avatar">PM</span><small>Engineering perspective</small></header>
