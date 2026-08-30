@@ -226,8 +226,8 @@ export default function Motion({children}:{children:ReactNode}){
     const cursor=cursorRef.current;
     const onPointerMove=(event:PointerEvent)=>{
       if(event.pointerType==='touch')return;
-      cursorX.set(event.clientX-26);
-      cursorY.set(event.clientY-26);
+      cursorX.set(event.clientX-21);
+      cursorY.set(event.clientY-21);
       cursor?.classList.add('is-visible');
       const target=event.target as Element|null;
       cursor?.classList.toggle('is-interactive',Boolean(target?.closest('a,button,input,textarea,select,[role="button"]')));
