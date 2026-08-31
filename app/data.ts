@@ -144,12 +144,13 @@ export const capabilities = [
   'Human-centred design',
   'UX and Product strategy',
   'Stakeholder management and facilitation',
-  'User research',
+  'User research and usability testing',
   'Information architecture (IA)',
   'Design systems and DesignOps',
   'Interaction design',
   'Prototyping and wireframing',
-  'Accessibility (WCAG 2.2 AA)',
+  'Generative AI and prompt engineering',
+  'Service design and accessibility (WCAG 2.2 AA)',
 ];
 
 export const toolsAndEnvironment = [
