@@ -28,10 +28,10 @@ export default function AboutPage(){return <PageFrame>
   <section className="section shell" id="experience">
     <SectionHead eyebrow="Experience" title="Where I&apos;ve worked and what I owned."/>
     <div className="timeline">
-      {experience.map((item,index)=><article className="timeline-item reveal" key={item.company}>
+      {experience.map((item,index)=><article className="timeline-item reveal" key={`${item.company}-${item.date}`}>
         <span>{String(index+1).padStart(2,'0')}</span>
-        <div className="timeline-title"><h3>{item.company}</h3><strong>{item.role}</strong><small>{item.place}</small></div>
-        <div className="timeline-copy"><time>{item.date}</time><p>{item.summary}</p><p><b>My contribution:</b> {item.contribution}</p></div>
+        <div className="timeline-title"><h3>{item.company}</h3><strong>{item.role}{item.employment ? ` · ${item.employment}` : ''}</strong>{item.place&&<small>{item.place}</small>}</div>
+        <div className="timeline-copy"><time>{item.date}</time><ul>{item.bullets.map(bullet=><li key={bullet}>{bullet}</li>)}</ul></div>
       </article>)}
     </div>
   </section>

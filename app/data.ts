@@ -8,6 +8,15 @@ export const profile = {
   years: '5+',
 };
 
+export const professionalSummary = 'Product Designer who\'s shipped 0-to-1 systems across AI tools, enterprise SaaS, travel, and EdTech — six industries, one repeated pattern: messy workflows in, cohesive systems out. I work best in ambiguity — the messier the problem, the clearer I get. My edge isn\'t the pixels. It\'s getting a room of engineers, PMs, and execs aligned on a design decision in one meeting instead of five. Not because I talk more, but because I\'ve already done the work of finding the one decision that actually matters.';
+
+export const projectAchievements = [
+  'Reduced onboarding drop-off from 65% to 13% by redesigning Simpo AI’s website-creation journey using AI interaction research and task-focused flows.',
+  'Reduced checkout drop-off from nearly 60% to 22% by redesigning LuxTJ’s cart and checkout experience, restructuring dense travel information, improving hierarchy, and simplifying the path from review to payment.',
+  'Increased profile engagement by up to 70% for LuxTJ by redesigning an overwhelming profile experience into a clearer, guided journey with stronger entry points, progressive disclosure, and behavioural design principles.',
+  'Increased app opening rate by up to 60% by redesigning the gamified experience for ORRA Jewellery, applying behavioural design and Hook Model principles to make participation clearer and more engaging.',
+];
+
 export const socials = [
   {label: 'LinkedIn', href: 'https://linkedin.com/in/akshayproductdesigner'},
   {label: 'Behance', href: 'https://www.behance.net/akshayv7'},
@@ -50,86 +59,124 @@ export const featuredProjects = [
 
 export const experience = [
   {
-    company: 'Free UK Genealogy',
-    role: 'Volunteer UX Designer',
-    place: 'United Kingdom',
-    date: 'Jul 2026 — Present',
-    summary: 'Supporting the user experience of a free, volunteer-powered family-history service.',
-    contribution: 'Improving journeys, information structure and interface clarity across the service.',
-  },
-  {
-    company: 'The View Magazine CIC',
-    role: 'Volunteer UX/UI Designer',
-    place: 'United Kingdom',
-    date: 'Dec 2025 — Feb 2026',
-    summary: 'A mobile-first magazine experience that makes current and archived issues easier to discover and read.',
-    contribution: 'Information architecture, issue discovery, archive flow and responsive reading experience.',
-  },
-  {
-    company: 'LUXTJ Website & Extranet',
-    role: 'Contract UX/UI Designer',
+    company: 'LUXTJ',
+    role: 'Product Designer',
+    employment: 'Contract',
     place: 'Remote',
-    date: 'Aug 2025 — May 2026',
-    summary: 'A connected luxury-travel website and partner extranet spanning discovery, booking and operations.',
-    contribution: 'End-to-end product design across eight core modules, from flows and UI through developer handoff.',
+    date: 'Aug 2025 — Aug 2026',
+    summary: 'Reduced checkout drop-off from nearly 60% to 22% by redesigning LuxTJ’s cart and checkout experience, restructuring dense travel information, improving hierarchy, and simplifying the path from review to payment.',
+    bullets: [
+      'Reduced checkout drop-off from nearly 60% to 22% by redesigning LuxTJ’s cart and checkout experience, restructuring dense travel information, improving hierarchy, and simplifying the path from review to payment.',
+      'Increased engagement with the social profile experience by up to 70% by redesigning an overwhelming multi-page profile into a guided journey with clearer starting points and behavioural design principles.',
+      'Reduced friction in the hotel selection journey by benchmarking leading travel platforms and redesigning hotel detail pages to surface decision-critical information earlier and support faster progression towards checkout.',
+      'Increased add-to-cart rate from 24% to 58% by redesigning hotel detail pages to prioritise decision-critical information and guide users towards the next step.',
+      'Led end-to-end product design for the Luxury travel website and partner extranet, connecting customer-facing and operational workflows across web, mobile, and internal platforms.',
+    ],
   },
   {
-    company: 'Proficon Labs',
+    company: 'Proficonlabs',
     role: 'UX Designer',
-    place: 'Hyderabad, India',
-    date: 'Oct 2024 — Aug 2025',
-    summary: 'Enterprise dashboards, CRM workflows and an AI-supported website-building product.',
-    contribution: 'Simplified navigation, information-dense workflows and reusable interface patterns.',
+    employment: '',
+    place: 'India',
+    date: 'Oct 2024 — Sept 2025',
+    summary: 'Reduced onboarding drop-off from nearly 65% to 13% by redesigning Simpo AI’s complex website-creation flow around clearer task progression, simpler choices, and more focused AI-assisted interactions.',
+    bullets: [
+      'Reduced onboarding drop-off from nearly 65% to 13% by redesigning Simpo AI’s complex website-creation flow around clearer task progression, simpler choices, and more focused AI-assisted interactions.',
+      'Increased ORRA Jewellery app opening rate by up to 60% by redesigning the Tambola gamification experience, clarifying how users participate and applying behavioural design principles to encourage repeat engagement.',
+      'Improved task completion time by 25% by simplifying workflows across Simpo AI’s website builder, CRM, POS, social media, and business-management tools.',
+      'Resolved critical usability issues across a school management parent application, improving navigation, information hierarchy, and access to key academic and administrative tasks.',
+    ],
+  },
+  {
+    company: 'LUXTJ',
+    role: 'Product Designer',
+    employment: 'Freelance',
+    place: 'Remote',
+    date: 'Dec 2023 — Dec 2024',
+    summary: 'Designed 4+ end-to-end travel journeys and 50+ mobile screens across discovery, trip planning, booking, itinerary management, and post-booking experiences for a new luxury travel product.',
+    bullets: [
+      'Designed 4+ end-to-end travel journeys and 50+ mobile screens across discovery, trip planning, booking, itinerary management, and post-booking experiences for a new luxury travel product.',
+      'Established reusable interaction patterns and mobile design foundations that later supported the broader LuxTJ ecosystem across mobile and web.',
+    ],
   },
   {
     company: 'Halohues Studios',
-    role: 'UX/UI Designer',
-    place: 'Hyderabad, India',
+    role: 'UI/UX Designer',
+    employment: '',
+    place: 'India',
     date: 'Jan 2024 — Oct 2024',
-    summary: 'Responsive product experiences for client projects across web and mobile.',
-    contribution: 'Wireframes, high-fidelity UI, component systems and developer-ready handoff.',
-  },
-  {
-    company: 'LUXTJ Mobile Application',
-    role: 'Freelance UX/UI Designer',
-    place: 'Remote',
-    date: 'Dec 2023 — Aug 2024',
-    summary: 'A premium mobile journey for destination discovery, trip planning and booking.',
-    contribution: 'Designed the discover → compare → save → book journey and its core interaction patterns.',
+    summary: 'Reduced image conversion time by 40% by designing a simpler workflow for VFX artists, making technical controls easier to understand and reducing unnecessary steps in the conversion process.',
+    bullets: [
+      'Reduced image conversion time by 40% by designing a simpler workflow for VFX artists, making technical controls easier to understand and reducing unnecessary steps in the conversion process.',
+      'Increased lead conversion by 25% by redesigning a sales funnel application around clearer lead stages, better information hierarchy, and more focused user actions.',
+      'Increased employee productivity by 15% by designing an internal intranet platform that improved access to studio information, communication, and day-to-day operational workflows.',
+      'Designed a client-facing PDF generator that simplified document creation and export, reducing manual effort and making document management more efficient.',
+    ],
   },
   {
     company: 'Bratha (India) Private Limited',
-    role: 'UX/UI Designer',
-    place: 'Remote',
-    date: 'Jul 2023 — Oct 2023',
-    summary: 'A clearer, more consistent digital product experience across responsive breakpoints.',
-    contribution: 'Product flows, visual design, reusable components and engineering handoff.',
+    role: 'UI/UX Designer',
+    employment: '',
+    place: 'India',
+    date: 'July 2023 — Oct 2023',
+    summary: 'Improved app usability by 45% by redesigning core mobile journeys, simplifying navigation, reducing friction, and making service discovery easier for users.',
+    bullets: [
+      'Improved app usability by 45% by redesigning core mobile journeys, simplifying navigation, reducing friction, and making service discovery easier for users.',
+      'Improved operational efficiency by 40% by designing a cleaner-facing application and supporting a CRM that connected customers, cleaners, and internal operations.',
+    ],
   },
   {
-    company: 'Astro Sutra',
-    role: 'Freelance UX/UI Designer',
-    place: 'Remote',
-    date: 'Oct 2022 — Mar 2023',
-    summary: 'A mobile platform for astrologer discovery and consultation booking.',
-    contribution: 'Improved trust and clarity through profile structure, content hierarchy and focused actions.',
-  },
-  {
-    company: 'Match Scope',
-    role: 'Freelance UX/UI Designer',
-    place: 'Remote',
-    date: 'Jan 2022 — Jul 2022',
-    summary: 'An astrology-based match-prediction journey from onboarding to compatibility results.',
-    contribution: 'Turned complex inputs into step-by-step forms and easier-to-understand result screens.',
+    company: 'Freelance',
+    role: 'UI/UX Designer',
+    employment: '',
+    place: '',
+    date: 'July 2023 — Oct 2023',
+    summary: 'Designed and improved key mobile experiences for AstroSutraa, a consumer astrology platform that reached 100K+ Android downloads, focusing on clearer navigation, content discovery, and usability.',
+    bullets: [
+      'Designed and improved key mobile experiences for AstroSutraa, a consumer astrology platform that reached 100K+ Android downloads, focusing on clearer navigation, content discovery, and usability.',
+      'Designed UX flows and interactive prototypes for ScholarCube, simplifying core journeys across digital examinations, student interactions, and assessment workflows.',
+      'Designed user flows, wireframes, and high-fidelity interfaces for Match Skope, translating early business requirements into clear, development-ready product experiences.',
+    ],
   },
 ];
 
 export const capabilities = [
-  'Product strategy',
+  'Human-centred design',
+  'UX and Product strategy',
+  'Stakeholder management and facilitation',
   'User research',
-  'Information architecture',
+  'Information architecture (IA)',
+  'Design systems and DesignOps',
   'Interaction design',
-  'Prototyping',
-  'Design systems',
-  'Usability testing',
-  'Developer handoff',
+  'Prototyping and wireframing',
+  'Accessibility (WCAG 2.2 AA)',
+];
+
+export const toolsAndEnvironment = [
+  {label: 'Design tools', value: 'Figma, Whimsical'},
+  {label: 'Collaboration tools', value: 'Miro, FigJam, Notion, JIRA, Confluence'},
+  {label: 'Environment', value: 'Agile, Triad/Trio sync, Cross-functional'},
+];
+
+export const certifications = [
+  'Human-Computer Interaction: The Foundations of UX Design — Interaction Design Foundation',
+  'User Experience — Interaction Design Foundation',
+  'User Experience Certificate — Accenture',
+  'Enterprise Design Thinking Practitioner — IBM',
+  'UI/UX Design Course — DesignBoat',
+];
+
+export const education = [
+  {
+    course: 'Digital Design and Innovation',
+    institution: 'Heriot-Watt University',
+    place: 'Edinburgh, UK',
+    date: 'Sep 2025 — Sep 2026',
+  },
+  {
+    course: 'Bachelor of Engineering, Computer Science',
+    institution: 'The Oxford College of Education',
+    place: 'India',
+    date: 'Aug 2017 — Aug 2021',
+  },
 ];

@@ -51,7 +51,7 @@ export default function Home(){return <PageFrame>
   <section className="home-experience shell">
     <div className="editorial-heading reveal"><span>04</span><div><small>Recent experience</small><h2>A few places I&apos;ve been useful.</h2></div></div>
     <div className="simple-experience">
-      {experience.slice(0,4).map(item=><article className="reveal" key={item.company}><time>{item.date}</time><div><h3>{item.company}</h3><p>{item.role}</p></div><p>{item.summary}</p></article>)}
+      {experience.slice(0,4).map(item=><article className="reveal" key={`${item.company}-${item.date}`}><time>{item.date}</time><div><h3>{item.company}</h3><p>{item.role}{item.employment ? ` · ${item.employment}` : ''}</p></div><p>{item.summary}</p></article>)}
     </div>
     <Link className="text-link" href="/about#experience" data-cursor-label="Jump">Full experience <Arrow/></Link>
   </section>

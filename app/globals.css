@@ -396,6 +396,7 @@ p{color:var(--muted)}
 .timeline-copy time{display:block;font-size:11px;font-weight:700;margin-bottom:18px}
 .timeline-copy p{font-size:14px;margin-bottom:10px;max-width:650px}
 .timeline-copy p b{color:var(--ink)}
+.timeline-copy ul{margin:0;padding-left:18px;display:grid;gap:10px;max-width:680px}.timeline-copy li{font-size:14px;line-height:1.55;color:var(--muted)}
 .capability-list{display:grid;grid-template-columns:repeat(2,1fr);border-top:1px solid var(--line)}
 .capability-list>div{display:grid;grid-template-columns:55px 1fr;padding:20px 0;border-bottom:1px solid var(--line)}
 .capability-list>div:nth-child(odd){padding-right:40px;border-right:1px solid var(--line)}
@@ -451,6 +452,7 @@ p{color:var(--muted)}
 .resume-section>h2{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);padding-top:4px}.resume-summary>p{font-size:20px;line-height:1.48;color:var(--ink);max-width:900px;letter-spacing:-.02em}
 .resume-experience article,.resume-education article{display:grid;grid-template-columns:170px 1fr;gap:28px;padding:0 0 28px;margin-bottom:28px;border-bottom:1px solid var(--line)}.resume-experience article:last-child,.resume-education article:last-child{margin-bottom:0;border-bottom:0;padding-bottom:0}.resume-experience time,.resume-education time{font-size:10px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);padding-top:5px}.resume-experience h3,.resume-education h3{font-size:23px;margin-bottom:6px}.resume-experience strong{font-size:11px;color:var(--accent-deep)}.resume-experience p,.resume-education p{font-size:13px;margin-top:12px}.resume-experience p b{color:var(--ink)}
 .resume-skills{display:flex;flex-wrap:wrap;gap:8px}.resume-skills span{padding:9px 12px;border:1px solid var(--line);font-size:11px}
+.resume-achievements,.resume-certifications,.resume-experience ul{margin:0;padding-left:18px;display:grid;gap:11px}.resume-achievements li,.resume-certifications li,.resume-experience li{font-size:13px;line-height:1.55;color:var(--muted)}.resume-details{display:grid;gap:14px}.resume-details p{display:grid;grid-template-columns:150px 1fr;gap:22px;font-size:13px}.resume-details b{color:var(--ink)}.resume-details span{color:var(--muted)}
 
 /* Case study */
 .case-page{background:#f6f5f1}
@@ -683,7 +685,7 @@ p{color:var(--muted)}
 @media (max-width:760px){
   .home-game{padding:88px 0}.game-layout{grid-template-columns:1fr;gap:38px}.game-intro{position:static}.ux-game-card{min-height:560px;padding:28px 20px}.ux-game-card>h3{font-size:32px;margin:62px 0 34px}.game-options{grid-template-columns:1fr}.game-options button{min-height:70px}.game-feedback{grid-template-columns:1fr;gap:11px;padding:20px}.game-feedback button{width:max-content;margin-top:4px}.ux-game-result{grid-template-columns:1fr;align-content:start;padding-top:74px}.ux-game-result>button{left:20px;right:auto;bottom:28px}.ux-game-result strong{font-size:62px}.ux-game-result h3{font-size:32px}
   .origin-layout{grid-template-columns:1fr;gap:34px}.origin-layout h2{font-size:43px}.outside-section{grid-template-columns:1fr;gap:28px}
-  .resume-sheet{padding-top:72px}.resume-heading{grid-template-columns:1fr;gap:26px;padding-bottom:46px}.resume-heading h1{font-size:54px}.resume-contact{padding-top:0}.resume-section{grid-template-columns:1fr;gap:26px;padding:38px 0}.resume-experience article,.resume-education article{grid-template-columns:1fr;gap:8px}.resume-summary>p{font-size:17px}
+  .resume-sheet{padding-top:72px}.resume-heading{grid-template-columns:1fr;gap:26px;padding-bottom:46px}.resume-heading h1{font-size:54px}.resume-contact{padding-top:0}.resume-section{grid-template-columns:1fr;gap:26px;padding:38px 0}.resume-experience article,.resume-education article{grid-template-columns:1fr;gap:8px}.resume-summary>p{font-size:17px}.resume-details p{grid-template-columns:1fr;gap:4px}
 }
 
 @media (max-width:1020px){
