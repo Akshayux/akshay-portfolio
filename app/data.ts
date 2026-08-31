@@ -130,7 +130,7 @@ export const experience = [
     role: 'UI/UX Designer',
     employment: '',
     place: '',
-    date: 'July 2023 — Oct 2023',
+    date: 'Dec 2021 — June 2023',
     summary: 'Designed and improved key mobile experiences for AstroSutraa, a consumer astrology platform that reached 100K+ Android downloads, focusing on clearer navigation, content discovery, and usability.',
     bullets: [
       'Designed and improved key mobile experiences for AstroSutraa, a consumer astrology platform that reached 100K+ Android downloads, focusing on clearer navigation, content discovery, and usability.',
