@@ -27,7 +27,7 @@ const chapters=[
     label:'Checkout · Completion',
     title:'More information created less confidence.',
     question:'How do you keep essential trip details visible without making checkout feel endless?',
-    failed:'The first checkout page brought too much information into one place. Users felt overwhelmed and the journey showed a drop-off rate of nearly 60%.',
+    failed:'The original checkout brought every decision, policy and trip detail into one long page. Users had to scan through too much information at once, contributing to a drop-off rate of nearly 60%.',
     investigated:'I audited checkout patterns across travel platforms, comparing how they sequence travellers, itinerary details, pricing, policies and payment. The strongest examples reduced memory load without hiding consequences.',
     changed:'I reorganised checkout into decision-sized groups, kept the trip summary and price visible, made sections editable and moved supporting detail closer to the moment it was needed.',
     result:'22%',
