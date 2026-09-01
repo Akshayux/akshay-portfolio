@@ -61,9 +61,8 @@ const chapters=[
     result:'+70%',
     resultLabel:'time spent in the social profile experience',
     lesson:'Engagement grows when every small action reveals a meaningful next benefit.',
-    image:'/figma/case-13.png',
-    imageAlt:'LUXTJ traveller profile details interface',
-    imageClass:'lux-story-visual-tall',
+    image:'/figma/luxtj-profile-before-after.png',
+    imageAlt:'LUXTJ traveller profile before-and-after redesign comparison',
   },
 ] as const;
 
