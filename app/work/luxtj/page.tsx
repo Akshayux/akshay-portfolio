@@ -10,17 +10,17 @@ export const metadata:Metadata={
 const chapters=[
   {
     number:'01',
-    label:'Bucket List · Learnability',
-    title:'The feature existed. The idea did not land.',
-    question:'How do you teach a new travel-planning concept without making people study the interface?',
-    failed:'The original Bucket List opened like a form. Before entering anything, people spent about two minutes working out what the feature was for and where to begin.',
-    investigated:'I studied how product tours, progressive disclosure and demonstration-led layouts introduce unfamiliar features. The problem was not the fields themselves—it was asking for effort before showing value.',
-    changed:'I replaced the all-at-once form with a context-setting entry, a clear starting point and a progressive flow that demonstrated the benefit before asking for information.',
+    label:'Personal Travel Calendar · Learnability',
+    title:'A calendar of dates did not yet feel like a reason to travel.',
+    question:'How might personal milestones become useful travel inspiration without making setup feel like administration?',
+    failed:'The original Personal Travel Calendar opened with an unfamiliar setup flow. Before adding anything, people spent about two minutes working out what the feature was for, which dates belonged there and what would happen next.',
+    investigated:'I studied progressive disclosure, demonstration-led onboarding and familiar calendar patterns. The core issue was not entering a date—it was asking people to organise information before showing how the product could turn a birthday, anniversary or meaningful moment into a travel plan.',
+    changed:'I introduced the feature through recognisable personal moments, showed the travel-planning benefit first and created one clear path for adding a date. Recommendations and next steps then appeared progressively, keeping the calendar useful rather than making it another form to maintain.',
     result:'30–50 sec',
-    resultLabel:'to understand the feature, down from about 2 minutes',
-    lesson:'Explain the reward before asking users to invest effort.',
-    image:'/figma/case-20.png',
-    imageAlt:'Redesigned LUXTJ Bucket List discovery experience',
+    resultLabel:'to understand the Personal Travel Calendar, down from about 2 minutes',
+    lesson:'Show how a personal date becomes a meaningful plan before asking people to maintain it.',
+    image:'/figma/case-18.png',
+    imageAlt:'Redesigned LUXTJ Personal Travel Calendar experience',
     imageClass:'lux-story-visual-tall',
   },
   {
@@ -87,7 +87,7 @@ const supporting=[
   ['/figma/case-4.png','Flight selection','Shared patterns make duration, stops and fare conditions easier to compare.'],
   ['/figma/case-7.png','Hotel discovery','Filters, map context and richer results support a confident shortlist.'],
   ['/figma/case-12.png','Room selection','Policies, inclusions, price and the next action stay connected.'],
-  ['/figma/case-18.png','Travel Calendar','Saved ideas become a useful plan instead of a dead-end list.'],
+  ['/figma/case-20.png','Trip planning entry','A clear introduction explains the value before asking people to add information.'],
 ] as const;
 
 function CaseKicker({children}:{children:React.ReactNode}){return <span className="eyebrow case-eyebrow">{children}</span>}
@@ -106,7 +106,7 @@ export default function LuxtjPage(){return <main id="top" className="case-page l
   <section className="case-hero-media lux-hero-media reveal" data-parallax><img src="/figma/case-17.png" alt="LUXTJ luxury-travel website shown on a desktop display"/></section>
 
   <section className="lux-impact case-wide reveal" aria-label="Selected project outcomes">
-    <div><strong>2 min → 30–50 sec</strong><span>Bucket List comprehension</span></div>
+    <div><strong>2 min → 30–50 sec</strong><span>Travel Calendar comprehension</span></div>
     <div><strong>~60%</strong><span>Checkout drop-off surfaced</span></div>
     <div><strong>22% faster</strong><span>Checkout completion</span></div>
     <div><strong>+70%</strong><span>Social-profile engagement</span></div>
@@ -114,10 +114,10 @@ export default function LuxtjPage(){return <main id="top" className="case-page l
 
   <section className="lux-skim case-wide reveal" aria-label="LUXTJ case study at a glance">
     <div><CaseKicker>At a glance</CaseKicker><small>90-second summary</small></div>
-    <ul><li><b>The problem</b><p>The first version asked people to interpret forms, dense checkout and an unstructured profile before showing value.</p></li><li><b>What I changed</b><p>I rebuilt four journeys around one clear starting point, progressive disclosure and the next decision.</p></li><li><b>What resulted</b><p>People understood Bucket List in 30–50 sec, checkout completed 22% faster and profile engagement rose 70%.</p></li></ul>
+    <ul><li><b>The problem</b><p>The first version asked people to configure a Personal Travel Calendar, interpret dense checkout and navigate an unstructured profile before showing value.</p></li><li><b>What I changed</b><p>I rebuilt four journeys around one clear starting point, progressive disclosure and the next decision.</p></li><li><b>What resulted</b><p>People understood the Personal Travel Calendar in 30–50 sec, checkout completed 22% faster and profile engagement rose 70%.</p></li></ul>
   </section>
 
-  <section className="case-section case-wide ecosystem-section reveal" id="ecosystem"><CaseKicker>The product I was shaping</CaseKicker><h2>One travel idea. Several moments that had to feel like one journey.</h2><div className="ecosystem-cards"><article><img className="ecosystem-device-image ecosystem-mobile-image" src="/figma/case-11.png" alt="Three LUXTJ mobile application screens showing a package, hotel and bucket list"/><span>Mobile app</span><h3>Inspiration in the pocket</h3><p>Discover destinations, save ideas and return when a trip becomes real.</p></article><article><img className="ecosystem-device-image" src="/figma/luxtj-customer-website-laptop.png" alt="LUXTJ customer website displayed on a laptop"/><span>Customer website</span><h3>Space to compare and plan</h3><p>Explore, evaluate and assemble a complex trip with more context.</p></article><article><img className="ecosystem-device-image" src="/figma/luxtj-partner-extranet-laptop.png" alt="LUXTJ partner extranet flight-search interface displayed on a laptop"/><span>Partner extranet</span><h3>Operations behind the promise</h3><p>Manage content, availability, pricing and bookings behind the customer experience.</p></article></div></section>
+  <section className="case-section case-wide ecosystem-section reveal" id="ecosystem"><CaseKicker>The product I was shaping</CaseKicker><h2>One travel idea. Several moments that had to feel like one journey.</h2><div className="ecosystem-cards"><article><img className="ecosystem-device-image ecosystem-mobile-image" src="/figma/case-11.png" alt="Three LUXTJ mobile application screens showing a package, hotel and personal travel list"/><span>Mobile app</span><h3>Inspiration in the pocket</h3><p>Discover destinations, save ideas and return when a trip becomes real.</p></article><article><img className="ecosystem-device-image" src="/figma/luxtj-customer-website-laptop.png" alt="LUXTJ customer website displayed on a laptop"/><span>Customer website</span><h3>Space to compare and plan</h3><p>Explore, evaluate and assemble a complex trip with more context.</p></article><article><img className="ecosystem-device-image" src="/figma/luxtj-partner-extranet-laptop.png" alt="LUXTJ partner extranet flight-search interface displayed on a laptop"/><span>Partner extranet</span><h3>Operations behind the promise</h3><p>Manage content, availability, pricing and bookings behind the customer experience.</p></article></div></section>
 
   <section className="case-section case-narrow lux-origin" id="failure">
     <div className="case-split"><div className="reveal"><CaseKicker>The uncomfortable start</CaseKicker><h2>My first mistake was designing for completeness before comprehension.</h2></div><div className="reveal"><p>The initial product tried to expose the richness of luxury travel immediately. In practice, that richness became work. New concepts looked like forms, checkout became an information wall, and profile options appeared without a reason to begin.</p><blockquote><small>What changed my direction</small>A finished-looking screen can still fail if a person cannot explain what it is for, what to do first or what happens next.</blockquote></div></div>
