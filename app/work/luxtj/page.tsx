@@ -33,8 +33,8 @@ const chapters=[
     result:'22%',
     resultLabel:'reduction in checkout completion time after redesign',
     lesson:'Fast checkout is created by hierarchy and recovery—not by removing every detail.',
-    image:'/figma/case-3.png',
-    imageAlt:'Redesigned LUXTJ checkout and trip summary page',
+    image:'/figma/luxtj-checkout-before-after.png',
+    imageAlt:'LUXTJ checkout before-and-after redesign comparison',
   },
   {
     number:'03',
