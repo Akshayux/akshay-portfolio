@@ -483,6 +483,7 @@ p{color:var(--muted)}
 .ecosystem-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
 .ecosystem-cards article{padding:14px 14px 28px;border:1px solid var(--line);border-radius:20px;background:var(--paper);overflow:hidden}
 .ecosystem-cards img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px;margin-bottom:24px;background:#ddd}
+.ecosystem-cards img.ecosystem-device-image{object-fit:contain;padding:6px;background:#f1f1ef}
 .ecosystem-cards article>span,.ecosystem-cards h3,.ecosystem-cards p{display:block;margin-inline:10px}
 .ecosystem-cards h3{font-size:23px;margin-top:26px;margin-bottom:12px}
 .ecosystem-cards p{font-size:13px}
