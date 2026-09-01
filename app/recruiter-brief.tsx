@@ -37,7 +37,12 @@ export default function RecruiterBrief(){
 
         <section className="recruiter-rationale"><span>Why I designed this brief</span><div><h3>I solved the portfolio-search problem for you too.</h3><p>Recruiters often have minutes—not hours—to understand a portfolio. I made this brief so you do not have to go through every page and assemble the signal yourself. It puts the answer in one place: what I solve, evidence that I have solved it before, and the skills I can bring to your organisation.</p></div></section>
 
-        <div className="recruiter-proof" aria-label="Selected product outcomes"><div><strong>65% → 13%</strong><span>Onboarding drop-off</span></div><div><strong>60% → 22%</strong><span>Checkout drop-off</span></div><div><strong>Up to +70%</strong><span>Profile engagement</span></div><div><strong>Up to +60%</strong><span>App opening rate</span></div></div>
+        <div className="recruiter-proof" aria-label="Selected product outcomes">
+          <div><strong>65% → 13%</strong><div><span>Onboarding drop-off</span><small><Link href="/work#proficonlabs">Proficonlabs · Simpo AI</Link></small></div></div>
+          <div><strong>60% → 22%</strong><div><span>Checkout drop-off</span><small><Link href="/work/luxtj">LUXTJ · checkout</Link></small></div></div>
+          <div><strong>Up to +70%</strong><div><span>Profile engagement</span><small><Link href="/work/luxtj">LUXTJ · profile</Link></small></div></div>
+          <div><strong>Up to +60%</strong><div><span>App opening rate</span><small><Link href="/work#orra-jewellery">ORRA Jewellery</Link></small></div></div>
+        </div>
 
         <section className="recruiter-intro recruiter-why"><span>01 / Why me</span><div><h3>I make ambiguity useful.</h3><p>Hire me when you need a Product or UX Designer who can diagnose why a journey is failing—not only make the interface look better.</p><div className="recruiter-why-grid"><article><strong>I find the real cause</strong><p>I connect user behaviour, business needs and system constraints before choosing a solution.</p></article><article><strong>I design measurable change</strong><p>I turn research into clearer journeys and track whether the redesign actually improved behaviour.</p></article><article><strong>I use AI with judgement</strong><p>I use tools such as ChatGPT, Claude and Figma AI to explore, synthesise and stress-test ideas—always grounded in human insight.</p></article></div></div></section>
 
