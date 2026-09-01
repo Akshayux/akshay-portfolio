@@ -74,12 +74,12 @@ export const experience = [
     ],
   },
   {
-    company: 'Proficonlabs',
+    company: 'Proficon Labs',
     role: 'UX Designer',
     employment: '',
     place: 'India',
-    date: 'Oct 2024 — Sept 2025',
-    summary: 'Reduced onboarding drop-off from nearly 65% to 13% by redesigning Simpo AI’s complex website-creation flow around clearer task progression, simpler choices, and more focused AI-assisted interactions.',
+    date: 'Oct 2024 — Aug 2025',
+    summary: 'Enterprise dashboards, CRM workflows and an AI-supported website-building product — including Orra Jewellery, a Tambola-based rewards experience redesigned around a clearer game loop.',
     bullets: [
       'Reduced onboarding drop-off from nearly 65% to 13% by redesigning Simpo AI’s complex website-creation flow around clearer task progression, simpler choices, and more focused AI-assisted interactions.',
       'Increased ORRA Jewellery app opening rate by up to 60% by redesigning the Tambola gamification experience, clarifying how users participate and applying behavioural design principles to encourage repeat engagement.',

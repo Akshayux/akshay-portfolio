@@ -358,6 +358,7 @@ p{color:var(--muted)}
 .work-snapshot h3{font-size:24px;margin-bottom:8px}
 .work-snapshot strong{font-size:12px;color:var(--accent-deep)}
 .work-snapshot>p{font-size:14px}
+.work-snapshot .inline-case-link{color:var(--accent-deep);font-weight:700;border-bottom:1px solid currentColor}
 .work-snapshot dl{font-size:12px}
 .work-snapshot dl>div{display:grid;grid-template-columns:76px 1fr;gap:8px;margin-bottom:10px}
 .work-snapshot dt{color:var(--muted)}
