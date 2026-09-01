@@ -211,6 +211,8 @@ export default function Motion({children}:{children:ReactNode}){
       if(cursorTargetRef.current===next)return;
       cursorTargetRef.current=next;
       cursor?.classList.toggle('is-interactive',Boolean(next));
+      const label=cursor?.querySelector<HTMLElement>('.cursor-label');
+      if(label)label.textContent=next?.dataset.cursorLabel||'';
     };
     const onPointerMove=(event:PointerEvent)=>{
       if(event.pointerType==='touch')return;
@@ -260,6 +262,7 @@ export default function Motion({children}:{children:ReactNode}){
     <motion.div className="page-curtain" initial={{scaleY:0}} animate={{scaleY:0}} transition={{duration:0}} aria-hidden="true"/>
     <motion.div ref={cursorRef} className="custom-cursor" style={{x:smoothCursorX,y:smoothCursorY}} aria-hidden="true">
       <span className="cursor-arrow"><svg viewBox="0 0 28 28"><path className="cursor-arrow-body" d="M4 3.5 21.5 12 14 14.2 11 22Z"/><path className="cursor-arrow-spark" d="M21 3.5c.3 2.1 1.4 3.2 3.5 3.5-2.1.3-3.2 1.4-3.5 3.5-.3-2.1-1.4-3.2-3.5-3.5 2.1-.3 3.2-1.4 3.5-3.5Z"/></svg></span>
+      <span className="cursor-label"/>
     </motion.div>
     {children}
   </>;
