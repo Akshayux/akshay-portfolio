@@ -19,9 +19,8 @@ const chapters=[
     result:'30–50 sec',
     resultLabel:'to understand the Personal Travel Calendar, down from about 2 minutes',
     lesson:'Show how a personal date becomes a meaningful plan before asking people to maintain it.',
-    image:'/figma/case-18.png',
+    image:'/figma/luxtj-ptc-before-after.png',
     imageAlt:'Redesigned LUXTJ Personal Travel Calendar experience',
-    imageClass:'lux-story-visual-tall',
   },
   {
     number:'02',
