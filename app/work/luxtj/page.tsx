@@ -85,7 +85,7 @@ const supporting=[
   ['/figma/case-4.png','Flight selection','Shared patterns make duration, stops and fare conditions easier to compare.'],
   ['/figma/case-7.png','Hotel discovery','Filters, map context and richer results support a confident shortlist.'],
   ['/figma/case-12.png','Room selection','Policies, inclusions, price and the next action stay connected.'],
-  ['/figma/case-20.png','Trip planning entry','A clear introduction explains the value before asking people to add information.'],
+  ['/figma/luxtj-begin-your-journey.png','Trip planning entry','A clear introduction explains the value before asking people to add information.'],
 ] as const;
 
 function CaseKicker({children}:{children:React.ReactNode}){return <span className="eyebrow case-eyebrow">{children}</span>}
