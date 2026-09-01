@@ -67,13 +67,14 @@ p{color:var(--muted)}
 .preloader-open,.preloader-open body{overflow:hidden}
 .custom-cursor{position:fixed;z-index:1000;left:0;top:0;width:28px;height:28px;pointer-events:none;opacity:0;transition:opacity .16s ease}
 .custom-cursor.is-visible{opacity:1}
+.custom-cursor.is-button{opacity:0}
 .cursor-arrow{width:23px;height:23px;display:block;transform-origin:5px 5px;filter:drop-shadow(0 2px 4px rgba(20,20,20,.14));transition:transform .24s cubic-bezier(.22,1,.36,1),filter .2s ease}.cursor-arrow svg{display:block;width:100%;height:100%;overflow:visible}.cursor-arrow-body{fill:var(--ink);stroke:var(--paper);stroke-width:1.05;stroke-linejoin:round}.cursor-arrow-spark{fill:var(--ink);opacity:0;transform:rotate(-20deg) scale(.35);transform-origin:21px 7px;transition:opacity .18s ease,transform .24s cubic-bezier(.22,1,.36,1)}
 .custom-cursor.is-interactive .cursor-arrow{transform:rotate(-4deg) scale(1.04);filter:drop-shadow(0 2px 4px rgba(20,20,20,.18))}.custom-cursor.is-interactive .cursor-arrow-spark{opacity:1;transform:rotate(0) scale(1)}
 .cursor-label{position:absolute;left:24px;top:19px;display:block;padding:5px 8px;border-radius:999px;background:var(--ink);color:var(--paper);font-size:8px;font-weight:750;line-height:1;text-transform:uppercase;letter-spacing:.1em;white-space:nowrap;opacity:0;transform:translate(-3px,-2px) scale(.88);transform-origin:left center;transition:opacity .16s ease,transform .22s cubic-bezier(.22,1,.36,1)}.custom-cursor.is-interactive .cursor-label{opacity:1;transform:translate(0,0) scale(1)}
 .custom-cursor.is-pressed .cursor-arrow,.custom-cursor.is-interactive.is-pressed .cursor-arrow{transform:rotate(-7deg) scale(.84)}
 .reduce-motion *{scroll-behavior:auto!important;animation:none!important;transition:none!important}
 
-@media (pointer:fine){body,a,button,input,textarea,select{cursor:none}}
+@media (pointer:fine){body,a,button,input,textarea,select{cursor:none}button[data-cursor-label]{cursor:pointer}}
 @media (pointer:coarse){.custom-cursor{display:none}}
 
 /* Navigation */

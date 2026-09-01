@@ -211,6 +211,7 @@ export default function Motion({children}:{children:ReactNode}){
       if(cursorTargetRef.current===next)return;
       cursorTargetRef.current=next;
       cursor?.classList.toggle('is-interactive',Boolean(next));
+      cursor?.classList.toggle('is-button',next?.tagName==='BUTTON');
       const label=cursor?.querySelector<HTMLElement>('.cursor-label');
       if(label)label.textContent=next?.dataset.cursorLabel||'';
     };
@@ -225,7 +226,7 @@ export default function Motion({children}:{children:ReactNode}){
     const onPointerOut=(event:PointerEvent)=>{if(event.pointerType!=='touch')setCursorTarget(event.relatedTarget)};
     const onPointerDown=()=>cursor?.classList.add('is-pressed');
     const onPointerUp=()=>cursor?.classList.remove('is-pressed');
-    const onPointerLeave=()=>{cursor?.classList.remove('is-visible','is-interactive','is-pressed');cursorTargetRef.current=null;};
+    const onPointerLeave=()=>{cursor?.classList.remove('is-visible','is-interactive','is-button','is-pressed');cursorTargetRef.current=null;};
     window.addEventListener('pointermove',onPointerMove,{passive:true});
     document.addEventListener('pointerover',onPointerOver,{passive:true});
     document.addEventListener('pointerout',onPointerOut,{passive:true});
