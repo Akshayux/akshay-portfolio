@@ -259,7 +259,7 @@ export default function Motion({children}:{children:ReactNode}){
     <motion.div className="scroll-progress" style={{scaleX:progress}} aria-hidden="true"/>
     <motion.div className="page-curtain" initial={{scaleY:0}} animate={{scaleY:0}} transition={{duration:0}} aria-hidden="true"/>
     <motion.div ref={cursorRef} className="custom-cursor" style={{x:smoothCursorX,y:smoothCursorY}} aria-hidden="true">
-      <span className="cursor-arrow"><svg viewBox="0 0 28 28"><path className="cursor-arrow-body" d="M4.1 2.9 23 11.8c.9.4.8 1.7-.2 1.9l-7.7 1.8-3.8 7.2c-.5.9-1.8.7-2.1-.2L2.7 4.6c-.4-1.1.4-2.2 1.4-1.7Z"/><circle className="cursor-arrow-dot" cx="7.2" cy="7.1" r="1.45"/></svg></span>
+      <span className="cursor-arrow"><svg viewBox="0 0 28 28"><path className="cursor-arrow-body" d="M4 3.5 21.5 12 14 14.2 11 22Z"/><path className="cursor-arrow-spark" d="M21 3.5c.3 2.1 1.4 3.2 3.5 3.5-2.1.3-3.2 1.4-3.5 3.5-.3-2.1-1.4-3.2-3.5-3.5 2.1-.3 3.2-1.4 3.5-3.5Z"/></svg></span>
     </motion.div>
     {children}
   </>;

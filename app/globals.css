@@ -67,9 +67,9 @@ p{color:var(--muted)}
 .preloader-open,.preloader-open body{overflow:hidden}
 .custom-cursor{position:fixed;z-index:1000;left:0;top:0;width:28px;height:28px;pointer-events:none;opacity:0;transition:opacity .16s ease}
 .custom-cursor.is-visible{opacity:1}
-.cursor-arrow{width:25px;height:25px;display:block;transform-origin:5px 5px;filter:drop-shadow(0 3px 5px rgba(20,20,20,.16));transition:transform .28s cubic-bezier(.22,1,.36,1),filter .2s ease}.cursor-arrow svg{display:block;width:100%;height:100%;overflow:visible}.cursor-arrow-body{fill:rgba(247,244,236,.98);stroke:var(--accent);stroke-width:1.45;stroke-linejoin:round;transition:fill .2s ease,stroke .2s ease}.cursor-arrow-dot{fill:var(--accent);transition:fill .2s ease}
-.custom-cursor.is-interactive .cursor-arrow{transform:rotate(-8deg) scale(.88);filter:drop-shadow(0 2px 4px rgba(54,85,245,.22))}.custom-cursor.is-interactive .cursor-arrow-body{fill:var(--accent);stroke:var(--ink)}.custom-cursor.is-interactive .cursor-arrow-dot{fill:var(--white)}
-.custom-cursor.is-pressed .cursor-arrow,.custom-cursor.is-interactive.is-pressed .cursor-arrow{transform:rotate(-13deg) scale(.74)}
+.cursor-arrow{width:23px;height:23px;display:block;transform-origin:5px 5px;filter:drop-shadow(0 2px 4px rgba(20,20,20,.14));transition:transform .24s cubic-bezier(.22,1,.36,1),filter .2s ease}.cursor-arrow svg{display:block;width:100%;height:100%;overflow:visible}.cursor-arrow-body{fill:var(--ink);stroke:var(--paper);stroke-width:1.05;stroke-linejoin:round}.cursor-arrow-spark{fill:var(--ink);opacity:0;transform:rotate(-20deg) scale(.35);transform-origin:21px 7px;transition:opacity .18s ease,transform .24s cubic-bezier(.22,1,.36,1)}
+.custom-cursor.is-interactive .cursor-arrow{transform:rotate(-4deg) scale(1.04);filter:drop-shadow(0 2px 4px rgba(20,20,20,.18))}.custom-cursor.is-interactive .cursor-arrow-spark{opacity:1;transform:rotate(0) scale(1)}
+.custom-cursor.is-pressed .cursor-arrow,.custom-cursor.is-interactive.is-pressed .cursor-arrow{transform:rotate(-7deg) scale(.84)}
 .reduce-motion *{scroll-behavior:auto!important;animation:none!important;transition:none!important}
 
 @media (pointer:fine){body,a,button,input,textarea,select{cursor:none}}
