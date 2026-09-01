@@ -47,8 +47,8 @@ const chapters=[
     result:'Shorter path',
     resultLabel:'from hotel consideration to checkout, observed after redesign',
     lesson:'A useful detail page does not show everything equally—it answers the next decision first.',
-    image:'/figma/case-14.png',
-    imageAlt:'Redesigned LUXTJ hotel room selection page',
+    image:'/figma/luxtj-hotel-before-after.png',
+    imageAlt:'LUXTJ hotel selection before-and-after redesign comparison',
   },
   {
     number:'04',
