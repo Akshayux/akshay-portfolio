@@ -1,5 +1,11 @@
 const recommendations = [
   {
+    name: 'Gaurav Sharma',
+    role: 'Founder & Product Builder · Simpo.ai',
+    perspective: 'Product leadership',
+    quote: "Akshay brought absolute clarity to our wireframe handoffs. He was remarkably receptive to technical constraints and team feedback. He don’t just design pretty screens, he question assumptions, validate ideas through quick usability testing, and document their design systems so engineering handoffs are seamless. Any product team would be lucky to have Akshay's creative problem-solving skills.",
+  },
+  {
     name: 'Harish Vithan',
     role: 'UX Lead · Proficon Labs',
     perspective: 'UX leadership',
@@ -16,12 +22,6 @@ const recommendations = [
     role: 'Senior Flutter Developer',
     perspective: 'Development',
     quote: 'He communicated his ideas clearly, was open to feedback, and worked closely with the development team to make sure the designs were practical and delivered as intended.',
-  },
-  {
-    name: 'Gaurav Sharma',
-    role: 'Founder & Product Builder · Simpo.ai',
-    perspective: 'Product leadership',
-    quote: "Akshay brought absolute clarity to our wireframe handoffs. He was remarkably receptive to technical constraints and team feedback. He don’t just design pretty screens, he question assumptions, validate ideas through quick usability testing, and document their design systems so engineering handoffs are seamless. Any product team would be lucky to have Akshay's creative problem-solving skills.",
   },
 ];
 
