@@ -36,6 +36,7 @@ export default function Home(){return <PageFrame>
       <div className="home-about-image reveal" data-parallax><img src="/figma/about-photo-v2.png" alt="Akshay by the coast"/><span>Outside the screen / UK</span></div>
       <div className="home-about-copy reveal">
         <p className="large-copy">My computer science degree taught me how digital systems are built. I became more interested in what happened on the other side of the screen—why a logical flow could still confuse someone, or why a useful feature went untouched.</p>
+        <p>Playing Rainbow Six Siege sharpened that curiosity. I started noticing how small interaction cues, feedback loops and split-second decisions shaped what players understood—and what they did next.</p>
         <p>That curiosity moved me into Product and UX Design. For more than five years, I&apos;ve worked with founders, engineers and stakeholders across travel, enterprise and service products—turning early ideas, constraints and edge cases into journeys people can actually follow.</p>
         <dl className="designer-story" aria-label="My path into product and UX design">
           <div><dt>Foundation</dt><dd>Computer science</dd></div>
