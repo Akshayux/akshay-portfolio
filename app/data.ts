@@ -41,7 +41,7 @@ export const featuredProjects = [
     label: 'Luxury travel · Partner operations',
     description: 'The operational product behind listings, bookings, staff, offers and payments.',
     outcome: 'Brought scattered partner tasks into one workspace so teams could manage the trip behind the promise.',
-    image: '/figma/case-1.png',
+    image: '/figma/luxtj-extranet-booking-dashboard.png',
     href: '/work/luxtj-extranet',
     tags: ['UX design', 'Enterprise', 'Design system'],
   },
