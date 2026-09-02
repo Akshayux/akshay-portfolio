@@ -51,7 +51,7 @@ export const featuredProjects = [
     label: 'University project · Digital health',
     description: 'An evidence-informed care-navigation concept designed around safety, clarity and continuity.',
     outcome: 'Gives people a safer way to understand what happens next while they wait for human care.',
-    image: '/scotcare/overview.png',
+    image: '/scotcare/mobile-mockup-cover.png',
     href: '/work/scotcare',
     tags: ['Research', 'Service design', 'Mobile'],
   },
