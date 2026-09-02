@@ -63,28 +63,13 @@ export const experience = [
     role: 'Product Designer',
     employment: 'Contract',
     place: 'Remote',
-    date: 'Aug 2025 — Aug 2026',
-    summary: 'Reduced checkout drop-off from nearly 60% to 22% by redesigning LuxTJ’s cart and checkout experience, restructuring dense travel information, improving hierarchy, and simplifying the path from review to payment.',
+    date: 'Sept 2025 — Aug 2026',
+    summary: 'Ran usability testing on the existing checkout flow to identify the top three friction points, then restructured information hierarchy and simplified the review-to-payment path, cutting checkout drop-off from 60% to 22%.',
     bullets: [
-      'Reduced checkout drop-off from nearly 60% to 22% by redesigning LuxTJ’s cart and checkout experience, restructuring dense travel information, improving hierarchy, and simplifying the path from review to payment.',
-      'Increased engagement with the social profile experience by up to 70% by redesigning an overwhelming multi-page profile into a guided journey with clearer starting points and behavioural design principles.',
-      'Reduced friction in the hotel selection journey by benchmarking leading travel platforms and redesigning hotel detail pages to surface decision-critical information earlier and support faster progression towards checkout.',
+      'Ran usability testing on the existing checkout flow to identify the top three friction points, then restructured information hierarchy and simplified the review-to-payment path, cutting checkout drop-off from 60% to 22%.',
+      'Audited the existing multi-page profile experience to identify where users disengaged, then rebuilt it into a guided journey using progressive disclosure and clearer entry points, lifting profile engagement by up to 70%.',
       'Increased add-to-cart rate from 24% to 58% by redesigning hotel detail pages to prioritise decision-critical information and guide users towards the next step.',
       'Led end-to-end product design for the Luxury travel website and partner extranet, connecting customer-facing and operational workflows across web, mobile, and internal platforms.',
-    ],
-  },
-  {
-    company: 'Proficon Labs',
-    role: 'UX Designer',
-    employment: '',
-    place: 'India',
-    date: 'Oct 2024 — Aug 2025',
-    summary: 'Enterprise dashboards, CRM workflows and an AI-supported website-building product — including Orra Jewellery, a Tambola-based rewards experience redesigned around a clearer game loop.',
-    bullets: [
-      'Reduced onboarding drop-off from nearly 65% to 13% by redesigning Simpo AI’s complex website-creation flow around clearer task progression, simpler choices, and more focused AI-assisted interactions.',
-      'Increased ORRA Jewellery app opening rate by up to 60% by redesigning the Tambola gamification experience, clarifying how users participate and applying behavioural design principles to encourage repeat engagement.',
-      'Improved task completion time by 25% by simplifying workflows across Simpo AI’s website builder, CRM, POS, social media, and business-management tools.',
-      'Resolved critical usability issues across a school management parent application, improving navigation, information hierarchy, and access to key academic and administrative tasks.',
     ],
   },
   {
@@ -97,6 +82,20 @@ export const experience = [
     bullets: [
       'Designed 4+ end-to-end travel journeys and 50+ mobile screens across discovery, trip planning, booking, itinerary management, and post-booking experiences for a new luxury travel product.',
       'Established reusable interaction patterns and mobile design foundations that later supported the broader LuxTJ ecosystem across mobile and web.',
+    ],
+  },
+  {
+    company: 'Proficonlabs',
+    role: 'UX Designer',
+    employment: '',
+    place: 'India',
+    date: 'Oct 2024 — Sept 2025',
+    summary: 'Conducted AI-interaction research on Simpo AI’s website-creation flow to pinpoint where users abandoned the process, then rebuilt it around clearer task progression and simpler choices, cutting onboarding drop-off from nearly 65% to 13%.',
+    bullets: [
+      'Conducted AI-interaction research on Simpo AI’s website-creation flow to pinpoint where users abandoned the process, then rebuilt it around clearer task progression and simpler choices, cutting onboarding drop-off from nearly 65% to 13%.',
+      'Mapped user engagement with the Tambola gamification feature and redesigned it around behavioural design principles to encourage repeat visits, lifting ORRA Jewellery’s app opening rate by up to 60%.',
+      'Improved task completion time by 25% by simplifying workflows across Simpo AI’s website builder, CRM, POS, social media, and business-management tools.',
+      'Resolved critical usability issues across a school management parent application, improving navigation, information hierarchy, and access to key academic and administrative tasks.',
     ],
   },
   {
@@ -114,7 +113,7 @@ export const experience = [
     ],
   },
   {
-    company: 'Bratha (India) Private Limited',
+    company: 'Bratha Private Limited',
     role: 'UI/UX Designer',
     employment: '',
     place: 'India',
