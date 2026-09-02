@@ -17,6 +17,12 @@ const recommendations = [
     perspective: 'Development',
     quote: 'He communicated his ideas clearly, was open to feedback, and worked closely with the development team to make sure the designs were practical and delivered as intended.',
   },
+  {
+    name: 'Gaurav Sharma',
+    role: 'Founder & Product Builder · Simpo.ai',
+    perspective: 'Product leadership',
+    quote: "Akshay brought absolute clarity to our wireframe handoffs. He was remarkably receptive to technical constraints and team feedback. He don’t just design pretty screens, he question assumptions, validate ideas through quick usability testing, and document their design systems so engineering handoffs are seamless. Any product team would be lucky to have Akshay's creative problem-solving skills.",
+  },
 ];
 
 export default function TestimonialsReveal() {
@@ -67,7 +73,7 @@ export default function TestimonialsReveal() {
       <div className="recommendation-heading reveal">
         <span>Recommendations</span>
         <h3>People who worked closely with me.</h3>
-        <p>Three perspectives on ownership, collaboration and getting design into production.</p>
+        <p>Four perspectives on ownership, collaboration and getting design into production.</p>
       </div>
 
       <div className="recommendation-grid" aria-label="Recommendations from collaborators">
