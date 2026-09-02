@@ -238,7 +238,7 @@ p{color:var(--muted)}
 .project-media::after{opacity:.38;transition:opacity .5s ease,background .5s ease}
 .project-media>span{display:none}
 .project-media img{border-radius:3px;box-shadow:0 20px 50px rgba(0,0,0,.2)}
-@media (hover:hover) and (pointer:fine){.project-feature:hover{transform:translateY(-7px);box-shadow:0 24px 70px rgba(20,20,20,.18)}.project-feature:hover .project-media::after{opacity:.78;background:linear-gradient(125deg,rgba(255,255,255,.3),rgba(54,85,245,.08) 52%,transparent 72%)}.project-feature:hover .project-media img{box-shadow:0 28px 68px rgba(0,0,0,.27)}.project-feature:hover .project-arrow{transform:rotate(45deg);background:var(--accent);border-color:var(--accent);color:var(--ink)}}
+@media (hover:hover) and (pointer:fine){.project-feature:hover{transform:translateY(-7px);box-shadow:0 24px 70px rgba(20,20,20,.18)}.project-feature:hover .project-media::after{opacity:.78;background:linear-gradient(125deg,rgba(255,255,255,.3),rgba(54,85,245,.08) 52%,transparent 72%)}.project-feature:hover .project-media img{box-shadow:0 28px 68px rgba(0,0,0,.27)}.project-feature:hover .project-arrow{transform:rotate(45deg);background:var(--accent);border-color:var(--accent);color:var(--white)}}
 .project-body{padding:42px 38px 32px;min-height:570px;position:relative}
 .project-index{display:none}
 .project-body h3{font-size:clamp(56px,5.2vw,78px);margin:0 0 20px}
