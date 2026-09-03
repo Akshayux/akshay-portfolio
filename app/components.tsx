@@ -51,7 +51,7 @@ export function ProjectFeature({compact=false}:{compact?:boolean}){
   return <article className={`project-feature reveal ${compact?'project-feature-compact':''}`}>
     <div className="project-topline"><span>Selected work / 01</span><span>Luxury travel · Customer experience</span></div>
     <Link className="project-media" href="/work/luxtj" aria-label="Read the LUXTJ case study" data-parallax data-cursor-label="View">
-      <img src="/figma/case-17.png" alt="LUXTJ luxury-travel booking website"/>
+      <img src="/figma/luxtj-main.png" alt="LUXTJ personalised luxury-travel experience displayed on a laptop"/>
     </Link>
     <div className="project-body">
       <h3>LUXTJ</h3>

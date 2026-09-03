@@ -101,7 +101,7 @@ export default function LuxtjPage(){return <main id="top" className="case-page l
     </dl>
   </section>
 
-  <section className="case-hero-media lux-hero-media reveal" data-parallax><img src="/figma/case-17.png" alt="LUXTJ luxury-travel website shown on a desktop display"/></section>
+  <section className="case-hero-media lux-hero-media reveal" data-parallax><img src="/figma/luxtj-main.png" alt="LUXTJ personalised luxury-travel experience displayed on a laptop"/></section>
 
   <section className="lux-impact case-wide reveal" aria-label="Selected project outcomes">
     <div><strong>2 min → 30–50 sec</strong><span>Travel Calendar comprehension</span></div>

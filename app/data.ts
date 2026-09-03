@@ -32,7 +32,7 @@ export const featuredProjects = [
     description: 'A connected journey for discovering, comparing, planning and booking luxury travel.',
     outcome: 'Made the high-stakes moments—hotel choice, checkout and profile setup—easier to understand and complete.',
     signal: 'Decision confidence · End-to-end product design',
-    image: '/figma/case-17.png',
+    image: '/figma/luxtj-main.png',
     href: '/work/luxtj',
     tags: ['Product design', 'Web', 'Travel'],
   },
