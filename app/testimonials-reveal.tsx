@@ -1,3 +1,7 @@
+'use client';
+
+import {useEffect, useState} from 'react';
+
 const recommendations = [
   {
     name: 'Gaurav Sharma',
@@ -26,6 +30,17 @@ const recommendations = [
 ];
 
 export default function TestimonialsReveal() {
+  const [linkedInRedirect, setLinkedInRedirect] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (!linkedInRedirect) return;
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setLinkedInRedirect(null);
+    };
+    window.addEventListener('keydown', closeOnEscape);
+    return () => window.removeEventListener('keydown', closeOnEscape);
+  }, [linkedInRedirect]);
+
   return (
     <div className="results-proof-wall">
       <div className="results-grid" aria-label="Selected product outcomes">
@@ -82,9 +97,23 @@ export default function TestimonialsReveal() {
             <header><span>{String(index + 1).padStart(2, '0')}</span><small>{item.perspective}</small></header>
             <blockquote>“{item.quote}”</blockquote>
             <footer><strong>{item.name}</strong><span>{item.role}</span></footer>
+            <button className="recommendation-link-trigger" type="button" onClick={() => setLinkedInRedirect(item.name)} aria-label={`View ${item.name}'s recommendation on LinkedIn`}>↗</button>
           </article>
         ))}
       </div>
+      {linkedInRedirect && (
+        <div className="external-link-dialog" role="presentation" onMouseDown={() => setLinkedInRedirect(null)}>
+          <section role="dialog" aria-modal="true" aria-labelledby="linkedin-dialog-title" aria-describedby="linkedin-dialog-copy" onMouseDown={(event) => event.stopPropagation()}>
+            <span>External link · LinkedIn</span>
+            <h3 id="linkedin-dialog-title">Continue to LinkedIn?</h3>
+            <p id="linkedin-dialog-copy">You&apos;re leaving this portfolio to view {linkedInRedirect}&apos;s recommendation on LinkedIn.</p>
+            <div>
+              <button type="button" onClick={() => setLinkedInRedirect(null)} autoFocus>Cancel</button>
+              <a href="https://linkedin.com/in/akshayproductdesigner" target="_blank" rel="noreferrer" onClick={() => setLinkedInRedirect(null)}>Continue to LinkedIn <span>↗</span></a>
+            </div>
+          </section>
+        </div>
+      )}
     </div>
   );
 }
