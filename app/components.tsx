@@ -67,12 +67,19 @@ export function ProjectFeature({compact=false}:{compact?:boolean}){
   </article>;
 }
 
-export function ProjectCard({index,title,label,description,outcome,image,href,tags}:{index:string;title:string;label:string;description:string;outcome:string;image:string;href:string;tags:string[]}){
-  return <article className="project-card reveal">
-    <Link className="project-card-media" href={href} aria-label={`Read the ${title} case study`} data-parallax data-cursor-label="View">
-      <img src={image} alt={`${title} project interface`}/><span>{index}</span>
+export function ProjectCard({index,title,label,description,outcome,signal,image,href,tags}:{index:string;title:string;label:string;description:string;outcome:string;signal:string;image:string;href:string;tags:string[]}){
+  return <article className={`project-card project-card-${index} reveal`}>
+    <Link className="project-card-link" href={href} aria-label={`Read the ${title} case study`} data-cursor-label="Explore">
+      <div className="project-card-media" data-parallax>
+        <img src={image} alt={`${title} project interface`}/><span>{index}</span><em>Open case study <Arrow/></em>
+      </div>
+      <div className="project-card-copy">
+        <header><small>{label}</small><span>Case study · {index}</span></header>
+        <h3>{title}</h3><p>{description}</p>
+        <div className="project-card-proof"><small>What changed</small><strong>{outcome}</strong><span>{signal}</span></div>
+        <footer><div>{tags.map(tag=><span key={tag}>{tag}</span>)}</div><span className="project-card-cta">Explore <Arrow/></span></footer>
+      </div>
     </Link>
-    <div className="project-card-copy"><small>{label}</small><h3>{title}</h3><p>{description}</p><p className="project-outcome">{outcome}</p><div>{tags.map(tag=><span key={tag}>{tag}</span>)}</div><Link href={href} aria-label={`Read the ${title} case study`} data-cursor-label="View"><Arrow/></Link></div>
   </article>;
 }
 
