@@ -66,7 +66,7 @@ export default function UXGame(){
     ?{title:'Everyday clarity champion',copy:'You spotted every moment where a small detail could save time, worry or regret.'}
     :score>=3
       ?{title:'Friction finder',copy:'You notice when an everyday experience could be clearer, calmer or more honest.'}
-      :{title:'Curious explorer',copy:'There is rarely one perfect answer—but asking what feels clearer is a great place to start.'};
+      :{title:'Curious explorer',copy:'There is rarely one perfect answer, but asking what feels clearer is a great place to start.'};
 
   if(finished)return <div className="ux-game-card ux-game-result" aria-live="polite">
     <span className="game-count">Your result</span>

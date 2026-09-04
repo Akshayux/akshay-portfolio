@@ -56,7 +56,7 @@ export function ProjectFeature({compact=false}:{compact?:boolean}){
     <div className="project-body">
       <h3>LUXTJ</h3>
       <p>One connected experience for discovering, planning and booking luxury travel.</p>
-      <p className="project-outcome">Made the high-stakes moments—hotel choice, checkout and profile setup—easier to understand and complete.</p>
+      <p className="project-outcome">Made high-stakes moments, including hotel choice, checkout and profile setup, easier to understand and complete.</p>
       <dl className="project-facts">
         <div><dt>Role</dt><dd>Lead product designer</dd></div>
         <div><dt>Work</dt><dd>Product thinking, UX, UI and design system</dd></div>

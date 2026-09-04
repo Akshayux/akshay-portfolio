@@ -2,11 +2,11 @@ import type {Metadata} from 'next';
 import {Arrow,Button,PageFrame,ProofStrip,SectionHead,Status,TestimonialsSection} from '../components';
 import {capabilities,experience} from '../data';
 
-export const metadata:Metadata={title:'About',description:'About Akshay Venkata Narayana — Product and UX Designer working across complex digital systems, currently based in the UK.'};
+export const metadata:Metadata={title:'About',description:'About Akshay Venkata Narayana, Product and UX Designer working across complex digital systems, currently based in the UK.'};
 
 export default function AboutPage(){return <PageFrame>
   <section className="about-hero shell">
-    <div className="about-hero-copy reveal"><Status/><span className="eyebrow">About Akshay</span><h1 data-parallax-layer data-parallax-speed="10">I ask why before drawing what.</h1><p>I&apos;m a Product and UX Designer based in the UK. I work on complex digital products—from travel booking and enterprise tools to public-interest platforms and mobile apps.</p><div className="hero-actions"><Button href="/resume" cursorLabel="Download">View resume</Button><Button href="/work" secondary cursorLabel="View">View work</Button></div></div>
+    <div className="about-hero-copy reveal"><Status/><span className="eyebrow">About Akshay</span><h1 data-parallax-layer data-parallax-speed="10">I ask why before drawing what.</h1><p>I&apos;m a Product and UX Designer based in the UK. I work on complex digital products, from travel booking and enterprise tools to public-interest platforms and mobile apps.</p><div className="hero-actions"><Button href="/resume" cursorLabel="Download">View resume</Button><Button href="/work" secondary cursorLabel="View">View work</Button></div></div>
     <div className="about-hero-image reveal" data-parallax><img src="/figma/about-photo-v2.png" alt="Akshay standing beside the coast"/></div>
   </section>
 
@@ -15,8 +15,8 @@ export default function AboutPage(){return <PageFrame>
   <section className="section shell about-dual-section">
     <span className="eyebrow reveal">Two sides of me</span>
     <div className="about-dual-grid">
-      <article className="about-dual-card about-designer reveal"><span>01 / As a UX designer</span><h2>Human behaviour, with a technical backbone.</h2><p>My Bachelor&apos;s in Computer Science taught me how software is structured. UX taught me to ask whether that structure makes sense to the person using it.</p><p>Today I work across research, product thinking, information architecture, interaction design and detailed UI—staying close to engineers and making edge cases part of the core journey.</p><strong>I sit comfortably between people, business needs and technical systems.</strong></article>
-      <article className="about-dual-card about-person reveal"><span>02 / When I&apos;m not doing UX</span><h2>I collect experiences, not only references.</h2><p>Travel and photography keep me observant. Fitness gives me discipline. Games make me notice systems, feedback and motivation from a completely different angle.</p><p>I also enjoy UX events and conversations with other designers—the kind where a small detail turns into a much bigger idea.</p><div><span>Travel</span><span>Fitness</span><span>Photography</span><span>Gaming</span><span>UX community</span></div></article>
+      <article className="about-dual-card about-designer reveal"><span>01 / As a UX designer</span><h2>Human behaviour, with a technical backbone.</h2><p>My Bachelor&apos;s in Computer Science taught me how software is structured. UX taught me to ask whether that structure makes sense to the person using it.</p><p>Today I work across research, product thinking, information architecture, interaction design and detailed UI, staying close to engineers and making edge cases part of the core journey.</p><strong>I sit comfortably between people, business needs and technical systems.</strong></article>
+      <article className="about-dual-card about-person reveal"><span>02 / When I&apos;m not doing UX</span><h2>I collect experiences, not only references.</h2><p>Travel and photography keep me observant. Fitness gives me discipline. Games make me notice systems, feedback and motivation from a completely different angle.</p><p>I also enjoy UX events and conversations with other designers, the kind where a small detail turns into a much bigger idea.</p><div><span>Travel</span><span>Fitness</span><span>Photography</span><span>Gaming</span><span>UX community</span></div></article>
     </div>
   </section>
 

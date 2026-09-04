@@ -561,7 +561,7 @@ p{color:var(--muted)}
 .measure-list li{padding:13px 0;border-bottom:1px solid var(--line);font-size:13px}
 .measure-list li::before{content:"↳";color:var(--accent-deep);margin-right:12px}
 
-/* LUXTJ case study — failure to clarity narrative */
+/* LUXTJ case study - failure to clarity narrative */
 .luxtj-case .case-hero-copy>p{max-width:720px}
 .lux-hero-media{background:#d4d2cb}
 .lux-impact{display:grid;grid-template-columns:repeat(4,1fr);margin-top:24px;background:var(--ink);color:var(--white)}

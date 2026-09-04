@@ -51,7 +51,7 @@ export default function TestimonialsReveal() {
           <p>Reduced checkout drop-off from nearly 60% to 22% by restructuring dense travel information, improving hierarchy and simplifying the path from review to payment.</p>
           <div className="result-client-note">
             <span>Client perspective</span>
-            <blockquote>“You need people who care, adapt, take ownership and go beyond what was expected—Akshay is one of those people. Across the LUXTJ website, app and extranet, he approached every rethink with patience, openness and a genuine willingness to make the product better.”</blockquote>
+            <blockquote>“You need people who care, adapt, take ownership and go beyond what was expected. Akshay is one of those people. Across the LUXTJ website, app and extranet, he approached every rethink with patience, openness and a genuine willingness to make the product better.”</blockquote>
             <footer><strong>Hooma Roy Choudhury</strong><small>Founder · Travel Jaunts &amp; LUXTJ</small></footer>
           </div>
         </article>

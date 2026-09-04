@@ -3,7 +3,7 @@ import Link from 'next/link';
 import {Arrow,SiteFooter,SiteHeader} from '../../components';
 
 export const metadata:Metadata={
-  title:'LUXTJ Case Study — From Confusion to Clarity',
+  title:'LUXTJ Case Study - From Confusion to Clarity',
   description:'How Akshay learned from an unclear first version and redesigned four high-friction journeys across the LUXTJ luxury-travel website.',
 };
 
@@ -14,7 +14,7 @@ const chapters=[
     title:'A calendar of dates did not yet feel like a reason to travel.',
     question:'How might personal milestones become useful travel inspiration without making setup feel like administration?',
     failed:'The original Personal Travel Calendar opened with an unfamiliar setup flow. Before adding anything, people spent about two minutes working out what the feature was for, which dates belonged there and what would happen next.',
-    investigated:'I studied progressive disclosure, demonstration-led onboarding and familiar calendar patterns. The core issue was not entering a date—it was asking people to organise information before showing how the product could turn a birthday, anniversary or meaningful moment into a travel plan.',
+    investigated:'I studied progressive disclosure, demonstration-led onboarding and familiar calendar patterns. The core issue was not entering a date, it was asking people to organise information before showing how the product could turn a birthday, anniversary or meaningful moment into a travel plan.',
     changed:'I introduced the feature through recognisable personal moments, showed the travel-planning benefit first and created one clear path for adding a date. Recommendations and next steps then appeared progressively, keeping the calendar useful rather than making it another form to maintain.',
     result:'30–50 sec',
     resultLabel:'to understand the Personal Travel Calendar, down from about 2 minutes',
@@ -32,7 +32,7 @@ const chapters=[
     changed:'I reorganised checkout into decision-sized groups, kept the trip summary and price visible, made sections editable and moved supporting detail closer to the moment it was needed.',
     result:'22%',
     resultLabel:'reduction in checkout completion time after redesign',
-    lesson:'Fast checkout is created by hierarchy and recovery—not by removing every detail.',
+    lesson:'Fast checkout is created by hierarchy and recovery, not by removing every detail.',
     image:'/figma/luxtj-checkout-before-after.png',
     imageAlt:'LUXTJ checkout before-and-after redesign comparison',
   },
@@ -46,7 +46,7 @@ const chapters=[
     changed:'I redesigned the description and room-selection pages around comparison. High-value evidence appears first; richer detail remains available progressively; price, policies and actions stay connected.',
     result:'Shorter path',
     resultLabel:'from hotel consideration to checkout, observed after redesign',
-    lesson:'A useful detail page does not show everything equally—it answers the next decision first.',
+    lesson:'A useful detail page does not show everything equally, it answers the next decision first.',
     image:'/figma/luxtj-hotel-before-after.png',
     imageAlt:'LUXTJ hotel selection before-and-after redesign comparison',
   },
@@ -135,7 +135,7 @@ export default function LuxtjPage(){return <main id="top" className="case-page l
   </section>
 
   <section className="case-section case-wide lux-redesigns" id="redesigns">
-    <div className="case-section-heading reveal"><CaseKicker>Four contributions</CaseKicker><h2>What failed, what I changed and what I learned.</h2><p>Each chapter starts with the friction—not the final mock-up—so the design decisions and my contribution stay visible.</p></div>
+    <div className="case-section-heading reveal"><CaseKicker>Four contributions</CaseKicker><h2>What failed, what I changed and what I learned.</h2><p>Each chapter starts with the friction, not the final mock-up, so the design decisions and my contribution stay visible.</p></div>
     <div className="lux-story-list">
       {chapters.map((chapter,index)=><article className={`lux-story reveal ${index%2?'lux-story-reverse':''}`} key={chapter.number}>
         <div className="lux-story-copy">
@@ -161,7 +161,7 @@ export default function LuxtjPage(){return <main id="top" className="case-page l
 
   <section className="case-section case-wide reveal"><CaseKicker>Supporting journeys</CaseKicker><h2>The smaller states carried real product risk too.</h2><div className="support-grid">{supporting.map(([image,title,copy],index)=><article key={title}><img src={image} alt={title}/><span>{String(index+1).padStart(2,'0')}</span><h3>{title}</h3><p>{copy}</p></article>)}</div></section>
 
-  <section className="case-section case-wide system-section"><div className="case-section-heading reveal"><CaseKicker>Making the learning reusable</CaseKicker><h2>The redesign became a shared product language.</h2><p>The same principles—progressive disclosure, persistent context, visible consequences and clear recovery—were carried into reusable patterns across customer web, mobile and the partner extranet.</p></div><div className="system-images reveal"><img src="/figma/luxtj-three-platform-system.png" alt="LUXTJ shared experience across partner extranet, mobile app and customer website"/></div></section>
+  <section className="case-section case-wide system-section"><div className="case-section-heading reveal"><CaseKicker>Making the learning reusable</CaseKicker><h2>The redesign became a shared product language.</h2><p>The same principles, including progressive disclosure, persistent context, visible consequences and clear recovery, were carried into reusable patterns across customer web, mobile and the partner extranet.</p></div><div className="system-images reveal"><img src="/figma/luxtj-three-platform-system.png" alt="LUXTJ shared experience across partner extranet, mobile app and customer website"/></div></section>
 
   <section className="case-section case-narrow" id="learning">
     <div className="case-split"><div className="reveal"><CaseKicker>Reflection</CaseKicker><h2>The best outcome was a better way of designing.</h2></div><div className="lux-learning-list reveal"><article><span>01</span><h3>Comprehension comes before conversion.</h3><p>If people cannot explain the value, optimising the action is premature.</p></article><article><span>02</span><h3>Hierarchy is a product decision.</h3><p>What appears first shapes confidence, speed and the quality of every choice after it.</p></article><article><span>03</span><h3>Failure needs a diagnosis, not decoration.</h3><p>Changing the visual layer would not have fixed unclear concepts or missing starting points.</p></article><article><span>04</span><h3>Instrument the next version early.</h3><p>I now define the behaviour to measure alongside the experience, not after the design is finished.</p></article></div></div>

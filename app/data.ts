@@ -8,7 +8,7 @@ export const profile = {
   years: '5+',
 };
 
-export const professionalSummary = 'Product Designer who\'s shipped 0-to-1 systems across AI tools, enterprise SaaS, travel, and EdTech — six industries, one repeated pattern: messy workflows in, cohesive systems out. I work best in ambiguity — the messier the problem, the clearer I get. My edge isn\'t the pixels. It\'s getting a room of engineers, PMs, and execs aligned on a design decision in one meeting instead of five. Not because I talk more, but because I\'ve already done the work of finding the one decision that actually matters.';
+export const professionalSummary = 'Product Designer who\'s shipped 0-to-1 systems across AI tools, enterprise SaaS, travel, and EdTech, spanning six industries with one repeated pattern: messy workflows in, cohesive systems out. I work best in ambiguity. The messier the problem, the clearer I get. My edge isn\'t the pixels. It\'s getting a room of engineers, PMs, and execs aligned on a design decision in one meeting instead of five. Not because I talk more, but because I\'ve already done the work of finding the one decision that actually matters.';
 
 export const projectAchievements = [
   'Reduced onboarding drop-off from 65% to 13% by redesigning Simpo AI’s website-creation journey using AI interaction research and task-focused flows.',
@@ -30,7 +30,7 @@ export const featuredProjects = [
     title: 'LUXTJ',
     label: 'Luxury travel · Customer experience',
     description: 'A connected journey for discovering, comparing, planning and booking luxury travel.',
-    outcome: 'Made the high-stakes moments—hotel choice, checkout and profile setup—easier to understand and complete.',
+    outcome: 'Made high-stakes moments, including hotel choice, checkout and profile setup, easier to understand and complete.',
     signal: 'Decision confidence · End-to-end product design',
     image: '/figma/luxtj-main.png',
     href: '/work/luxtj',
@@ -66,7 +66,7 @@ export const experience = [
     role: 'Product Designer',
     employment: 'Contract',
     place: 'Remote',
-    date: 'Sept 2025 — Aug 2026',
+    date: 'Sept 2025 - Aug 2026',
     summary: 'Ran usability testing on the existing checkout flow to identify the top three friction points, then restructured information hierarchy and simplified the review-to-payment path, cutting checkout drop-off from 60% to 22%.',
     bullets: [
       'Ran usability testing on the existing checkout flow to identify the top three friction points, then restructured information hierarchy and simplified the review-to-payment path, cutting checkout drop-off from 60% to 22%.',
@@ -80,7 +80,7 @@ export const experience = [
     role: 'Product Designer',
     employment: 'Freelance',
     place: 'Remote',
-    date: 'Dec 2023 — Dec 2024',
+    date: 'Dec 2023 - Dec 2024',
     summary: 'Designed 4+ end-to-end travel journeys and 50+ mobile screens across discovery, trip planning, booking, itinerary management, and post-booking experiences for a new luxury travel product.',
     bullets: [
       'Designed 4+ end-to-end travel journeys and 50+ mobile screens across discovery, trip planning, booking, itinerary management, and post-booking experiences for a new luxury travel product.',
@@ -92,7 +92,7 @@ export const experience = [
     role: 'UX Designer',
     employment: '',
     place: 'India',
-    date: 'Oct 2024 — Sept 2025',
+    date: 'Oct 2024 - Sept 2025',
     summary: 'Conducted AI-interaction research on Simpo AI’s website-creation flow to pinpoint where users abandoned the process, then rebuilt it around clearer task progression and simpler choices, cutting onboarding drop-off from nearly 65% to 13%.',
     bullets: [
       'Conducted AI-interaction research on Simpo AI’s website-creation flow to pinpoint where users abandoned the process, then rebuilt it around clearer task progression and simpler choices, cutting onboarding drop-off from nearly 65% to 13%.',
@@ -106,7 +106,7 @@ export const experience = [
     role: 'UI/UX Designer',
     employment: '',
     place: 'India',
-    date: 'Jan 2024 — Oct 2024',
+    date: 'Jan 2024 - Oct 2024',
     summary: 'Reduced image conversion time by 40% by designing a simpler workflow for VFX artists, making technical controls easier to understand and reducing unnecessary steps in the conversion process.',
     bullets: [
       'Reduced image conversion time by 40% by designing a simpler workflow for VFX artists, making technical controls easier to understand and reducing unnecessary steps in the conversion process.',
@@ -120,7 +120,7 @@ export const experience = [
     role: 'UI/UX Designer',
     employment: '',
     place: 'India',
-    date: 'July 2023 — Oct 2023',
+    date: 'July 2023 - Oct 2023',
     summary: 'Improved app usability by 45% by redesigning core mobile journeys, simplifying navigation, reducing friction, and making service discovery easier for users.',
     bullets: [
       'Improved app usability by 45% by redesigning core mobile journeys, simplifying navigation, reducing friction, and making service discovery easier for users.',
@@ -132,7 +132,7 @@ export const experience = [
     role: 'UI/UX Designer',
     employment: '',
     place: '',
-    date: 'Dec 2021 — June 2023',
+    date: 'Dec 2021 - June 2023',
     summary: 'Designed and improved key mobile experiences for AstroSutraa, a consumer astrology platform that reached 100K+ Android downloads, focusing on clearer navigation, content discovery, and usability.',
     bullets: [
       'Designed and improved key mobile experiences for AstroSutraa, a consumer astrology platform that reached 100K+ Android downloads, focusing on clearer navigation, content discovery, and usability.',
@@ -162,11 +162,11 @@ export const toolsAndEnvironment = [
 ];
 
 export const certifications = [
-  'Human-Computer Interaction: The Foundations of UX Design — Interaction Design Foundation',
-  'User Experience — Interaction Design Foundation',
-  'User Experience Certificate — Accenture',
-  'Enterprise Design Thinking Practitioner — IBM',
-  'UI/UX Design Course — DesignBoat',
+  'Human-Computer Interaction: The Foundations of UX Design - Interaction Design Foundation',
+  'User Experience - Interaction Design Foundation',
+  'User Experience Certificate - Accenture',
+  'Enterprise Design Thinking Practitioner - IBM',
+  'UI/UX Design Course - DesignBoat',
 ];
 
 export const education = [
@@ -174,12 +174,12 @@ export const education = [
     course: 'Digital Design and Innovation',
     institution: 'Heriot-Watt University',
     place: 'Edinburgh, UK',
-    date: 'Sep 2025 — Sep 2026',
+    date: 'Sep 2025 - Sep 2026',
   },
   {
     course: 'Bachelor of Engineering, Computer Science',
     institution: 'The Oxford College of Education',
     place: 'India',
-    date: 'Aug 2017 — Aug 2021',
+    date: 'Aug 2017 - Aug 2021',
   },
 ];
