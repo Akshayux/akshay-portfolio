@@ -9,7 +9,7 @@ export function SiteHeader(){
   return <header className="site-header">
     <div className="shell header-inner">
       <Link className="brand" href="/" aria-label="Akshay Venkata Narayana, home" data-cursor-label="Home">
-        <strong>AKSHAY V.</strong><span>Product & UX designer</span>
+        <img src="/akshay-logo.png" alt="" width="420" height="420"/>
       </Link>
       <nav className="primary-nav" aria-label="Primary navigation">
         <Link href="/work" data-cursor-label="Jump">Work</Link>

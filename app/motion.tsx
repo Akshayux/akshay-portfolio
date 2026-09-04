@@ -257,7 +257,7 @@ export default function Motion({children}:{children:ReactNode}){
   return <>
     {preloaderPhase!=='hidden'&&<div className={`site-preloader ${preloaderPhase==='leaving'?'is-leaving':''}`} aria-hidden="true">
       <div className="preloader-panels"><i/><i/><i/><i/><i/></div>
-      <div className="preloader-signature"><strong>AKSHAY V.</strong><span>Product + UX</span></div>
+      <div className="preloader-signature"><img src="/akshay-logo.png" alt="" width="420" height="420"/><span>Product + UX</span></div>
     </div>}
     <motion.div className="scroll-progress" style={{scaleX:progress}} aria-hidden="true"/>
     <motion.div className="page-curtain" initial={{scaleY:0}} animate={{scaleY:0}} transition={{duration:0}} aria-hidden="true"/>
