@@ -150,7 +150,7 @@ export default function LuxtjPage(){return <main id="top" className="case-page l
           <div className="lux-story-result"><strong>{chapter.result}</strong><span>{chapter.resultLabel}</span></div>
           <blockquote><small>What I learned</small>{chapter.lesson}</blockquote>
         </div>
-        <figure className={`lux-story-visual ${chapter.imageClass||''}`}><img src={chapter.image} alt={chapter.imageAlt}/><figcaption>Final direction · LUXTJ {chapter.label.split(' · ')[0]}</figcaption></figure>
+        <figure className="lux-story-visual"><img src={chapter.image} alt={chapter.imageAlt}/><figcaption>Final direction · LUXTJ {chapter.label.split(' · ')[0]}</figcaption></figure>
       </article>)}
     </div>
   </section>
