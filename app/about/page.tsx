@@ -1,5 +1,5 @@
 import type {Metadata} from 'next';
-import {Arrow,Button,PageFrame,ProofStrip,SectionHead,Status,TestimonialsSection} from '../components';
+import {Button,PageFrame,ProofStrip,SectionHead,Status,TestimonialsSection} from '../components';
 import {capabilities,experience} from '../data';
 
 export const metadata:Metadata={title:'About',description:'About Akshay Venkata Narayana, Product and UX Designer working across complex digital systems, currently based in the UK.'};

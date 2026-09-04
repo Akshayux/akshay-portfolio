@@ -50,7 +50,10 @@ export default function Motion({children}:{children:ReactNode}){
 
   useEffect(()=>{
     const root=document.documentElement;
-    if(reduceMotion){setPreloaderPhase('hidden');return;}
+    if(reduceMotion){
+      const hide=window.setTimeout(()=>setPreloaderPhase('hidden'),0);
+      return()=>window.clearTimeout(hide);
+    }
     root.classList.add('preloader-open');
     const leave=window.setTimeout(()=>setPreloaderPhase('leaving'),420);
     const hide=window.setTimeout(()=>{setPreloaderPhase('hidden');root.classList.remove('preloader-open')},1370);
@@ -100,10 +103,13 @@ export default function Motion({children}:{children:ReactNode}){
       proofObserver.observe(proofStrip);
     }
 
-    const intro=animate('.hero-copy > *, .page-hero > *, .about-hero-copy > *, .contact-heading > *, .case-hero-copy > *',
-      {opacity:[0,1],y:[28,0]},
-      {duration:.72,delay:(index)=>.78+index*.065,ease});
-    cleanups.push(()=>intro.stop());
+    const introTargets=Array.from(document.querySelectorAll<HTMLElement>('.hero-copy > *, .page-hero > *, .about-hero-copy > *, .contact-heading > *, .case-hero-copy > *'));
+    if(introTargets.length){
+      const intro=animate(introTargets,
+        {opacity:[0,1],y:[28,0]},
+        {duration:.72,delay:(index)=>.78+index*.065,ease});
+      cleanups.push(()=>intro.stop());
+    }
 
     const introHeading=document.querySelector<HTMLElement>('h1');
     if(introHeading){
@@ -252,7 +258,7 @@ export default function Motion({children}:{children:ReactNode}){
       parallaxLayers.forEach(layer=>{layer.style.translate=''})
       root.classList.remove('motion-ready');
     };
-  },[reduceMotion]);
+  },[reduceMotion,cursorX,cursorY]);
 
   return <>
     {preloaderPhase!=='hidden'&&<div className={`site-preloader ${preloaderPhase==='leaving'?'is-leaving':''}`} aria-hidden="true">
