@@ -605,7 +605,7 @@ p{color:var(--muted)}
 .lux-process-outcome .principle-grid{grid-column:2;margin-top:0}
 .lux-redesigns{padding-bottom:60px}
 .lux-story-list{display:grid;gap:130px}
-.lux-story{display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);gap:70px;align-items:start;padding-top:28px;border-top:1px solid var(--ink)}
+.lux-story{display:grid;grid-template-columns:minmax(300px,.72fr) minmax(0,1.45fr);gap:48px;align-items:start;padding-top:28px;border-top:1px solid var(--ink)}
 .lux-story-reverse .lux-story-copy{order:2}.lux-story-reverse .lux-story-visual{order:1}
 .lux-story-copy header{display:flex;justify-content:space-between;gap:20px;margin-bottom:78px}
 .lux-story-copy header span{font-size:11px;color:var(--accent-deep)}
@@ -620,7 +620,7 @@ p{color:var(--muted)}
 .lux-story-result span{max-width:235px;color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.06em}
 .lux-story-copy blockquote{margin-top:32px;padding-left:19px;border-left:2px solid var(--accent);font-size:18px;line-height:1.45;letter-spacing:-.025em}
 .lux-story-copy blockquote small{margin-bottom:10px}
-.lux-story-visual{position:sticky;top:118px;height:min(70vw,760px);padding:38px;background:#d8d6cf;overflow:hidden}
+.lux-story-visual{position:sticky;top:118px;height:min(72vw,820px);padding:24px;background:#d8d6cf;overflow:hidden}
 .lux-story-visual img{width:100%;height:100%;object-fit:contain}
 .lux-story-visual-tall img{object-fit:cover;object-position:top}
 .lux-story-visual figcaption{position:absolute;left:14px;bottom:12px;padding:6px 8px;background:var(--paper);font-size:8px;text-transform:uppercase;letter-spacing:.08em}
