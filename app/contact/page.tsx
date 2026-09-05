@@ -1,5 +1,5 @@
 import type {Metadata} from 'next';
-import {Arrow,Button,SiteFooter,SiteHeader,Status} from '../components';
+import {Arrow,Button,SiteFooter,SiteHeader} from '../components';
 import {profile,socials} from '../data';
 
 export const metadata:Metadata={title:'Contact',description:'Contact Akshay about product design roles, UX projects and meaningful collaborations.'};
@@ -7,7 +7,7 @@ export const metadata:Metadata={title:'Contact',description:'Contact Akshay abou
 export default function ContactPage(){return <main id="top" className="contact-page">
   <SiteHeader/>
   <section className="contact-hero shell">
-    <div className="contact-heading reveal"><Status/><span className="eyebrow">Contact</span><h1 data-parallax-layer data-parallax-speed="10">Say hello.<br/>Tell me what you&apos;re building.</h1></div>
+    <div className="contact-heading reveal"><span className="eyebrow">Contact</span><h1 data-parallax-layer data-parallax-speed="10">Say hello.<br/>Tell me what you&apos;re building.</h1></div>
     <div className="contact-content reveal">
       <p>I&apos;m looking for a Product or UX Design role where I can stay close to the work, learn from what ships and improve it over time. I&apos;m also open to selected freelance projects.</p>
       <div className="contact-primary"><span>Best way to reach me</span><a href={`mailto:${profile.email}`} data-cursor-label="Email">{profile.email} <Arrow/></a><small>I usually reply within two working days.</small></div>

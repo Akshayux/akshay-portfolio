@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import {Arrow,PageFrame,ProjectCard,ProjectFeature,Status,TestimonialsSection} from './components';
+import {Arrow,PageFrame,ProjectCard,ProjectFeature,TestimonialsSection} from './components';
 import {experience,featuredProjects} from './data';
 import RecruiterBrief from './recruiter-brief';
 import UXGame from './ux-game';
@@ -8,13 +8,12 @@ export default function Home(){return <PageFrame>
   <section className="hero shell">
     <div className="hero-copy">
       <span className="hero-label">Product & UX Designer · United Kingdom</span>
-      <h1 data-parallax-layer data-parallax-speed="12">Complex products,<br/><em>made clear.</em></h1>
-      <div className="hero-intro"><p>I&apos;m Akshay. I turn complicated workflows, systems and ideas into digital products people understand and enjoy using.</p><div><Link className="text-link" href="/work" data-cursor-label="View">See my work <Arrow/></Link><RecruiterBrief/></div></div>
+      <h1 data-parallax-layer data-parallax-speed="12">I&apos;m Akshay,<br/><em>a Product &amp; UX Designer.</em></h1>
+      <div className="hero-intro"><p>I design clear digital products from complex workflows, systems and ideas, making every journey easier to understand and use.</p><div><Link className="text-link" href="/work" data-cursor-label="View">See my work <Arrow/></Link><RecruiterBrief/></div></div>
     </div>
     <div className="hero-visual reveal" data-parallax>
       <div className="portrait-frame"><img src="/akshay-portrait.jpg" alt="Akshay Venkata Narayana, Product Designer"/></div>
       <div className="portrait-note"><strong>5+ years</strong><span>Product & UX experience</span></div>
-      <Status/>
     </div>
     <div className="hero-foot"><span>Scroll to explore</span><span>↓</span></div>
   </section>

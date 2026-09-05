@@ -16,13 +16,8 @@ export function SiteHeader(){
         <Link href="/about" data-cursor-label="Jump">About</Link>
         <Link href="/contact" data-cursor-label="Jump">Contact</Link>
       </nav>
-      <Link className="header-action" href="/resume" data-cursor-label="Download">View resume</Link>
     </div>
   </header>;
-}
-
-export function Status(){
-  return <span className="status"><i/> Available for Product & UX roles</span>;
 }
 
 export function Button({href,children,secondary=false,cursorLabel}:{href:string;children:ReactNode;secondary?:boolean;cursorLabel:string}){

@@ -27,7 +27,7 @@ export default function RecruiterBrief(){
   },[open]);
 
   return <>
-    <button className="recruiter-trigger" type="button" aria-expanded={open} aria-controls="recruiter-brief" onClick={()=>setOpen(true)} data-cursor-label="Open"><span>Recruiters - start here</span><small>Why Akshay?</small><b aria-hidden="true">↗</b></button>
+    <button className="recruiter-trigger" type="button" aria-expanded={open} aria-controls="recruiter-brief" onClick={()=>setOpen(true)} data-cursor-label="Open"><span>Want to hire me?</span><small>See why I fit</small><b aria-hidden="true">↗</b></button>
     {open&&<div className="recruiter-overlay" onMouseDown={event=>{if(event.target===event.currentTarget)setOpen(false)}}>
       <div ref={dialogRef} id="recruiter-brief" className="recruiter-dialog" role="dialog" aria-modal="true" aria-labelledby="recruiter-title">
         <header className="recruiter-brief-head">

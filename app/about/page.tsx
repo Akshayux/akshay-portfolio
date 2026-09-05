@@ -1,12 +1,12 @@
 import type {Metadata} from 'next';
-import {Button,PageFrame,ProofStrip,SectionHead,Status,TestimonialsSection} from '../components';
+import {Button,PageFrame,ProofStrip,SectionHead,TestimonialsSection} from '../components';
 import {capabilities,experience} from '../data';
 
 export const metadata:Metadata={title:'About',description:'About Akshay Venkata Narayana, Product and UX Designer working across complex digital systems, currently based in the UK.'};
 
 export default function AboutPage(){return <PageFrame>
   <section className="about-hero shell">
-    <div className="about-hero-copy reveal"><Status/><span className="eyebrow">About Akshay</span><h1 data-parallax-layer data-parallax-speed="10">I ask why before drawing what.</h1><p>I&apos;m a Product and UX Designer based in the UK. I work on complex digital products, from travel booking and enterprise tools to public-interest platforms and mobile apps.</p><div className="hero-actions"><Button href="/resume" cursorLabel="Download">View resume</Button><Button href="/work" secondary cursorLabel="View">View work</Button></div></div>
+    <div className="about-hero-copy reveal"><span className="eyebrow">About Akshay</span><h1 data-parallax-layer data-parallax-speed="10">I ask why before drawing what.</h1><p>I&apos;m a Product and UX Designer based in the UK. I work on complex digital products, from travel booking and enterprise tools to public-interest platforms and mobile apps.</p><div className="hero-actions"><Button href="/resume" cursorLabel="Download">View resume</Button><Button href="/work" secondary cursorLabel="View">View work</Button></div></div>
     <div className="about-hero-image reveal" data-parallax><img src="/figma/about-photo-v2.png" alt="Akshay standing beside the coast"/></div>
   </section>
 
