@@ -8,7 +8,7 @@ export default function Home(){return <PageFrame>
   <section className="hero shell">
     <div className="hero-copy">
       <span className="hero-label">UX / Product Designer</span>
-      <h1 data-parallax-layer data-parallax-speed="12">I think in systems,<br/><em>not screens.</em></h1>
+      <h1 data-parallax-layer data-parallax-speed="12">I untangle<br/><em>complex products.</em></h1>
       <p className="hero-focus">I design where AI actually helps.</p>
       <div className="hero-intro">
         <p>I&apos;m a Senior Product and UX Designer who turns complicated workflows into products people can understand and use. I&apos;ve worked across enterprise SaaS, insurance, banking and proptech, mostly on the messy, complicated parts.</p>
