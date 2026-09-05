@@ -14,12 +14,6 @@ export default function Home(){return <PageFrame>
         <p>I&apos;m a Senior Product and UX Designer who turns complicated workflows into products people can understand and use. I&apos;ve worked across enterprise SaaS, insurance, banking and proptech, mostly on the messy, complicated parts.</p>
         <div><Link className="text-link" href="/work" data-cursor-label="View">See my work <Arrow/></Link><RecruiterBrief/></div>
       </div>
-      <dl className="hero-credentials" aria-label="Professional profile">
-        <div><dt>Role</dt><dd>Senior Product / UX Designer</dd></div>
-        <div><dt>Experience</dt><dd>5+ years</dd></div>
-        <div><dt>Products</dt><dd>B2B · B2C · SaaS · 0-1</dd></div>
-        <div><dt>Location</dt><dd>London 🇬🇧</dd></div>
-      </dl>
     </div>
     <div className="hero-visual reveal" data-parallax>
       <div className="portrait-frame"><img src="/akshay-portrait.jpg" alt="Akshay Venkata Narayana, Product Designer"/></div>
