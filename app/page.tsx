@@ -40,7 +40,7 @@ export default function Home(){return <PageFrame>
   <section className="home-about shell">
     <div className="editorial-heading reveal"><span>04</span><div><small>About me</small><h2>I came to UX by following the questions code couldn&apos;t answer.</h2></div></div>
     <div className="home-about-layout">
-      <div className="home-about-image reveal" data-parallax><img src="/figma/about-photo-v2.png" alt="Akshay by the coast"/><span>Outside the screen / UK</span></div>
+      <div className="home-about-image home-about-image-london reveal" data-parallax><img src="/home-about-london.png" alt="Akshay in London with Tower Bridge in the background"/><span>Outside the screen / London</span></div>
       <div className="home-about-copy reveal">
         <p className="large-copy">My computer science degree taught me how digital systems are built. I became more interested in what happened on the other side of the screen, why a logical flow could still confuse someone, or why a useful feature went untouched.</p>
         <p>Playing Rainbow Six Siege sharpened that curiosity. I started noticing how small interaction cues, feedback loops and split-second decisions shaped what players understood, and what they did next.</p>
