@@ -2,8 +2,9 @@ import type {ReactNode} from 'react';
 import Link from 'next/link';
 import {profile,socials} from './data';
 import TestimonialsReveal from './testimonials-reveal';
+import ArrowIcon from './arrow-icon';
 
-export function Arrow(){return <span aria-hidden="true">↗</span>}
+export function Arrow(){return <ArrowIcon/>}
 
 export function SiteHeader(){
   return <header className="site-header">

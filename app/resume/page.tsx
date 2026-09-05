@@ -2,13 +2,14 @@ import type {Metadata} from 'next';
 import {SiteFooter,SiteHeader} from '../components';
 import {capabilities,certifications,education,experience,professionalSummary,profile,projectAchievements,toolsAndEnvironment} from '../data';
 import ResumeActions from './resume-actions';
+import ArrowIcon from '../arrow-icon';
 
 export const metadata:Metadata={title:'Resume',description:'Resume of Akshay Venkata Narayana, Product and UX Designer based in the United Kingdom.'};
 
 export default function ResumePage(){return <main id="top" className="resume-page">
   <SiteHeader/>
   <article className="resume-sheet shell">
-    <header className="resume-heading reveal"><div><span>Resume · 2026</span><h1>{profile.name}</h1><p>Product Designer</p></div><div className="resume-contact"><a href={`mailto:${profile.email}`} data-cursor-label="Email">{profile.email}</a><a href="tel:+447810120379" data-cursor-label="Call">{profile.phone}</a><a href="https://linkedin.com/in/akshayproductdesigner" target="_blank" rel="noreferrer" data-cursor-label="Open">LinkedIn ↗</a><span>Edinburgh, United Kingdom</span><ResumeActions/></div></header>
+    <header className="resume-heading reveal"><div><span>Resume · 2026</span><h1>{profile.name}</h1><p>Product Designer</p></div><div className="resume-contact"><a href={`mailto:${profile.email}`} data-cursor-label="Email">{profile.email}</a><a href="tel:+447810120379" data-cursor-label="Call">{profile.phone}</a><a href="https://linkedin.com/in/akshayproductdesigner" target="_blank" rel="noreferrer" data-cursor-label="Open">LinkedIn <ArrowIcon/></a><span>Edinburgh, United Kingdom</span><ResumeActions/></div></header>
 
     <section className="resume-section resume-summary"><h2>Profile</h2><p>{professionalSummary}</p></section>
 

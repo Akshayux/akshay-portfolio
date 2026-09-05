@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import {useEffect,useRef,useState} from 'react';
+import ArrowIcon from './arrow-icon';
 
 export default function RecruiterBrief(){
   const [open,setOpen]=useState(false);
@@ -27,7 +28,7 @@ export default function RecruiterBrief(){
   },[open]);
 
   return <>
-    <button className="recruiter-trigger" type="button" aria-expanded={open} aria-controls="recruiter-brief" onClick={()=>setOpen(true)} data-cursor-label="Open"><span>Want to hire me?</span><small>See why I fit</small><b aria-hidden="true">↗</b></button>
+    <button className="recruiter-trigger" type="button" aria-expanded={open} aria-controls="recruiter-brief" onClick={()=>setOpen(true)} data-cursor-label="Open"><span>Want to hire me?</span><small>See why I fit</small><b><ArrowIcon/></b></button>
     {open&&<div className="recruiter-overlay" onMouseDown={event=>{if(event.target===event.currentTarget)setOpen(false)}}>
       <div ref={dialogRef} id="recruiter-brief" className="recruiter-dialog" role="dialog" aria-modal="true" aria-labelledby="recruiter-title">
         <header className="recruiter-brief-head">
@@ -50,7 +51,7 @@ export default function RecruiterBrief(){
 
         <section className="recruiter-difference"><div><span>03 / What I bring to your team</span><h3>A designer who can think, make and explain.</h3></div><div className="recruiter-difference-grid"><article><small>Product thinking</small><strong>Frame the right problem</strong><p>I connect user needs, business goals and system constraints to focus the team on the decision that matters next.</p></article><article><small>UX craft</small><strong>Design clear journeys</strong><p>I turn research into simple information architecture, useful interactions and experiences people can move through with confidence.</p></article><article><small>AI-assisted workflow</small><strong>Move faster with judgement</strong><p>I use AI tools for exploration, synthesis and critique, while keeping the final decisions human, evidence-led and responsible.</p></article><article><small>Systems + delivery</small><strong>Make work buildable</strong><p>I create reusable patterns, communicate states and partner with developers so good ideas survive implementation.</p></article></div></section>
 
-        <footer className="recruiter-actions"><div><span>The short answer</span><p>I bring clarity to the product, evidence to the decision and care to the collaboration.</p></div><div><Link href="/work/luxtj" data-cursor-label="View">See the thinking <b aria-hidden="true">↗</b></Link><Link href="/resume" data-cursor-label="Download">View resume</Link><a href="mailto:akshayv2310@gmail.com" data-cursor-label="Email">Talk to Akshay</a></div></footer>
+        <footer className="recruiter-actions"><div><span>The short answer</span><p>I bring clarity to the product, evidence to the decision and care to the collaboration.</p></div><div><Link href="/work/luxtj" data-cursor-label="View">See the thinking <b><ArrowIcon/></b></Link><Link href="/resume" data-cursor-label="Download">View resume</Link><a href="mailto:akshayv2310@gmail.com" data-cursor-label="Email">Talk to Akshay</a></div></footer>
       </div>
     </div>}
   </>;

@@ -1,6 +1,7 @@
 'use client';
 
 import {useEffect, useState} from 'react';
+import ArrowIcon from './arrow-icon';
 
 const recommendations = [
   {
@@ -97,7 +98,7 @@ export default function TestimonialsReveal() {
             <header><span>{String(index + 1).padStart(2, '0')}</span><small>{item.perspective}</small></header>
             <blockquote>“{item.quote}”</blockquote>
             <footer><strong>{item.name}</strong><span>{item.role}</span></footer>
-            <button className="recommendation-link-trigger" type="button" onClick={() => setLinkedInRedirect(item.name)} aria-label={`View ${item.name}'s recommendation on LinkedIn`}>↗</button>
+            <button className="recommendation-link-trigger" type="button" onClick={() => setLinkedInRedirect(item.name)} aria-label={`View ${item.name}'s recommendation on LinkedIn`}><ArrowIcon/></button>
           </article>
         ))}
       </div>
@@ -109,7 +110,7 @@ export default function TestimonialsReveal() {
             <p id="linkedin-dialog-copy">You&apos;re leaving this portfolio to view {linkedInRedirect}&apos;s recommendation on LinkedIn.</p>
             <div>
               <button type="button" onClick={() => setLinkedInRedirect(null)} autoFocus>Cancel</button>
-              <a href="https://linkedin.com/in/akshayproductdesigner" target="_blank" rel="noreferrer" onClick={() => setLinkedInRedirect(null)}>Continue to LinkedIn <span>↗</span></a>
+              <a href="https://linkedin.com/in/akshayproductdesigner" target="_blank" rel="noreferrer" onClick={() => setLinkedInRedirect(null)}>Continue to LinkedIn <ArrowIcon/></a>
             </div>
           </section>
         </div>
