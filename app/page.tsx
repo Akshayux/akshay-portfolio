@@ -22,7 +22,7 @@ export default function Home(){return <PageFrame>
   </section>
 
   <section className="featured-work shell" id="selected-work">
-    <div className="editorial-heading reveal"><span>01</span><div><small>Selected work</small><h2>Designing the whole journey, not a collection of screens.</h2></div></div>
+    <div className="editorial-heading reveal"><span>01</span><div><small>Selected work</small><h2>I usually end up redesigning three connected screens when someone asks me to fix one.</h2></div></div>
     <ProjectFeature/>
     <div className="more-work-heading reveal"><span>More selected work</span><Link className="text-link" href="/work" data-cursor-label="View">See all work <Arrow/></Link></div>
     <div className="project-card-grid">
@@ -32,8 +32,13 @@ export default function Home(){return <PageFrame>
 
   <TestimonialsSection index="02"/>
 
+  <section className="home-game shell">
+    <div className="editorial-heading reveal"><span>03</span><div><small>A tiny everyday game</small><h2>You use products all day. Which option feels better?</h2></div></div>
+    <div className="game-layout"><div className="game-intro reveal"><p>Five familiar moments, from a late pizza to a free trial. Pick the option you&apos;d genuinely want to see.</p><span>No design knowledge needed.<br/>About one minute.</span></div><div className="reveal"><UXGame/></div></div>
+  </section>
+
   <section className="home-about shell">
-    <div className="editorial-heading reveal"><span>03</span><div><small>About me</small><h2>I came to UX by following the questions code couldn&apos;t answer.</h2></div></div>
+    <div className="editorial-heading reveal"><span>04</span><div><small>About me</small><h2>I came to UX by following the questions code couldn&apos;t answer.</h2></div></div>
     <div className="home-about-layout">
       <div className="home-about-image reveal" data-parallax><img src="/figma/about-photo-v2.png" alt="Akshay by the coast"/><span>Outside the screen / UK</span></div>
       <div className="home-about-copy reveal">
@@ -52,15 +57,11 @@ export default function Home(){return <PageFrame>
   </section>
 
   <section className="home-experience shell">
-    <div className="editorial-heading reveal"><span>04</span><div><small>Recent experience</small><h2>A few places I&apos;ve been useful.</h2></div></div>
+    <div className="editorial-heading reveal"><span>05</span><div><small>Recent experience</small><h2>A few places I&apos;ve been useful.</h2></div></div>
     <div className="simple-experience">
       {experience.slice(0,4).map(item=><article className="reveal" key={`${item.company}-${item.date}`}><time>{item.date}</time><div><h3>{item.company}</h3><p>{item.role}{item.employment ? ` · ${item.employment}` : ''}</p></div><p>{item.summary}</p></article>)}
     </div>
     <Link className="text-link" href="/about#experience" data-cursor-label="Jump">Full experience <Arrow/></Link>
   </section>
 
-  <section className="home-game shell">
-    <div className="editorial-heading reveal"><span>05</span><div><small>A tiny everyday game</small><h2>You use products all day. Which option feels better?</h2></div></div>
-    <div className="game-layout"><div className="game-intro reveal"><p>Five familiar moments, from a late pizza to a free trial. Pick the option you&apos;d genuinely want to see.</p><span>No design knowledge needed.<br/>About one minute.</span></div><div className="reveal"><UXGame/></div></div>
-  </section>
 </PageFrame>}

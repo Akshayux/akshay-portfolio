@@ -13,15 +13,18 @@ export function SiteHeader(){
         <img src="/akshay-logo.png" alt="" width="420" height="420"/>
       </Link>
       <nav className="primary-nav" aria-label="Primary navigation">
-        <details className="work-menu">
-          <summary data-cursor-label="Open"><span>Work</span><svg viewBox="0 0 12 8" aria-hidden="true"><path d="m1 1 5 5 5-5"/></svg></summary>
-          <div className="work-menu-panel">
-            <Link href="/work" data-cursor-label="Jump"><small>00</small><span>All work</span></Link>
-            <Link href="/work/luxtj" data-cursor-label="Jump"><small>01</small><span>LUXTJ</span></Link>
-            <Link href="/work/luxtj-extranet" data-cursor-label="Jump"><small>02</small><span>LUXTJ Extranet</span></Link>
-            <Link href="/work/scotcare" data-cursor-label="Jump"><small>03</small><span>ScotCare</span></Link>
-          </div>
-        </details>
+        <div className="work-menu">
+          <Link className="work-menu-link" href="/work" data-cursor-label="Jump">Work</Link>
+          <details>
+            <summary data-cursor-label="Open" aria-label="Open work menu"><svg viewBox="0 0 12 8" aria-hidden="true"><path d="m1 1 5 5 5-5"/></svg></summary>
+            <div className="work-menu-panel">
+              <Link href="/work" data-cursor-label="Jump"><small>00</small><span>All work</span></Link>
+              <Link href="/work/luxtj" data-cursor-label="Jump"><small>01</small><span>LUXTJ</span></Link>
+              <Link href="/work/luxtj-extranet" data-cursor-label="Jump"><small>02</small><span>LUXTJ Extranet</span></Link>
+              <Link href="/work/scotcare" data-cursor-label="Jump"><small>03</small><span>ScotCare</span></Link>
+            </div>
+          </details>
+        </div>
         <Link href="/about" data-cursor-label="Jump">About</Link>
         <Link href="/contact" data-cursor-label="Jump">Contact</Link>
       </nav>

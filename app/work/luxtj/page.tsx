@@ -14,8 +14,8 @@ const chapters=[
     title:'A calendar of dates did not yet feel like a reason to travel.',
     question:'How might personal milestones become useful travel inspiration without making setup feel like administration?',
     failed:'The original Personal Travel Calendar opened with an unfamiliar setup flow. Before adding anything, people spent about two minutes working out what the feature was for, which dates belonged there and what would happen next.',
-    investigated:'I studied progressive disclosure, demonstration-led onboarding and familiar calendar patterns. The core issue was not entering a date, it was asking people to organise information before showing how the product could turn a birthday, anniversary or meaningful moment into a travel plan.',
-    changed:'I introduced the feature through recognisable personal moments, showed the travel-planning benefit first and created one clear path for adding a date. Recommendations and next steps then appeared progressively, keeping the calendar useful rather than making it another form to maintain.',
+    investigated:'I studied progressive disclosure, demonstration-led onboarding and familiar calendar patterns. People were being asked to organise information before seeing how a birthday, anniversary or meaningful moment could become a travel plan.',
+    changed:'I introduced the feature through recognisable personal moments, showed the travel-planning benefit first and created one clear path for adding a date. Recommendations and next steps then appeared progressively, keeping the calendar useful and lightweight.',
     result:'30–50 sec',
     resultLabel:'to understand the Personal Travel Calendar, down from about 2 minutes',
     lesson:'Show how a personal date becomes a meaningful plan before asking people to maintain it.',
@@ -32,38 +32,44 @@ const chapters=[
     changed:'I reorganised checkout into decision-sized groups, kept the trip summary and price visible, made sections editable and moved supporting detail closer to the moment it was needed.',
     result:'22%',
     resultLabel:'reduction in checkout completion time after redesign',
-    lesson:'Fast checkout is created by hierarchy and recovery, not by removing every detail.',
+    lesson:'The checkout improved when every detail appeared beside the decision it affected, with an obvious route back to edit it.',
     image:'/figma/luxtj-checkout-before-after.png',
     imageAlt:'LUXTJ checkout before-and-after redesign comparison',
   },
   {
     number:'03',
     label:'Hotels · Decision speed',
-    title:'The details were present, but not decision-ready.',
+    title:'The details were present, but people still could not choose confidently.',
     question:'What does a traveller need to know before a hotel feels safe to choose?',
     failed:'Hotel selection took the longest part of the journey. Important differences were difficult to scan, forcing people to open, compare and revisit options repeatedly.',
     investigated:'I reviewed hotel product-detail pages across travel websites and mapped the evidence people use to decide: location, inclusions, room differences, cancellation, price and the path forward.',
     changed:'I redesigned the description and room-selection pages around comparison. High-value evidence appears first; richer detail remains available progressively; price, policies and actions stay connected.',
     result:'Shorter path',
     resultLabel:'from hotel consideration to checkout, observed after redesign',
-    lesson:'A useful detail page does not show everything equally, it answers the next decision first.',
+    lesson:'The hotel page was answering six questions at once. I prioritised the evidence people needed before booking and moved the supporting detail one step deeper.',
     image:'/figma/luxtj-hotel-before-after.png',
     imageAlt:'LUXTJ hotel selection before-and-after redesign comparison',
   },
   {
     number:'04',
     label:'Profile · Engagement',
-    title:'A list of features is not a reason to start.',
-    question:'How can profile creation feel like progress rather than administration?',
+    title:'The profile offered plenty of features and gave people no reason to begin.',
+    question:'How can each profile step show enough value to earn the next one?',
     failed:'Profile interest was close to zero. Multiple pages and features were presented at once, with no obvious first step and no visible reason to complete them.',
-    investigated:'I studied the existing behaviour, mapped where people stopped and explored the trigger–action–reward ideas in Hooked. The opportunity was to create momentum, not add another reminder.',
-    changed:'I introduced one clear starting point, showed visible progress and used a trigger–action–reward structure to surface genuine travel-personalisation value, not manufacture urgency.',
+    investigated:'I studied the existing behaviour, mapped where people stopped and explored the trigger–action–reward ideas in Hooked. The opportunity was to create momentum through visible value at each step.',
+    changed:'I introduced one clear starting point, showed visible progress and used a trigger–action–reward structure to surface genuine travel-personalisation value.',
     result:'+70%',
     resultLabel:'time spent in the social profile experience',
     lesson:'Engagement grows when every small action reveals a meaningful next benefit.',
     image:'/figma/luxtj-profile-before-after.png',
     imageAlt:'LUXTJ traveller profile before-and-after redesign comparison',
   },
+] as const;
+
+const chapterLabels=[
+  ['Where people got stuck','The pattern I followed','Where it landed','What stayed with me'],
+  ['The information wall','What I compared','The rebuild','What changed in my practice'],
+  ['The decision gap','What people needed','The page I shipped','The detail that mattered'],
 ] as const;
 
 const process=[
@@ -135,20 +141,25 @@ export default function LuxtjPage(){return <main id="top" className="case-page l
   </section>
 
   <section className="case-section case-wide lux-redesigns" id="redesigns">
-    <div className="case-section-heading reveal"><CaseKicker>Four contributions</CaseKicker><h2>What failed, what I changed and what I learned.</h2><p>Each chapter starts with the friction, not the final mock-up, so the design decisions and my contribution stay visible.</p></div>
+    <div className="case-section-heading reveal"><CaseKicker>Four contributions</CaseKicker><h2>The redesign unfolded differently in each journey.</h2><p>Each chapter begins with the friction and follows the decisions that shaped the final direction.</p></div>
     <div className="lux-story-list">
       {chapters.map((chapter,index)=><article className={`lux-story reveal ${index%2?'lux-story-reverse':''}`} key={chapter.number}>
         <div className="lux-story-copy">
           <header><span>{chapter.number}</span><small>{chapter.label}</small></header>
           <h3>{chapter.title}</h3>
           <p className="lux-story-question">{chapter.question}</p>
-          <div className="lux-story-steps">
-            <section><small>What failed</small><p>{chapter.failed}</p></section>
-            <section><small>What I investigated</small><p>{chapter.investigated}</p></section>
-            <section><small>What I changed</small><p>{chapter.changed}</p></section>
-          </div>
-          <div className="lux-story-result"><strong>{chapter.result}</strong><span>{chapter.resultLabel}</span></div>
-          <blockquote><small>What I learned</small>{chapter.lesson}</blockquote>
+          {index===3?<div className="lux-story-profile-notes">
+            <p>{chapter.failed} I mapped where people stopped, then used a clearer starting point and visible progress to make the value of each step easier to see.</p>
+            <p>The trigger–action–reward restructure moved time spent in the profile up 70%, but drop-off still spikes at the second profile step. I have a theory about the amount of information requested there, but I have not tested it yet.</p>
+          </div>:<>
+            <div className="lux-story-steps">
+              <section><small>{chapterLabels[index][0]}</small><p>{chapter.failed}</p></section>
+              <section><small>{chapterLabels[index][1]}</small><p>{chapter.investigated}</p></section>
+              <section><small>{chapterLabels[index][2]}</small><p>{chapter.changed}</p></section>
+            </div>
+            <div className="lux-story-result"><strong>{chapter.result}</strong><span>{chapter.resultLabel}</span></div>
+            <blockquote><small>{chapterLabels[index][3]}</small>{chapter.lesson}</blockquote>
+          </>}
         </div>
         <figure className="lux-story-visual"><img src={chapter.image} alt={chapter.imageAlt}/><figcaption>Final direction · LUXTJ {chapter.label.split(' · ')[0]}</figcaption></figure>
       </article>)}
@@ -164,8 +175,8 @@ export default function LuxtjPage(){return <main id="top" className="case-page l
   <section className="case-section case-wide system-section"><div className="case-section-heading reveal"><CaseKicker>Making the learning reusable</CaseKicker><h2>The redesign became a shared product language.</h2><p>The same principles, including progressive disclosure, persistent context, visible consequences and clear recovery, were carried into reusable patterns across customer web, mobile and the partner extranet.</p></div><div className="system-images reveal"><img src="/figma/luxtj-three-platform-system.png" alt="LUXTJ shared experience across partner extranet, mobile app and customer website"/></div></section>
 
   <section className="case-section case-narrow" id="learning">
-    <div className="case-split"><div className="reveal"><CaseKicker>Reflection</CaseKicker><h2>The best outcome was a better way of designing.</h2></div><div className="lux-learning-list reveal"><article><span>01</span><h3>Comprehension comes before conversion.</h3><p>If people cannot explain the value, optimising the action is premature.</p></article><article><span>02</span><h3>Hierarchy is a product decision.</h3><p>What appears first shapes confidence, speed and the quality of every choice after it.</p></article><article><span>03</span><h3>Failure needs a diagnosis, not decoration.</h3><p>Changing the visual layer would not have fixed unclear concepts or missing starting points.</p></article><article><span>04</span><h3>Instrument the next version early.</h3><p>I now define the behaviour to measure alongside the experience, not after the design is finished.</p></article></div></div>
-    <p className="lux-evidence-note reveal"><strong>Evidence note.</strong> Figures shown here reflect project observations and product data available during the work. Where exact instrumentation was limited, I describe the result directionally rather than inventing precision.</p>
+    <div className="case-split"><div className="reveal"><CaseKicker>Reflection</CaseKicker><h2>The fortnight that changed how I approached the project.</h2></div><div className="lux-reflection-note reveal"><p>I spent the first two weeks trying to fix checkout by moving things around visually before I realised the actual problem was that nobody understood what they were paying for until the last screen.</p><p>That was a wasted fortnight, but it was also the point where I stopped treating this as a UI job. From there, the work became a question of sequencing decisions, consequences and recovery.</p></div></div>
+    <p className="lux-evidence-note reveal"><strong>Heads up.</strong> These figures come from the project data available during the work. A controlled A/B test was outside the project, so I trust the direction more than the exact number.</p>
   </section>
 
   <section className="case-closing shell reveal"><span>Next</span><h2>Want to talk through the messy middle?</h2><p>I can walk through the failed directions, research choices, alternatives and delivery decisions in a portfolio conversation.</p><div><Link href="/work" data-cursor-label="Back">← All work</Link><Link href="/contact" data-cursor-label="Open">Start a conversation <Arrow/></Link></div></section>

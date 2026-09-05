@@ -49,6 +49,11 @@ export default function Motion({children}:{children:ReactNode}){
   const cursorTargetRef=useRef<HTMLElement|null>(null);
 
   useEffect(()=>{
+    if('scrollRestoration' in history)history.scrollRestoration='manual';
+    window.scrollTo({top:0,left:0,behavior:'auto'});
+  },[]);
+
+  useEffect(()=>{
     const root=document.documentElement;
     if(reduceMotion){
       const hide=window.setTimeout(()=>setPreloaderPhase('hidden'),0);
