@@ -7,11 +7,10 @@ import UXGame from './ux-game';
 export default function Home(){return <PageFrame>
   <section className="hero shell">
     <div className="hero-copy">
-      <span className="hero-label">UX / Product Designer</span>
-      <h1 data-parallax-layer data-parallax-speed="12">I untangle<br/><em>complex products.</em></h1>
-      <p className="hero-focus">I design where AI actually helps.</p>
+      <span className="hero-label">Akshay V. · Product &amp; UX Designer</span>
+      <h1 data-parallax-layer data-parallax-speed="12">I design digital products<br/><em>that make sense.</em></h1>
       <div className="hero-intro">
-        <p>I&apos;m a Senior Product and UX Designer who turns complicated workflows into products people can understand and use. I&apos;ve worked across enterprise SaaS, insurance, banking and proptech, mostly on the messy, complicated parts.</p>
+        <p>I&apos;m Akshay, a Product and UX Designer with 5+ years of experience. I turn complicated workflows into clear web and mobile experiences for people and businesses.</p>
         <div><Link className="text-link" href="/work" data-cursor-label="View">See my work <Arrow/></Link><RecruiterBrief/></div>
       </div>
     </div>
