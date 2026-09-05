@@ -7,9 +7,19 @@ import UXGame from './ux-game';
 export default function Home(){return <PageFrame>
   <section className="hero shell">
     <div className="hero-copy">
-      <span className="hero-label">Product & UX Designer · United Kingdom</span>
-      <h1 data-parallax-layer data-parallax-speed="12">I&apos;m Akshay,<br/><em>a Product &amp; UX Designer.</em></h1>
-      <div className="hero-intro"><p>I design clear digital products from complex workflows, systems and ideas, making every journey easier to understand and use.</p><div><Link className="text-link" href="/work" data-cursor-label="View">See my work <Arrow/></Link><RecruiterBrief/></div></div>
+      <span className="hero-label">UX / Product Designer</span>
+      <h1 data-parallax-layer data-parallax-speed="12">I think in systems,<br/><em>not screens.</em></h1>
+      <p className="hero-focus">I design where AI actually helps.</p>
+      <div className="hero-intro">
+        <p>I&apos;m a Senior Product and UX Designer who turns complicated workflows into products people can understand and use. I&apos;ve worked across enterprise SaaS, insurance, banking and proptech, mostly on the messy, complicated parts.</p>
+        <div><Link className="text-link" href="/work" data-cursor-label="View">See my work <Arrow/></Link><RecruiterBrief/></div>
+      </div>
+      <dl className="hero-credentials" aria-label="Professional profile">
+        <div><dt>Role</dt><dd>Senior Product / UX Designer</dd></div>
+        <div><dt>Experience</dt><dd>5+ years</dd></div>
+        <div><dt>Products</dt><dd>B2B · B2C · SaaS · 0-1</dd></div>
+        <div><dt>Location</dt><dd>London 🇬🇧</dd></div>
+      </dl>
     </div>
     <div className="hero-visual reveal" data-parallax>
       <div className="portrait-frame"><img src="/akshay-portrait.jpg" alt="Akshay Venkata Narayana, Product Designer"/></div>
