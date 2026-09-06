@@ -10,7 +10,7 @@ export default function Home(){return <PageFrame>
       <span className="hero-label">Akshay V. · Product &amp; UX Designer</span>
       <h1 data-parallax-layer data-parallax-speed="12">I design digital products<br/><em>that make sense.</em></h1>
       <div className="hero-intro">
-        <p>I&apos;m Akshay, a Product and UX Designer with 5+ years of experience. I turn complicated workflows into clear web and mobile experiences for people and businesses.</p>
+        <p>I&apos;m Akshay, a Product and UX Designer with 5+ years of experience across travel, enterprise SaaS, insurance, banking and proptech. I turn complicated workflows into clear web and mobile experiences for people and businesses.</p>
         <div><Link className="text-link" href="/work" data-cursor-label="View">See my work <Arrow/></Link><RecruiterBrief/></div>
       </div>
     </div>
