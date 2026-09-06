@@ -23,6 +23,7 @@ export function SiteHeader(){
               <Link href="/work/luxtj" data-cursor-label="Jump"><small>01</small><span>LUXTJ</span></Link>
               <Link href="/work/luxtj-extranet" data-cursor-label="Jump"><small>02</small><span>LUXTJ Extranet</span></Link>
               <Link href="/work/scotcare" data-cursor-label="Jump"><small>03</small><span>ScotCare</span></Link>
+              <Link href="/work/simpo-ai" data-cursor-label="Jump"><small>04</small><span>Simpo AI</span></Link>
             </div>
           </details>
         </div>
@@ -59,7 +60,7 @@ export function ProofStrip(){
 export function ProjectFeature({compact=false}:{compact?:boolean}){
   return <article className={`case-study-card case-study-feature reveal ${compact?'project-feature-compact':''}`}>
     <Link className="case-study-link" href="/work/luxtj" aria-label="Read the LUXTJ case study" data-cursor-label="View">
-      <div className="case-study-media" data-parallax><img src="/figma/luxtj-main.png" alt="LUXTJ personalised luxury-travel experience displayed on a laptop"/></div>
+      <div className="case-study-media" data-parallax><img src="/optimized/luxtj-main.jpg" alt="LUXTJ personalised luxury-travel experience displayed on a laptop"/></div>
       <div className="case-study-copy">
         <header><small>Luxury travel · Customer experience</small><span>9 min read</span></header>
         <h3>Three conversion leaks were hiding inside one luxury-travel journey.</h3>
@@ -73,7 +74,7 @@ export function ProjectFeature({compact=false}:{compact?:boolean}){
 export function ProjectCard({index,title,label,role,metrics,readTime,description,outcome,signal,image,href,tags}:{index:string;title:string;label:string;role:string;metrics:{value:string;label:string}[];readTime:string;description:string;outcome:string;signal:string;image:string;href:string;tags:string[]}){
   return <article className={`case-study-card project-card-${index} reveal`}>
     <Link className="case-study-link" href={href} aria-label={`Read the ${title} case study`} data-cursor-label="Explore">
-      <div className="case-study-media" data-parallax><img src={image} alt={`${title} project interface`}/><span>{index}</span></div>
+      <div className="case-study-media" data-parallax><img src={image} loading="lazy" decoding="async" alt={`${title} project interface`}/><span>{index}</span></div>
       <div className="case-study-copy">
         <header><small>{label}</small><span>{readTime} read</span></header>
         <h3>{description}</h3>

@@ -46,4 +46,4 @@ npm run build
 
 ## Live website
 
-[alex-morgan-product-portfolio.akshay2310.chatgpt.site](https://alex-morgan-product-portfolio.akshay2310.chatgpt.site)
+[www.akshayvenkat.com](https://www.akshayvenkat.com)

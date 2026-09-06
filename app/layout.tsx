@@ -2,7 +2,7 @@ import type {Metadata} from 'next';
 import Motion from './motion';
 import './globals.css';
 
-const siteUrl = 'https://alex-morgan-product-portfolio.akshay2310.chatgpt.site';
+const siteUrl = 'https://www.akshayvenkat.com';
 
 export const metadata:Metadata={
   metadataBase:new URL(siteUrl),
