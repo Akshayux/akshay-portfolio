@@ -1,6 +1,6 @@
 import Link from 'next/link';
-import {Arrow,PageFrame,ProjectCard,ProjectFeature,TestimonialsSection} from './components';
-import {experience,featuredProjects} from './data';
+import {Arrow,CaseStudyStack,PageFrame,TestimonialsSection} from './components';
+import {experience} from './data';
 import RecruiterBrief from './recruiter-brief';
 import UXGame from './ux-game';
 
@@ -35,11 +35,8 @@ export default function Home(){return <PageFrame>
 
   <section className="featured-work shell" id="selected-work">
     <div className="editorial-heading reveal"><span>01</span><div><small>Selected work</small><h2>I usually end up redesigning three connected screens when someone asks me to fix one.</h2></div></div>
-    <ProjectFeature/>
+    <CaseStudyStack/>
     <div className="more-work-heading reveal"><span>More selected work</span><Link className="text-link" href="/work" data-cursor-label="View">See all work <Arrow/></Link></div>
-    <div className="project-card-grid">
-      {featuredProjects.slice(1).map(project=><ProjectCard key={project.title} {...project}/>)}
-    </div>
   </section>
 
   <TestimonialsSection index="02"/>

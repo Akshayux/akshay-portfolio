@@ -1,6 +1,6 @@
 import type {ReactNode} from 'react';
 import Link from 'next/link';
-import {profile,socials} from './data';
+import {featuredProjects,profile,socials} from './data';
 import TestimonialsReveal from './testimonials-reveal';
 import ArrowIcon from './arrow-icon';
 import ThemeToggle from './theme-toggle';
@@ -57,45 +57,39 @@ export function ProofStrip(){
 }
 
 export function ProjectFeature({compact=false}:{compact?:boolean}){
-  return <article className={`project-feature reveal ${compact?'project-feature-compact':''}`}>
-    <div className="project-topline"><span>Selected work / 01</span><span>Luxury travel · Customer experience</span></div>
-    <Link className="project-media" href="/work/luxtj" aria-label="Read the LUXTJ case study" data-parallax data-cursor-label="View">
-      <img src="/figma/luxtj-main.png" alt="LUXTJ personalised luxury-travel experience displayed on a laptop"/>
+  return <article className={`case-study-card case-study-feature reveal ${compact?'project-feature-compact':''}`}>
+    <Link className="case-study-link" href="/work/luxtj" aria-label="Read the LUXTJ case study" data-cursor-label="View">
+      <div className="case-study-media" data-parallax><img src="/figma/luxtj-main.png" alt="LUXTJ personalised luxury-travel experience displayed on a laptop"/></div>
+      <div className="case-study-copy">
+        <header><small>01 · Luxury travel</small><span>9 min read</span></header>
+        <h3>LUXTJ</h3>
+        <div className="project-role-pill">Lead product designer</div>
+        <p className="case-study-hook">Three conversion leaks were hiding inside one luxury-travel journey.</p>
+        <dl className="case-study-metrics" aria-label="LUXTJ project outcomes"><div><dt>60% → 22%</dt><dd>Checkout drop-off</dd></div><div><dt>24% → 58%</dt><dd>Add-to-cart</dd></div><div><dt>+70%</dt><dd>Profile engagement</dd></div></dl>
+        <footer><span>Read case study</span><Arrow/></footer>
+      </div>
     </Link>
-    <div className="project-body">
-      <p className="project-question">Three conversion leaks were hiding inside one luxury-travel journey.</p>
-      <dl className="project-metrics" aria-label="LUXTJ project outcomes">
-        <div><dt>60% → 22%</dt><dd>Checkout drop-off</dd></div>
-        <div><dt>24% → 58%</dt><dd>Add-to-cart</dd></div>
-        <div><dt>+70%</dt><dd>Profile engagement</dd></div>
-      </dl>
-      <h3>LUXTJ</h3>
-      <div className="project-role-pill">Lead product designer</div>
-      <p className="project-outcome">See how I rebuilt hotel choice, checkout and profile setup around clearer decisions.</p>
-      <dl className="project-facts">
-        <div><dt>Work</dt><dd>Product thinking, UX, UI and design system</dd></div>
-      </dl>
-      <Link className="project-arrow" href="/work/luxtj" aria-label="Read LUXTJ case study" data-cursor-label="View"><Arrow/></Link>
-    </div>
   </article>;
 }
 
 export function ProjectCard({index,title,label,role,metrics,readTime,description,outcome,signal,image,href,tags}:{index:string;title:string;label:string;role:string;metrics:{value:string;label:string}[];readTime:string;description:string;outcome:string;signal:string;image:string;href:string;tags:string[]}){
-  return <article className={`project-card project-card-${index} reveal`}>
-    <Link className="project-card-link" href={href} aria-label={`Read the ${title} case study`} data-cursor-label="Explore">
-      <div className="project-card-media" data-parallax>
-        <img src={image} alt={`${title} project interface`}/><span>{index}</span><em>{readTime} read <Arrow/></em>
-      </div>
-      <div className="project-card-copy">
-        <header><small>{label}</small><span>Case study · {index}</span></header>
+  return <article className={`case-study-card project-card-${index} reveal`}>
+    <Link className="case-study-link" href={href} aria-label={`Read the ${title} case study`} data-cursor-label="Explore">
+      <div className="case-study-media" data-parallax><img src={image} alt={`${title} project interface`}/></div>
+      <div className="case-study-copy">
+        <header><small>{index} · {label}</small><span>{readTime} read</span></header>
+        <h3>{title}</h3>
         <div className="project-role-pill">{role}</div>
-        <dl className="project-metrics">{metrics.map(metric=><div key={metric.label}><dt>{metric.value}</dt><dd>{metric.label}</dd></div>)}</dl>
-        <h3>{title}</h3><p>{description}</p>
-        <div className="project-card-proof"><small>What changed</small><strong>{outcome}</strong><span>{signal}</span></div>
-        <footer><div>{tags.map(tag=><span key={tag}>{tag}</span>)}</div><span className="project-card-cta">Explore <Arrow/></span></footer>
+        <p className="case-study-hook">{description}</p>
+        <dl className="case-study-metrics">{metrics.map(metric=><div key={metric.label}><dt>{metric.value}</dt><dd>{metric.label}</dd></div>)}</dl>
+        <footer><span>Read case study</span><Arrow/></footer>
       </div>
     </Link>
   </article>;
+}
+
+export function CaseStudyStack({compact=false}:{compact?:boolean}){
+  return <div className="case-study-stack"><ProjectFeature compact={compact}/>{featuredProjects.slice(1).map(project=><ProjectCard key={project.title} {...project}/>)}</div>;
 }
 
 export function TestimonialsSection({index='05'}:{index?:string}={}){
