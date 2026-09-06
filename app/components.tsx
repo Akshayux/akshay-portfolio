@@ -23,7 +23,7 @@ export function SiteHeader(){
               <Link href="/work/luxtj" data-cursor-label="Jump"><small>01</small><span>LUXTJ</span></Link>
               <Link href="/work/luxtj-extranet" data-cursor-label="Jump"><small>02</small><span>LUXTJ Extranet</span></Link>
               <Link href="/work/scotcare" data-cursor-label="Jump"><small>03</small><span>ScotCare</span></Link>
-              <Link href="/work/simpo-ai" data-cursor-label="Jump"><small>04</small><span>Simpo AI</span></Link>
+              <span className="work-menu-disabled" aria-disabled="true"><small>04</small><span>Simpo AI <em>In progress</em></span></span>
             </div>
           </details>
         </div>
@@ -71,17 +71,18 @@ export function ProjectFeature({compact=false}:{compact?:boolean}){
   </article>;
 }
 
-export function ProjectCard({index,title,label,role,metrics,readTime,description,outcome,signal,image,href,tags}:{index:string;title:string;label:string;role:string;metrics:{value:string;label:string}[];readTime:string;description:string;outcome:string;signal:string;image:string;href:string;tags:string[]}){
-  return <article className={`case-study-card project-card-${index} reveal`}>
-    <Link className="case-study-link" href={href} aria-label={`Read the ${title} case study`} data-cursor-label="Explore">
+export function ProjectCard({index,title,label,role,metrics,readTime,description,outcome,signal,image,href,tags,inProgress=false}:{index:string;title:string;label:string;role:string;metrics:{value:string;label:string}[];readTime:string;description:string;outcome:string;signal:string;image:string;href:string;tags:string[];inProgress?:boolean}){
+  const content=<>
       <div className="case-study-media" data-parallax><img src={image} loading="lazy" decoding="async" alt={`${title} project interface`}/><span>{index}</span></div>
       <div className="case-study-copy">
-        <header><small>{label}</small><span>{readTime} read</span></header>
+        <header><small>{label}</small><span>{inProgress?'In progress':`${readTime} read`}</span></header>
         <h3>{description}</h3>
         <dl className="case-study-metrics">{metrics.map(metric=><div key={metric.label}><dt>{metric.value}</dt><dd>{metric.label}</dd></div>)}</dl>
-        <footer><span>View case study</span><Arrow/></footer>
+        <footer className={inProgress?'case-study-status':''}><span>{inProgress?'In progress':'View case study'}</span>{!inProgress&&<Arrow/>}</footer>
       </div>
-    </Link>
+    </>;
+  return <article className={`case-study-card project-card-${index}${inProgress?' case-study-card-progress':''} reveal`}>
+    {inProgress?<div className="case-study-link" aria-label={`${title} case study, in progress`}>{content}</div>:<Link className="case-study-link" href={href} aria-label={`Read the ${title} case study`} data-cursor-label="Explore">{content}</Link>}
   </article>;
 }
 

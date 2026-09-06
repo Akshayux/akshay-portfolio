@@ -79,6 +79,7 @@ export const featuredProjects = [
     signal: 'AI interaction research · Task-focused UX',
     image: '/simpo-ai-flow.svg',
     href: '/work/simpo-ai',
+    inProgress: true,
     tags: ['AI', 'Onboarding', 'SaaS'],
   },
 ];
