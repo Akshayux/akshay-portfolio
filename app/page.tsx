@@ -7,7 +7,7 @@ import UXGame from './ux-game';
 export default function Home(){return <PageFrame>
   <section className="hero shell">
     <div className="hero-copy">
-      <span className="hero-label">Akshay V. · Product &amp; UX Designer</span>
+      <span className="hero-label">Akshay Venkat · Product &amp; UX Designer</span>
       <h1 data-parallax-layer data-parallax-speed="12">I design digital products<br/><em>that make sense.</em></h1>
       <div className="hero-intro">
         <p>I&apos;m Akshay, a Product and UX Designer with 5+ years of experience across travel, enterprise SaaS, insurance, banking and proptech. I trace the workflows, states and business rules behind a screen, then turn that complexity into a clear experience.</p>
