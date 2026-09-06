@@ -235,9 +235,10 @@ p{color:var(--muted)}
 .hero-visual{position:relative;justify-self:end;width:min(100%,430px);padding:0;background:transparent;border-radius:0;box-shadow:none;overflow:visible}
 .portrait-frame{height:570px;border-radius:4px;overflow:hidden;background:#1b1b1d}
 .portrait-frame img{width:100%;height:108%;object-fit:cover;object-position:center 25%}
-.portrait-note{position:absolute;left:-22px;bottom:30px;width:170px;padding:18px;background:var(--accent);color:var(--white);display:flex;flex-direction:column;box-shadow:0 14px 32px rgba(54,85,245,.24)}
-.portrait-note strong{font-size:22px;letter-spacing:-.04em}
-.portrait-note span{font-size:9px;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,.75)}
+.portrait-note{position:absolute;left:-22px;bottom:30px;width:242px;padding:18px;background:var(--accent);color:var(--white);display:grid;gap:14px;box-shadow:0 14px 32px rgba(54,85,245,.24)}
+.portrait-note>div{display:grid;gap:2px}.portrait-note>div+div{padding-top:12px;border-top:1px solid rgba(255,255,255,.24)}
+.portrait-note strong{font-size:19px;letter-spacing:-.04em}
+.portrait-note span{font-size:8px;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,.78);line-height:1.35}
 .hero-visual .status{position:absolute;right:-10px;top:22px;margin:0;background:var(--paper);border:0;border-radius:0;padding:9px 11px;color:var(--ink)}
 .hero-foot{grid-column:1/-1;display:flex;justify-content:space-between;padding-top:25px;border-top:1px solid var(--line);font-size:10px;text-transform:uppercase;letter-spacing:.09em;color:var(--muted)}
 .home-proof{padding:42px 0 116px}
@@ -900,16 +901,19 @@ html[data-theme="dark"] .case-study-media{background:#20201d}.case-study-copy h3
 .case-study-feature .case-study-media{padding:34px;border-radius:26px;background:#222}
 .case-study-feature .case-study-media::before{content:'01';position:absolute;top:20px;left:20px;z-index:1;width:36px;height:36px;display:grid;place-items:center;border-radius:50%;background:#fff;color:#141414;font-size:9px;font-weight:750}
 .case-study-feature .case-study-media img{width:92%;max-height:330px}
-.case-study-copy{padding:50px 28px 34px 0;align-items:stretch;background:transparent}
-.case-study-feature .case-study-copy{padding:50px 28px 34px 0;background:transparent}
+.case-study-copy{padding:50px 28px 54px 0;align-items:stretch;background:transparent}
+.case-study-feature .case-study-copy{padding:50px 28px 54px 0;background:transparent}
 .case-study-copy header{font-size:9px;color:var(--muted)}.case-study-feature .case-study-copy header{color:#a8a8a4}
 .case-study-copy h3,.case-study-feature .case-study-copy h3{margin:18px 0 0;color:var(--ink);font-size:clamp(34px,3.5vw,53px);font-weight:650;line-height:1.02;letter-spacing:-.067em;text-transform:none}
 .case-study-feature .case-study-copy h3{color:#fff}
 .case-study-metrics{margin-top:38px}.case-study-feature .case-study-metrics{border-color:rgba(255,255,255,.2)}.case-study-feature .case-study-metrics>div+div{border-color:rgba(255,255,255,.2)}
-.case-study-copy footer{width:max-content;min-height:52px;margin-top:auto;padding:7px 8px 7px 20px;border:1px solid var(--line);border-radius:999px;color:var(--ink);font-size:11px;font-weight:750;text-transform:uppercase;letter-spacing:.04em}.case-study-copy footer .arrow-icon{width:36px;height:36px;display:grid;place-items:center;border-radius:50%;background:var(--accent);color:#fff;font-size:15px}
+.case-study-copy footer{width:max-content;min-height:52px;margin-top:44px;padding:7px 8px 7px 20px;border:1px solid var(--line);border-radius:999px;color:var(--ink);font-size:11px;font-weight:750;text-transform:uppercase;letter-spacing:.04em}.case-study-copy footer .arrow-icon{width:36px;height:36px;display:grid;place-items:center;border-radius:50%;background:var(--accent);color:#fff;font-size:15px}
 .case-study-feature .case-study-copy footer{border-color:rgba(255,255,255,.32);color:#fff}.case-study-feature .case-study-metrics dd{color:#aaa}.case-study-feature .case-study-copy footer .arrow-icon{background:var(--accent)}
 @media (hover:hover) and (pointer:fine){.case-study-card:hover .case-study-copy footer .arrow-icon,.case-study-card:focus-within .case-study-copy footer .arrow-icon{transform:translate(0,0) rotate(45deg)}}
-@media (max-width:760px){.case-study-card{padding:10px;border-radius:22px}.case-study-link{grid-template-columns:1fr;gap:0}.case-study-media,.case-study-feature .case-study-media{min-height:280px;padding:24px;border-radius:15px}.case-study-media>span,.case-study-feature .case-study-media::before{top:14px;left:14px;width:32px;height:32px}.case-study-feature .case-study-media img{width:90%;max-height:230px}.case-study-copy,.case-study-feature .case-study-copy{padding:28px 16px 18px}.case-study-copy h3,.case-study-feature .case-study-copy h3{font-size:34px}.case-study-metrics{margin-top:28px}.case-study-copy footer{min-height:46px;margin-top:25px;padding-left:16px}.case-study-copy footer .arrow-icon{width:30px;height:30px}}
+@media (max-width:760px){.case-study-card{padding:10px;border-radius:22px}.case-study-link{grid-template-columns:1fr;gap:0}.case-study-media,.case-study-feature .case-study-media{min-height:280px;padding:24px;border-radius:15px}.case-study-media>span,.case-study-feature .case-study-media::before{top:14px;left:14px;width:32px;height:32px}.case-study-feature .case-study-media img{width:90%;max-height:230px}.case-study-copy,.case-study-feature .case-study-copy{padding:28px 16px 32px}.case-study-copy h3,.case-study-feature .case-study-copy h3{font-size:34px}.case-study-metrics{margin-top:28px}.case-study-copy footer{min-height:46px;margin-top:32px;padding-left:16px}.case-study-copy footer .arrow-icon{width:30px;height:30px}}
+
+/* Keep the home stack intentional while the Work page presents every case at once. */
+@media (min-width:761px){.case-study-stack>.case-study-card:nth-child(4){z-index:4}.case-study-stack-static>.case-study-card{position:relative;top:auto!important;z-index:auto!important}.case-study-stack-static{gap:28px}}
 
 @media (max-width:1020px){
   .results-grid{grid-template-columns:1fr 1fr}.result-card-featured{grid-column:1/-1;grid-row:auto;min-height:560px}.result-card-wide{grid-column:1/-1}.recommendation-heading{grid-template-columns:110px 1.25fr 1fr}.recommendation-card{padding:22px}.recommendation-card blockquote{font-size:15px}

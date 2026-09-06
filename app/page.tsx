@@ -7,22 +7,22 @@ import UXGame from './ux-game';
 export default function Home(){return <PageFrame>
   <section className="hero shell">
     <div className="hero-copy">
-      <span className="hero-label">Akshay Venkat · Product &amp; UX Designer</span>
+      <span className="hero-label">Akshay Venkata Narayana · Product &amp; UX Designer</span>
       <h1 data-parallax-layer data-parallax-speed="12">I design digital products<br/><em>that make sense.</em></h1>
       <div className="hero-intro">
-        <p>I&apos;m Akshay, a Product and UX Designer with 5+ years of experience across travel, enterprise SaaS, insurance, banking and proptech. I trace the workflows, states and business rules behind a screen, then turn that complexity into a clear experience.</p>
+        <p>I&apos;m Akshay, a Product and UX Designer with 5+ years of experience across travel, enterprise SaaS, insurance, banking and proptech. I recently completed an MA in Digital Design and Innovation at Heriot-Watt University in the UK. I trace the workflows, states and business rules behind a screen, then turn that complexity into a clear experience.</p>
         <div><Link className="text-link" href="/work" data-cursor-label="View">See my work <Arrow/></Link><RecruiterBrief/></div>
       </div>
     </div>
     <div className="hero-visual reveal" data-parallax>
       <div className="portrait-frame"><img src="/akshay-portrait.jpg" alt="Akshay Venkata Narayana, Product Designer"/></div>
-      <div className="portrait-note"><strong>5+ years</strong><span>Product & UX experience</span></div>
+      <div className="portrait-note"><div><strong>5+ years</strong><span>Product &amp; UX experience</span></div><div><strong>Master&apos;s complete</strong><span>MA Digital Design &amp; Innovation · Heriot-Watt University</span></div><div><strong>United Kingdom</strong><span>Based in Edinburgh</span></div></div>
     </div>
     <div className="hero-foot"><span>Scroll to explore</span><span>↓</span></div>
   </section>
 
   <section className="systems-thinking shell">
-    <div className="systems-thinking-intro reveal"><small>How I think</small><h2>I follow the problem beyond the screen.</h2><p>A visible interface problem is often only the last link in a longer chain. I trace what connects it before deciding what to redesign.</p></div>
+    <div className="systems-thinking-intro reveal"><small>How I think</small><h2>When a screen looks wrong, I research the journey to show what needs redesigning.</h2><p>A visible interface problem is often only the last link in a longer chain. I trace what connects it before deciding what to redesign.</p></div>
     <ol className="systems-trace reveal" aria-label="How I trace a product problem">
       <li><span>01</span><strong>User friction</strong><small>What is breaking?</small></li>
       <li><span>02</span><strong>Journey</strong><small>Where does context disappear?</small></li>
@@ -49,7 +49,7 @@ export default function Home(){return <PageFrame>
   <section className="home-about shell">
     <div className="editorial-heading reveal"><span>04</span><div><small>About me</small><h2>I came to UX by following the questions code couldn&apos;t answer.</h2></div></div>
     <div className="home-about-layout">
-      <div className="home-about-image home-about-image-london reveal" data-parallax><img src="/optimized/home-about-london.jpg" loading="lazy" decoding="async" alt="Akshay in London with Tower Bridge in the background"/><span>Outside the screen / London</span></div>
+      <div className="home-about-image home-about-image-london reveal" data-parallax><img src="/optimized/about-london.jpg" loading="lazy" decoding="async" alt="Akshay in London with Tower Bridge in the background"/><span>Outside the screen / London</span></div>
       <div className="home-about-copy reveal">
         <p className="large-copy">My computer science degree taught me how digital systems are built. I became more interested in what happened on the other side of the screen, why a logical flow could still confuse someone, or why a useful feature went untouched.</p>
         <p>Playing Rainbow Six Siege sharpened that curiosity. I started noticing how small interaction cues, feedback loops and split-second decisions shaped what players understood, and what they did next.</p>

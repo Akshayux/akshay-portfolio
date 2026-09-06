@@ -6,13 +6,13 @@ const siteUrl = 'https://www.akshayvenkat.com';
 
 export const metadata:Metadata={
   metadataBase:new URL(siteUrl),
-  title:{default:'Akshay Venkat | Product & UX Designer in Edinburgh, UK',template:'%s | Akshay Venkat'},
+  title:{default:'Akshay Venkata Narayana | Product & UX Designer in Edinburgh, UK',template:'%s | Akshay Venkata Narayana'},
   description:'Akshay Venkat, also known as Akshay Venkata Narayana, is a Product & UX Designer in Edinburgh, UK, designing clear connected digital products across travel, SaaS and complex systems.',
   keywords:['Akshay Venkat','Akshay Venkata Narayana','Akshay Venkat UX Designer','Akshay Venkat Product Designer','Product Designer Edinburgh','UX Designer Edinburgh','Heriot-Watt University'],
   alternates:{canonical:'/'},
   robots:{index:true,follow:true},
-  openGraph:{type:'website',url:siteUrl,siteName:'Akshay Venkat',title:'Akshay Venkat | Product & UX Designer in Edinburgh, UK',description:'Product & UX Designer creating clear connected digital products across travel, SaaS and complex systems.',images:[{url:'/akshay-portrait.jpg',width:1200,height:1200,alt:'Akshay Venkat, Product and UX Designer'}]},
-  twitter:{card:'summary_large_image',title:'Akshay Venkat | Product & UX Designer in Edinburgh, UK',description:'Product & UX Designer creating clear connected digital products across travel, SaaS and complex systems.',images:['/akshay-portrait.jpg']},
+  openGraph:{type:'website',url:siteUrl,siteName:'Akshay Venkata Narayana',title:'Akshay Venkata Narayana | Product & UX Designer in Edinburgh, UK',description:'Product & UX Designer creating clear connected digital products across travel, SaaS and complex systems.',images:[{url:'/akshay-portrait.jpg',width:1200,height:1200,alt:'Akshay Venkata Narayana, Product and UX Designer'}]},
+  twitter:{card:'summary_large_image',title:'Akshay Venkata Narayana | Product & UX Designer in Edinburgh, UK',description:'Product & UX Designer creating clear connected digital products across travel, SaaS and complex systems.',images:['/akshay-portrait.jpg']},
   icons:{icon:'/akshay-logo.png'},
 };
 
@@ -20,7 +20,7 @@ export default function RootLayout({children}:Readonly<{children:React.ReactNode
   const personSchema={
     '@context':'https://schema.org',
     '@type':'Person',
-    name:'Akshay Venkat',
+    name:'Akshay Venkata Narayana',
     alternateName:['Akshay Venkata Narayana','Akshay V.'],
     url:siteUrl,
     image:`${siteUrl}/akshay-portrait.jpg`,

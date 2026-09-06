@@ -86,7 +86,7 @@ export function ProjectCard({index,title,label,role,metrics,readTime,description
 }
 
 export function CaseStudyStack({compact=false}:{compact?:boolean}){
-  return <div className="case-study-stack"><ProjectFeature compact={compact}/>{featuredProjects.slice(1).map(project=><ProjectCard key={project.title} {...project}/>)}</div>;
+  return <div className={`case-study-stack${compact?' case-study-stack-static':''}`}><ProjectFeature compact={compact}/>{featuredProjects.slice(1).map(project=><ProjectCard key={project.title} {...project}/>)}</div>;
 }
 
 export function TestimonialsSection({index='05'}:{index?:string}={}){
@@ -114,7 +114,7 @@ export function ContactPanel(){
 export function SiteFooter(){
   return <footer className="site-footer"><div className="shell">
     <p>© 2026 {profile.name} · Product & UX Designer</p>
-    <div><Link href="/resume" data-cursor-label="Download">Resume</Link><a href={`mailto:${profile.email}`} data-cursor-label="Email">Email</a>{socials.map(item=><a key={item.label} href={item.href} target="_blank" rel="noreferrer" data-cursor-label="Open">{item.label}</a>)}<a href="#top" data-cursor-label="Scroll">Back to top ↑</a></div>
+    <div><a href={`mailto:${profile.email}`} data-cursor-label="Email">Email</a>{socials.map(item=><a key={item.label} href={item.href} target="_blank" rel="noreferrer" data-cursor-label="Open">{item.label}</a>)}<a href="#top" data-cursor-label="Scroll">Back to top ↑</a></div>
   </div></footer>;
 }
 
