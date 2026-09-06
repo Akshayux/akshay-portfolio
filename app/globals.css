@@ -918,9 +918,6 @@ html[data-theme="dark"] .case-study-media{background:#20201d}.case-study-copy h3
 /* Keep the home stack intentional while the Work page presents every case at once. */
 @media (min-width:761px){.case-study-stack>.case-study-card:nth-child(4){z-index:4}.case-study-stack-static>.case-study-card{position:relative;top:auto!important;z-index:auto!important}.case-study-stack-static{gap:28px}}
 
-/* Keep supporting cards solid while letting product imagery sit directly on the card. */
-.case-study-card:not(.case-study-feature) .case-study-media,html[data-theme="dark"] .case-study-card:not(.case-study-feature) .case-study-media{background:transparent}
-
 @media (max-width:1020px){
   .results-grid{grid-template-columns:1fr 1fr}.result-card-featured{grid-column:1/-1;grid-row:auto;min-height:560px}.result-card-wide{grid-column:1/-1}.recommendation-heading{grid-template-columns:110px 1.25fr 1fr}.recommendation-card{padding:22px}.recommendation-card blockquote{font-size:15px}
 }
