@@ -723,6 +723,10 @@ p{color:var(--muted)}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.motion-ready .reveal{opacity:1;transform:none}.project-feature,.project-media::after,.project-media img,.project-card,.project-card-media::after,.project-card-media img,.project-card-copy,.recommendation-card,.recommendation-link-trigger,.about-dual-card,.about-dual-card h2,.about-dual-card strong,.about-person>div,.button{transition:none}.project-feature:hover,.project-card:hover,.project-card:focus-within,.recommendation-card:hover,.about-dual-card:hover{transform:none}.text-reveal-word{color:inherit!important}}
 
 html[data-theme="dark"] .brand img{filter:invert(1)}
+/* Motion stores the light-theme colour on each revealed word. Reassert theme tokens
+   after a theme switch, while preserving the hero's intentional accent line. */
+html[data-theme="dark"] .text-reveal-word{color:var(--ink)!important}
+html[data-theme="dark"] em .text-reveal-word{color:var(--accent)!important}
 html[data-theme="dark"] .button{background:var(--ink);border-color:var(--ink);color:var(--paper)}
 html[data-theme="dark"] .button .button-icon{background:var(--paper);color:var(--ink)}
 html[data-theme="dark"] .button:hover{background:var(--accent);border-color:var(--accent);color:#fff}
@@ -730,6 +734,7 @@ html[data-theme="dark"] .button:hover .button-icon{background:#fff;color:#141414
 html[data-theme="dark"] .button-secondary{background:transparent;border-color:var(--line);color:var(--ink)}
 html[data-theme="dark"] .button-secondary .button-icon{background:var(--ink);color:var(--paper)}
 html[data-theme="dark"] .recruiter-trigger{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+html[data-theme="dark"] .recruiter-trigger>small{color:#6c6a64}
 html[data-theme="dark"] .recruiter-trigger>b{color:#fff}
 html[data-theme="dark"] .recruiter-trigger:hover{background:var(--accent);border-color:var(--accent);color:#fff}
 html[data-theme="dark"] .contact-cta .button{background:#fff;border-color:#fff;color:#243fc7}
