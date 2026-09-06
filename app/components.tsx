@@ -63,18 +63,17 @@ export function ProjectFeature({compact=false}:{compact?:boolean}){
       <img src="/figma/luxtj-main.png" alt="LUXTJ personalised luxury-travel experience displayed on a laptop"/>
     </Link>
     <div className="project-body">
-      <div className="project-role-pill">Lead product designer</div>
+      <p className="project-question">Three conversion leaks were hiding inside one luxury-travel journey.</p>
       <dl className="project-metrics" aria-label="LUXTJ project outcomes">
         <div><dt>60% → 22%</dt><dd>Checkout drop-off</dd></div>
         <div><dt>24% → 58%</dt><dd>Add-to-cart</dd></div>
         <div><dt>+70%</dt><dd>Profile engagement</dd></div>
       </dl>
       <h3>LUXTJ</h3>
-      <p>Three conversion leaks were hiding inside one luxury-travel journey.</p>
+      <div className="project-role-pill">Lead product designer</div>
       <p className="project-outcome">See how I rebuilt hotel choice, checkout and profile setup around clearer decisions.</p>
       <dl className="project-facts">
         <div><dt>Work</dt><dd>Product thinking, UX, UI and design system</dd></div>
-        <div><dt>Time</dt><dd>12 months</dd></div>
       </dl>
       <Link className="project-arrow" href="/work/luxtj" aria-label="Read LUXTJ case study" data-cursor-label="View"><Arrow/></Link>
     </div>

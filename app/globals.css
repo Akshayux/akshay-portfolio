@@ -284,6 +284,8 @@ p{color:var(--muted)}
 @media (hover:hover) and (pointer:fine){.project-feature:hover{transform:translateY(-7px);box-shadow:0 24px 70px rgba(20,20,20,.18)}.project-feature:hover .project-media::after{opacity:.78;background:linear-gradient(125deg,rgba(255,255,255,.3),rgba(54,85,245,.08) 52%,transparent 72%)}.project-feature:hover .project-media img{box-shadow:none}.project-feature:hover .project-arrow{transform:rotate(45deg);background:var(--accent);border-color:var(--accent);color:var(--white)}}
 .project-body{padding:42px 38px 32px;min-height:570px;position:relative}
 .project-role-pill{display:inline-flex;width:max-content;padding:7px 10px;border:1px solid currentColor;border-radius:999px;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.08em}
+.project-feature .project-question{max-width:420px;color:var(--white);font-size:20px;line-height:1.28;font-weight:650;letter-spacing:-.025em}
+.project-feature h3+.project-role-pill{margin:0 0 24px}
 .project-metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin:22px 0 30px;border-top:1px solid rgba(255,255,255,.2);border-bottom:1px solid rgba(255,255,255,.2)}
 .project-metrics>div{padding:15px 12px 14px 0}.project-metrics>div+div{padding-left:12px;border-left:1px solid rgba(255,255,255,.2)}
 .project-metrics dt{font-size:17px;font-weight:700;white-space:nowrap}.project-metrics dd{margin-top:4px;font-size:8px;line-height:1.25;text-transform:uppercase;letter-spacing:.07em;color:rgba(255,255,255,.58)}
