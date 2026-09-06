@@ -3,6 +3,7 @@ import Link from 'next/link';
 import {profile,socials} from './data';
 import TestimonialsReveal from './testimonials-reveal';
 import ArrowIcon from './arrow-icon';
+import ThemeToggle from './theme-toggle';
 
 export function Arrow(){return <ArrowIcon/>}
 
@@ -27,6 +28,7 @@ export function SiteHeader(){
         </div>
         <Link href="/about" data-cursor-label="Jump">About</Link>
         <Link href="/contact" data-cursor-label="Jump">Contact</Link>
+        <ThemeToggle/>
       </nav>
     </div>
   </header>;
@@ -79,11 +81,11 @@ export function ProjectFeature({compact=false}:{compact?:boolean}){
   </article>;
 }
 
-export function ProjectCard({index,title,label,role,metrics,description,outcome,signal,image,href,tags}:{index:string;title:string;label:string;role:string;metrics:{value:string;label:string}[];description:string;outcome:string;signal:string;image:string;href:string;tags:string[]}){
+export function ProjectCard({index,title,label,role,metrics,readTime,description,outcome,signal,image,href,tags}:{index:string;title:string;label:string;role:string;metrics:{value:string;label:string}[];readTime:string;description:string;outcome:string;signal:string;image:string;href:string;tags:string[]}){
   return <article className={`project-card project-card-${index} reveal`}>
     <Link className="project-card-link" href={href} aria-label={`Read the ${title} case study`} data-cursor-label="Explore">
       <div className="project-card-media" data-parallax>
-        <img src={image} alt={`${title} project interface`}/><span>{index}</span><em>Open case study <Arrow/></em>
+        <img src={image} alt={`${title} project interface`}/><span>{index}</span><em>{readTime} read <Arrow/></em>
       </div>
       <div className="project-card-copy">
         <header><small>{label}</small><span>Case study · {index}</span></header>
