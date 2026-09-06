@@ -64,7 +64,7 @@ export function ProjectFeature({compact=false}:{compact?:boolean}){
       <div className="case-study-copy">
         <header><small>Luxury travel · Customer experience</small><span>9 min read</span></header>
         <h3>Three conversion leaks were hiding inside one luxury-travel journey.</h3>
-        <dl className="case-study-metrics" aria-label="LUXTJ project outcomes"><div><dt>60% → 22%</dt><dd>Checkout drop-off</dd></div><div><dt>24% → 58%</dt><dd>Add-to-cart</dd></div><div><dt>+70%</dt><dd>Profile engagement</dd></div></dl>
+        <dl className="case-study-metrics" aria-label="LUXTJ project outcomes"><div><dt>9 → 4</dt><dd>Profile setup screens</dd></div><div><dt>Web + mobile</dt><dd>Checkout journey</dd></div><div><dt>Most-clicked</dt><dd>Add-to-cart action</dd></div></dl>
         <footer><span>View case study</span><Arrow/></footer>
       </div>
     </Link>

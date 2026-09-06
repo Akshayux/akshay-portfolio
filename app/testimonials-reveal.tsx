@@ -46,10 +46,10 @@ export default function TestimonialsReveal() {
     <div className="results-proof-wall">
       <div className="results-grid" aria-label="Selected product outcomes">
         <article className="result-card result-card-featured reveal">
-          <header><span>LUXTJ · Checkout</span><small>Project outcome</small></header>
-          <strong className="result-metric">60% <i>→</i> 22%</strong>
-          <h3>Checkout drop-off</h3>
-          <p>Reduced checkout drop-off from nearly 60% to 22% by restructuring dense travel information, improving hierarchy and simplifying the path from review to payment.</p>
+          <header><span>LUXTJ · Profile</span><small>Project outcome</small></header>
+          <strong className="result-metric">9 <i>→</i> 4</strong>
+          <h3>Profile setup screens</h3>
+          <p>Rebuilt an unclear 9-screen setup as a 4-screen guided flow without removing any required step.</p>
           <div className="result-client-note">
             <span>Client perspective</span>
             <blockquote>“You need people who care, adapt, take ownership and go beyond what was expected. Akshay is one of those people. Across the LUXTJ website, app and extranet, he approached every rethink with patience, openness and a genuine willingness to make the product better.”</blockquote>
@@ -60,16 +60,16 @@ export default function TestimonialsReveal() {
         <article className="result-card result-card-wide reveal">
           <header><span>LUXTJ · Hotel details</span><small>Project outcome</small></header>
           <div className="result-card-split">
-            <div><strong className="result-metric">24% <i>→</i> 58%</strong><h3>Add-to-cart rate</h3></div>
-            <p>Increased add-to-cart rate by prioritising decision-critical hotel information and guiding people towards a clear next step.</p>
+            <div><strong className="result-metric">Most-clicked</strong><h3>Add-to-cart action</h3></div>
+            <p>Heatmap evidence helped move decision-critical information forward, taking the action from ignored to the most-clicked element on the page.</p>
           </div>
         </article>
 
         <article className="result-card result-card-small reveal">
-          <header><span>LUXTJ · Profile</span><small>Project outcome</small></header>
-          <strong className="result-metric">+70%</strong>
-          <h3>Profile engagement</h3>
-          <p>Turned an overwhelming multi-page profile into a guided journey with clearer starting points and behavioural design principles.</p>
+          <header><span>LUXTJ · Checkout</span><small>Ownership</small></header>
+          <strong className="result-metric">Web + mobile</strong>
+          <h3>One checkout journey</h3>
+          <p>Owned the work from identifying drop-off through usability testing to production-ready handoff.</p>
         </article>
 
         <article className="result-card result-card-small result-card-dark reveal">

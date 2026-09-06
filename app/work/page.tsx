@@ -23,7 +23,7 @@ export default function WorkPage(){return <PageFrame>
         <span>{String(index+2).padStart(2,'0')}</span>
         <div><h3>{item.company}</h3><strong>{item.role}</strong></div>
         <p>{item.company==='Proficonlabs'?<>Enterprise dashboards, CRM workflows and an AI-supported website-building product, including <a className="inline-case-link" href="https://www.behance.net/gallery/232241697/Orra-Jewellery" target="_blank" rel="noreferrer" data-cursor-label="Open">Orra Jewellery <ArrowIcon/></a>, a Tambola-based rewards experience redesigned around a clearer game loop.</>:item.summary}</p>
-        <dl><div><dt>When</dt><dd>{item.date}</dd></div><div><dt>{item.company==='Proficonlabs'?'Contribution':'Context'}</dt><dd>{item.company==='Proficonlabs'?'Simplified navigation and reusable interface patterns for internal tools; for Orra, applied the Hook model to restructure triggers, actions and rewards, increasing app opening rate by up to 60%.':([item.employment,item.place].filter(Boolean).join(' · ')||'Project-based')}</dd></div></dl>
+        <dl><div><dt>When</dt><dd>{item.date}</dd></div><div><dt>{item.company==='Proficonlabs'?'Contribution':'Context'}</dt><dd>{item.company==='Proficonlabs'?'Reduced Simpo AI onboarding from 8 steps to 4 and a common ops task from 9 clicks to 4; for Orra, the redesigned game loop more than doubled weekly app opens.':([item.employment,item.place].filter(Boolean).join(' · ')||'Project-based')}</dd></div></dl>
       </article>)}
     </div>
   </section>

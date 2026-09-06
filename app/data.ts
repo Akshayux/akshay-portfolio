@@ -11,10 +11,10 @@ export const profile = {
 export const professionalSummary = 'Product Designer who\'s shipped 0-to-1 systems across AI tools, enterprise SaaS, travel, and EdTech, spanning six industries with one repeated pattern: messy workflows in, cohesive systems out. I work best in ambiguity. The messier the problem, the clearer I get. My edge isn\'t the pixels. It\'s getting a room of engineers, PMs, and execs aligned on a design decision in one meeting instead of five. Not because I talk more, but because I\'ve already done the work of finding the one decision that actually matters.';
 
 export const projectAchievements = [
-  'Reduced onboarding drop-off from 65% to 13% by redesigning Simpo AI’s website-creation journey using AI interaction research and task-focused flows.',
-  'Reduced checkout drop-off from nearly 60% to 22% by redesigning LuxTJ’s cart and checkout experience, restructuring dense travel information, improving hierarchy, and simplifying the path from review to payment.',
-  'Increased profile engagement by up to 70% for LuxTJ by redesigning an overwhelming profile experience into a clearer, guided journey with stronger entry points, progressive disclosure, and behavioural design principles.',
-  'Increased app opening rate by up to 60% by redesigning the gamified experience for ORRA Jewellery, applying behavioural design and Hook Model principles to make participation clearer and more engaging.',
+  'Rebuilt LUXTJ’s unclear 9-screen profile setup as a 4-screen guided flow without removing any required step.',
+  'Rebuilt Simpo AI’s onboarding from 8 confusing steps to 4 focused ones and reduced a common internal task from 9 clicks to 4.',
+  'Owned the ORRA Jewellery Tambola redesign end to end, more than doubling weekly app opens through clearer behavioural triggers and rewards.',
+  'Simplified Halohues workflows, reducing image conversion time by 40%, lead conversion steps from 7 to 3, and daily tools from 5 to 1.',
 ];
 
 export const socials = [
@@ -31,7 +31,7 @@ export const featuredProjects = [
     label: 'Luxury travel · Customer experience',
     role: 'Lead product designer',
     readTime: '9 min',
-    metrics: [{value:'60% → 22%',label:'Checkout drop-off'},{value:'24% → 58%',label:'Add-to-cart'},{value:'+70%',label:'Profile engagement'}],
+    metrics: [{value:'9 → 4',label:'Profile setup screens'},{value:'Web + mobile',label:'Checkout journey'},{value:'Most-clicked',label:'Add-to-cart action'}],
     description: 'Three conversion leaks were hiding inside one luxury-travel journey.',
     outcome: 'See how I rebuilt hotel choice, checkout and profile setup around clearer decisions.',
     signal: 'Decision confidence · End-to-end product design',
@@ -45,7 +45,7 @@ export const featuredProjects = [
     label: 'Luxury travel · Partner operations',
     role: 'Lead Product & UX Designer',
     readTime: '6 min',
-    metrics: [{value:'6+',label:'Core journeys'},{value:'3',label:'Platforms'},{value:'1',label:'Shared system'}],
+    metrics: [{value:'3',label:'Connected products'},{value:'End to end',label:'Design ownership'},{value:'1',label:'Shared system'}],
     description: 'What happens after a luxury trip is booked?',
     outcome: 'See how five scattered partner operations became one connected workspace.',
     signal: 'Five operational areas · One connected workspace',
@@ -59,7 +59,7 @@ export const featuredProjects = [
     label: 'University project · Digital health',
     role: 'Independent Product & UX Designer',
     readTime: '7 min',
-    metrics: [{value:'5',label:'Research stages'},{value:'3',label:'Care scenarios'},{value:'8',label:'Journey moments'}],
+    metrics: [{value:'WCAG 2.2 AA',label:'Accessibility standard'},{value:'NHS Scotland',label:'Care context'},{value:'MA project',label:'Academic setting'}],
     description: 'When someone feels unwell, the hardest question is often: what happens next?',
     outcome: 'See how evidence became a safer care-navigation concept with clear human boundaries.',
     signal: 'Safety · Clarity · Continuity',
@@ -73,7 +73,7 @@ export const featuredProjects = [
     label: 'AI product · Website creation',
     role: 'UX Designer',
     readTime: '6 min',
-    metrics: [{value:'65% → 13%',label:'Onboarding drop-off'},{value:'25%',label:'Faster task completion'},{value:'0–1',label:'AI creation flow'}],
+    metrics: [{value:'8 → 4',label:'Onboarding steps'},{value:'9 → 4',label:'Ops task clicks'},{value:'6 → 3',label:'Parent-app steps'}],
     description: 'Why were people leaving an AI website builder before they made their first choice?',
     outcome: 'See how clearer progression and simpler decisions made the first session easier to finish.',
     signal: 'AI interaction research · Task-focused UX',
@@ -94,9 +94,9 @@ export const experience = [
     summary: 'Returned to LUXTJ to redesign the customer and partner journeys after establishing the first product foundations as a freelancer.',
     bullets: [
       'Return engagement: redesigned the customer and partner journeys after my earlier freelance work established the product foundations.',
-      'Ran usability testing on the existing checkout flow to identify the top three friction points, then restructured information hierarchy and simplified the review-to-payment path, cutting checkout drop-off from 60% to 22%.',
-      'Audited the existing multi-page profile experience to identify where users disengaged, then rebuilt it into a guided journey using progressive disclosure and clearer entry points, lifting profile engagement by up to 70%.',
-      'Increased add-to-cart rate from 24% to 58% by redesigning hotel detail pages to prioritise decision-critical information and guide users towards the next step.',
+      'Owned the checkout experience end to end, from identifying drop-off through usability testing to shipping a clearer review-to-payment flow across web and mobile.',
+      'Took an unclear 9-screen profile setup with no obvious owner, talked to users to find where they gave up, and rebuilt it independently as a 4-screen guided flow without dropping any required step.',
+      'Redesigned hotel detail pages so decision-critical information surfaced first, validated with heatmap data, taking the add-to-cart button from ignored to the most-clicked element on the page.',
       'Led end-to-end product design for the Luxury travel website and partner extranet, connecting customer-facing and operational workflows across web, mobile, and internal platforms.',
     ],
   },
@@ -119,11 +119,12 @@ export const experience = [
     employment: '',
     place: 'India',
     date: 'Oct 2024 - Sept 2025',
-    summary: 'Conducted AI-interaction research on Simpo AI’s website-creation flow to pinpoint where users abandoned the process, then rebuilt it around clearer task progression and simpler choices, cutting onboarding drop-off from nearly 65% to 13%.',
+    summary: 'Rebuilt Simpo AI’s onboarding from 8 confusing steps to 4 focused ones, working directly with engineering to keep the redesigned flow implementable within existing constraints.',
     bullets: [
-      'Conducted AI-interaction research on Simpo AI’s website-creation flow to pinpoint where users abandoned the process, then rebuilt it around clearer task progression and simpler choices, cutting onboarding drop-off from nearly 65% to 13%.',
-      'Mapped user engagement with the Tambola gamification feature and redesigned it around behavioural design principles to encourage repeat visits, lifting ORRA Jewellery’s app opening rate by up to 60%.',
-      'Improved task completion time by 25% by simplifying workflows across Simpo AI’s website builder, CRM, POS, social media, and business-management tools.',
+      'Rebuilt Simpo AI’s onboarding from 8 confusing steps to 4 focused ones, working directly with engineering to keep the redesigned flow implementable within existing constraints.',
+      'Owned the Tambola gamification redesign end to end, more than doubling weekly app opens by applying behavioural design principles stakeholders had not previously considered.',
+      'Simplified internal tools across Simpo AI’s CRM, POS, and business-management systems, reducing a common task from 9 clicks to 4 for non-technical staff.',
+      'Fixed a confusing navigation structure in a school management parent app, cutting key tasks from 6 steps to 3.',
       'Resolved critical usability issues across a school management parent application, improving navigation, information hierarchy, and access to key academic and administrative tasks.',
     ],
   },
@@ -136,9 +137,8 @@ export const experience = [
     summary: 'Reduced image conversion time by 40% by designing a simpler workflow for VFX artists, making technical controls easier to understand and reducing unnecessary steps in the conversion process.',
     bullets: [
       'Reduced image conversion time by 40% by designing a simpler workflow for VFX artists, making technical controls easier to understand and reducing unnecessary steps in the conversion process.',
-      'Increased lead conversion by 25% by redesigning a sales funnel application around clearer lead stages, better information hierarchy, and more focused user actions.',
-      'Increased employee productivity by 15% by designing an internal intranet platform that improved access to studio information, communication, and day-to-day operational workflows.',
-      'Designed a client-facing PDF generator that simplified document creation and export, reducing manual effort and making document management more efficient.',
+      'Rebuilt a leaky sales funnel around clearer lead stages, reducing the steps required to convert a lead from 7 to 3.',
+      'Designed an internal intranet that consolidated studio information and daily operations, cutting the number of tools staff needed to check from 5 to 1.',
     ],
   },
   {
