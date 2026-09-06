@@ -877,6 +877,20 @@ html[data-theme="dark"] .case-study-card{background:var(--paper-2);border-color:
 html[data-theme="dark"] .case-study-media{background:#20201d}.case-study-copy h3,html[data-theme="dark"] .case-study-hook,html[data-theme="dark"] .case-study-copy footer{color:var(--ink)}
 @media (max-width:760px){.case-study-stack{gap:16px}.case-study-link{grid-template-columns:1fr;min-height:0}.case-study-media{min-height:280px;padding:22px}.case-study-feature .case-study-media{min-height:290px}.case-study-copy{padding:28px 22px 26px}.case-study-copy h3{margin-top:30px;font-size:39px}.case-study-hook{margin-top:23px;font-size:19px}.case-study-metrics{margin-top:26px}.case-study-metrics dt{font-size:14px}.case-study-metrics>div{padding-block:12px}.case-study-copy footer{margin-top:0;padding-top:22px}.project-feature-compact .case-study-media{min-height:280px}.work-project-grid{display:none}}
 
+/* Give the lead project a deliberate visual priority. */
+.case-study-feature{background:#181816;border-color:#181816;color:#fff}
+.case-study-feature .case-study-media{padding:38px;place-items:center}
+.case-study-feature .case-study-media img{width:86%;height:auto;max-height:330px;object-fit:contain}
+.case-study-feature .case-study-copy{background:#181816}
+.case-study-feature .case-study-copy header{color:#a9a9a4}
+.case-study-feature .case-study-copy h3{margin-top:32px;color:#a9a9a4;font-size:14px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+.case-study-feature .project-role-pill{margin-top:15px;color:#fff;border-color:rgba(255,255,255,.45)}
+.case-study-feature .case-study-hook{margin-top:34px;color:#fff;font-size:clamp(32px,3.3vw,50px);line-height:.98;letter-spacing:-.065em}
+.case-study-feature .case-study-metrics{border-color:rgba(255,255,255,.24)}
+.case-study-feature .case-study-metrics>div+div{border-color:rgba(255,255,255,.24)}
+.case-study-feature .case-study-metrics dd,.case-study-feature .case-study-copy footer{color:rgba(255,255,255,.68)}
+@media (max-width:760px){.case-study-feature .case-study-media{padding:24px}.case-study-feature .case-study-media img{width:88%;max-height:245px}.case-study-feature .case-study-copy h3{margin-top:28px;font-size:11px}.case-study-feature .case-study-hook{margin-top:27px;font-size:34px;line-height:.99}}
+
 @media (max-width:1020px){
   .results-grid{grid-template-columns:1fr 1fr}.result-card-featured{grid-column:1/-1;grid-row:auto;min-height:560px}.result-card-wide{grid-column:1/-1}.recommendation-heading{grid-template-columns:110px 1.25fr 1fr}.recommendation-card{padding:22px}.recommendation-card blockquote{font-size:15px}
 }
