@@ -626,7 +626,7 @@ p{color:var(--muted)}
 .lux-impact span{max-width:180px;color:#a9aaa5;font-size:10px;text-transform:uppercase;letter-spacing:.09em}
 .lux-skim{display:grid;grid-template-columns:160px 1fr;gap:38px;padding:48px 0 72px;border-bottom:1px solid var(--line)}
 .lux-skim>div>small{display:block;margin-top:16px;color:var(--muted);font-size:9px;text-transform:uppercase;letter-spacing:.09em}
-.lux-skim ul{display:grid;grid-template-columns:repeat(3,1fr);margin:0;padding:0;list-style:none;border-top:1px solid var(--line)}
+.lux-skim ul{display:grid;grid-template-columns:repeat(4,1fr);margin:0;padding:0;list-style:none;border-top:1px solid var(--line)}
 .lux-skim li{padding:20px 28px 0 0;border-right:1px solid var(--line)}.lux-skim li:not(:first-child){padding-left:28px}.lux-skim li:last-child{border-right:0}
 .lux-skim li b{display:block;font-size:16px;margin-bottom:14px}.lux-skim li p{font-size:13px;line-height:1.5;color:var(--ink)}
 .lux-origin{padding-top:150px}
