@@ -10,7 +10,7 @@ export default function Home(){return <PageFrame>
       <span className="hero-label">Akshay V. · Product &amp; UX Designer</span>
       <h1 data-parallax-layer data-parallax-speed="12">I design digital products<br/><em>that make sense.</em></h1>
       <div className="hero-intro">
-        <p>I&apos;m Akshay, a Product and UX Designer with 5+ years of experience across travel, enterprise SaaS, insurance, banking and proptech. I turn complicated workflows into clear web and mobile experiences for people and businesses.</p>
+        <p>I&apos;m Akshay, a Product and UX Designer with 5+ years of experience across travel, enterprise SaaS, insurance, banking and proptech. I trace the workflows, states and business rules behind a screen, then turn that complexity into a clear experience.</p>
         <div><Link className="text-link" href="/work" data-cursor-label="View">See my work <Arrow/></Link><RecruiterBrief/></div>
       </div>
     </div>
@@ -19,6 +19,18 @@ export default function Home(){return <PageFrame>
       <div className="portrait-note"><strong>5+ years</strong><span>Product & UX experience</span></div>
     </div>
     <div className="hero-foot"><span>Scroll to explore</span><span>↓</span></div>
+  </section>
+
+  <section className="systems-thinking shell">
+    <div className="systems-thinking-intro reveal"><small>How I think</small><h2>I follow the problem beyond the screen.</h2><p>A visible interface problem is often only the last link in a longer chain. I trace what connects it before deciding what to redesign.</p></div>
+    <ol className="systems-trace reveal" aria-label="How I trace a product problem">
+      <li><span>01</span><strong>User friction</strong><small>What is breaking?</small></li>
+      <li><span>02</span><strong>Journey</strong><small>Where does context disappear?</small></li>
+      <li><span>03</span><strong>Workflow</strong><small>What happens around it?</small></li>
+      <li><span>04</span><strong>Product rule</strong><small>What constraint shapes it?</small></li>
+      <li><span>05</span><strong>Decision</strong><small>What should change?</small></li>
+      <li><span>06</span><strong>Connected screens</strong><small>What else is affected?</small></li>
+    </ol>
   </section>
 
   <section className="featured-work shell" id="selected-work">
