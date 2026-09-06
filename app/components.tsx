@@ -61,12 +61,10 @@ export function ProjectFeature({compact=false}:{compact?:boolean}){
     <Link className="case-study-link" href="/work/luxtj" aria-label="Read the LUXTJ case study" data-cursor-label="View">
       <div className="case-study-media" data-parallax><img src="/figma/luxtj-main.png" alt="LUXTJ personalised luxury-travel experience displayed on a laptop"/></div>
       <div className="case-study-copy">
-        <header><small>01 · Luxury travel</small><span>9 min read</span></header>
-        <h3>LUXTJ</h3>
-        <div className="project-role-pill">Lead product designer</div>
-        <p className="case-study-hook">Three conversion leaks were hiding inside one luxury-travel journey.</p>
+        <header><small>Luxury travel · Customer experience</small><span>9 min read</span></header>
+        <h3>Three conversion leaks were hiding inside one luxury-travel journey.</h3>
         <dl className="case-study-metrics" aria-label="LUXTJ project outcomes"><div><dt>60% → 22%</dt><dd>Checkout drop-off</dd></div><div><dt>24% → 58%</dt><dd>Add-to-cart</dd></div><div><dt>+70%</dt><dd>Profile engagement</dd></div></dl>
-        <footer><span>Read case study</span><Arrow/></footer>
+        <footer><span>View case study</span><Arrow/></footer>
       </div>
     </Link>
   </article>;
@@ -75,14 +73,12 @@ export function ProjectFeature({compact=false}:{compact?:boolean}){
 export function ProjectCard({index,title,label,role,metrics,readTime,description,outcome,signal,image,href,tags}:{index:string;title:string;label:string;role:string;metrics:{value:string;label:string}[];readTime:string;description:string;outcome:string;signal:string;image:string;href:string;tags:string[]}){
   return <article className={`case-study-card project-card-${index} reveal`}>
     <Link className="case-study-link" href={href} aria-label={`Read the ${title} case study`} data-cursor-label="Explore">
-      <div className="case-study-media" data-parallax><img src={image} alt={`${title} project interface`}/></div>
+      <div className="case-study-media" data-parallax><img src={image} alt={`${title} project interface`}/><span>{index}</span></div>
       <div className="case-study-copy">
-        <header><small>{index} · {label}</small><span>{readTime} read</span></header>
-        <h3>{title}</h3>
-        <div className="project-role-pill">{role}</div>
-        <p className="case-study-hook">{description}</p>
+        <header><small>{label}</small><span>{readTime} read</span></header>
+        <h3>{description}</h3>
         <dl className="case-study-metrics">{metrics.map(metric=><div key={metric.label}><dt>{metric.value}</dt><dd>{metric.label}</dd></div>)}</dl>
-        <footer><span>Read case study</span><Arrow/></footer>
+        <footer><span>View case study</span><Arrow/></footer>
       </div>
     </Link>
   </article>;

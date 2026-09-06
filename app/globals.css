@@ -891,6 +891,26 @@ html[data-theme="dark"] .case-study-media{background:#20201d}.case-study-copy h3
 .case-study-feature .case-study-metrics dd,.case-study-feature .case-study-copy footer{color:rgba(255,255,255,.68)}
 @media (max-width:760px){.case-study-feature .case-study-media{padding:24px}.case-study-feature .case-study-media img{width:88%;max-height:245px}.case-study-feature .case-study-copy h3{margin-top:28px;font-size:11px}.case-study-feature .case-study-hook{margin-top:27px;font-size:34px;line-height:.99}}
 
+/* Case-study cards: visual proof on the left; the decision and outcome on the right. */
+.case-study-card{border-radius:32px;padding:22px;background:var(--paper);box-shadow:none}
+.case-study-feature{background:#171717;border-color:#171717;color:#fff}
+.case-study-link{min-height:430px;grid-template-columns:minmax(0,1fr) minmax(390px,1fr);gap:34px}
+.case-study-media{position:relative;min-height:386px;padding:34px;border-radius:26px;background:#ebeae6}
+.case-study-media>span{position:absolute;top:20px;left:20px;z-index:1;width:36px;height:36px;display:grid;place-items:center;border-radius:50%;background:#fff;color:#141414;font-size:9px;font-weight:750;box-shadow:0 6px 15px rgba(0,0,0,.08)}
+.case-study-feature .case-study-media{padding:34px;border-radius:26px;background:#222}
+.case-study-feature .case-study-media::before{content:'01';position:absolute;top:20px;left:20px;z-index:1;width:36px;height:36px;display:grid;place-items:center;border-radius:50%;background:#fff;color:#141414;font-size:9px;font-weight:750}
+.case-study-feature .case-study-media img{width:92%;max-height:330px}
+.case-study-copy{padding:50px 28px 34px 0;align-items:stretch;background:transparent}
+.case-study-feature .case-study-copy{padding:50px 28px 34px 0;background:transparent}
+.case-study-copy header{font-size:9px;color:var(--muted)}.case-study-feature .case-study-copy header{color:#a8a8a4}
+.case-study-copy h3,.case-study-feature .case-study-copy h3{margin:18px 0 0;color:var(--ink);font-size:clamp(34px,3.5vw,53px);font-weight:650;line-height:1.02;letter-spacing:-.067em;text-transform:none}
+.case-study-feature .case-study-copy h3{color:#fff}
+.case-study-metrics{margin-top:38px}.case-study-feature .case-study-metrics{border-color:rgba(255,255,255,.2)}.case-study-feature .case-study-metrics>div+div{border-color:rgba(255,255,255,.2)}
+.case-study-copy footer{width:max-content;min-height:52px;margin-top:auto;padding:7px 8px 7px 20px;border:1px solid var(--line);border-radius:999px;color:var(--ink);font-size:11px;font-weight:750;text-transform:uppercase;letter-spacing:.04em}.case-study-copy footer .arrow-icon{width:36px;height:36px;display:grid;place-items:center;border-radius:50%;background:var(--accent);color:#fff;font-size:15px}
+.case-study-feature .case-study-copy footer{border-color:rgba(255,255,255,.32);color:#fff}.case-study-feature .case-study-metrics dd{color:#aaa}.case-study-feature .case-study-copy footer .arrow-icon{background:var(--accent)}
+@media (hover:hover) and (pointer:fine){.case-study-card:hover .case-study-copy footer .arrow-icon,.case-study-card:focus-within .case-study-copy footer .arrow-icon{transform:translate(0,0) rotate(45deg)}}
+@media (max-width:760px){.case-study-card{padding:10px;border-radius:22px}.case-study-link{grid-template-columns:1fr;gap:0}.case-study-media,.case-study-feature .case-study-media{min-height:280px;padding:24px;border-radius:15px}.case-study-media>span,.case-study-feature .case-study-media::before{top:14px;left:14px;width:32px;height:32px}.case-study-feature .case-study-media img{width:90%;max-height:230px}.case-study-copy,.case-study-feature .case-study-copy{padding:28px 16px 18px}.case-study-copy h3,.case-study-feature .case-study-copy h3{font-size:34px}.case-study-metrics{margin-top:28px}.case-study-copy footer{min-height:46px;margin-top:25px;padding-left:16px}.case-study-copy footer .arrow-icon{width:30px;height:30px}}
+
 @media (max-width:1020px){
   .results-grid{grid-template-columns:1fr 1fr}.result-card-featured{grid-column:1/-1;grid-row:auto;min-height:560px}.result-card-wide{grid-column:1/-1}.recommendation-heading{grid-template-columns:110px 1.25fr 1fr}.recommendation-card{padding:22px}.recommendation-card blockquote{font-size:15px}
 }
