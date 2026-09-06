@@ -49,7 +49,7 @@ export const featuredProjects = [
     description: 'What happens after a luxury trip is booked?',
     outcome: 'See how five scattered partner operations became one connected workspace.',
     signal: 'Five operational areas · One connected workspace',
-    image: '/optimized/luxtj-extranet-booking-dashboard.jpg',
+    image: '/figma/luxtj-extranet-booking-dashboard.png',
     href: '/work/luxtj-extranet',
     tags: ['UX design', 'Enterprise', 'Design system'],
   },
