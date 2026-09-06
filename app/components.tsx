@@ -61,11 +61,16 @@ export function ProjectFeature({compact=false}:{compact?:boolean}){
       <img src="/figma/luxtj-main.png" alt="LUXTJ personalised luxury-travel experience displayed on a laptop"/>
     </Link>
     <div className="project-body">
+      <div className="project-role-pill">Lead product designer</div>
+      <dl className="project-metrics" aria-label="LUXTJ project outcomes">
+        <div><dt>60% → 22%</dt><dd>Checkout drop-off</dd></div>
+        <div><dt>24% → 58%</dt><dd>Add-to-cart</dd></div>
+        <div><dt>+70%</dt><dd>Profile engagement</dd></div>
+      </dl>
       <h3>LUXTJ</h3>
-      <p>One connected experience for discovering, planning and booking luxury travel.</p>
-      <p className="project-outcome">Made high-stakes moments, including hotel choice, checkout and profile setup, easier to understand and complete.</p>
+      <p>Three conversion leaks were hiding inside one luxury-travel journey.</p>
+      <p className="project-outcome">See how I rebuilt hotel choice, checkout and profile setup around clearer decisions.</p>
       <dl className="project-facts">
-        <div><dt>Role</dt><dd>Lead product designer</dd></div>
         <div><dt>Work</dt><dd>Product thinking, UX, UI and design system</dd></div>
         <div><dt>Time</dt><dd>12 months</dd></div>
       </dl>
@@ -74,7 +79,7 @@ export function ProjectFeature({compact=false}:{compact?:boolean}){
   </article>;
 }
 
-export function ProjectCard({index,title,label,description,outcome,signal,image,href,tags}:{index:string;title:string;label:string;description:string;outcome:string;signal:string;image:string;href:string;tags:string[]}){
+export function ProjectCard({index,title,label,role,metrics,description,outcome,signal,image,href,tags}:{index:string;title:string;label:string;role:string;metrics:{value:string;label:string}[];description:string;outcome:string;signal:string;image:string;href:string;tags:string[]}){
   return <article className={`project-card project-card-${index} reveal`}>
     <Link className="project-card-link" href={href} aria-label={`Read the ${title} case study`} data-cursor-label="Explore">
       <div className="project-card-media" data-parallax>
@@ -82,6 +87,8 @@ export function ProjectCard({index,title,label,description,outcome,signal,image,
       </div>
       <div className="project-card-copy">
         <header><small>{label}</small><span>Case study · {index}</span></header>
+        <div className="project-role-pill">{role}</div>
+        <dl className="project-metrics">{metrics.map(metric=><div key={metric.label}><dt>{metric.value}</dt><dd>{metric.label}</dd></div>)}</dl>
         <h3>{title}</h3><p>{description}</p>
         <div className="project-card-proof"><small>What changed</small><strong>{outcome}</strong><span>{signal}</span></div>
         <footer><div>{tags.map(tag=><span key={tag}>{tag}</span>)}</div><span className="project-card-cta">Explore <Arrow/></span></footer>
