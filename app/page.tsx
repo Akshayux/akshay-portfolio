@@ -25,15 +25,14 @@ export default function Home(){return <PageFrame>
   </section>
 
   <section className="systems-thinking shell">
-    <div className="systems-thinking-intro reveal"><small>How I think</small><h2>When a screen looks wrong, I research what is happening around it.</h2><p>When stakeholders ask for a redesign, I dig into user behaviour, workflows and constraints first. Then I show the team what really needs to change, and why.</p></div>
-    <ol className="systems-trace reveal" aria-label="How I trace a product problem">
-      <li><span>01</span><strong>User friction</strong><small>What is breaking?</small></li>
-      <li><span>02</span><strong>Journey</strong><small>Where does context disappear?</small></li>
-      <li><span>03</span><strong>Workflow</strong><small>What happens around it?</small></li>
-      <li><span>04</span><strong>Product rule</strong><small>What constraint shapes it?</small></li>
-      <li><span>05</span><strong>Decision</strong><small>What should change?</small></li>
-      <li><span>06</span><strong>Connected screens</strong><small>What else is affected?</small></li>
-    </ol>
+    <div className="systems-thinking-prose reveal">
+      <small>How I actually find the problem</small>
+      <div>
+        <p>I don&apos;t start with the screen. I start with whoever&apos;s frustrated by it — a user stuck mid-task, a support team fielding the same complaint, a metric that won&apos;t move no matter what gets redesigned.</p>
+        <p>By the time I open Figma, I usually already know which three screens are actually involved.</p>
+        <div className="systems-thinking-proof">On LUXTJ, a &ldquo;checkout problem&rdquo; turned out to start on the calendar screen, two steps earlier. <Link href="/work/luxtj" data-cursor-label="Read">See how that unfolded <Arrow/></Link></div>
+      </div>
+    </div>
   </section>
 
   <section className="featured-work shell" id="selected-work">
