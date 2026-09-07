@@ -22,8 +22,8 @@ export function SiteHeader(){
               <Link href="/work" data-cursor-label="Jump"><small>00</small><span>All work</span></Link>
               <Link href="/work/luxtj" data-cursor-label="Jump"><small>01</small><span>LUXTJ</span></Link>
               <Link href="/work/luxtj-extranet" data-cursor-label="Jump"><small>02</small><span>LUXTJ Extranet</span></Link>
-              <Link href="/work/scotcare" data-cursor-label="Jump"><small>03</small><span>ScotCare</span></Link>
-              <span className="work-menu-disabled" aria-disabled="true"><small>04</small><span>Simpo AI <em>In progress</em></span></span>
+              <span className="work-menu-disabled" aria-disabled="true"><small>03</small><span>Simpo AI <em>In progress</em></span></span>
+              <Link href="/work/scotcare" data-cursor-label="Jump"><small>04</small><span>ScotCare</span></Link>
             </div>
           </details>
         </div>
@@ -63,7 +63,8 @@ export function ProjectFeature({compact=false}:{compact?:boolean}){
       <div className="case-study-media" data-parallax><img src="/optimized/luxtj-main.jpg" alt="LUXTJ personalised luxury-travel experience displayed on a laptop"/></div>
       <div className="case-study-copy">
         <header><small>Luxury travel · Customer experience</small><span>9 min read</span></header>
-        <h3>Three conversion leaks were hiding inside one luxury-travel journey.</h3>
+        <div className="case-study-lead-metric"><strong>60% → 22%</strong><span>Checkout drop-off · LUXTJ</span></div>
+        <h3>&ldquo;The leak wasn&apos;t on the checkout screen.&rdquo;</h3>
         <dl className="case-study-metrics" aria-label="LUXTJ project outcomes"><div><dt>9 → 4</dt><dd>Profile setup screens</dd></div><div><dt>Web + mobile</dt><dd>Checkout journey</dd></div><div><dt>Most-clicked</dt><dd>Add-to-cart action</dd></div></dl>
         <footer><span>View case study</span><Arrow/></footer>
       </div>
