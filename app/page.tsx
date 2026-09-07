@@ -8,10 +8,13 @@ export default function Home(){return <PageFrame>
   <section className="hero shell">
     <div className="hero-copy">
       <span className="hero-label">Akshay Venkata Narayana · Product &amp; UX Designer</span>
-      <h1 data-parallax-layer data-parallax-speed="12">I design digital products<br/><em>that make sense.</em></h1>
+      <h1 data-parallax-layer data-parallax-speed="12">I don&apos;t stop at the screen<br/><em>I was asked about.</em></h1>
       <div className="hero-intro">
-        <p>I&apos;m Akshay, a Product and UX Designer with 5+ years of experience across B2B SaaS, AI, travel and consumer products. I recently completed an MA in Digital Design and Innovation at Heriot-Watt University in the UK. I take messy problems from research through interaction design and delivery, turning complex systems into products that feel simple to use.</p>
-        <div><Link className="text-link" href="/work" data-cursor-label="View">See my work <Arrow/></Link><RecruiterBrief/></div>
+        <p>Most fixes touch one screen. Mine tend to spread to three — because the real problem is rarely where it was reported.</p>
+        <div className="hero-expertise-pills" aria-label="Industries and product experience">
+          <span>B2B SaaS</span><span>AI</span><span>Travel</span><span>Enterprise</span>
+        </div>
+        <div className="hero-cta-row"><Link className="text-link" href="/work" data-cursor-label="View">See my work <Arrow/></Link><RecruiterBrief/></div>
       </div>
     </div>
     <div className="hero-visual reveal" data-parallax>

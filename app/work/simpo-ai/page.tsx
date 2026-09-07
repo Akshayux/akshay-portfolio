@@ -4,7 +4,7 @@ import {Arrow,SiteFooter,SiteHeader} from '../../components';
 
 export const metadata:Metadata={
   title:'Simpo AI Case Study - Making AI Onboarding Clearer',
-  description:'How Akshay Venkat redesigned Simpo AI’s website-creation onboarding to reduce directional drop-off from about 65% to 13%.',
+  description:'How Akshay Venkata Narayana redesigned Simpo AI’s website-creation onboarding to reduce directional drop-off from about 65% to 13%.',
 };
 
 function Kicker({children}:{children:React.ReactNode}){return <span className="eyebrow case-eyebrow">{children}</span>}
