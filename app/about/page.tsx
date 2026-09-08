@@ -43,7 +43,12 @@ export default function AboutPage(){return <PageFrame>
 
   <section className="section shell reflection-section reveal">
     <span className="eyebrow">A lesson I keep</span>
-    <div><h2>Polish cannot rescue a fuzzy problem.</h2><p>Early in my career, I reached for the final interface too quickly. Now I spend more time understanding the situation, making assumptions visible and connecting each design decision to a real purpose.</p></div>
+    <div><h2>The screen is usually only the last clue.</h2><p>I designed the first version of LUXTJ, then came back to it after real usage showed where people were struggling. The redesign got better when I stopped polishing the reported screen and followed the friction into the surrounding journey.</p></div>
+  </section>
+
+  <section className="section shell about-next reveal">
+    <span className="eyebrow">What I want next</span>
+    <div><h2>Complex products with room for careful thinking.</h2><p>I’m most interested in teams where customer journeys, operational realities and business rules meet — and where a designer can stay close enough to the people building the work to make the details hold together.</p></div>
   </section>
 
   <TestimonialsSection/>

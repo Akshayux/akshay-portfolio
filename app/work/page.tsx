@@ -8,8 +8,8 @@ export const metadata:Metadata={title:'Work',description:'Selected Product and U
 export default function WorkPage(){return <PageFrame>
   <section className="page-hero shell reveal">
     <span className="eyebrow">Work / 2023-2026</span>
-    <h1 data-parallax-layer data-parallax-speed="10">A closer look at how I solve product problems.</h1>
-    <p>Four detailed case studies across customer travel, partner operations, AI onboarding and evidence-informed digital health, followed by a concise project archive.</p>
+    <h1 data-parallax-layer data-parallax-speed="10">A few problems I followed past the screen.</h1>
+    <p>Four case studies across customer travel, partner operations, AI onboarding and digital health — each focused on the decisions that changed what happened next.</p>
   </section>
 
   <section className="section shell work-feature">
