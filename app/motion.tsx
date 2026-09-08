@@ -76,14 +76,18 @@ export default function Motion({children}:{children:ReactNode}){
     }
 
     const cleanups:Array<()=>void>=[];
+    const revealItems=Array.from(document.querySelectorAll<HTMLElement>('.reveal'));
     const observer=new IntersectionObserver(entries=>{
       entries.forEach(entry=>{
         if(!entry.isIntersecting)return;
+        const item=entry.target as HTMLElement;
+        const index=revealItems.indexOf(item);
+        item.style.setProperty('--reveal-delay',`${Math.min(Math.max(index,0)*45,240)}ms`);
         entry.target.classList.add('is-visible');
         observer.unobserve(entry.target);
       });
     },{threshold:.08,rootMargin:'0px 0px -7%'});
-    document.querySelectorAll('.reveal').forEach(item=>observer.observe(item));
+    revealItems.forEach(item=>observer.observe(item));
 
     const proofStrip=document.querySelector<HTMLElement>('.proof-strip');
     let proofObserver:IntersectionObserver|undefined;
