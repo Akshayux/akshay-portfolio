@@ -22,8 +22,8 @@ export function SiteHeader(){
               <Link href="/work" data-cursor-label="Jump"><small>00</small><span>All work</span></Link>
               <Link href="/work/luxtj" data-cursor-label="Jump"><small>01</small><span>LUXTJ</span></Link>
               <Link href="/work/luxtj-extranet" data-cursor-label="Jump"><small>02</small><span>LUXTJ Extranet</span></Link>
-              <span className="work-menu-disabled" aria-disabled="true"><small>03</small><span>Simpo AI <em>In progress</em></span></span>
-              <Link href="/work/scotcare" data-cursor-label="Jump"><small>04</small><span>ScotCare</span></Link>
+              <Link href="/work/scotcare" data-cursor-label="Jump"><small>03</small><span>ScotCare</span></Link>
+              <span className="work-menu-disabled" aria-disabled="true"><small>04</small><span>Simpo AI <em>In progress</em></span></span>
             </div>
           </details>
         </div>
@@ -88,7 +88,8 @@ export function ProjectCard({index,title,label,role,metrics,readTime,description
 }
 
 export function CaseStudyStack({compact=false}:{compact?:boolean}){
-  return <div className={`case-study-stack${compact?' case-study-stack-static':''}`}><ProjectFeature compact={compact}/>{featuredProjects.slice(1).map(project=><ProjectCard key={project.title} {...project}/>)}</div>;
+  const projects=[...featuredProjects.slice(1)].sort((a,b)=>Number(Boolean(a.inProgress))-Number(Boolean(b.inProgress)));
+  return <div className={`case-study-stack${compact?' case-study-stack-static':''}`}><ProjectFeature compact={compact}/>{projects.map(project=><ProjectCard key={project.title} {...project}/>)}</div>;
 }
 
 export function TestimonialsSection({index='05'}:{index?:string}={}){
