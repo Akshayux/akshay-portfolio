@@ -12,7 +12,7 @@ export default function Home(){return <PageFrame>
       <div className="hero-intro">
         <p>Most fixes touch one screen. Mine tend to spread to three — because the real problem is rarely where it was reported.</p>
         <div className="hero-expertise-pills" aria-label="Industries and product experience">
-          <span>B2B SaaS</span><span>AI</span><span>Travel</span><span>Enterprise</span>
+          <span>B2B SaaS</span><span>AI</span><span>Travel</span><span>Human made</span>
         </div>
         <div className="hero-cta-row"><Link className="text-link" href="/work" data-cursor-label="View">See my work <Arrow/></Link><RecruiterBrief/></div>
       </div>
