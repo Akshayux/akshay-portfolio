@@ -914,6 +914,8 @@ html[data-theme="dark"] .case-study-media{background:#20201d}.case-study-copy h3
 .case-study-feature .case-study-copy h3{color:#fff}
 .case-study-metrics{margin-top:38px}.case-study-feature .case-study-metrics{border-color:rgba(255,255,255,.2)}.case-study-feature .case-study-metrics>div+div{border-color:rgba(255,255,255,.2)}
 .case-study-copy footer{width:max-content;min-height:52px;margin-top:44px;padding:7px 8px 7px 20px;border:1px solid var(--line);border-radius:999px;color:var(--ink);font-size:11px;font-weight:750;text-transform:uppercase;letter-spacing:.04em}.case-study-copy footer .arrow-icon{width:36px;height:36px;display:grid;place-items:center;border-radius:50%;background:var(--accent);color:#fff;font-size:15px}
+.button-icon .arrow-icon svg,.recruiter-trigger>b .arrow-icon svg,.case-study-copy footer .arrow-icon svg,.project-arrow .arrow-icon svg{width:16px;height:16px}
+.button-icon .arrow-icon,.recruiter-trigger>b .arrow-icon{width:16px;height:16px}
 .case-study-card-progress{cursor:default}.case-study-card-progress .case-study-status{padding:12px 18px;border-color:var(--line);background:var(--paper-2);color:var(--muted)}
 @media (hover:hover) and (pointer:fine){.case-study-card-progress:hover{transform:none;box-shadow:none}.case-study-card-progress:hover .case-study-media img{transform:none;filter:drop-shadow(0 18px 25px rgba(20,20,20,.15))}}
 .case-study-feature .case-study-copy footer{border-color:rgba(255,255,255,.32);color:#fff}.case-study-feature .case-study-metrics dd{color:#aaa}.case-study-feature .case-study-copy footer .arrow-icon{background:var(--accent)}
