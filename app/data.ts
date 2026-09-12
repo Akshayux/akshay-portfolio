@@ -3,7 +3,7 @@ export const profile = {
   shortName: 'Akshay',
   role: 'Product & UX Designer',
   location: 'United Kingdom',
-  email: 'akshayv2310@gmail.com',
+  email: 'hello@akshayvenkat.com',
   phone: '+44 7810120379',
   years: '5+',
 };
