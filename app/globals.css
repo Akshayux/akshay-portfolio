@@ -940,6 +940,11 @@ html[data-theme="dark"] .case-study-media{background:#20201d}.case-study-copy h3
   .case-study-stack>.case-study-card>.case-study-link{height:100%;min-height:0}
 }
 
+/* One consistent corner system across every work card and its media frame. */
+.case-study-card{border-radius:28px}
+.case-study-media,.case-study-feature .case-study-media{border-radius:22px}
+@media (max-width:760px){.case-study-card{border-radius:20px}.case-study-media,.case-study-feature .case-study-media{border-radius:14px}}
+
 @media (max-width:1020px){
   .results-grid{grid-template-columns:1fr 1fr}.result-card-featured{grid-column:1/-1;grid-row:auto;min-height:560px}.result-card-wide{grid-column:1/-1}.recommendation-heading{grid-template-columns:110px 1.25fr 1fr}.recommendation-card{padding:22px}.recommendation-card blockquote{font-size:15px}
 }
