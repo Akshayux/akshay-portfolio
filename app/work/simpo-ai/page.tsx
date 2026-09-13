@@ -20,6 +20,18 @@ export default function SimpoAIPage(){return <main id="top" className="case-page
 
   <section className="case-hero-media simpo-hero-media reveal" data-parallax><img src="/simpo-ai-flow.svg" alt="Abstract illustration of the Simpo AI onboarding flow"/></section>
 
+  <section className="simpo-snapshot case-wide reveal" aria-label="Simpo AI mini case study snapshot">
+    <div className="simpo-snapshot-intro"><Kicker>Mini case study</Kicker><h2>From “where do I start?” to a first useful website.</h2><p>A quick, scannable view of the design work behind the Simpo AI onboarding reset.</p></div>
+    <div className="simpo-snapshot-grid">
+      <article><span>01 · Problem</span><h3>People were leaving before seeing value.</h3><p>Too many unfamiliar choices arrived before the first useful result.</p></article>
+      <article><span>02 · Ownership</span><h3>Mapped the first session end to end.</h3><p>Aligned product and engineering around a clearer path to the first website.</p></article>
+      <article><span>03 · Investigation</span><h3>Found where progress disappeared.</h3><p>Reviewed abandonment, traced decisions and benchmarked staged-creation patterns.</p></article>
+      <article><span>04 · Design moves</span><h3>Made each step smaller and explainable.</h3><p>One question at a time, visible progress, editable choices and earlier feedback.</p></article>
+      <article><span>05 · Outcome</span><h3>Onboarding drop-off: ~65% → 13%.</h3><p>The first session became easier to understand and finish.</p></article>
+      <article><span>06 · What I learned</span><h3>AI earns trust by showing its intent.</h3><p>Make the next decision clear, then let the person stay in control.</p></article>
+    </div>
+  </section>
+
   <section className="lux-skim case-wide reveal" aria-label="Simpo AI case study at a glance"><div><Kicker>At a glance</Kicker><small>90-second summary</small></div><ul><li><b>The problem</b><p>People were leaving before they could see a useful first result.</p></li><li><b>The constraint</b><p>The flow needed to make AI guidance clearer without taking control away from the person creating the site.</p></li><li><b>My ownership</b><p>I investigated abandonment, mapped the first session and designed the new progression.</p></li><li><b>The outcome</b><p>Directional onboarding drop-off moved from about 65% to 13%.</p></li></ul></section>
 
   <section className="case-section case-narrow" id="problem"><div className="case-split"><div className="reveal"><Kicker>The original problem</Kicker><h2>People had to make decisions before they had enough context to make them.</h2></div><div className="reveal"><p>The existing flow exposed several choices at once, including choices about the site and choices about what the AI should generate. That made the first session feel like setup work instead of a path to an outcome.</p><blockquote><small>Design question</small>How might the flow explain the next useful choice, show what the AI is doing and keep the person moving towards a first website?</blockquote></div></div></section>
