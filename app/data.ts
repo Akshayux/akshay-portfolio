@@ -63,7 +63,7 @@ export const featuredProjects = [
     description: 'Why were people leaving an AI website builder before they made their first choice?',
     outcome: 'See how clearer progression and simpler decisions made the first session easier to finish.',
     signal: 'AI interaction research · Task-focused UX',
-    image: '/simpo-ai-flow.svg',
+    image: '/simpo-ai-dashboard.png',
     href: '/work/simpo-ai',
     inProgress: true,
     tags: ['AI', 'Onboarding', 'SaaS'],
