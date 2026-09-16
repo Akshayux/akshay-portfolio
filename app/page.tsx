@@ -3,13 +3,12 @@ import {Arrow,CaseStudyStack,PageFrame,TestimonialsSection} from './components';
 import {experience} from './data';
 import UXGame from './ux-game';
 import HeroPreview from './hero-preview';
+import LanguageGreeting from './language-greeting';
 
 export default function Home(){return <PageFrame>
   <section className="hero hero-centered shell" aria-labelledby="hero-title">
     <div className="hero-copy reveal">
-      <div className="hero-label hero-language-greeting" tabIndex={0} aria-label="Namasté in Kannada, Hindi, Telugu, English, Tamil and Spanish" data-tooltip="I speak Kannada · Hindi · Telugu · English · Tamil · Español">
-        <span lang="kn">ನಮಸ್ಕಾರ</span><i aria-hidden="true">·</i><span lang="hi">नमस्ते</span><i aria-hidden="true">·</i><span lang="te">నమస్తే</span><i aria-hidden="true">·</i><span lang="en">Hello</span><i aria-hidden="true">·</i><span lang="ta">வணக்கம்</span><i aria-hidden="true">·</i><span lang="es">Hola</span>
-      </div>
+      <LanguageGreeting/>
       <h1 id="hero-title" className="hero-statement"><strong>I&apos;m Akshay,</strong> <span>I&apos;m a Product Designer with 5+ years of experience,</span> a Computer Science background, and an MA in Digital Design (HCI) from Heriot-Watt University.</h1>
       <p className="hero-support">I use human-centred research and storytelling to turn complex workflows into clear, useful products that people trust.</p>
       <div className="hero-cta-row"><Link className="button hero-primary-button" href="/work" data-cursor-label="View"><span>See my work</span><span className="button-icon" aria-hidden="true"><Arrow/></span></Link></div>
