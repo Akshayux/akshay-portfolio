@@ -5,9 +5,15 @@ import {capabilities,experience} from '../data';
 export const metadata:Metadata={title:'About',description:'About Akshay Venkata Narayana, Product and UX Designer working across complex digital systems, currently based in the UK.'};
 
 export default function AboutPage(){return <PageFrame>
-  <section className="about-hero shell">
-    <div className="about-hero-copy reveal"><span className="eyebrow">About Akshay Venkata Narayana</span><h1 data-parallax-layer data-parallax-speed="10">I ask why before drawing what.</h1><p>I&apos;m a Product and UX Designer based in the UK. I work on complex digital products, from travel booking and enterprise tools to public-interest platforms and mobile apps.</p><p className="about-experience-line">5+ years across travel, SaaS, insurance and banking.</p><div className="hero-actions"><Button href="/work" cursorLabel="View">View work</Button><Button href="/contact" secondary cursorLabel="Open">Get in touch</Button></div></div>
-    <div className="about-hero-image reveal" data-parallax><img src="/optimized/about-london.jpg" alt="Akshay in London with Tower Bridge in the background"/></div>
+  <section className="about-canvas shell">
+    <div className="about-canvas-top reveal"><span className="eyebrow">About Akshay Venkata Narayana</span><h1 data-parallax-layer data-parallax-speed="10">Designer first,<br/><em>product thinker always.</em></h1><p>I design digital products by following the people, rules and decisions behind the interface.</p><div className="hero-actions"><Button href="/work" cursorLabel="View">View work</Button><Button href="/contact" secondary cursorLabel="Open">Get in touch</Button></div></div>
+    <div className="about-canvas-board reveal">
+      <div className="about-canvas-callout about-callout-location"><span>Based in</span><strong>London, UK</strong><small>Currently designing across the UK and beyond.</small></div>
+      <div className="about-canvas-callout about-callout-focus"><span>Designs for</span><strong>B2B SaaS · AI · Travel</strong><small>Also insurance, banking and public-interest services.</small></div>
+      <div className="about-canvas-portrait" data-parallax><img src="/optimized/about-london.jpg" alt="Akshay in London with Tower Bridge in the background"/><span>Outside the screen / London</span></div>
+      <div className="about-canvas-callout about-callout-practice"><span>How I work</span><strong>I research before I redesign.</strong><small>When a stakeholder asks for a visual fix, I trace the friction and explain what actually needs to change.</small></div>
+      <div className="about-canvas-callout about-callout-tools"><span>Works with</span><strong>Figma · FigJam · Prototypes</strong><small>Close to engineering, from first question to shipped detail.</small></div>
+    </div>
   </section>
 
   <section className="shell about-proof"><ProofStrip/></section>

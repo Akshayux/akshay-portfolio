@@ -17,10 +17,6 @@ export default function Home(){return <PageFrame>
         <div className="hero-cta-row"><Link className="text-link" href="/work" data-cursor-label="View">See my work <Arrow/></Link><RecruiterBrief/></div>
       </div>
     </div>
-    <div className="hero-visual reveal" data-parallax>
-      <div className="portrait-frame"><img src="/akshay-portrait.jpg" alt="Akshay Venkata Narayana, Product Designer"/></div>
-      <div className="portrait-note"><div><strong>5+ years</strong><span>Product &amp; UX experience</span></div></div>
-    </div>
     <div className="hero-foot"><span>Scroll to explore</span><span>↓</span></div>
   </section>
 
