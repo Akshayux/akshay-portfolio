@@ -44,6 +44,44 @@ body{overflow-x:hidden}
   .hero{display:block;min-height:0;padding-top:clamp(56px,7vh,80px);padding-bottom:30px}
 }
 
+/* Centered, type-led hero inspired by Cyze's calm index: a short introduction,
+   one clear action, then a tactile preview that invites exploration. */
+.hero-centered{display:flex;flex-direction:column;align-items:center;gap:64px;min-height:0;padding-top:clamp(72px,9vh,108px);padding-bottom:62px;text-align:center}
+.hero-centered .hero-copy{width:100%;max-width:920px;display:flex;flex-direction:column;align-items:center}
+.hero-centered .hero-label{margin:0 0 26px;font-size:14px;letter-spacing:.14em}
+.hero-centered .hero-statement{max-width:920px;margin:0;font-size:clamp(26px,3.05vw,42px);font-weight:500;line-height:1.22;letter-spacing:-.045em}
+.hero-centered .hero-statement strong{font-weight:750}
+.hero-centered .hero-statement span{color:var(--accent)}
+.hero-centered .hero-support{max-width:680px;margin-top:22px;color:var(--muted);font-size:17px;line-height:1.5}
+.hero-centered .hero-cta-row{justify-content:center;margin-top:30px}
+.hero-centered .hero-primary-button{background:var(--white);border-color:var(--white);color:var(--ink);font-size:14px}
+.hero-centered .hero-primary-button .button-icon{background:var(--accent);color:var(--ink)}
+.hero-centered .hero-primary-button:hover{background:var(--accent);border-color:var(--accent);color:var(--ink)}
+.hero-preview{position:relative;width:min(100%,1040px);display:block;color:var(--ink);text-align:left}
+.hero-preview-frame{position:relative;aspect-ratio:2.08;display:grid;place-items:center;overflow:hidden;border:1px solid var(--line);border-radius:22px;background:var(--paper-2);box-shadow:0 22px 60px rgba(0,0,0,.2);isolation:isolate;transition:transform .5s cubic-bezier(.22,1,.36,1),box-shadow .5s ease}
+.hero-preview-frame::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:radial-gradient(260px circle at var(--pointer-x,50%) var(--pointer-y,50%),rgba(211,154,106,.2),transparent 70%);opacity:0;transition:opacity .35s ease}
+.hero-preview-frame img{position:relative;z-index:0;width:92%;height:92%;object-fit:contain;filter:drop-shadow(0 18px 24px rgba(0,0,0,.22));transition:transform .7s cubic-bezier(.22,1,.36,1),filter .5s ease}
+.hero-preview-kicker,.hero-preview-hint{position:absolute;z-index:2;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+.hero-preview-kicker{top:24px;left:26px;color:var(--muted)}
+.hero-preview-hint{right:26px;bottom:24px;color:var(--ink);opacity:.72}
+.hero-preview-play{position:absolute;z-index:2;width:62px;height:62px;display:grid;place-items:center;border-radius:50%;background:var(--accent);color:var(--ink);box-shadow:0 12px 30px rgba(0,0,0,.22);animation:hero-pulse 3.6s ease-in-out infinite;transition:transform .5s cubic-bezier(.22,1,.36,1),background .3s ease}
+.hero-preview-play svg{width:22px;height:22px;fill:currentColor;transform:translateX(2px)}
+@media (hover:hover) and (pointer:fine){.hero-preview:hover .hero-preview-frame,.hero-preview:focus-visible .hero-preview-frame{transform:translateY(-5px);box-shadow:0 32px 78px rgba(0,0,0,.28)}.hero-preview:hover .hero-preview-frame::before,.hero-preview:focus-visible .hero-preview-frame::before{opacity:1}.hero-preview:hover .hero-preview-frame img,.hero-preview:focus-visible .hero-preview-frame img{transform:scale(1.025);filter:drop-shadow(0 24px 32px rgba(0,0,0,.3))}.hero-preview:hover .hero-preview-play,.hero-preview:focus-visible .hero-preview-play{transform:scale(1.1) rotate(5deg);background:var(--white)}}
+@keyframes hero-pulse{0%,100%{box-shadow:0 12px 30px rgba(0,0,0,.22)}50%{box-shadow:0 16px 34px rgba(211,154,106,.34)}}
+@media (max-width:760px){
+  .hero-centered{gap:40px;padding-top:64px;padding-bottom:46px}
+  .hero-centered .hero-label{margin-bottom:20px;font-size:12px}
+  .hero-centered .hero-statement{font-size:clamp(25px,7.2vw,34px);line-height:1.2}
+  .hero-centered .hero-support{margin-top:18px;font-size:16px}
+  .hero-centered .hero-cta-row{margin-top:24px}
+  .hero-preview-frame{aspect-ratio:1.35;border-radius:16px}
+  .hero-preview-frame img{width:96%;height:80%}
+  .hero-preview-kicker{top:16px;left:18px;font-size:10px}
+  .hero-preview-hint{right:18px;bottom:16px;font-size:10px}
+  .hero-preview-play{width:52px;height:52px}
+}
+@media (prefers-reduced-motion:reduce){.hero-preview-play{animation:none}}
+
 /* Long-form projects: use readable body type without diluting the hierarchy. */
 .case-three p,.ecosystem-cards p,.responsibility-grid p,.principle-grid p,
 .support-grid p,.module-grid p,.research-step-list p,.lux-skim li p,

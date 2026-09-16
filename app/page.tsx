@@ -1,20 +1,18 @@
 import Link from 'next/link';
 import {Arrow,CaseStudyStack,PageFrame,TestimonialsSection} from './components';
 import {experience} from './data';
-import RecruiterBrief from './recruiter-brief';
 import UXGame from './ux-game';
+import HeroPreview from './hero-preview';
 
 export default function Home(){return <PageFrame>
-  <section className="hero shell">
-    <div className="hero-copy">
-      <span className="hero-label">Hello</span>
-      <h1 data-parallax-layer data-parallax-speed="12">I&apos;m Akshay.</h1>
-      <div className="hero-intro">
-        <p>I&apos;m a Product Designer with 5+ years of experience, a Computer Science background, and an MA in Digital Design (HCI) from Heriot-Watt University. I use human-centred research and storytelling to turn complex workflows into clear, useful products that people trust.</p>
-        <p className="hero-signoff">When I&apos;m not shaping products, I&apos;m usually chasing one last rep at the gym.</p>
-        <div className="hero-cta-row"><Link className="text-link" href="/work" data-cursor-label="View">See my work <Arrow/></Link><RecruiterBrief/></div>
-      </div>
+  <section className="hero hero-centered shell" aria-labelledby="hero-title">
+    <div className="hero-copy reveal">
+      <span className="hero-label">నమస్తే (Namasté)</span>
+      <h1 id="hero-title" className="hero-statement"><strong>I&apos;m Akshay,</strong> <span>I&apos;m a Product Designer with 5+ years of experience,</span> a Computer Science background, and an MA in Digital Design (HCI) from Heriot-Watt University.</h1>
+      <p className="hero-support">I use human-centred research and storytelling to turn complex workflows into clear, useful products that people trust.</p>
+      <div className="hero-cta-row"><Link className="button hero-primary-button" href="/work" data-cursor-label="View"><span>See my work</span><span className="button-icon" aria-hidden="true"><Arrow/></span></Link></div>
     </div>
+    <HeroPreview/>
   </section>
 
   <section className="featured-work shell" id="selected-work">
