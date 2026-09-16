@@ -977,8 +977,10 @@ html[data-theme="dark"] .case-study-media{background:#20201d}.case-study-copy h3
 }
 
 /* Home hero is intentionally type-led; the portrait now belongs to the About canvas. */
-.hero{grid-template-columns:1fr}
+.hero{grid-template-columns:1fr;min-height:calc(100vh - 220px);padding-bottom:28px}
 .hero-copy{max-width:980px}
+.featured-work{padding-top:84px}
+@media (max-width:760px){.hero{min-height:0;padding-bottom:30px}.featured-work{padding-top:88px}}
 
 @media (max-width:760px){
   .about-canvas{padding:64px 0 82px}
