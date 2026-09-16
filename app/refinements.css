@@ -49,6 +49,11 @@ body{overflow-x:hidden}
 .hero-centered{display:flex;flex-direction:column;align-items:center;gap:64px;min-height:0;padding-top:clamp(72px,9vh,108px);padding-bottom:62px;text-align:center}
 .hero-centered .hero-copy{width:100%;max-width:920px;display:flex;flex-direction:column;align-items:center}
 .hero-centered .hero-label{margin:0 0 26px;font-size:14px;letter-spacing:.14em}
+.hero-centered .hero-language-greeting{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:9px;margin-bottom:26px;padding:5px 10px;color:var(--accent);letter-spacing:.02em;text-transform:none;cursor:help}
+.hero-language-greeting span{display:inline-block;line-height:1}
+.hero-language-greeting i{font-style:normal;opacity:.6}
+.hero-language-greeting::after{content:attr(data-tooltip);position:absolute;z-index:5;left:50%;top:calc(100% + 12px);max-width:min(92vw,420px);padding:9px 13px;border:1px solid var(--line);border-radius:999px;background:var(--paper-2);color:var(--ink);box-shadow:0 14px 30px rgba(0,0,0,.2);font-size:11px;font-weight:650;letter-spacing:.02em;line-height:1.2;white-space:nowrap;opacity:0;pointer-events:none;transform:translate(-50%,-5px);transition:opacity .25s ease,transform .35s cubic-bezier(.22,1,.36,1)}
+.hero-language-greeting:hover::after,.hero-language-greeting:focus-visible::after{opacity:1;transform:translate(-50%,0)}
 .hero-centered .hero-statement{max-width:920px;margin:0;font-size:clamp(26px,3.05vw,42px);font-weight:500;line-height:1.22;letter-spacing:-.045em}
 .hero-centered .hero-statement strong{font-weight:750}
 .hero-centered .hero-statement span{color:var(--accent)}
@@ -71,6 +76,8 @@ body{overflow-x:hidden}
 @media (max-width:760px){
   .hero-centered{gap:40px;padding-top:64px;padding-bottom:46px}
   .hero-centered .hero-label{margin-bottom:20px;font-size:12px}
+  .hero-centered .hero-language-greeting{gap:5px;margin-bottom:20px;padding:4px 6px;font-size:11px;letter-spacing:0}
+  .hero-language-greeting::after{font-size:10px}
   .hero-centered .hero-statement{font-size:clamp(25px,7.2vw,34px);line-height:1.2}
   .hero-centered .hero-support{margin-top:18px;font-size:16px}
   .hero-centered .hero-cta-row{margin-top:24px}
