@@ -21,8 +21,8 @@ export function SiteHeader(){
               <Link href="/work" data-cursor-label="Jump"><small>00</small><span>All work</span></Link>
               <Link href="/work/luxtj" data-cursor-label="Jump"><small>01</small><span>LUXTJ</span></Link>
               <Link href="/work/luxtj-extranet" data-cursor-label="Jump"><small>02</small><span>LUXTJ Extranet</span></Link>
-              <Link href="/work/scotcare" data-cursor-label="Jump"><small>03</small><span>ScotCare</span></Link>
-              <span className="work-menu-disabled" aria-disabled="true"><small>04</small><span>Simpo AI <em>In progress</em></span></span>
+              <Link href="/work/simpo-ai" data-cursor-label="View"><small>03</small><span>Simpo AI <em>Snapshot · in progress</em></span></Link>
+              <Link href="/work/scotcare" data-cursor-label="Jump"><small>04</small><span>ScotCare</span></Link>
             </div>
           </details>
         </div>
@@ -70,23 +70,23 @@ export function ProjectFeature({compact=false}:{compact?:boolean}){
   </article>;
 }
 
-export function ProjectCard({index,title,label,role,metrics,readTime,description,outcome,signal,image,href,tags,inProgress=false}:{index:string;title:string;label:string;role:string;metrics:{value:string;label:string}[];readTime:string;description:string;outcome:string;signal:string;image:string;href:string;tags:string[];inProgress?:boolean}){
+export function ProjectCard({index,title,label,metrics,readTime,description,image,href,inProgress=false}:{index:string;title:string;label:string;role:string;metrics:{value:string;label:string}[];readTime:string;description:string;outcome:string;signal:string;image:string;href:string;tags:string[];inProgress?:boolean}){
   const content=<>
       <div className="case-study-media" data-parallax><img src={image} loading="lazy" decoding="async" alt={`${title} project interface`}/><span>{index}</span></div>
       <div className="case-study-copy">
         <header><small>{label}</small><span>{inProgress?'In progress':`${readTime} read`}</span></header>
         <h3>{description}</h3>
         <dl className="case-study-metrics">{metrics.map(metric=><div key={metric.label}><dt>{metric.value}</dt><dd>{metric.label}</dd></div>)}</dl>
-        <footer className={inProgress?'case-study-status':''}><span>{inProgress?'In progress':'View case study'}</span>{!inProgress&&<Arrow/>}</footer>
+        <footer><span>{inProgress?'View snapshot':'View case study'}</span><Arrow/></footer>
       </div>
     </>;
   return <article className={`case-study-card project-card-${index}${inProgress?' case-study-card-progress':''} reveal`}>
-    {inProgress?<div className="case-study-link" aria-label={`${title} case study, in progress`}>{content}</div>:<Link className="case-study-link" href={href} aria-label={`Read the ${title} case study`} data-cursor-label="Explore">{content}</Link>}
+    <Link className="case-study-link" href={href} aria-label={inProgress?`View the ${title} project snapshot`:`Read the ${title} case study`} data-cursor-label="Explore">{content}</Link>
   </article>;
 }
 
 export function CaseStudyStack({compact=false}:{compact?:boolean}){
-  const projects=[...featuredProjects.slice(1)].sort((a,b)=>Number(Boolean(a.inProgress))-Number(Boolean(b.inProgress)));
+  const projects=featuredProjects.slice(1);
   return <div className={`case-study-stack${compact?' case-study-stack-static':''}`}><ProjectFeature compact={compact}/>{projects.map(project=><ProjectCard key={project.title} {...project}/>)}</div>;
 }
 

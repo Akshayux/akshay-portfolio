@@ -1,285 +1,39 @@
 'use client';
 
-import {useEffect,useRef,useState,type ReactNode} from 'react';
-import {animate,motion,useMotionValue,useReducedMotion,useScroll,useSpring} from 'motion/react';
-
-const ease=[0.22,1,0.36,1] as const;
-
-function splitIntoRevealWords(element:HTMLElement){
-  if(element.dataset.textSplit==='true')return Array.from(element.querySelectorAll<HTMLElement>('.text-reveal-word'));
-  const textNodes:Text[]=[];
-  const walker=document.createTreeWalker(element,NodeFilter.SHOW_TEXT,{acceptNode(node){
-    const parent=node.parentElement;
-    if(!node.textContent?.trim()||parent?.closest('[aria-hidden="true"]'))return NodeFilter.FILTER_REJECT;
-    return NodeFilter.FILTER_ACCEPT;
-  }});
-  while(walker.nextNode())textNodes.push(walker.currentNode as Text);
-  textNodes.forEach(node=>{
-    const fragment=document.createDocumentFragment();
-    node.textContent?.split(/(\s+)/).forEach(part=>{
-      if(!part)return;
-      if(/^\s+$/.test(part)){fragment.appendChild(document.createTextNode(part));return;}
-      const word=document.createElement('span');
-      word.className='text-reveal-word';
-      word.textContent=part;
-      fragment.appendChild(word);
-    });
-    node.parentNode?.replaceChild(fragment,node);
-  });
-  element.dataset.textSplit='true';
-  return Array.from(element.querySelectorAll<HTMLElement>('.text-reveal-word'));
-}
-
-function mutedRevealColor(primary:string){
-  const channels=primary.match(/[\d.]+/g)?.slice(0,3).map(Number)??[20,20,20];
-  const luminance=channels[0]*.299+channels[1]*.587+channels[2]*.114;
-  return luminance>155?'rgba(255,255,255,.24)':'rgba(20,20,20,.22)';
-}
+import {useEffect,type ReactNode} from 'react';
+import {motion,useReducedMotion,useScroll,useSpring} from 'motion/react';
+import {usePathname} from 'next/navigation';
 
 export default function Motion({children}:{children:ReactNode}){
+  const pathname=usePathname();
   const reduceMotion=useReducedMotion();
-  const [preloaderPhase,setPreloaderPhase]=useState<'waiting'|'leaving'|'hidden'>('waiting');
   const {scrollYProgress}=useScroll();
   const progress=useSpring(scrollYProgress,{stiffness:130,damping:30,mass:.28});
-  const cursorX=useMotionValue(-100);
-  const cursorY=useMotionValue(-100);
-  const smoothCursorX=useSpring(cursorX,{stiffness:820,damping:45,mass:.2});
-  const smoothCursorY=useSpring(cursorY,{stiffness:820,damping:45,mass:.2});
-  const cursorRef=useRef<HTMLDivElement>(null);
-  const cursorTargetRef=useRef<HTMLElement|null>(null);
-
-  useEffect(()=>{
-    if('scrollRestoration' in history)history.scrollRestoration='manual';
-    window.scrollTo({top:0,left:0,behavior:'auto'});
-  },[]);
 
   useEffect(()=>{
     const root=document.documentElement;
-    if(reduceMotion){
-      const hide=window.setTimeout(()=>setPreloaderPhase('hidden'),0);
-      return()=>window.clearTimeout(hide);
-    }
-    root.classList.add('preloader-open');
-    const leave=window.setTimeout(()=>setPreloaderPhase('leaving'),420);
-    const hide=window.setTimeout(()=>{setPreloaderPhase('hidden');root.classList.remove('preloader-open')},1370);
-    return()=>{window.clearTimeout(leave);window.clearTimeout(hide);root.classList.remove('preloader-open')};
-  },[reduceMotion]);
-
-  useEffect(()=>{
-    const root=document.documentElement;
-    root.classList.add('motion-ready');
     if(reduceMotion){
       root.classList.add('reduce-motion');
-      document.querySelectorAll('.reveal').forEach(item=>item.classList.add('is-visible'));
-      document.querySelectorAll('.proof-strip').forEach(item=>item.classList.add('is-animated'));
-      return()=>root.classList.remove('motion-ready','reduce-motion');
+      return()=>root.classList.remove('reduce-motion');
     }
 
-    const cleanups:Array<()=>void>=[];
-    const revealItems=Array.from(document.querySelectorAll<HTMLElement>('.reveal'));
+    // Content stays legible while each section makes a brief entrance.
+    const items=Array.from(document.querySelectorAll<HTMLElement>('.reveal'));
     const observer=new IntersectionObserver(entries=>{
       entries.forEach(entry=>{
         if(!entry.isIntersecting)return;
-        const item=entry.target as HTMLElement;
-        const index=revealItems.indexOf(item);
-        item.style.setProperty('--reveal-delay',`${Math.min(Math.max(index,0)*45,240)}ms`);
         entry.target.classList.add('is-visible');
         observer.unobserve(entry.target);
       });
-    },{threshold:.08,rootMargin:'0px 0px -7%'});
-    revealItems.forEach(item=>observer.observe(item));
+    },{threshold:.02,rootMargin:'0px 0px -24px 0px'});
+    items.forEach(item=>observer.observe(item));
 
-    const proofStrip=document.querySelector<HTMLElement>('.proof-strip');
-    let proofObserver:IntersectionObserver|undefined;
-    if(proofStrip){
-      proofObserver=new IntersectionObserver(entries=>{
-        const entry=entries[0];
-        if(!entry?.isIntersecting)return;
-        proofStrip.classList.add('is-animated');
-        proofStrip.querySelectorAll<HTMLElement>('dt[data-count]').forEach((stat,index)=>{
-          const target=Number(stat.dataset.count||0);
-          const suffix=stat.dataset.suffix||'';
-          const counter=animate(0,target,{
-            duration:1.15,
-            delay:.12+index*.11,
-            ease,
-            onUpdate:value=>{stat.textContent=`${Math.round(value)}${suffix}`},
-          });
-          cleanups.push(()=>counter.stop());
-        });
-        proofObserver?.disconnect();
-      },{threshold:.34,rootMargin:'0px 0px -8%'});
-      proofObserver.observe(proofStrip);
-    }
-
-    const introTargets=Array.from(document.querySelectorAll<HTMLElement>('.hero-copy > *, .page-hero > *, .about-hero-copy > *, .contact-heading > *, .case-hero-copy > *'));
-    if(introTargets.length){
-      const intro=animate(introTargets,
-        {opacity:[0,1],y:[28,0]},
-        {duration:.72,delay:(index)=>.78+index*.065,ease});
-      cleanups.push(()=>intro.stop());
-    }
-
-    const introHeading=document.querySelector<HTMLElement>('h1');
-    if(introHeading){
-      const introWords=splitIntoRevealWords(introHeading);
-      const wordIntros=introWords.map((word,index)=>{
-        const primary=getComputedStyle(word).color;
-        return animate(word,{color:[mutedRevealColor(primary),primary],y:[12,0]},
-          {duration:.72,delay:.82+Math.min(index*.045,.5),ease});
-      });
-      cleanups.push(()=>wordIntros.forEach(animation=>animation.stop()));
-    }
-
-    const textRevealSelector=[
-      '.editorial-heading h2','.home-about-copy .large-copy','.testimonial-card blockquote',
-      '.case-section h2','.case-closing h2','.about-dual-card h2',
-      '.belief-layout h2','.contact-close p','.reflection-section h2'
-    ].join(',');
-    const revealGroups=Array.from(document.querySelectorAll<HTMLElement>(textRevealSelector)).map(element=>{
-      const words=splitIntoRevealWords(element);
-      words.forEach(word=>{
-        const primary=getComputedStyle(word).color;
-        word.style.setProperty('--word-primary',primary);
-        word.style.setProperty('--word-muted',mutedRevealColor(primary));
-      });
-      return{element,words};
-    });
-    let textFrame=0;
-    const updateTextReveal=()=>{
-      const viewport=window.innerHeight;
-      revealGroups.forEach(({element,words})=>{
-        const rect=element.getBoundingClientRect();
-        if(rect.top>viewport*1.15)return;
-        const start=viewport*.9;
-        const end=viewport*.24;
-        const progress=Math.max(0,Math.min(1,(start-rect.top)/(start-end)));
-        const last=Math.max(words.length-1,1);
-        words.forEach((word,index)=>{
-          const local=Math.max(0,Math.min(1,progress*1.5-(index/last)*.5));
-          word.style.setProperty('--word-reveal',String(local));
-          word.style.setProperty('--word-muted-share',`${(1-local)*100}%`);
-        });
-      });
-      textFrame=0;
-    };
-    const scheduleTextReveal=()=>{if(!textFrame)textFrame=requestAnimationFrame(updateTextReveal)};
-    updateTextReveal();
-
-    const parallaxItems=Array.from(document.querySelectorAll<HTMLElement>('[data-parallax] img'));
-    const parallaxLayers=Array.from(document.querySelectorAll<HTMLElement>('[data-parallax-layer]'));
-    let frame=0;
-    const updateParallax=()=>{
-      parallaxItems.forEach((image,index)=>{
-        const rect=image.getBoundingClientRect();
-        if(rect.bottom<0||rect.top>window.innerHeight)return;
-        const delta=(rect.top+rect.height/2-window.innerHeight/2)/window.innerHeight;
-        image.style.transform=`translate3d(0, ${delta*(index%2?18:-18)}px, 0) scale(1.035)`;
-      });
-      parallaxLayers.forEach(layer=>{
-        const rect=layer.getBoundingClientRect();
-        if(rect.bottom<0||rect.top>window.innerHeight)return;
-        const speed=Number(layer.dataset.parallaxSpeed||10);
-        const delta=(rect.top+rect.height/2-window.innerHeight/2)/window.innerHeight;
-        layer.style.translate=`0 ${delta*speed}px`;
-      });
-      frame=0;
-    };
-    const onScroll=()=>{if(!frame)frame=requestAnimationFrame(updateParallax);scheduleTextReveal()};
-    updateParallax();
-    window.addEventListener('scroll',onScroll,{passive:true});
-    window.addEventListener('resize',scheduleTextReveal,{passive:true});
-
-    const tilts=Array.from(document.querySelectorAll<HTMLElement>('[data-tilt]'));
-    tilts.forEach(card=>{
-      const move=(event:PointerEvent)=>{
-        if(event.pointerType==='touch')return;
-        const rect=card.getBoundingClientRect();
-        const x=(event.clientX-rect.left)/rect.width-.5;
-        const y=(event.clientY-rect.top)/rect.height-.5;
-        animate(card,{rotateX:-y*1.2,rotateY:x*1.4,y:-3},{type:'spring',stiffness:180,damping:26,mass:.7});
-      };
-      const leave=()=>animate(card,{rotateX:0,rotateY:0,y:0},{type:'spring',stiffness:180,damping:24,mass:.65});
-      card.addEventListener('pointermove',move);
-      card.addEventListener('pointerleave',leave);
-      cleanups.push(()=>{card.removeEventListener('pointermove',move);card.removeEventListener('pointerleave',leave)});
-    });
-
-    let transitioning=false;
-    const onNavigate=(event:MouseEvent)=>{
-      const anchor=(event.target as Element|null)?.closest('a') as HTMLAnchorElement|null;
-      if(!anchor||event.defaultPrevented||event.button!==0||event.metaKey||event.ctrlKey||event.shiftKey||event.altKey||anchor.target==='_blank'||anchor.hasAttribute('download'))return;
-      const url=new URL(anchor.href,window.location.href);
-      if(url.origin!==window.location.origin||url.href===window.location.href||url.hash||url.protocol==='mailto:')return;
-      event.preventDefault();
-      if(transitioning)return;
-      transitioning=true;
-      animate('.page-curtain',{scaleY:[0,1]},{duration:.34,ease:[.76,0,.24,1]});
-      window.setTimeout(()=>{window.location.href=url.href},315);
-    };
-    document.addEventListener('click',onNavigate,true);
-
-    const cursor=cursorRef.current;
-    const findCursorTarget=(node:EventTarget|null)=>node instanceof Element?node.closest<HTMLElement>('[data-cursor-label]'):null;
-    const setCursorTarget=(node:EventTarget|null)=>{
-      const next=findCursorTarget(node);
-      if(cursorTargetRef.current===next)return;
-      cursorTargetRef.current=next;
-      cursor?.classList.toggle('is-interactive',Boolean(next));
-      cursor?.classList.toggle('is-button',next?.tagName==='BUTTON');
-      const label=cursor?.querySelector<HTMLElement>('.cursor-label');
-      if(label)label.textContent=next?.dataset.cursorLabel||'';
-    };
-    const onPointerMove=(event:PointerEvent)=>{
-      if(event.pointerType==='touch')return;
-      cursorX.set(event.clientX-3);
-      cursorY.set(event.clientY-3);
-      cursor?.classList.add('is-visible');
-      setCursorTarget(event.target);
-    };
-    const onPointerOver=(event:PointerEvent)=>{if(event.pointerType!=='touch')setCursorTarget(event.target)};
-    const onPointerOut=(event:PointerEvent)=>{if(event.pointerType!=='touch')setCursorTarget(event.relatedTarget)};
-    const onPointerDown=()=>cursor?.classList.add('is-pressed');
-    const onPointerUp=()=>cursor?.classList.remove('is-pressed');
-    const onPointerLeave=()=>{cursor?.classList.remove('is-visible','is-interactive','is-button','is-pressed');cursorTargetRef.current=null;};
-    window.addEventListener('pointermove',onPointerMove,{passive:true});
-    document.addEventListener('pointerover',onPointerOver,{passive:true});
-    document.addEventListener('pointerout',onPointerOut,{passive:true});
-    window.addEventListener('pointerdown',onPointerDown,{passive:true});
-    window.addEventListener('pointerup',onPointerUp,{passive:true});
-    document.documentElement.addEventListener('mouseleave',onPointerLeave);
-
-    return()=>{
-      observer.disconnect();
-      proofObserver?.disconnect();
-      cleanups.forEach(cleanup=>cleanup());
-      window.removeEventListener('scroll',onScroll);
-      window.removeEventListener('resize',scheduleTextReveal);
-      window.removeEventListener('pointermove',onPointerMove);
-      document.removeEventListener('pointerover',onPointerOver);
-      document.removeEventListener('pointerout',onPointerOut);
-      window.removeEventListener('pointerdown',onPointerDown);
-      window.removeEventListener('pointerup',onPointerUp);
-      document.documentElement.removeEventListener('mouseleave',onPointerLeave);
-      document.removeEventListener('click',onNavigate,true);
-      if(frame)cancelAnimationFrame(frame);
-      if(textFrame)cancelAnimationFrame(textFrame);
-      parallaxLayers.forEach(layer=>{layer.style.translate=''})
-      root.classList.remove('motion-ready');
-    };
-  },[reduceMotion,cursorX,cursorY]);
+    document.querySelector<HTMLElement>('.proof-strip')?.classList.add('is-animated');
+    return()=>observer.disconnect();
+  },[pathname,reduceMotion]);
 
   return <>
-    {preloaderPhase!=='hidden'&&<div className={`site-preloader ${preloaderPhase==='leaving'?'is-leaving':''}`} aria-hidden="true">
-      <div className="preloader-panels"><i/><i/><i/><i/><i/></div>
-      <div className="preloader-signature"><img src="/akshay-logo.png" alt="" width="420" height="420"/><span>Product + UX</span></div>
-    </div>}
     <motion.div className="scroll-progress" style={{scaleX:progress}} aria-hidden="true"/>
-    <motion.div className="page-curtain" initial={{scaleY:0}} animate={{scaleY:0}} transition={{duration:0}} aria-hidden="true"/>
-    <motion.div ref={cursorRef} className="custom-cursor" style={{x:smoothCursorX,y:smoothCursorY}} aria-hidden="true">
-      <span className="cursor-arrow"><svg viewBox="0 0 28 28"><path className="cursor-arrow-body" d="M4 3.5 21.5 12 14 14.2 11 22Z"/><path className="cursor-arrow-spark" d="M21 3.5c.3 2.1 1.4 3.2 3.5 3.5-2.1.3-3.2 1.4-3.5 3.5-.3-2.1-1.4-3.2-3.5-3.5 2.1-.3 3.2-1.4 3.5-3.5Z"/></svg></span>
-      <span className="cursor-label"/>
-    </motion.div>
     {children}
   </>;
 }

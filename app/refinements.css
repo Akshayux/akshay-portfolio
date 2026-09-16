@@ -1,0 +1,88 @@
+/* Readability and layout refinements shared by the full portfolio. */
+:root{--shell:min(1240px,calc(100vw - 64px))}
+html{scroll-padding-top:96px}
+body{overflow-x:hidden}
+:is(a,button,summary):focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+@media (pointer:fine){body,a,button,input,textarea,select{cursor:auto}a,button,summary{cursor:pointer}}
+
+/* Let the work arrive naturally, without an overlapping sticky stack. */
+.case-study-stack,.case-study-stack-static{gap:24px}
+.case-study-stack>.case-study-card{position:relative;top:auto;z-index:auto;height:auto;min-height:0}
+.case-study-stack>.case-study-card>.case-study-link{min-height:520px;height:auto}
+.case-study-card{border-radius:24px;padding:16px;box-shadow:none}
+.case-study-card:hover,.case-study-card:focus-within{z-index:2}
+.case-study-media,.case-study-feature .case-study-media{min-height:0;border-radius:16px}
+.case-study-copy,.case-study-feature .case-study-copy{padding:36px 24px 36px 0}
+.case-study-copy header,.case-study-feature .case-study-copy header{font-size:11px;line-height:1.35}
+.case-study-copy h3,.case-study-feature .case-study-copy h3{font-size:clamp(30px,3.2vw,46px);line-height:1.08}
+.case-study-lead-metric span{font-size:12px}
+.case-study-metrics dd{font-size:10px;line-height:1.35}
+.case-study-copy footer{font-size:12px}
+.case-study-card-progress:hover,.case-study-card-progress:focus-within{transform:translateY(-5px);box-shadow:0 28px 64px rgba(0,0,0,.16)}
+.case-study-card-progress:hover .case-study-media img,.case-study-card-progress:focus-within .case-study-media img{transform:scale(1.035)}
+.case-study-media>span,.case-study-feature .case-study-media::before{font-size:11px}
+
+/* Navigation, labels and supporting copy should remain legible at a glance. */
+.primary-nav a,.header-action{font-size:14px}
+.work-menu-panel small{font-size:11px}
+.work-menu-disabled em{font-size:10px}
+.work-menu-panel a em{display:block;margin-top:2px;color:var(--muted);font-size:10px;font-style:normal;line-height:1.2}
+.work-menu-panel a:hover em,.work-menu-panel a:focus-visible em{color:inherit}
+.eyebrow{font-size:12px}
+.page-hero{padding:64px 0 36px}
+.page-hero h1{font-size:clamp(52px,6.2vw,86px)}
+.page-hero p{font-size:18px;line-height:1.5}
+.section{padding-block:96px}
+.work-feature{padding-top:0}
+.work-snapshot>p,.work-snapshot dl{font-size:15px}
+.work-snapshot strong{font-size:13px}
+.site-footer,.site-footer p{font-size:13px}
+.contact-details p{font-size:14px}
+.testimonial-heading p{font-size:16px}
+.featured-work{padding-top:44px}
+@media (min-width:761px){
+  .hero{display:block;min-height:0;padding-top:clamp(56px,7vh,80px);padding-bottom:30px}
+}
+
+/* Long-form projects: use readable body type without diluting the hierarchy. */
+.case-three p,.ecosystem-cards p,.responsibility-grid p,.principle-grid p,
+.support-grid p,.module-grid p,.research-step-list p,.lux-skim li p,
+.lux-process-list p,.lux-story-steps section p,.lux-learning-list p,
+.simpo-snapshot-grid p{font-size:15px;line-height:1.55}
+.case-summary dt,.case-three span,.ecosystem-cards article>span,
+.responsibility-grid span,.principle-grid span,.module-grid span,
+.research-step-list span,.lux-assumption-grid span,.lux-story-steps small,
+.lux-story-copy blockquote small,.lux-process-list li>span{font-size:11px}
+.case-summary dd,.decision-table span,.decision-table b,
+.lux-impact span,.lux-evidence-note{font-size:13px}
+
+/* Animations never determine whether text can be read. */
+.text-reveal-word{color:inherit!important;transition:none}
+.reveal.is-visible{animation:quiet-entrance .45s cubic-bezier(.22,1,.36,1) both}
+@keyframes quiet-entrance{from{opacity:.72;transform:translateY(10px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.reveal.is-visible{animation:none}}
+
+@media (max-width:1020px){
+  .case-study-stack>.case-study-card>.case-study-link{grid-template-columns:1fr;gap:0;min-height:0}
+  .case-study-media,.case-study-feature .case-study-media{min-height:320px}
+  .case-study-media img{max-height:310px}
+  .case-study-copy,.case-study-feature .case-study-copy{padding:28px 20px 24px}
+  .case-study-copy footer{margin-top:28px}
+}
+@media (max-width:760px){
+  :root{--shell:calc(100vw - 32px)}
+  .primary-nav{gap:18px}
+  .primary-nav a{font-size:12px}
+  .case-study-stack,.case-study-stack-static{gap:16px}
+  .case-study-card{border-radius:20px;padding:10px}
+  .case-study-media,.case-study-feature .case-study-media{border-radius:12px;min-height:250px}
+  .case-study-copy,.case-study-feature .case-study-copy{padding:26px 12px 24px}
+  .case-study-copy h3,.case-study-feature .case-study-copy h3{font-size:clamp(29px,8vw,36px)}
+  .case-study-copy header,.case-study-feature .case-study-copy header{font-size:10px}
+  .case-study-metrics{gap:0}
+  .case-study-metrics dt{font-size:14px}
+  .case-study-metrics dd{font-size:9px}
+  .page-hero{padding:60px 0 45px}
+  .page-hero h1{font-size:clamp(42px,11vw,58px)}
+  .section{padding-block:78px}
+}

@@ -32,7 +32,7 @@ export default function AboutPage(){return <PageFrame>
   </section>
 
   <section className="section shell" id="experience">
-    <SectionHead eyebrow="Experience" title="Where I&apos;ve worked and what I owned."/>
+    <SectionHead eyebrow="Experience" title="Where I've worked and what I owned."/>
     <div className="timeline">
       {experience.map((item,index)=><article className="timeline-item reveal" key={`${item.company}-${item.date}`}>
         <span>{String(index+1).padStart(2,'0')}</span>

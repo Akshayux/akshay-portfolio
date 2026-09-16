@@ -17,7 +17,7 @@ export default function WorkPage(){return <PageFrame>
   </section>
 
   <section className="section shell">
-    <SectionHead eyebrow="Project archive" title="Other product contexts I&apos;ve worked in." copy="Enterprise software, editorial products and mobile experiences across full-time, contract and freelance roles."/>
+    <SectionHead eyebrow="Project archive" title="Other product contexts I've worked in." copy="Enterprise software, editorial products and mobile experiences across full-time, contract and freelance roles."/>
     <div className="work-snapshot-list">
       {experience.filter(item=>!item.company.startsWith('LUXTJ')).map((item,index)=><article className="work-snapshot reveal" id={item.company==='Proficonlabs'?'proficon-labs':undefined} key={`${item.company}-${item.date}`}>
         <span>{String(index+2).padStart(2,'0')}</span>

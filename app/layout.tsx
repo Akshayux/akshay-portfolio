@@ -1,6 +1,7 @@
 import type {Metadata} from 'next';
 import Motion from './motion';
 import './globals.css';
+import './refinements.css';
 
 const siteUrl = 'https://www.akshayvenkat.com';
 
