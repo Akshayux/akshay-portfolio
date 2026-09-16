@@ -20,6 +20,12 @@ export default function Home(){return <PageFrame>
     </div>
   </section>
 
+  <section className="featured-work shell" id="selected-work">
+    <div className="editorial-heading reveal"><span>01</span><div><small>Work</small><h2>A few products I&apos;ve helped make clearer.</h2></div></div>
+    <CaseStudyStack/>
+    <div className="more-work-heading reveal"><span>More selected work</span><Link className="text-link" href="/work" data-cursor-label="View">See all work <Arrow/></Link></div>
+  </section>
+
   <section className="systems-thinking shell">
     <div className="systems-thinking-prose reveal">
       <small>How I actually find the problem</small>
@@ -29,12 +35,6 @@ export default function Home(){return <PageFrame>
         <div className="systems-thinking-proof">On LUXTJ, a &ldquo;checkout problem&rdquo; turned out to start on the calendar screen, two steps earlier. <Link href="/work/luxtj" data-cursor-label="Read">See how that unfolded <Arrow/></Link></div>
       </div>
     </div>
-  </section>
-
-  <section className="featured-work shell" id="selected-work">
-    <div className="editorial-heading reveal"><span>01</span><div><small>Selected work</small><h2>I usually end up redesigning three connected screens when someone asks me to fix one.</h2></div></div>
-    <CaseStudyStack/>
-    <div className="more-work-heading reveal"><span>More selected work</span><Link className="text-link" href="/work" data-cursor-label="View">See all work <Arrow/></Link></div>
   </section>
 
   <TestimonialsSection index="02"/>
