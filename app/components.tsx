@@ -3,7 +3,6 @@ import Link from 'next/link';
 import {featuredProjects,profile,socials} from './data';
 import TestimonialsReveal from './testimonials-reveal';
 import ArrowIcon from './arrow-icon';
-import ThemeToggle from './theme-toggle';
 
 export function Arrow(){return <ArrowIcon/>}
 
@@ -29,7 +28,6 @@ export function SiteHeader(){
         </div>
         <Link href="/about" data-cursor-label="Jump">About</Link>
         <Link href="/contact" data-cursor-label="Jump">Contact</Link>
-        <ThemeToggle/>
       </nav>
     </div>
   </header>;
