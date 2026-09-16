@@ -17,7 +17,7 @@ export default function Home(){return <PageFrame>
 
   <section className="featured-work shell" id="selected-work">
     <div className="editorial-heading reveal"><span>01</span><div><small>Work</small><h2>A few products I&apos;ve helped make clearer.</h2></div></div>
-    <CaseStudyStack/>
+    <CaseStudyStack bento/>
     <div className="more-work-heading reveal"><span>More selected work</span><Link className="text-link" href="/work" data-cursor-label="View">See all work <Arrow/></Link></div>
   </section>
 

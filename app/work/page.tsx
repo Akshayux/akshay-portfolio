@@ -13,7 +13,7 @@ export default function WorkPage(){return <PageFrame>
   </section>
 
   <section className="section shell work-feature">
-    <CaseStudyStack compact/>
+    <CaseStudyStack compact bento/>
   </section>
 
   <section className="section shell">

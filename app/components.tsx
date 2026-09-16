@@ -55,8 +55,8 @@ export function ProofStrip(){
   </dl>;
 }
 
-export function ProjectFeature({compact=false}:{compact?:boolean}){
-  return <article className={`case-study-card case-study-feature reveal ${compact?'project-feature-compact':''}`}>
+export function ProjectFeature({compact=false,bento=false}:{compact?:boolean;bento?:boolean}){
+  return <article className={`case-study-card case-study-feature reveal ${compact?'project-feature-compact':''} ${bento?'work-bento-feature':''}`}>
     <Link className="case-study-link" href="/work/luxtj" aria-label="Read the LUXTJ case study" data-cursor-label="View">
       <div className="case-study-media" data-parallax><img src="/optimized/luxtj-main.jpg" alt="LUXTJ personalised luxury-travel experience displayed on a laptop"/></div>
       <div className="case-study-copy">
@@ -70,7 +70,7 @@ export function ProjectFeature({compact=false}:{compact?:boolean}){
   </article>;
 }
 
-export function ProjectCard({index,title,label,metrics,readTime,description,image,href,inProgress=false}:{index:string;title:string;label:string;role:string;metrics:{value:string;label:string}[];readTime:string;description:string;outcome:string;signal:string;image:string;href:string;tags:string[];inProgress?:boolean}){
+export function ProjectCard({index,title,label,metrics,readTime,description,image,href,inProgress=false,bento=false}:{index:string;title:string;label:string;role:string;metrics:{value:string;label:string}[];readTime:string;description:string;outcome:string;signal:string;image:string;href:string;tags:string[];inProgress?:boolean;bento?:boolean}){
   const content=<>
       <div className="case-study-media" data-parallax><img src={image} loading="lazy" decoding="async" alt={`${title} project interface`}/><span>{index}</span></div>
       <div className="case-study-copy">
@@ -80,14 +80,14 @@ export function ProjectCard({index,title,label,metrics,readTime,description,imag
         <footer><span>{inProgress?'View snapshot':'View case study'}</span><Arrow/></footer>
       </div>
     </>;
-  return <article className={`case-study-card project-card-${index}${inProgress?' case-study-card-progress':''} reveal`}>
+  return <article className={`case-study-card project-card-${index}${inProgress?' case-study-card-progress':''}${bento?' work-bento-card':''} reveal`}>
     <Link className="case-study-link" href={href} aria-label={inProgress?`View the ${title} project snapshot`:`Read the ${title} case study`} data-cursor-label="Explore">{content}</Link>
   </article>;
 }
 
-export function CaseStudyStack({compact=false}:{compact?:boolean}){
+export function CaseStudyStack({compact=false,bento=false}:{compact?:boolean;bento?:boolean}){
   const projects=featuredProjects.slice(1);
-  return <div className={`case-study-stack${compact?' case-study-stack-static':''}`}><ProjectFeature compact={compact}/>{projects.map(project=><ProjectCard key={project.title} {...project}/>)}</div>;
+  return <div className={`case-study-stack${compact?' case-study-stack-static':''}${bento?' case-study-stack-bento':''}`}><ProjectFeature compact={compact} bento={bento}/>{projects.map(project=><ProjectCard key={project.title} {...project} bento={bento}/>)}</div>;
 }
 
 export function TestimonialsSection({index='05'}:{index?:string}={}){

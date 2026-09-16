@@ -124,3 +124,61 @@ body{overflow-x:hidden}
   .page-hero h1{font-size:clamp(42px,11vw,58px)}
   .section{padding-block:78px}
 }
+
+/* Bento work grid: give each project a clear visual weight while keeping one
+   rhythm, one corner language and one obvious path into the case study. */
+.case-study-stack-bento{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));grid-template-rows:minmax(300px,auto) minmax(300px,auto) minmax(250px,auto);gap:18px;align-items:stretch}
+.case-study-stack-bento>.case-study-card{position:relative!important;top:auto!important;height:auto!important;min-height:0;display:flex;padding:12px;border-radius:24px;background:var(--paper-2);border:1px solid var(--line);box-shadow:none;overflow:hidden;transition:transform .45s cubic-bezier(.22,1,.36,1),box-shadow .45s ease,background .3s ease}
+.case-study-stack-bento>.case-study-card>.case-study-link{display:flex;flex-direction:column;width:100%;height:100%;min-height:0;gap:0}
+.case-study-stack-bento>.case-study-feature{grid-column:span 7;grid-row:span 2;background:var(--paper-2);border-color:var(--line);color:var(--ink)}
+.case-study-stack-bento>.project-card-02,.case-study-stack-bento>.project-card-03{grid-column:span 5;grid-row:span 1}
+.case-study-stack-bento>.project-card-04{grid-column:1/-1;grid-row:span 1}
+.case-study-stack-bento .case-study-media,.case-study-stack-bento .case-study-feature .case-study-media{position:relative;flex:1 1 auto;min-height:0;height:auto;padding:22px;border-radius:16px;background:color-mix(in srgb,var(--paper) 84%,var(--accent) 16%)}
+.case-study-stack-bento .case-study-media img{width:90%;height:90%;max-height:none;object-fit:contain;filter:drop-shadow(0 14px 20px rgba(0,0,0,.18));transition:transform .65s cubic-bezier(.22,1,.36,1),filter .5s ease}
+.case-study-stack-bento .case-study-media>span,.case-study-stack-bento .case-study-feature .case-study-media::before{top:16px;left:16px;width:34px;height:34px;font-size:10px}
+.case-study-stack-bento .case-study-copy,.case-study-stack-bento .case-study-feature .case-study-copy{flex:0 0 auto;min-height:0;padding:20px 12px 12px;background:transparent;color:var(--ink)}
+.case-study-stack-bento .case-study-copy header,.case-study-stack-bento .case-study-feature .case-study-copy header{font-size:9px;line-height:1.3;color:var(--muted)}
+.case-study-stack-bento .case-study-copy h3,.case-study-stack-bento .case-study-feature .case-study-copy h3{margin:14px 0 0;font-size:clamp(24px,2.4vw,37px);line-height:1.02;letter-spacing:-.06em;color:var(--ink)}
+.case-study-stack-bento .case-study-feature .case-study-copy h3{font-size:clamp(28px,2.7vw,43px);font-weight:650;text-transform:none;color:var(--ink)}
+.case-study-stack-bento .case-study-lead-metric{margin-top:15px}
+.case-study-stack-bento .case-study-lead-metric strong{font-size:clamp(25px,2.2vw,34px)}
+.case-study-stack-bento .case-study-lead-metric span{font-size:10px;color:var(--muted)}
+.case-study-stack-bento .case-study-metrics{margin-top:18px}
+.case-study-stack-bento .case-study-metrics>div{padding:10px 8px 10px 0}
+.case-study-stack-bento .case-study-metrics dt{font-size:clamp(13px,1.35vw,18px)}
+.case-study-stack-bento .case-study-metrics dd{font-size:8px}
+.case-study-stack-bento .case-study-copy footer{width:max-content;min-height:42px;margin-top:18px;padding:5px 6px 5px 14px;font-size:10px;border-color:var(--line);color:var(--ink)}
+.case-study-stack-bento .case-study-copy footer .arrow-icon{width:30px;height:30px;font-size:13px}
+.case-study-stack-bento>.project-card-02 .case-study-media{background:color-mix(in srgb,var(--paper-2) 78%,var(--accent) 22%)}
+.case-study-stack-bento>.project-card-03 .case-study-media{background:color-mix(in srgb,var(--paper-2) 88%,var(--accent) 12%)}
+.case-study-stack-bento>.project-card-04 .case-study-link{display:grid;grid-template-columns:minmax(280px,.72fr) minmax(0,1.28fr);align-items:stretch}
+.case-study-stack-bento>.project-card-04 .case-study-media{height:auto;min-height:210px}
+.case-study-stack-bento>.project-card-04 .case-study-copy{padding:28px 28px 22px}
+.case-study-stack-bento>.project-card-04 .case-study-copy h3{max-width:720px;font-size:clamp(27px,2.7vw,42px)}
+.case-study-stack-bento>.project-card-04 .case-study-media img{width:86%;height:86%}
+@media (hover:hover) and (pointer:fine){
+  .case-study-stack-bento>.case-study-card:hover,.case-study-stack-bento>.case-study-card:focus-within{transform:translateY(-5px);box-shadow:0 24px 50px rgba(0,0,0,.2);z-index:3}
+  .case-study-stack-bento>.case-study-card:hover .case-study-media img,.case-study-stack-bento>.case-study-card:focus-within .case-study-media img{transform:scale(1.04);filter:drop-shadow(0 22px 28px rgba(0,0,0,.25))}
+  .case-study-stack-bento>.case-study-card:hover .case-study-copy footer .arrow-icon,.case-study-stack-bento>.case-study-card:focus-within .case-study-copy footer .arrow-icon{transform:translate(0,0) rotate(45deg)}
+}
+@media (max-width:1020px) and (min-width:761px){
+  .case-study-stack-bento{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:minmax(280px,auto) minmax(280px,auto) minmax(240px,auto);gap:16px}
+  .case-study-stack-bento>.case-study-feature,.case-study-stack-bento>.project-card-04{grid-column:1/-1}
+  .case-study-stack-bento>.case-study-feature{grid-row:span 1}
+  .case-study-stack-bento>.case-study-feature>.case-study-link{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr)}
+  .case-study-stack-bento>.case-study-feature .case-study-media{height:auto}
+  .case-study-stack-bento>.project-card-04 .case-study-copy{padding:22px 24px 20px}
+}
+@media (max-width:760px){
+  .case-study-stack-bento{grid-template-columns:1fr;grid-template-rows:none;grid-auto-rows:auto;gap:14px}
+  .case-study-stack-bento>.case-study-card,.case-study-stack-bento>.case-study-feature,.case-study-stack-bento>.project-card-02,.case-study-stack-bento>.project-card-03,.case-study-stack-bento>.project-card-04{grid-column:auto;grid-row:auto;padding:10px;border-radius:20px}
+  .case-study-stack-bento>.case-study-feature>.case-study-link,.case-study-stack-bento>.project-card-04 .case-study-link{display:flex;flex-direction:column}
+  .case-study-stack-bento .case-study-media,.case-study-stack-bento .case-study-feature .case-study-media{flex:0 0 260px;min-height:260px;padding:20px;border-radius:14px}
+  .case-study-stack-bento>.case-study-feature .case-study-media{flex-basis:280px}
+  .case-study-stack-bento .case-study-copy,.case-study-stack-bento .case-study-feature .case-study-copy,.case-study-stack-bento>.project-card-04 .case-study-copy{padding:22px 10px 16px}
+  .case-study-stack-bento .case-study-copy h3,.case-study-stack-bento .case-study-feature .case-study-copy h3,.case-study-stack-bento>.project-card-04 .case-study-copy h3{font-size:clamp(26px,8vw,36px)}
+  .case-study-stack-bento .case-study-lead-metric strong{font-size:27px}
+  .case-study-stack-bento .case-study-metrics{margin-top:22px}
+  .case-study-stack-bento .case-study-copy footer{margin-top:24px}
+  .case-study-stack-bento>.project-card-04 .case-study-media{min-height:240px}
+}
