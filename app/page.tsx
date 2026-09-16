@@ -17,7 +17,6 @@ export default function Home(){return <PageFrame>
         <div className="hero-cta-row"><Link className="text-link" href="/work" data-cursor-label="View">See my work <Arrow/></Link><RecruiterBrief/></div>
       </div>
     </div>
-    <div className="hero-foot"><span>Scroll to explore</span><span>↓</span></div>
   </section>
 
   <section className="systems-thinking shell">
