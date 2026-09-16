@@ -10,7 +10,7 @@ export default function Home(){return <PageFrame>
       <span className="hero-label">Akshay Venkata Narayana · Product &amp; UX Designer</span>
       <h1 data-parallax-layer data-parallax-speed="12">I don&apos;t stop at the screen<br/><em>I was asked about.</em></h1>
       <div className="hero-intro">
-        <p>Most fixes touch one screen. Mine tend to spread to three — because the real problem is rarely where it was reported.</p>
+        <p>Hi, I&apos;m Akshay Venkata Narayana — a Product Designer with 5+ years of experience leading and collaborating across complex digital products. With a Computer Science background and an MA in Digital Design (HCI) from Heriot-Watt University, I use human-centred research and storytelling to turn messy problems into experiences people trust. When I&apos;m not shaping a product, I&apos;m usually chasing one last rep at the gym.</p>
         <div className="hero-expertise-pills" aria-label="Industries and product experience">
           <span>B2B SaaS</span><span>AI</span><span>Travel</span><span>Human made</span>
         </div>
