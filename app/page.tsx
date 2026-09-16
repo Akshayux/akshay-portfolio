@@ -15,6 +15,11 @@ export default function Home(){return <PageFrame>
         <div className="hero-cta-row"><Link className="text-link" href="/work" data-cursor-label="View">See my work <Arrow/></Link><RecruiterBrief/></div>
       </div>
     </div>
+    <Link className="hero-work-peek reveal" href="#selected-work" data-cursor-label="View work" aria-label="Preview selected work">
+      <div><span>Selected work</span><strong>&ldquo;The leak wasn&apos;t on the checkout screen.&rdquo;</strong></div>
+      <img src="/optimized/luxtj-main.jpg" alt="Preview of the LUXTJ travel product"/>
+      <Arrow/>
+    </Link>
   </section>
 
   <section className="featured-work shell" id="selected-work">
