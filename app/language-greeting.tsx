@@ -3,10 +3,11 @@
 import {useEffect,useState} from 'react';
 
 const greetings = [
-  {text:'ನಮಸ್ಕಾರ',lang:'kn'},
-  {text:'नमस्ते',lang:'hi'},
+  {text:'Hello',lang:'en'},
   {text:'నమస్తే',lang:'te'},
   {text:'Hello',lang:'en'},
+  {text:'ನಮಸ್ಕಾರ',lang:'kn'},
+  {text:'नमस्ते',lang:'hi'},
   {text:'வணக்கம்',lang:'ta'},
   {text:'Hola',lang:'es'},
 ] as const;
