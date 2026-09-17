@@ -7,25 +7,19 @@ export default function HeroPreview(){
   const previewRef=useRef<HTMLAnchorElement>(null);
   const scrollProgressRef=useRef(0);
 
-  const move=(event:React.PointerEvent<HTMLAnchorElement>)=>{
-    if(event.pointerType==='touch')return;
-    const element=previewRef.current;
-    if(!element)return;
-    const rect=element.getBoundingClientRect();
-    if(scrollProgressRef.current>0)return;
-    const normalized=(event.clientX-rect.left)/rect.width-.5;
-    element.style.setProperty('--pointer-shift-x',`${normalized*72}px`);
-  };
-  const reset=()=>{
-    const element=previewRef.current;
-    element?.style.setProperty('--pointer-shift-x','0px');
-  };
-
   useEffect(()=>{
     const element=previewRef.current;
     if(!element)return;
     const hero=element.closest<HTMLElement>('.hero-centered');
     let frame=0;
+    const resetPointer=()=>element.style.setProperty('--pointer-shift-x','0px');
+    const followPointer=(event:PointerEvent)=>{
+      if(!hero||event.pointerType==='touch'||scrollProgressRef.current>0)return;
+      const heroRect=hero.getBoundingClientRect();
+      const halfVideo=element.offsetWidth/2;
+      const cursorX=Math.min(Math.max(event.clientX-heroRect.left,halfVideo),heroRect.width-halfVideo);
+      element.style.setProperty('--pointer-shift-x',`${cursorX-heroRect.width/2}px`);
+    };
     const updateScroll=()=>{
       frame=0;
       if(!hero)return;
@@ -46,14 +40,18 @@ export default function HeroPreview(){
     updateScroll();
     window.addEventListener('scroll',onScroll,{passive:true});
     window.addEventListener('resize',onScroll);
+    hero?.addEventListener('pointermove',followPointer);
+    hero?.addEventListener('pointerleave',resetPointer);
     return()=>{
       window.removeEventListener('scroll',onScroll);
       window.removeEventListener('resize',onScroll);
+      hero?.removeEventListener('pointermove',followPointer);
+      hero?.removeEventListener('pointerleave',resetPointer);
       if(frame)window.cancelAnimationFrame(frame);
     };
   },[]);
 
-  return <Link ref={previewRef} className="hero-preview reveal" href="/work" aria-label="Explore selected work" onPointerMove={move} onPointerLeave={reset} data-cursor-label="Explore">
+  return <Link ref={previewRef} className="hero-preview reveal" href="/work" aria-label="Explore selected work" data-cursor-label="Explore">
     <div className="hero-preview-frame">
       <video className="hero-preview-video" autoPlay muted loop playsInline preload="auto" aria-label="Akshay Venkata Narayana product design reel">
         <source src="/hero-reel.mp4" type="video/mp4"/>
