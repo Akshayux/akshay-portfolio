@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import {Arrow,CaseStudyStack,PageFrame,TestimonialsSection} from './components';
 import {experience} from './data';
-import UXGame from './ux-game';
 import HeroPreview from './hero-preview';
 import LanguageGreeting from './language-greeting';
 
@@ -39,13 +38,8 @@ export default function Home(){return <PageFrame>
 
   <TestimonialsSection index="02"/>
 
-  <section className="home-game shell">
-    <div className="editorial-heading reveal"><span>03</span><div><small>A tiny everyday game</small><h2>You use products all day. Which option feels better?</h2></div></div>
-    <div className="game-layout"><div className="game-intro reveal"><p>Five familiar moments, from a late pizza to a free trial. Pick the option you&apos;d genuinely want to see.</p><span>No design knowledge needed.<br/>About one minute.</span></div><div className="reveal"><UXGame/></div></div>
-  </section>
-
   <section className="home-about shell">
-    <div className="editorial-heading reveal"><span>04</span><div><small>About me</small><h2>I came to UX by following the questions code couldn&apos;t answer.</h2></div></div>
+    <div className="editorial-heading reveal"><span>03</span><div><small>About me</small><h2>I came to UX by following the questions code couldn&apos;t answer.</h2></div></div>
     <div className="home-about-layout">
       <div className="home-about-image home-about-image-london reveal" data-parallax><img src="/optimized/about-london.jpg" loading="lazy" decoding="async" alt="Akshay in London with Tower Bridge in the background"/><span>Outside the screen / London</span></div>
       <div className="home-about-copy reveal">
@@ -64,7 +58,7 @@ export default function Home(){return <PageFrame>
   </section>
 
   <section className="home-experience shell">
-    <div className="editorial-heading reveal"><span>05</span><div><small>Recent experience</small><h2>A few places I&apos;ve been useful.</h2></div></div>
+    <div className="editorial-heading reveal"><span>04</span><div><small>Recent experience</small><h2>A few places I&apos;ve been useful.</h2></div></div>
     <div className="simple-experience">
       {experience.slice(0,4).map(item=><article className="reveal" key={`${item.company}-${item.date}`}><time>{item.date}</time><div><h3>{item.company}</h3><p>{item.role}{item.employment ? ` · ${item.employment}` : ''}</p></div><p>{item.summary}</p></article>)}
     </div>
