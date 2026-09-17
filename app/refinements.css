@@ -106,7 +106,7 @@ body{overflow-x:hidden}
 .hero-centered .hero-statement{max-width:430px;color:#5d5d58;font-size:clamp(38px,4.15vw,58px);font-weight:650;line-height:1.18;letter-spacing:-.045em}
 .hero-centered .hero-statement strong{font-weight:650}
 .hero-centered .hero-statement span{color:#c98d5c}
-.hero-centered .hero-support{max-width:660px;margin:12px 0 0;color:#686862;font-size:17px;line-height:1.55;text-align:center}
+.hero-centered .hero-support{max-width:660px;margin:12px 0 0;color:#686862;font-size:17px;line-height:1.55;text-align:right}
 .hero-centered .hero-cta-row{grid-column:2;justify-content:flex-end;margin-top:34px}
 .hero-centered .hero-primary-button{min-height:40px;padding:4px 5px 4px 14px;background:#1d2519;border-color:#1d2519;color:#f7f1d9;font-size:12px;box-shadow:none}
 .hero-centered .hero-primary-button .button-icon{width:30px;height:30px;background:#d39a6a;color:#1d2519}
