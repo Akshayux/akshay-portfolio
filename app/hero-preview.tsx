@@ -1,10 +1,9 @@
 'use client';
 
-import Link from 'next/link';
 import {useEffect,useRef} from 'react';
 
 export default function HeroPreview(){
-  const previewRef=useRef<HTMLAnchorElement>(null);
+  const previewRef=useRef<HTMLDivElement>(null);
   const scrollProgressRef=useRef(0);
 
   useEffect(()=>{
@@ -51,7 +50,7 @@ export default function HeroPreview(){
     };
   },[]);
 
-  return <Link ref={previewRef} className="hero-preview reveal" href="/work" aria-label="Explore selected work" data-cursor-label="Explore">
+  return <div ref={previewRef} className="hero-preview reveal" aria-label="Selected work preview">
     <div className="hero-preview-frame">
       <video className="hero-preview-video" autoPlay muted loop playsInline preload="auto" aria-label="Akshay Venkata Narayana product design reel">
         <source src="/hero-reel.mp4" type="video/mp4"/>
@@ -60,5 +59,5 @@ export default function HeroPreview(){
       <span className="hero-preview-hint">Explore the thinking</span>
       <span className="hero-preview-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m9 6 9 6-9 6Z"/></svg></span>
     </div>
-  </Link>;
+  </div>;
 }
