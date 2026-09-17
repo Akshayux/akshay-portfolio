@@ -22,12 +22,13 @@ export default function HeroPreview(){
   useEffect(()=>{
     const element=previewRef.current;
     if(!element)return;
+    const hero=element.closest<HTMLElement>('.hero-centered');
     let frame=0;
     const updateScroll=()=>{
       frame=0;
-      const travel=Math.max(window.innerHeight*.75,1);
-      const progress=Math.max(0,Math.min(1,window.scrollY/travel));
-      element.style.setProperty('--scroll-expand',String(progress));
+      if(!hero)return;
+      const travel=Math.max(hero.offsetHeight-window.innerHeight,1);
+      const progress=Math.max(0,Math.min(1,-hero.getBoundingClientRect().top/travel));
       const compactWidth=Math.min(539,window.innerWidth*.88);
       const fullScale=Math.max(1,window.innerWidth/compactWidth);
       const scale=1+(fullScale-1)*progress;
