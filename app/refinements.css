@@ -237,6 +237,9 @@ body{overflow-x:hidden}
     grid-column:span 1;
     grid-row:2;
   }
+  .case-study-stack-bento>.project-card-04 .case-study-link{display:flex;flex-direction:column}
+  .case-study-stack-bento>.project-card-04 .case-study-media{min-height:220px}
+  .case-study-stack-bento>.project-card-04 .case-study-copy{padding:20px 12px 12px}
 }
 @media (max-width:1020px) and (min-width:761px){
   .case-study-stack-bento{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:minmax(280px,auto) minmax(280px,auto) minmax(240px,auto);gap:16px}
