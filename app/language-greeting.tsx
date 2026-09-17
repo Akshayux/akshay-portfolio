@@ -14,9 +14,9 @@ const greetings = [
 
 const spokenLanguages = 'I speak Kannada · Hindi · Telugu · English · Tamil · Español';
 
-export default function LanguageGreeting(){
+export default function LanguageGreeting({className=''}:{className?:string}){
   const [phraseIndex,setPhraseIndex] = useState(0);
-  const [displayText,setDisplayText] = useState(greetings[0].text);
+  const [displayText,setDisplayText] = useState<string>(greetings[0].text);
   const [deleting,setDeleting] = useState(false);
   const [reducedMotion,setReducedMotion] = useState<boolean | null>(null);
 
@@ -51,7 +51,7 @@ export default function LanguageGreeting(){
     return ()=>window.clearTimeout(timer);
   },[displayText,deleting,phraseIndex,reducedMotion]);
 
-  return <div className="hero-label hero-language-greeting" tabIndex={0} aria-label="Namasté in Kannada, Hindi, Telugu, English, Tamil and Spanish" data-tooltip={spokenLanguages}>
+  return <div className={`hero-label hero-language-greeting${className ? ` ${className}` : ''}`} tabIndex={0} aria-label="Namasté in Kannada, Hindi, Telugu, English, Tamil and Spanish" data-tooltip={spokenLanguages}>
     <span className="hero-language-word" lang={greetings[phraseIndex].lang} aria-hidden="true">{displayText}</span>
     <span className="hero-language-caret" aria-hidden="true">|</span>
   </div>;

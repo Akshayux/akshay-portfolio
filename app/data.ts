@@ -78,7 +78,7 @@ export const featuredProjects = [
     description: 'When someone feels unwell, the hardest question is often: what happens next?',
     outcome: 'See how evidence became a safer care-navigation concept with clear human boundaries.',
     signal: 'Safety · Clarity · Continuity',
-    image: '/scotcare/mobile-mockup-cover.png',
+    image: '/scotcare/recording-thumbnail.jpg',
     href: '/work/scotcare',
     tags: ['Research', 'Service design', 'Mobile'],
   },
