@@ -16,7 +16,7 @@ const spokenLanguages = 'I speak Kannada · Hindi · Telugu · English · Tamil 
 
 export default function LanguageGreeting(){
   const [phraseIndex,setPhraseIndex] = useState(0);
-  const [displayText,setDisplayText] = useState(greetings[0].text);
+  const [displayText,setDisplayText] = useState<string>(greetings[0].text);
   const [deleting,setDeleting] = useState(false);
   const [reducedMotion,setReducedMotion] = useState<boolean | null>(null);
 
