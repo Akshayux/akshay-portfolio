@@ -72,7 +72,7 @@ export function ProjectFeature({compact=false,bento=false}:{compact?:boolean;ben
 
 export function ProjectCard({index,title,label,metrics,readTime,description,image,href,inProgress=false,bento=false}:{index:string;title:string;label:string;role:string;metrics:{value:string;label:string}[];readTime:string;description:string;outcome:string;signal:string;image:string;href:string;tags:string[];inProgress?:boolean;bento?:boolean}){
   const content=<>
-      <div className="case-study-media" data-parallax><img src={image} loading="lazy" decoding="async" alt={`${title} project interface`}/><span>{index}</span></div>
+      <div className={`case-study-media${index==='04'?' case-study-media-video':''}`} data-parallax>{index==='04'?<video src="/scotcare/experience-video.mp4" poster={image} autoPlay muted loop playsInline preload="metadata" aria-label="ScotCare application walkthrough"/>:<img src={image} loading="lazy" decoding="async" alt={`${title} project interface`}/>}<span>{index}</span></div>
       <div className="case-study-copy">
         <header><small>{label}</small><span>{inProgress?'In progress':`${readTime} read`}</span></header>
         <h3>{description}</h3>
