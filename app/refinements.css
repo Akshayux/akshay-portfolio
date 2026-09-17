@@ -213,6 +213,31 @@ body{overflow-x:hidden}
   .case-study-stack-bento>.case-study-card:hover .case-study-media img,.case-study-stack-bento>.case-study-card:focus-within .case-study-media img{transform:scale(1.04);filter:drop-shadow(0 22px 28px rgba(0,0,0,.25))}
   .case-study-stack-bento>.case-study-card:hover .case-study-copy footer .arrow-icon,.case-study-stack-bento>.case-study-card:focus-within .case-study-copy footer .arrow-icon{transform:translate(0,0) rotate(45deg)}
 }
+
+/* Keep the portfolio bento airy: one clear lead tile, then three equal paths. */
+@media (min-width:1021px){
+  .case-study-stack-bento{
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    grid-template-rows:minmax(360px,auto) minmax(320px,auto);
+    gap:24px;
+  }
+  .case-study-stack-bento>.case-study-feature{
+    grid-column:1/-1;
+    grid-row:1;
+  }
+  .case-study-stack-bento>.case-study-feature>.case-study-link{
+    display:grid;
+    grid-template-columns:minmax(0,1.2fr) minmax(320px,.8fr);
+    align-items:stretch;
+  }
+  .case-study-stack-bento>.case-study-feature .case-study-media{min-height:360px}
+  .case-study-stack-bento>.project-card-02,
+  .case-study-stack-bento>.project-card-03,
+  .case-study-stack-bento>.project-card-04{
+    grid-column:span 1;
+    grid-row:2;
+  }
+}
 @media (max-width:1020px) and (min-width:761px){
   .case-study-stack-bento{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:minmax(280px,auto) minmax(280px,auto) minmax(240px,auto);gap:16px}
   .case-study-stack-bento>.case-study-feature,.case-study-stack-bento>.project-card-04{grid-column:1/-1}
