@@ -13,7 +13,7 @@ export default function HeroPreview(){
     let frame=0;
     const resetPointer=()=>element.style.setProperty('--pointer-shift-x','0px');
     const followPointer=(event:PointerEvent)=>{
-      if(!hero||event.pointerType==='touch'||scrollProgressRef.current>0)return;
+      if(!hero||window.innerWidth<=760||event.pointerType==='touch'||scrollProgressRef.current>0)return;
       const heroRect=hero.getBoundingClientRect();
       const halfVideo=element.offsetWidth/2;
       const cursorX=Math.min(Math.max(event.clientX-heroRect.left,halfVideo),heroRect.width-halfVideo);
@@ -22,6 +22,13 @@ export default function HeroPreview(){
     const updateScroll=()=>{
       frame=0;
       if(!hero)return;
+      if(window.innerWidth<=760){
+        scrollProgressRef.current=0;
+        element.style.setProperty('--scroll-scale','1');
+        element.style.setProperty('--scroll-drop','0px');
+        element.style.setProperty('--pointer-shift-x','0px');
+        return;
+      }
       const travel=Math.max(hero.offsetHeight-window.innerHeight,1);
       const progress=Math.max(0,Math.min(1,-hero.getBoundingClientRect().top/travel));
       scrollProgressRef.current=progress;
