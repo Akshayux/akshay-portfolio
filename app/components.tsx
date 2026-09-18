@@ -62,7 +62,7 @@ export function ProjectFeature({compact=false,bento=false}:{compact?:boolean;ben
       <div className="case-study-copy">
         <header><small>Luxury travel · Customer experience</small><span>9 min read</span></header>
         <div className="case-study-lead-metric"><strong>60% → 22%</strong><span>Checkout drop-off · LUXTJ</span></div>
-        <h3>&ldquo;The leak wasn&apos;t on the checkout screen.&rdquo;</h3>
+        <h3>The leak wasn&apos;t on the checkout screen.</h3>
         <dl className="case-study-metrics" aria-label="LUXTJ project outcomes"><div><dt>9 → 4</dt><dd>Profile setup screens</dd></div><div><dt>Web + mobile</dt><dd>Checkout journey</dd></div><div><dt>Most-clicked</dt><dd>Add-to-cart action</dd></div></dl>
         <footer><span>View case study</span><Arrow/></footer>
       </div>
