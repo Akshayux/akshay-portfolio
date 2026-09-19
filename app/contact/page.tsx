@@ -1,6 +1,7 @@
 import type {Metadata} from 'next';
 import {Arrow,Button,SiteFooter,SiteHeader} from '../components';
 import {profile,socials} from '../data';
+import RecruiterBrief from '../recruiter-brief';
 
 export const metadata:Metadata={title:'Contact',description:'Contact Akshay about product design roles, UX projects and meaningful collaborations.'};
 
@@ -11,7 +12,7 @@ export default function ContactPage(){return <main id="top" className="contact-p
     <div className="contact-content reveal">
       <p>I&apos;m looking for a Product or UX Design role where I can stay close to the work, learn from what ships and improve it over time. I&apos;m also open to selected freelance projects.</p>
       <div className="contact-primary"><span>Best way to reach me</span><a href={`mailto:${profile.email}`} data-cursor-label="Email">{profile.email} <Arrow/></a><small>I usually reply within two working days.</small></div>
-      <div className="contact-buttons"><Button href={`mailto:${profile.email}?subject=Design%20opportunity`} cursorLabel="Email">Email me</Button><Button href="/resume" secondary cursorLabel="Download">View resume</Button></div>
+      <div className="contact-buttons"><Button href={`mailto:${profile.email}?subject=Design%20opportunity`} cursorLabel="Email">Email me</Button><Button href="/resume" secondary cursorLabel="Download">View resume</Button><RecruiterBrief/></div>
     </div>
   </section>
   <section className="contact-details shell reveal">
