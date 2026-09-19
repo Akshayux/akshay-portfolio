@@ -51,7 +51,7 @@ body{overflow-x:hidden}
 .hero-centered .hero-label{margin:0 0 26px;font-size:14px;letter-spacing:.14em}
 .hero-centered .hero-language-greeting{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:4px;margin-bottom:26px;padding:5px 10px;color:var(--accent);letter-spacing:.02em;text-transform:none;cursor:help}
 .hero-language-word{display:inline-block;min-width:0;line-height:1;text-align:left}
-.hero-language-name{display:inline-block;margin-left:5px;padding-left:8px;border-left:1px solid color-mix(in srgb,currentColor 38%,transparent);font-size:.67em;font-weight:700;letter-spacing:.1em;line-height:1;text-transform:uppercase;opacity:.74}
+.hero-language-name{display:inline-block;margin-left:6px;font-size:.67em;font-weight:700;letter-spacing:.1em;line-height:1;text-transform:uppercase;opacity:.74}
 .hero-language-caret{display:inline-block;width:1px;line-height:1;color:var(--accent);animation:hero-language-caret-blink 1s steps(1,end) infinite}
 .hero-language-greeting::after{content:attr(data-tooltip);position:absolute;z-index:5;left:50%;top:calc(100% + 12px);max-width:min(92vw,420px);padding:9px 13px;border:1px solid var(--line);border-radius:999px;background:var(--paper-2);color:var(--ink);box-shadow:0 14px 30px rgba(0,0,0,.2);font-size:11px;font-weight:650;letter-spacing:.02em;line-height:1.2;white-space:nowrap;opacity:0;pointer-events:none;transform:translate(-50%,-5px);transition:opacity .25s ease,transform .35s cubic-bezier(.22,1,.36,1)}
 .hero-language-greeting:hover::after,.hero-language-greeting:focus-visible::after{opacity:1;transform:translate(-50%,0)}
@@ -78,7 +78,7 @@ body{overflow-x:hidden}
 @media (max-width:760px){
   .hero-centered{gap:40px;padding-top:64px;padding-bottom:46px}
   .hero-centered .hero-label{margin-bottom:20px;font-size:12px}
-  .hero-centered .hero-language-greeting{gap:3px;margin-bottom:20px;padding:4px 6px;font-size:11px;letter-spacing:0}
+  .hero-centered .hero-language-greeting{gap:3px;margin-bottom:20px;padding:0;font-size:11px;letter-spacing:0}
   .hero-language-greeting::after{font-size:10px}
   .hero-centered .hero-statement{font-size:clamp(25px,7.2vw,34px);line-height:1.2}
   .hero-centered .hero-support{margin-top:18px;font-size:16px}
@@ -124,7 +124,7 @@ body{overflow-x:hidden}
   .hero-centered{width:100%;margin-left:0;min-height:calc(185svh - 64px);padding:0}
   .hero-centered .hero-stage{height:calc(100svh - 64px);min-height:0;padding:32px 16px 44px}
   .hero-centered .hero-introduction{width:100%;padding:18px 0 0;border-radius:12px 12px 0 0}
-  .hero-centered .hero-language-greeting{margin:0 auto 16px;font-size:15px;justify-content:flex-start;text-align:left}
+  .hero-centered .hero-language-greeting{margin:0 auto 16px;padding:0;font-size:15px;justify-content:flex-start;text-align:left}
   .hero-centered .hero-copy-body{margin:0;display:flex;flex-direction:column;gap:0;text-align:left}
   .hero-centered .hero-statement{max-width:100%;font-size:clamp(34px,10vw,48px)}
   .hero-centered .hero-support{max-width:100%;margin-top:20px;text-align:left;font-size:16px}
@@ -319,7 +319,7 @@ body{overflow-x:hidden}
   .hero-centered .hero-preview-frame{border-radius:14px;transform:translate3d(0,0,0) scale(1)!important}
   .hero-centered .hero-preview-video{object-fit:contain}
   .hero-centered .hero-introduction{order:1;width:100%;padding:0}
-  .hero-centered .hero-language-greeting{margin:0 auto 20px;font-size:15px;justify-content:flex-start;text-align:left}
+  .hero-centered .hero-language-greeting{margin:0 auto 20px;padding:0;font-size:15px;justify-content:flex-start;text-align:left}
   .hero-centered .hero-copy-body{display:flex;flex-direction:column;gap:0;margin:0;text-align:left}
   .hero-centered .hero-statement{max-width:18ch;font-size:clamp(34px,10.5vw,44px);line-height:1.08}
   .hero-centered .hero-support{max-width:100%;margin-top:18px;font-size:16px;line-height:1.52;text-align:left}
@@ -360,7 +360,7 @@ body{overflow-x:hidden}
   .hero-centered .hero-stage{justify-content:flex-start;gap:68px;padding:32px 32px 72px}
   .hero-centered .hero-preview{flex:0 0 270px;width:539px;height:270px;max-width:88vw}
   .hero-centered .hero-introduction{width:min(100%,1150px);padding:0 22px}
-  .hero-centered .hero-language-greeting{justify-content:flex-start;margin:0 0 28px;font-size:17px;text-align:left}
+  .hero-centered .hero-language-greeting{justify-content:flex-start;margin:0 0 28px;padding:0;font-size:17px;text-align:left}
   .hero-centered .hero-copy-body{max-width:1150px;grid-template-columns:minmax(300px,.95fr) minmax(390px,1.05fr);column-gap:100px;row-gap:0}
   .hero-centered .hero-statement{max-width:560px;font-size:clamp(38px,4vw,52px);line-height:1.2}
   .hero-centered .hero-support{max-width:610px;margin:0;color:#54544f;font-size:17px;line-height:1.75;text-align:left}
