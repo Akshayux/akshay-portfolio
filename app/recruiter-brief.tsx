@@ -32,7 +32,7 @@ export default function RecruiterBrief(){
     {open&&<div className="recruiter-overlay" onMouseDown={event=>{if(event.target===event.currentTarget)setOpen(false)}}>
       <div ref={dialogRef} id="recruiter-brief" className="recruiter-dialog" role="dialog" aria-modal="true" aria-labelledby="recruiter-title">
         <header className="recruiter-brief-head">
-          <div><span>For recruiters · designed for your first scan</span><h2 id="recruiter-title">Why Akshay for your organisation?</h2><p>I find the friction hidden inside complex products, turn it into a clear design problem and stay with the work until the solution is understandable, measurable and buildable.</p></div>
+          <div><span>Recruiter brief · a two-minute read</span><h2 id="recruiter-title">Why Akshay?</h2><p>I find the friction hidden inside complex products, turn it into a clear design problem and stay with the work until the solution is understandable, measurable and buildable.</p></div>
           <button ref={closeRef} type="button" onClick={()=>setOpen(false)} aria-label="Close recruiter brief" data-cursor-label="Close"><span>Close</span><b aria-hidden="true">×</b></button>
         </header>
 

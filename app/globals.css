@@ -213,18 +213,18 @@ p{color:var(--muted)}
 .recruiter-trigger>span{grid-column:1;font-size:11px;font-weight:750;line-height:1.05;white-space:nowrap}.recruiter-trigger>small{grid-column:1;color:#a9aaa5;font-size:7px;line-height:1;text-transform:uppercase;letter-spacing:.09em}.recruiter-trigger>b{grid-column:2;grid-row:1/3;width:36px;height:36px;display:grid;place-items:center;border-radius:50%;background:var(--accent);font-size:11px;transition:transform .35s cubic-bezier(.22,1,.36,1)}
 .recruiter-trigger:hover{transform:translateY(-2px);background:var(--accent);border-color:var(--accent)}.recruiter-trigger:hover>b{background:var(--white);color:var(--ink);transform:rotate(45deg)}
 .recruiter-brief-open,.recruiter-brief-open body{overflow:hidden}
-.recruiter-overlay{position:fixed;z-index:900;inset:0;padding:16px;display:grid;place-items:center;background:rgba(20,20,20,.68);backdrop-filter:blur(14px);animation:recruiter-overlay-in .3s ease both}
-.recruiter-dialog{width:min(1160px,100%);max-height:calc(100svh - 32px);overflow:auto;background:var(--paper);color:var(--ink);box-shadow:0 30px 100px rgba(0,0,0,.36);overscroll-behavior:contain;animation:recruiter-dialog-in .65s cubic-bezier(.22,1,.36,1) both}
-.recruiter-brief-head{position:relative;min-height:460px;padding:52px 56px;background:var(--ink);color:var(--white);display:flex;align-items:flex-end}
-.recruiter-brief-head>div{max-width:850px}.recruiter-brief-head>div>span,.recruiter-intro>span,.recruiter-contribution>div>span,.recruiter-difference>div>span,.recruiter-table>div>span{display:block;color:var(--accent);font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.13em}
-.recruiter-brief-head h2{font-size:clamp(56px,7vw,92px);margin:22px 0 28px;max-width:940px}.recruiter-brief-head p{max-width:670px;color:#b5b5b1;font-size:18px}
-.recruiter-brief-head>button{position:absolute;right:28px;top:28px;min-height:42px;padding:5px 5px 5px 14px;display:flex;align-items:center;gap:12px;border:1px solid #444;color:var(--white);background:transparent;border-radius:999px}.recruiter-brief-head>button span{font-size:9px;text-transform:uppercase;letter-spacing:.08em}.recruiter-brief-head>button b{width:30px;height:30px;display:grid;place-items:center;border-radius:50%;background:var(--white);color:var(--ink);font-size:16px;font-weight:400}
-.recruiter-rationale{padding:56px;display:grid;grid-template-columns:150px 1fr;gap:28px;border-bottom:1px solid var(--ink);background:var(--white)}
+.recruiter-overlay{position:fixed;z-index:900;inset:0;padding:24px;display:grid;place-items:center;background:rgba(14,18,12,.72);backdrop-filter:blur(12px);animation:recruiter-overlay-in .3s ease both}
+.recruiter-dialog{width:min(1040px,100%);max-height:calc(100svh - 48px);overflow:auto;border:1px solid rgba(255,251,234,.22);border-radius:24px;background:#f7f4e9;color:#202519;box-shadow:0 32px 100px rgba(0,0,0,.4);overscroll-behavior:contain;scrollbar-color:#b86f4b #ece7d8;animation:recruiter-dialog-in .5s cubic-bezier(.22,1,.36,1) both}
+.recruiter-brief-head{position:relative;min-height:0;padding:48px 52px 50px;background:#202519;color:#fffbea;display:flex;align-items:flex-end}
+.recruiter-brief-head>div{max-width:720px}.recruiter-brief-head>div>span,.recruiter-intro>span,.recruiter-contribution>div>span,.recruiter-difference>div>span,.recruiter-table>div>span{display:block;color:var(--accent);font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.13em}
+.recruiter-brief-head h2{color:#fffbea;font-size:clamp(48px,6vw,76px);margin:18px 0 18px;max-width:940px}.recruiter-brief-head p{max-width:620px;color:rgba(255,251,234,.72);font-size:16px;line-height:1.55}
+.recruiter-brief-head>button{position:absolute;right:24px;top:24px;min-height:38px;padding:4px 4px 4px 12px;display:flex;align-items:center;gap:10px;border:1px solid rgba(255,251,234,.32);color:#fffbea;background:rgba(255,255,255,.06);border-radius:999px;transition:background .2s ease}.recruiter-brief-head>button:hover{background:rgba(255,255,255,.14)}.recruiter-brief-head>button span{font-size:9px;text-transform:uppercase;letter-spacing:.08em}.recruiter-brief-head>button b{width:28px;height:28px;display:grid;place-items:center;border-radius:50%;background:#fffbea;color:#202519;font-size:16px;font-weight:400}
+.recruiter-rationale{padding:44px 52px;display:grid;grid-template-columns:150px 1fr;gap:28px;border-bottom:1px solid #202519;background:#fffbea}
 .recruiter-rationale>span{padding-top:7px;color:var(--accent-deep);font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.12em}.recruiter-rationale h3{font-size:34px;margin-bottom:16px}.recruiter-rationale p{max-width:760px;font-size:16px;line-height:1.55}
 .recruiter-proof{display:grid;grid-template-columns:repeat(4,1fr);background:var(--accent);color:var(--white)}
 .recruiter-proof>div{min-height:165px;padding:24px;display:flex;flex-direction:column;justify-content:space-between;border-right:1px solid rgba(255,255,255,.25)}.recruiter-proof>div:last-child{border-right:0}
 .recruiter-proof strong{font-size:38px;letter-spacing:-.055em}.recruiter-proof>div>div{display:grid;gap:7px}.recruiter-proof span{display:block;max-width:155px;font-size:9px;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,.78)}.recruiter-proof small{display:block;font-size:8px;line-height:1.35;color:rgba(255,255,255,.54)}.recruiter-proof small a{border-bottom:1px solid transparent;transition:border-color .2s ease,color .2s ease}.recruiter-proof small a:hover{color:var(--white);border-color:currentColor}
-.recruiter-intro,.recruiter-contribution,.recruiter-difference,.recruiter-table{padding:92px 56px;border-bottom:1px solid var(--ink)}
+.recruiter-intro,.recruiter-contribution,.recruiter-difference,.recruiter-table{padding:76px 52px;border-bottom:1px solid #202519}
 .recruiter-intro{display:grid;grid-template-columns:150px 1fr;gap:28px}.recruiter-intro>span{padding-top:7px}.recruiter-intro h3{font-size:clamp(40px,5vw,68px);max-width:780px}.recruiter-intro p{grid-column:2;max-width:780px;margin-top:3px;font-size:18px;line-height:1.55}
 .recruiter-why>div>p{margin-top:18px}.recruiter-why-grid{display:grid;grid-template-columns:repeat(3,1fr);margin-top:50px;border-top:1px solid var(--ink)}
 .recruiter-why-grid article{min-height:220px;padding:26px 28px 30px 0;border-right:1px solid var(--line)}.recruiter-why-grid article:not(:first-child){padding-left:28px}.recruiter-why-grid article:last-child{border-right:0}
@@ -237,7 +237,7 @@ p{color:var(--muted)}
 .recruiter-difference-grid article{min-height:290px;padding:28px 36px 34px 0;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}.recruiter-difference-grid article:nth-child(even){padding-left:36px;border-right:0}
 .recruiter-difference-grid small{font-size:8px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted)}.recruiter-difference-grid strong{display:block;font-size:26px;margin:70px 0 14px}.recruiter-difference-grid p{font-size:13px;max-width:430px}
 .recruiter-table dl{border-top:1px solid var(--ink)}.recruiter-table dl>div{display:grid;grid-template-columns:1fr 1.618fr;gap:28px;padding:18px 0;border-bottom:1px solid var(--line)}.recruiter-table dt{font-size:13px;font-weight:750}.recruiter-table dd{font-size:13px;color:var(--muted)}
-.recruiter-actions{padding:54px 56px;background:var(--accent);color:var(--white);display:flex;justify-content:space-between;gap:38px;align-items:end}.recruiter-actions>div:first-child span{font-size:9px;text-transform:uppercase;letter-spacing:.11em;color:rgba(255,255,255,.7)}.recruiter-actions>div:first-child p{margin-top:9px;color:var(--white);font-size:18px}.recruiter-actions>div:last-child{display:flex;align-items:center;gap:22px}.recruiter-actions a{font-size:12px;font-weight:750;border-bottom:1px solid currentColor;padding-bottom:4px;white-space:nowrap}.recruiter-actions a:first-child{padding:13px 16px;border:0;background:var(--white);color:var(--ink)}.recruiter-actions a:first-child b{margin-left:10px}
+.recruiter-actions{padding:48px 52px;background:var(--accent);color:var(--white);display:flex;justify-content:space-between;gap:38px;align-items:end}.recruiter-actions>div:first-child span{font-size:9px;text-transform:uppercase;letter-spacing:.11em;color:rgba(255,255,255,.7)}.recruiter-actions>div:first-child p{margin-top:9px;color:var(--white);font-size:18px}.recruiter-actions>div:last-child{display:flex;align-items:center;gap:22px}.recruiter-actions a{font-size:12px;font-weight:750;border-bottom:1px solid currentColor;padding-bottom:4px;white-space:nowrap}.recruiter-actions a:first-child{padding:13px 16px;border:0;background:var(--white);color:var(--ink)}.recruiter-actions a:first-child b{margin-left:10px}
 @keyframes recruiter-overlay-in{from{opacity:0}to{opacity:1}}@keyframes recruiter-dialog-in{from{opacity:0;transform:translateY(40px) scale(.985)}to{opacity:1;transform:none}}
 .hero-visual{position:relative;justify-self:end;width:min(100%,430px);padding:0;background:transparent;border-radius:0;box-shadow:none;overflow:visible}
 .portrait-frame{height:570px;border-radius:4px;overflow:hidden;background:#1b1b1d}
@@ -1037,6 +1037,14 @@ html[data-theme="dark"] .project-feature .project-facts dd,
 html[data-theme="dark"] .project-feature .project-metrics dd{color:var(--ink)}
 html[data-theme="dark"] .project-feature .project-arrow{color:var(--ink);border-color:var(--line)}
 html[data-theme="dark"] .recruiter-trigger:hover>b{background:var(--paper-2);color:var(--ink)}
+
+/* Keep this document independently legible while the surrounding site switches theme. */
+html[data-theme="dark"] .recruiter-dialog{background:#f7f4e9;color:#202519}
+html[data-theme="dark"] .recruiter-brief-head{background:#202519;color:#fffbea}
+html[data-theme="dark"] .recruiter-brief-head h2{color:#fffbea}
+html[data-theme="dark"] .recruiter-brief-head p{color:rgba(255,251,234,.72)}
+html[data-theme="dark"] .recruiter-brief-head>button{color:#fffbea}
+html[data-theme="dark"] .recruiter-brief-head>button b{background:#fffbea;color:#202519}
 html[data-theme="dark"] .recommendation-link-trigger:hover{background:var(--paper-2);color:var(--ink)}
 html[data-theme="dark"] .project-card-media>em{background:var(--paper);color:var(--ink)}
 
@@ -1051,3 +1059,19 @@ html[data-theme="dark"] .project-card-media>em{background:var(--paper);color:var
 
 /* Keep the hero-to-work divider quiet in the dark palette. */
 html[data-theme="dark"] .featured-work{border-top-color:rgba(247,241,217,.15)}
+
+/* Recruiter brief: a compact, readable mobile document rather than a scaled desktop panel. */
+@media (max-width:760px){
+  .recruiter-overlay{padding:8px}
+  .recruiter-dialog{max-height:calc(100svh - 16px);border-radius:18px}
+  .recruiter-brief-head{min-height:0;padding:78px 24px 30px}
+  .recruiter-brief-head h2{font-size:clamp(42px,12vw,54px);margin:14px 0;letter-spacing:-.065em}
+  .recruiter-brief-head p{font-size:15px;line-height:1.5}
+  .recruiter-brief-head>button{right:16px;top:16px}
+  .recruiter-rationale{padding:36px 24px}
+  .recruiter-rationale h3{font-size:27px;line-height:1.05}
+  .recruiter-rationale p{font-size:15px}
+  .recruiter-proof>div{min-height:112px;padding:16px}
+  .recruiter-intro,.recruiter-contribution,.recruiter-difference,.recruiter-table{padding:56px 24px}
+  .recruiter-actions{padding:34px 24px}
+}
