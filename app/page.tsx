@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import {Arrow,CaseStudyStack,PageFrame,TestimonialsSection} from './components';
-import {experience} from './data';
 import HeroPreview from './hero-preview';
 import LanguageGreeting from './language-greeting';
 
@@ -37,32 +36,5 @@ export default function Home(){return <PageFrame>
   </section>
 
   <TestimonialsSection index="02"/>
-
-  <section className="home-about shell">
-    <div className="editorial-heading reveal"><span>03</span><div><small>About me</small><h2>I came to UX by following the questions code couldn&apos;t answer.</h2></div></div>
-    <div className="home-about-layout">
-      <div className="home-about-image home-about-image-london reveal" data-parallax><img src="/optimized/about-london.jpg" loading="lazy" decoding="async" alt="Akshay in London with Tower Bridge in the background"/><span>Outside the screen / London</span></div>
-      <div className="home-about-copy reveal">
-        <p className="large-copy">My computer science degree taught me how digital systems are built. I became more interested in what happened on the other side of the screen, why a logical flow could still confuse someone, or why a useful feature went untouched.</p>
-        <p>Playing Rainbow Six Siege sharpened that curiosity. I started noticing how small interaction cues, feedback loops and split-second decisions shaped what players understood, and what they did next.</p>
-        <p>That curiosity moved me into Product and UX Design. For more than five years, I&apos;ve worked with founders, engineers and stakeholders across travel, enterprise and service products, turning early ideas, constraints and edge cases into journeys people can actually follow.</p>
-        <dl className="designer-story" aria-label="My path into product and UX design">
-          <div><dt>Foundation</dt><dd>Computer science</dd></div>
-          <div><dt>Practice</dt><dd>Product &amp; UX design</dd></div>
-          <div><dt>Today</dt><dd>Master&apos;s in Design · UK</dd></div>
-        </dl>
-        <blockquote>I don&apos;t start with screens.<br/>I start with what people need to understand.</blockquote>
-        <Link className="text-link" href="/about" data-cursor-label="View">More about how I work <Arrow/></Link>
-      </div>
-    </div>
-  </section>
-
-  <section className="home-experience shell">
-    <div className="editorial-heading reveal"><span>04</span><div><small>Recent experience</small><h2>A few places I&apos;ve been useful.</h2></div></div>
-    <div className="simple-experience">
-      {experience.slice(0,4).map(item=><article className="reveal" key={`${item.company}-${item.date}`}><time>{item.date}</time><div><h3>{item.company}</h3><p>{item.role}{item.employment ? ` · ${item.employment}` : ''}</p></div><p>{item.summary}</p></article>)}
-    </div>
-    <Link className="text-link" href="/about#experience" data-cursor-label="Jump">Full experience <Arrow/></Link>
-  </section>
 
 </PageFrame>}
