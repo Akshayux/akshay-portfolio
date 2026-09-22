@@ -8,9 +8,10 @@ const greetings = [
   {text:'नमस्ते',lang:'hi',label:'Hindi'},
   {text:'నమస్తే',lang:'te',label:'Telugu'},
   {text:'ನಮಸ್ಕಾರ',lang:'kn',label:'Kannada'},
+  {text:'வணக்கம்',lang:'ta',label:'Tamil'},
 ] as const;
 
-const spokenLanguages = 'English, Spanish, Hindi, Telugu and Kannada';
+const spokenLanguages = 'English, Spanish, Hindi, Telugu, Kannada and Tamil';
 
 export default function LanguageGreeting({className=''}:{className?:string}){
   const [phraseIndex,setPhraseIndex] = useState(0);
@@ -55,6 +56,6 @@ export default function LanguageGreeting({className=''}:{className?:string}){
     <span className="hero-language-word" lang={greeting.lang} aria-hidden="true">{displayText}</span>
     {('label' in greeting) && <span className="hero-language-name" aria-hidden="true">{greeting.label}</span>}
     <span className="hero-language-caret" aria-hidden="true">|</span>
-    <span className="hero-language-tooltip" role="tooltip"><strong>These are the languages that I speak</strong><span>English · Español · Hindi · Telugu · Kannada</span><em>“Knowledge of languages is the doorway to wisdom.”</em></span>
+    <span className="hero-language-tooltip" role="tooltip"><strong>These are the languages that I speak</strong><span>English · Español · Hindi · Telugu · Kannada · Tamil</span><em>“Knowledge of languages is the doorway to wisdom.”</em></span>
   </div>;
 }

@@ -46,8 +46,13 @@ export default function CustomCursor(){
     };
   },[]);
 
-  return <div ref={cursorRef} className={`custom-cursor custom-cursor-orb${visible?' is-visible':''}${interactive?' is-interactive':''}${pressed?' is-pressed':''}`} aria-hidden="true">
-    <span className="cursor-orb"><i/></span>
+  return <div ref={cursorRef} className={`custom-cursor custom-cursor-plane${visible?' is-visible':''}${interactive?' is-interactive':''}${pressed?' is-pressed':''}`} aria-hidden="true">
+    <span className="cursor-plane">
+      <svg viewBox="0 0 32 32" focusable="false" aria-hidden="true">
+        <path className="cursor-plane-body" d="M2.8 2.9 29.2 13.7 17.5 18.7 12.4 29.2 2.8 2.9Z"/>
+        <path className="cursor-plane-fold" d="M4.2 4.5 17.5 18.7 28.8 13.8"/>
+      </svg>
+    </span>
     <span className="cursor-label">{label}</span>
   </div>;
 }
