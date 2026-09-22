@@ -18,7 +18,7 @@ export default function SimpoAIPage(){return <main id="top" className="case-page
     <dl className="case-summary reveal"><div><dt>Role</dt><dd>UX Designer</dd></div><div><dt>Scope</dt><dd>Research, journey design and UI</dd></div><div><dt>Timeline</dt><dd>Oct 2024 - Sept 2025</dd></div><div><dt>Context</dt><dd>AI website creation</dd></div><div><dt>Team</dt><dd>Product and engineering</dd></div><div><dt>Read time</dt><dd>6 minutes</dd></div></dl>
   </section>
 
-  <section className="case-hero-media simpo-hero-media reveal" data-parallax><img src="/simpo-ai-flow.svg" alt="Abstract illustration of the Simpo AI onboarding flow"/></section>
+  <section className="case-hero-media simpo-hero-media reveal" data-parallax><img src="/simpo-ai-dashboard.png" alt="Simpo AI product workspace showing the redesigned creation flow"/></section>
 
   <section className="simpo-snapshot case-wide reveal" aria-label="Simpo AI mini case study snapshot">
     <div className="simpo-snapshot-top">

@@ -374,10 +374,10 @@ body{overflow-x:hidden}
 
 /* A small left-side contents menu keeps navigation close without permanently
    covering the case-study canvas. */
-.case-toc{position:fixed;z-index:90;top:50%;left:16px;width:auto;min-height:0;display:block;padding:0;overflow:visible;border:0;border-radius:0;background:transparent;color:var(--ink);box-shadow:none;backdrop-filter:none;mix-blend-mode:normal;opacity:1;transform:translateY(-50%)}
-.case-toc summary{position:relative;display:flex;width:98px;height:42px;align-items:center;justify-content:center;gap:9px;padding:0 13px;border:1px solid color-mix(in srgb,var(--ink) 22%,transparent);border-radius:999px;background:color-mix(in srgb,var(--paper) 95%,transparent);box-shadow:0 10px 30px rgba(20,25,17,.12);color:var(--ink);cursor:pointer;list-style:none;backdrop-filter:blur(16px);transition:background-color .2s ease,border-color .2s ease,color .2s ease}
+.case-toc{position:fixed;z-index:90;top:80px;left:16px;width:auto;min-height:0;display:block;padding:0;overflow:visible;border:0;border-radius:0;background:transparent;color:var(--ink);box-shadow:none;backdrop-filter:none;mix-blend-mode:normal;opacity:1;transform:none}
+.case-toc summary{position:relative;display:flex;width:42px;height:42px;align-items:center;justify-content:center;gap:9px;padding:0;border:1px solid color-mix(in srgb,var(--ink) 22%,transparent);border-radius:50%;background:color-mix(in srgb,var(--paper) 95%,transparent);box-shadow:0 10px 30px rgba(20,25,17,.12);color:var(--ink);cursor:pointer;list-style:none;backdrop-filter:blur(16px);transition:background-color .2s ease,border-color .2s ease,color .2s ease}
 .case-toc summary::-webkit-details-marker{display:none}
-.case-toc summary>span:last-child{font-size:9px;font-weight:750;letter-spacing:.1em;text-transform:uppercase}
+.case-toc summary>span:last-child{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap}
 .case-toc-icon{display:grid;width:14px;gap:3px}
 .case-toc-icon i{display:block;width:14px;height:1px;background:currentColor;transition:transform .2s ease,opacity .2s ease}
 .case-toc[open] summary{border-color:#1d2519;background:#1d2519;color:#f7f1d9}
@@ -391,7 +391,7 @@ body{overflow-x:hidden}
 .case-page section[id]{scroll-margin-top:82px}
 @media (max-width:760px){
   .case-toc{top:auto;bottom:16px;left:12px;transform:none}
-  .case-toc summary{width:92px;height:40px}
+  .case-toc summary{width:40px;height:40px}
   .case-toc nav{top:auto;bottom:48px;max-height:calc(100vh - 140px);overflow-y:auto}
   .case-page section[id]{scroll-margin-top:70px}
 }
@@ -437,68 +437,73 @@ body{overflow-x:hidden}
 /* Keep every page's opening hero in the same calm, light visual language as
    the home hero. The full-bleed layer preserves each page's existing layout
    while giving the first viewport one consistent colour story. */
-:is(.page-hero,.about-canvas,.contact-hero,.resume-heading,.case-page .case-hero){position:relative;isolation:isolate;color:#5d5d58}
-:is(.page-hero,.about-canvas,.contact-hero,.resume-heading,.case-page .case-hero)::before{content:"";position:absolute;z-index:-1;inset:0 calc(50% - 50vw);background:#f1efe9}
+:is(.page-hero,.about-canvas,.contact-hero,.resume-heading,.case-page .case-hero){position:relative;isolation:isolate;color:var(--ink)}
+:is(.page-hero,.about-canvas,.contact-hero,.resume-heading,.case-page .case-hero)::before{content:"";position:absolute;z-index:-1;inset:0 calc(50% - 50vw);background:var(--paper)}
 :is(.page-hero,.about-canvas,.contact-hero,.resume-heading,.case-page .case-hero) h1,
 :is(.page-hero,.about-canvas,.contact-hero,.resume-heading,.case-page .case-hero) h2,
-:is(.page-hero,.about-canvas,.contact-hero,.resume-heading,.case-page .case-hero) strong{color:#5d5d58}
-:is(.page-hero,.about-canvas,.contact-hero,.resume-heading,.case-page .case-hero) p{color:#54544f}
+:is(.page-hero,.about-canvas,.contact-hero,.resume-heading,.case-page .case-hero) strong{color:var(--ink)}
+:is(.page-hero,.about-canvas,.contact-hero,.resume-heading,.case-page .case-hero) p{color:var(--muted)}
 :is(.page-hero,.about-canvas,.contact-hero,.resume-heading,.case-page .case-hero) .eyebrow,
-:is(.page-hero,.about-canvas,.contact-hero,.resume-heading,.case-page .case-hero) .case-eyebrow{color:#c98d5c}
-.about-canvas-board{background:radial-gradient(circle at 50% 46%,rgba(201,141,92,.1),transparent 38%),#e7e4dc;border-color:rgba(93,93,88,.22)}
-.about-canvas-callout{color:#5d5d58}
-.about-canvas-callout small,.about-canvas-callout span{color:#686862}
-.about-canvas-portrait span{background:#f1efe9;color:#5d5d58}
-.contact-primary{border-color:rgba(93,93,88,.22)}
-.contact-primary>span,.contact-primary>small{color:#686862}
-.case-summary{border-color:rgba(93,93,88,.22)}
-.case-summary>div{border-color:rgba(93,93,88,.22)}
-.case-summary dt{color:#686862}
-.case-summary dd{color:#5d5d58}
-.resume-heading{border-color:rgba(93,93,88,.35)}
-.resume-heading>div:first-child>span{color:#c98d5c}
-.resume-heading>div:first-child>p{color:#5d5d58}
+:is(.page-hero,.about-canvas,.contact-hero,.resume-heading,.case-page .case-hero) .case-eyebrow{color:var(--accent-deep)}
+.about-canvas-board{background:radial-gradient(circle at 50% 46%,color-mix(in srgb,var(--accent) 12%,transparent),transparent 38%),var(--paper-2);border-color:var(--line)}
+.about-canvas-callout{color:var(--ink)}
+.about-canvas-callout small,.about-canvas-callout span{color:var(--muted)}
+.about-canvas-portrait span{background:var(--paper);color:var(--ink)}
+.contact-primary{border-color:var(--line)}
+.contact-primary>span,.contact-primary>small{color:var(--muted)}
+.case-summary{border-color:var(--line)}
+.case-summary>div{border-color:var(--line)}
+.case-summary dt{color:var(--muted)}
+.case-summary dd{color:var(--ink)}
+.resume-heading{border-color:var(--line)}
+.resume-heading>div:first-child>span{color:var(--accent-deep)}
+.resume-heading>div:first-child>p{color:var(--ink)}
 
 /* Buttons on the intentionally light hero surfaces keep a dark readable
    treatment in their default and hover states, even though the document
    theme remains dark for the rest of the portfolio. */
 :is(.hero-centered,.page-hero,.about-canvas,.contact-hero,.resume-heading,.case-page .case-hero) .button-secondary{
   background:transparent;
-  border-color:rgba(29,37,25,.3);
-  color:#1d2519;
+  border-color:var(--line);
+  color:var(--ink);
 }
 :is(.hero-centered,.page-hero,.about-canvas,.contact-hero,.resume-heading,.case-page .case-hero) .button-secondary .button-icon{
-  background:#1d2519;
-  color:#f7f1d9;
+  background:var(--ink);
+  color:var(--white);
 }
 :is(.hero-centered,.page-hero,.about-canvas,.contact-hero,.resume-heading,.case-page .case-hero) .button-secondary:hover,
 :is(.hero-centered,.page-hero,.about-canvas,.contact-hero,.resume-heading,.case-page .case-hero) .button-secondary:focus-visible{
-  background:#1d2519;
-  border-color:#1d2519;
-  color:#f7f1d9;
+  background:var(--ink);
+  border-color:var(--ink);
+  color:var(--white);
 }
 :is(.hero-centered,.page-hero,.about-canvas,.contact-hero,.resume-heading,.case-page .case-hero) .button-secondary:hover .button-icon,
 :is(.hero-centered,.page-hero,.about-canvas,.contact-hero,.resume-heading,.case-page .case-hero) .button-secondary:focus-visible .button-icon{
-  background:#d39a6a;
-  color:#1d2519;
+  background:var(--accent);
+  color:var(--ink);
 }
 :is(.hero-centered,.page-hero,.about-canvas,.contact-hero,.resume-heading,.case-page .case-hero) .button:not(.button-secondary){
-  background:#1d2519;
-  border-color:#1d2519;
-  color:#f7f1d9;
+  background:var(--ink);
+  border-color:var(--ink);
+  color:var(--white);
 }
 :is(.hero-centered,.page-hero,.about-canvas,.contact-hero,.resume-heading,.case-page .case-hero) .button:not(.button-secondary) .button-icon{
-  background:#f7f1d9;
-  color:#1d2519;
+  background:var(--white);
+  color:var(--ink);
 }
 :is(.hero-centered,.page-hero,.about-canvas,.contact-hero,.resume-heading,.case-page .case-hero) .button:not(.button-secondary):hover,
 :is(.hero-centered,.page-hero,.about-canvas,.contact-hero,.resume-heading,.case-page .case-hero) .button:not(.button-secondary):focus-visible{
-  background:#c98d5c;
-  border-color:#c98d5c;
-  color:#1d2519;
+  background:var(--accent);
+  border-color:var(--accent);
+  color:var(--ink);
 }
 :is(.hero-centered,.page-hero,.about-canvas,.contact-hero,.resume-heading,.case-page .case-hero) .button:not(.button-secondary):hover .button-icon,
 :is(.hero-centered,.page-hero,.about-canvas,.contact-hero,.resume-heading,.case-page .case-hero) .button:not(.button-secondary):focus-visible .button-icon{
-  background:#1d2519;
-  color:#f7f1d9;
+  background:var(--ink);
+  color:var(--white);
 }
+
+/* Use the actual Simpo product interface as the case-study visual anchor. */
+.simpo-hero-media{padding:28px;background:#dfe5ff}
+.simpo-hero-media img{width:min(100%,1040px);max-height:620px;object-fit:contain}
+@media (max-width:760px){.simpo-hero-media{padding:14px}.simpo-hero-media img{max-height:none}}
