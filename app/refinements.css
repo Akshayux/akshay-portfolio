@@ -95,8 +95,8 @@ body{overflow-x:hidden}
 @media (prefers-reduced-motion:reduce){.hero-language-caret{animation:none}}
 
 /* The hero is a single pinned viewport while its video expands on scroll. */
-.site-header{height:64px;background:#1d2519;color:#f7f1d9;border-color:rgba(247,241,217,.16)}
-.site-header .brand img{width:34px;height:34px}
+.site-header{height:64px;background:var(--paper);color:var(--ink);border-color:var(--line)}
+.site-header .brand img{width:34px;height:34px;filter:none}
 .site-header .primary-nav{gap:28px}
 .hero-centered{display:block;position:relative;width:100vw;margin-left:calc(50% - 50vw);min-height:calc(190svh - 64px);padding:0;background:#f1efe9;color:#5d5d58;overflow:visible}
 .hero-centered .hero-stage{position:sticky;top:64px;height:calc(100svh - 64px);min-height:680px;display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:40px 32px 52px;overflow:hidden}
@@ -504,10 +504,16 @@ body{overflow-x:hidden}
 }
 
 /* The home hero CTA is intentionally high contrast on the bright first fold. */
-.hero-centered .hero-primary-button{background:#1d2519!important;border-color:#1d2519!important;color:#fffbea!important}
-.hero-centered .hero-primary-button .button-icon{background:#d39a6a;color:#1d2519}
-.hero-centered .hero-primary-button:hover,.hero-centered .hero-primary-button:focus-visible{background:#d39a6a;border-color:#d39a6a;color:#1d2519}
-.hero-centered .hero-primary-button:hover .button-icon,.hero-centered .hero-primary-button:focus-visible .button-icon{background:#1d2519;color:#fffbea}
+.hero-centered .hero-primary-button{background:#2d5b44!important;border-color:#2d5b44!important;color:#fffbea!important}
+.hero-centered .hero-primary-button .button-icon{background:#f1efe9;color:#2d5b44}
+.hero-centered .hero-primary-button:hover,.hero-centered .hero-primary-button:focus-visible{background:#292a27;border-color:#292a27;color:#fffbea}
+.hero-centered .hero-primary-button:hover .button-icon,.hero-centered .hero-primary-button:focus-visible .button-icon{background:#f1efe9;color:#292a27}
+
+/* Green is reserved for interaction and emphasis; broad surfaces remain paper. */
+.site-header .primary-nav a::after{background:var(--accent)}
+.site-header .primary-nav a:hover{color:var(--accent)}
+.case-toc[open] summary{border-color:var(--accent);background:var(--accent);color:var(--white)}
+.case-study-stack-bento>.project-card-04 .case-study-media-video{background:#292a27}
 
 /* Use the actual Simpo product interface as the case-study visual anchor. */
 .simpo-hero-media{padding:28px;background:var(--paper-2)}
