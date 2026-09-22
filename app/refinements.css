@@ -135,6 +135,33 @@ body{overflow-x:hidden}
 @keyframes hero-preview-running{0%{transform:scale(1.01) translate3d(-.7%,0,0)}100%{transform:scale(1.05) translate3d(.7%,-.5%,0)}}
 @media (prefers-reduced-motion:reduce){.hero-centered .hero-preview-frame img,.hero-centered .hero-preview-video{animation:none}}
 
+/* Keep the homepage introduction calm and editorial: the message leads, the
+   work follows below instead of competing with it in the first fold. */
+.hero-centered{display:block;width:auto;margin-left:0;min-height:0;padding:clamp(76px,10vw,140px) 0 92px;background:var(--paper);color:var(--ink);overflow:visible}
+.hero-centered .hero-stage{position:relative;top:auto;height:auto;min-height:0;display:block;padding:0;overflow:visible}
+.hero-centered .hero-introduction{width:min(100%,1112px);padding:0;margin:0 auto;border-radius:0}
+.hero-centered .hero-language-greeting{justify-content:flex-start;margin:0 0 42px;padding:0;color:var(--warm);font-size:18px;letter-spacing:.08em}
+.hero-centered .hero-copy-body{max-width:none;margin:0;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:96px;align-items:start;text-align:left}
+.hero-centered .hero-statement{max-width:600px;color:var(--ink);font-size:clamp(44px,5vw,72px);font-weight:650;line-height:.98;letter-spacing:-.065em}
+.hero-centered .hero-statement span{color:var(--warm)}
+.hero-centered .hero-support{max-width:620px;margin:0;color:var(--muted);font-size:18px;line-height:1.55;text-align:left}
+.hero-centered .hero-support p+p{margin-top:32px}
+.hero-centered .hero-cta-row{grid-column:2;justify-content:flex-start;margin-top:34px}
+.hero-centered .hero-primary-button{min-height:52px;padding:6px 7px 6px 20px;background:var(--accent);border-color:var(--accent);color:var(--white);font-size:13px;box-shadow:0 8px 24px rgba(20,20,20,.12)}
+.hero-centered .hero-primary-button .button-icon{background:var(--paper);color:var(--accent)}
+.hero-centered .hero-primary-button:hover{background:var(--ink);border-color:var(--ink);color:var(--white)}
+.hero-centered .hero-primary-button:hover .button-icon{background:var(--paper);color:var(--ink)}
+.hero-centered + .featured-work{margin-top:0}
+@media (max-width:760px){
+  .hero-centered{padding:64px 0 72px}
+  .hero-centered .hero-language-greeting{margin-bottom:28px;font-size:15px}
+  .hero-centered .hero-copy-body{display:flex;flex-direction:column;gap:0}
+  .hero-centered .hero-statement{max-width:100%;font-size:clamp(42px,12vw,62px)}
+  .hero-centered .hero-support{max-width:100%;margin-top:30px;font-size:16px}
+  .hero-centered .hero-support p+p{margin-top:22px}
+  .hero-centered .hero-cta-row{margin-top:28px}
+}
+
 /* Long-form projects: use readable body type without diluting the hierarchy. */
 .case-three p,.ecosystem-cards p,.responsibility-grid p,.principle-grid p,
 .support-grid p,.module-grid p,.research-step-list p,.lux-skim li p,
