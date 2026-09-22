@@ -1,6 +1,6 @@
 import type {Metadata} from 'next';
 import Link from 'next/link';
-import {Arrow,SiteFooter,SiteHeader} from '../../components';
+import {Arrow,CaseToc,SiteFooter,SiteHeader} from '../../components';
 
 export const metadata:Metadata={
   title:'LUXTJ Case Study - From Confusion to Clarity',
@@ -98,7 +98,7 @@ function CaseKicker({children}:{children:React.ReactNode}){return <span classNam
 
 export default function LuxtjPage(){return <main id="top" className="case-page luxtj-case">
   <SiteHeader/>
-  <aside className="case-toc" aria-label="Case study contents"><span>On this page</span><a href="#overview" data-cursor-label="Jump">Overview</a><a href="#ecosystem" data-cursor-label="Jump">Ecosystem</a><a href="#failure" data-cursor-label="Jump">First failure</a><a href="#architecture" data-cursor-label="Jump">Architecture</a><a href="#process" data-cursor-label="Jump">Process</a><a href="#redesigns" data-cursor-label="Jump">Redesigns</a><a href="#learning" data-cursor-label="Jump">Learning</a></aside>
+  <CaseToc items={[["#overview","Overview"],["#ecosystem","Ecosystem"],["#failure","First failure"],["#architecture","Architecture"],["#process","Process"],["#redesigns","Redesigns"],["#learning","Learning"]]}/>
 
   <section className="case-hero shell" id="overview">
     <div className="case-hero-copy reveal"><CaseKicker>LUXTJ · Luxury travel website</CaseKicker><h1 data-parallax-layer data-parallax-speed="10">I designed v1. Real use gave me the brief for v2.</h1><p>I designed the first version of LUXTJ during my earlier freelance engagement. When people struggled to understand key features and complete important journeys, I owned that outcome and returned to lead the redesign. The work was about making complex travel decisions easier to understand, while working inside an evolving product system and delivery constraints.</p></div>

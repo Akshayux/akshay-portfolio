@@ -1,6 +1,6 @@
 import type {Metadata} from 'next';
 import Link from 'next/link';
-import {Arrow,SiteFooter,SiteHeader} from '../../components';
+import {Arrow,CaseToc,SiteFooter,SiteHeader} from '../../components';
 
 export const metadata:Metadata={
   title:'Simpo AI Case Study - Making AI Onboarding Clearer',
@@ -11,7 +11,7 @@ function Kicker({children}:{children:React.ReactNode}){return <span className="e
 
 export default function SimpoAIPage(){return <main id="top" className="case-page simpo-case">
   <SiteHeader/>
-  <aside className="case-toc" aria-label="Case study contents"><span>On this page</span><a href="#overview" data-cursor-label="Jump">Overview</a><a href="#problem" data-cursor-label="Jump">Problem</a><a href="#research" data-cursor-label="Jump">Investigation</a><a href="#redesign" data-cursor-label="Jump">Redesign</a><a href="#outcome" data-cursor-label="Jump">Outcome</a><a href="#learning" data-cursor-label="Jump">Reflection</a></aside>
+  <CaseToc items={[["#overview","Overview"],["#problem","Problem"],["#research","Investigation"],["#redesign","Redesign"],["#outcome","Outcome"],["#learning","Reflection"]]}/>
 
   <section className="case-hero shell" id="overview">
     <div className="case-hero-copy reveal"><Kicker>Proficon Labs · Simpo AI</Kicker><h1 data-parallax-layer data-parallax-speed="10">Making an AI website builder feel less like a black box.</h1><p>Simpo AI helps people create a website with AI. The early onboarding asked people to make unfamiliar choices before they understood what the system would do for them. I redesigned that first session around clearer progress, smaller decisions and visible feedback.</p></div>

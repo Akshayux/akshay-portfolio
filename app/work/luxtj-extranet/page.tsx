@@ -1,6 +1,6 @@
 import type {Metadata} from 'next';
 import Link from 'next/link';
-import {Arrow,SiteFooter,SiteHeader} from '../../components';
+import {Arrow,CaseToc,SiteFooter,SiteHeader} from '../../components';
 
 export const metadata:Metadata={title:'LUXTJ Extranet Case Study',description:'Designing the partner and internal workflows behind LUXTJ across listings, bookings, staff, offers and payments.'};
 
@@ -24,7 +24,7 @@ function Kicker({children}:{children:React.ReactNode}){return <span className="e
 
 export default function ExtranetPage(){return <main id="top" className="case-page extranet-case">
   <SiteHeader/>
-  <aside className="case-toc" aria-label="Case study contents"><span>On this page</span><a href="#overview" data-cursor-label="Jump">Overview</a><a href="#challenge" data-cursor-label="Jump">Challenge</a><a href="#scope" data-cursor-label="Jump">Scope</a><a href="#system" data-cursor-label="Jump">System</a><a href="#delivery" data-cursor-label="Jump">Delivery</a></aside>
+  <CaseToc items={[["#overview","Overview"],["#challenge","Challenge"],["#scope","Scope"],["#system","System"],["#delivery","Delivery"]]}/>
 
   <section className="case-hero shell" id="overview">
     <div className="case-hero-copy reveal"><Kicker>LUXTJ Extranet · Product & UX case study</Kicker><h1 data-parallax-layer data-parallax-speed="10">Designing the operations behind a luxury trip.</h1><p>The extranet connects the customer promise to the partner work required to fulfil it, from listing content and availability to bookings, offers, staff and payments.</p></div>

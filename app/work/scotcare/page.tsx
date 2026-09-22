@@ -1,6 +1,6 @@
 import type {Metadata} from 'next';
 import Link from 'next/link';
-import {Arrow,SiteFooter,SiteHeader} from '../../components';
+import {Arrow,CaseToc,SiteFooter,SiteHeader} from '../../components';
 
 export const metadata:Metadata={title:'ScotCare Case Study',description:'ScotCare is an evidence-informed academic care-navigation concept for patients in Scotland, designed around safety, clarity and continuity.'};
 
@@ -22,7 +22,7 @@ function Kicker({children}:{children:React.ReactNode}){return <span className="e
 
 export default function ScotCarePage(){return <main id="top" className="case-page scotcare-case">
   <SiteHeader/>
-  <aside className="case-toc" aria-label="Case study contents"><span>On this page</span><a href="#overview" data-cursor-label="Jump">Overview</a><a href="#problem" data-cursor-label="Jump">Problem</a><a href="#research" data-cursor-label="Jump">Research</a><a href="#experience" data-cursor-label="Jump">Experience</a><a href="#reflection" data-cursor-label="Jump">Reflection</a></aside>
+  <CaseToc items={[["#overview","Overview"],["#problem","Problem"],["#research","Research"],["#experience","Experience"],["#reflection","Reflection"]]}/>
 
   <section className="case-hero shell" id="overview"><div className="case-hero-copy reveal"><Kicker>ScotCare · University UX project</Kicker><h1 data-parallax-layer data-parallax-speed="10">From “I don&apos;t know what to do” to “I understand what happens next.”</h1><p>An evidence-informed care-navigation concept for people in Scotland, designed to reduce uncertainty before, during and after contact with human-led healthcare.</p></div><dl className="case-summary reveal"><div><dt>Role</dt><dd>Independent UX & Product Designer</dd></div><div><dt>Course</dt><dd>MA Digital Design & Innovation</dd></div><div><dt>University</dt><dd>Heriot-Watt University</dd></div><div><dt>Year</dt><dd>2026</dd></div><div><dt>Methods</dt><dd>Evidence synthesis to prototype</dd></div><div><dt>Status</dt><dd>Academic concept</dd></div></dl></section>
 

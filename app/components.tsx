@@ -6,6 +6,13 @@ import ArrowIcon from './arrow-icon';
 
 export function Arrow(){return <ArrowIcon/>}
 
+export function CaseToc({items}:{items:readonly (readonly [string,string])[]}){
+  return <details className="case-toc">
+    <summary aria-label="Open case study contents"><span aria-hidden="true" className="case-toc-icon"><i/><i/><i/></span><span>Contents</span></summary>
+    <nav aria-label="Case study contents"><strong>On this page</strong>{items.map(([href,label])=><a key={href} href={href} data-cursor-label="Jump">{label}</a>)}</nav>
+  </details>;
+}
+
 export function SiteHeader(){
   return <header className="site-header">
     <div className="shell header-inner">
