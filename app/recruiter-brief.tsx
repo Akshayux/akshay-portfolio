@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import {useEffect,useRef,useState} from 'react';
+import {createPortal} from 'react-dom';
 import ArrowIcon from './arrow-icon';
 
 export default function RecruiterBrief(){
@@ -29,7 +30,7 @@ export default function RecruiterBrief(){
 
   return <>
     <button className="recruiter-trigger" type="button" aria-expanded={open} aria-controls="recruiter-brief" onClick={()=>setOpen(true)} data-cursor-label="Open"><span>Want to hire me?</span><small>See why I fit</small><b><ArrowIcon/></b></button>
-    {open&&<div className="recruiter-overlay" onMouseDown={event=>{if(event.target===event.currentTarget)setOpen(false)}}>
+    {open&&typeof document!=='undefined'&&createPortal(<div className="recruiter-overlay" onMouseDown={event=>{if(event.target===event.currentTarget)setOpen(false)}}>
       <div ref={dialogRef} id="recruiter-brief" className="recruiter-dialog" role="dialog" aria-modal="true" aria-labelledby="recruiter-title">
         <header className="recruiter-brief-head">
           <div><span>Recruiter brief · a two-minute read</span><h2 id="recruiter-title">Why Akshay?</h2><p>I find the friction hidden inside complex products, turn it into a clear design problem and stay with the work until the solution is understandable, measurable and buildable.</p></div>
@@ -53,6 +54,6 @@ export default function RecruiterBrief(){
 
         <footer className="recruiter-actions"><div><span>The short answer</span><p>I bring clarity to the product, evidence to the decision and care to the collaboration.</p></div><div><Link href="/work/luxtj" data-cursor-label="View">See the thinking <b><ArrowIcon/></b></Link><Link href="/resume" data-cursor-label="Download">View resume</Link><a href="mailto:hello@akshayvenkat.com" data-cursor-label="Email">Talk to Akshay</a></div></footer>
       </div>
-    </div>}
+    </div>,document.body)}
   </>;
 }

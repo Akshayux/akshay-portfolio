@@ -372,15 +372,18 @@ body{overflow-x:hidden}
 /* Keep the supporting story at the same readable contrast on every viewport. */
 .hero-centered .hero-support,.hero-centered .hero-support p{color:#54544f!important;opacity:1!important;filter:none!important}
 
-/* Keep the fixed case-study index readable over the deliberately light case heroes.
-   Giving it its own surface also means it stays clear as the document scrolls. */
-.case-toc{width:146px;padding:15px 16px;border:1px solid rgba(29,37,25,.18);border-radius:12px;background:rgba(241,239,233,.96);color:#50584d;box-shadow:0 12px 28px rgba(29,37,25,.1);backdrop-filter:blur(10px)}
-.case-toc span{color:#7b806e;font-weight:700}
-.case-toc a{color:#50584d;font-size:11px;font-weight:600}
-.case-toc a:hover,.case-toc a:focus-visible{color:#1d2519;outline:none}
+/* Keep the case-study index in the outer gutter. It stays lightweight and uses
+   difference blending so the labels remain readable over light and dark sections. */
+.case-toc{width:108px;padding:0 0 0 12px;border:0;border-left:1px solid currentColor;border-radius:0;background:transparent;color:#fff;box-shadow:none;backdrop-filter:none;mix-blend-mode:difference;opacity:.82}
+.case-toc span{color:inherit;font-weight:700}
+.case-toc a{color:inherit;font-size:10px;font-weight:600}
+.case-toc a:hover,.case-toc a:focus-visible{color:inherit;opacity:1;outline:none}
+@media (max-width:1799px){.case-toc{display:none}}
+@media (min-width:1800px){.case-toc{left:calc((100vw - 1500px)/2 - 126px)}}
 
 /* A recruiter brief should open as a concise dossier, not a second long-form page. */
-.recruiter-dialog{width:min(940px,calc(100vw - 48px));border-radius:20px}
+.recruiter-overlay{place-items:center;background:rgba(14,18,12,.82)}
+.recruiter-dialog{width:min(880px,calc(100vw - 48px));border-radius:20px}
 .recruiter-brief-head{min-height:0;padding:42px 48px 44px}
 .recruiter-brief-head>div{max-width:620px}
 .recruiter-brief-head h2{font-size:clamp(46px,5vw,64px);line-height:.98;margin:14px 0 16px}
@@ -409,9 +412,12 @@ body{overflow-x:hidden}
 }
 
 /* Reuse the Simpo case-card visual as the evidence anchor for its project snapshot. */
-.simpo-snapshot-media{margin:0 0 42px;padding:20px;border:1px solid var(--line);border-radius:20px;background:var(--paper-2);overflow:hidden}
-.simpo-snapshot-media img{width:100%;height:auto;max-height:480px;object-fit:contain}
-@media (max-width:760px){.simpo-snapshot-media{margin-bottom:30px;padding:12px;border-radius:14px}.simpo-snapshot-media img{max-height:none}}
+.simpo-snapshot-top{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(300px,.8fr);gap:42px;align-items:end;margin-bottom:42px}
+.simpo-snapshot-top .simpo-snapshot-intro{display:block;margin:0}
+.simpo-snapshot-top .simpo-snapshot-intro h2{margin:18px 0 14px}
+.simpo-snapshot-media{margin:0;padding:14px;border:1px solid var(--line);border-radius:16px;background:var(--paper-2);overflow:hidden}
+.simpo-snapshot-media img{width:100%;height:auto;max-height:280px;object-fit:contain}
+@media (max-width:760px){.simpo-snapshot-top{grid-template-columns:1fr;gap:24px;margin-bottom:30px}.simpo-snapshot-media{padding:10px;border-radius:12px}.simpo-snapshot-media img{max-height:none}}
 
 /* Keep every page's opening hero in the same calm, light visual language as
    the home hero. The full-bleed layer preserves each page's existing layout
