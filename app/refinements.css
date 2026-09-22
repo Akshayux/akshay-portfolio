@@ -531,10 +531,10 @@ body{overflow-x:hidden}
 }
 
 /* The home hero CTA is intentionally high contrast on the bright first fold. */
-.hero-centered .hero-primary-button{background:#2d5b44!important;border-color:#2d5b44!important;color:#fffbea!important}
-.hero-centered .hero-primary-button .button-icon{background:#f1efe9;color:#2d5b44}
-.hero-centered .hero-primary-button:hover,.hero-centered .hero-primary-button:focus-visible{background:#292a27;border-color:#292a27;color:#fffbea}
-.hero-centered .hero-primary-button:hover .button-icon,.hero-centered .hero-primary-button:focus-visible .button-icon{background:#f1efe9;color:#292a27}
+.hero-centered .hero-primary-button{background:var(--ink)!important;border-color:var(--ink)!important;color:var(--white)!important}
+.hero-centered .hero-primary-button .button-icon{background:var(--warm);color:var(--ink)}
+.hero-centered .hero-primary-button:hover,.hero-centered .hero-primary-button:focus-visible{background:var(--accent-deep);border-color:var(--accent-deep);color:var(--white)}
+.hero-centered .hero-primary-button:hover .button-icon,.hero-centered .hero-primary-button:focus-visible .button-icon{background:var(--warm);color:var(--ink)}
 
 /* Green is reserved for interaction and emphasis; broad surfaces remain paper. */
 .site-header .primary-nav a::after{background:var(--warm)}
@@ -563,3 +563,60 @@ body{overflow-x:hidden}
 .case-study-stack-bento>.case-study-feature .case-study-copy footer{border-color:color-mix(in srgb,var(--white) 44%,transparent)}
 .case-study-stack-bento>.case-study-feature .case-study-copy footer .arrow-icon{background:var(--paper);color:var(--accent)}
 @media (max-width:760px){.hero-centered .hero-preview{margin-bottom:48px}}
+
+/* Homepage work: one calm, readable stack rather than competing bento tiles.
+   Each case uses the same proof-left / story-right rhythm from the supplied reference. */
+.case-study-stack-bento{display:grid;grid-template-columns:1fr;gap:18px}
+.case-study-stack-bento>.case-study-card{position:relative;top:auto!important;z-index:auto!important;grid-column:1/-1!important;grid-row:auto!important;height:auto!important;min-height:0;padding:12px;border-color:var(--accent);border-radius:26px;background:var(--accent);color:var(--white);box-shadow:0 18px 40px rgba(24,42,31,.14)}
+.case-study-stack-bento>.case-study-card>.case-study-link{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:22px;min-height:350px;height:auto!important;color:inherit}
+.case-study-stack-bento .case-study-media,.case-study-stack-bento .case-study-feature .case-study-media{min-height:326px;height:auto;padding:28px;border-radius:18px;background:#1d2a1e}
+.case-study-stack-bento .case-study-media>span,.case-study-stack-bento .case-study-feature .case-study-media::before{top:18px;left:18px;width:42px;height:42px;background:var(--white);color:var(--ink);font-size:10px}
+.case-study-stack-bento .case-study-media img,.case-study-stack-bento .case-study-feature .case-study-media img{width:88%;height:auto;max-height:278px;object-fit:contain;filter:none}
+.case-study-stack-bento .case-study-copy,.case-study-stack-bento .case-study-feature .case-study-copy{min-width:0;padding:30px 24px 28px 4px;align-items:stretch;background:transparent;color:var(--white)}
+.case-study-stack-bento .case-study-copy header,.case-study-stack-bento .case-study-feature .case-study-copy header{color:color-mix(in srgb,var(--white) 70%,transparent);font-size:10px}
+.case-study-stack-bento .case-study-copy h3,.case-study-stack-bento .case-study-feature .case-study-copy h3{margin-top:26px;color:var(--white);font-size:clamp(31px,3.25vw,49px);line-height:.99}
+.case-study-stack-bento .case-study-hook,.case-study-stack-bento .case-study-feature .case-study-hook{margin-top:20px;color:var(--white);font-size:clamp(18px,1.6vw,22px);line-height:1.22}
+.case-study-stack-bento .project-role-pill,.case-study-stack-bento .case-study-feature .project-role-pill{color:var(--white);border-color:color-mix(in srgb,var(--white) 48%,transparent)}
+.case-study-stack-bento .case-study-lead-metric span,.case-study-stack-bento .case-study-metrics dt,.case-study-stack-bento .case-study-metrics dd{color:var(--white)}
+.case-study-stack-bento .case-study-metrics,.case-study-stack-bento .case-study-feature .case-study-metrics{margin-top:26px;border-color:color-mix(in srgb,var(--white) 30%,transparent)}
+.case-study-stack-bento .case-study-metrics>div+div,.case-study-stack-bento .case-study-feature .case-study-metrics>div+div{border-color:color-mix(in srgb,var(--white) 30%,transparent)}
+.case-study-stack-bento .case-study-metrics dd,.case-study-stack-bento .case-study-feature .case-study-metrics dd{color:color-mix(in srgb,var(--white) 70%,transparent)}
+.case-study-stack-bento .case-study-copy footer,.case-study-stack-bento .case-study-feature .case-study-copy footer{min-height:44px;margin-top:22px;padding:5px 6px 5px 17px;border-color:color-mix(in srgb,var(--white) 60%,transparent);color:var(--white);font-size:10px}
+.case-study-stack-bento .case-study-copy footer .arrow-icon,.case-study-stack-bento .case-study-feature .case-study-copy footer .arrow-icon{width:32px;height:32px;background:var(--warm);color:var(--ink)}
+@media (hover:hover) and (pointer:fine){.case-study-stack-bento>.case-study-card:hover,.case-study-stack-bento>.case-study-card:focus-within{background:var(--accent-deep);border-color:var(--accent-deep);box-shadow:0 25px 56px rgba(24,42,31,.22)}.case-study-stack-bento>.case-study-card:hover .case-study-media,.case-study-stack-bento>.case-study-card:focus-within .case-study-media{background:#182419}}
+@media (max-width:760px){.case-study-stack-bento{gap:14px}.case-study-stack-bento>.case-study-card{padding:9px;border-radius:20px}.case-study-stack-bento>.case-study-card>.case-study-link{grid-template-columns:1fr;gap:0;min-height:0}.case-study-stack-bento .case-study-media,.case-study-stack-bento .case-study-feature .case-study-media{min-height:230px;padding:20px;border-radius:13px}.case-study-stack-bento .case-study-media img,.case-study-stack-bento .case-study-feature .case-study-media img{max-height:190px}.case-study-stack-bento .case-study-copy,.case-study-stack-bento .case-study-feature .case-study-copy{padding:24px 14px 20px}.case-study-stack-bento .case-study-copy h3,.case-study-stack-bento .case-study-feature .case-study-copy h3{margin-top:20px;font-size:32px}.case-study-stack-bento .case-study-metrics{grid-template-columns:repeat(3,minmax(0,1fr));margin-top:22px}.case-study-stack-bento .case-study-copy footer{margin-top:20px}.case-study-stack-bento .case-study-media>span,.case-study-stack-bento .case-study-feature .case-study-media::before{top:12px;left:12px;width:34px;height:34px}}
+
+/* One CTA language everywhere: dark pill, warm circular arrow, clear contrast. */
+.button,.button.button-secondary,.contact-cta .button{background:var(--ink)!important;border-color:var(--ink)!important;color:var(--white)!important}
+.button .button-icon,.button.button-secondary .button-icon,.contact-cta .button .button-icon{background:var(--warm)!important;color:var(--ink)!important}
+.button:hover,.button:focus-visible,.button.button-secondary:hover,.button.button-secondary:focus-visible,.contact-cta .button:hover,.contact-cta .button:focus-visible{background:var(--accent-deep)!important;border-color:var(--accent-deep)!important;color:var(--white)!important}
+.button:hover .button-icon,.button:focus-visible .button-icon{background:var(--warm)!important;color:var(--ink)!important}
+
+/* The document keeps a light-token dark mode, so explicitly protect the work
+   stack from its broad light-card fallback. */
+html[data-theme="dark"] .case-study-stack-bento>.case-study-card{background:var(--accent)!important;border-color:var(--accent)!important;color:var(--white)!important}
+html[data-theme="dark"] .case-study-stack-bento .case-study-media,html[data-theme="dark"] .case-study-stack-bento .case-study-feature .case-study-media{background:#1d2a1e!important}
+html[data-theme="dark"] .case-study-stack-bento .case-study-copy,html[data-theme="dark"] .case-study-stack-bento .case-study-feature .case-study-copy{background:transparent!important;color:var(--white)!important}
+html[data-theme="dark"] .case-study-stack-bento .case-study-copy h3,html[data-theme="dark"] .case-study-stack-bento .case-study-hook,html[data-theme="dark"] .case-study-stack-bento .case-study-copy footer,html[data-theme="dark"] .case-study-stack-bento .case-study-metrics dt{color:var(--white)!important}
+html[data-theme="dark"] .case-study-stack-bento .case-study-copy header,html[data-theme="dark"] .case-study-stack-bento .case-study-metrics dd{color:color-mix(in srgb,var(--white) 70%,transparent)!important}
+@media (hover:hover) and (pointer:fine){html[data-theme="dark"] .case-study-stack-bento>.case-study-card:hover,html[data-theme="dark"] .case-study-stack-bento>.case-study-card:focus-within{background:var(--accent-deep)!important;border-color:var(--accent-deep)!important}}
+
+/* Work navigation opens on paper: use the dark text palette in every state. */
+html[data-theme="dark"] .work-menu-panel{background:var(--paper)!important;color:var(--ink)!important}
+html[data-theme="dark"] .work-menu-panel a,html[data-theme="dark"] .work-menu-panel .work-menu-disabled{color:var(--ink)!important}
+html[data-theme="dark"] .work-menu-panel small,html[data-theme="dark"] .work-menu-panel a em,html[data-theme="dark"] .work-menu-panel .work-menu-disabled em{color:var(--muted)!important}
+html[data-theme="dark"] .work-menu-panel a:hover,html[data-theme="dark"] .work-menu-panel a:focus-visible{background:var(--paper-2)!important;color:var(--ink)!important}
+html[data-theme="dark"] .work-menu-panel a:hover small,html[data-theme="dark"] .work-menu-panel a:hover em,html[data-theme="dark"] .work-menu-panel a:focus-visible small,html[data-theme="dark"] .work-menu-panel a:focus-visible em{color:var(--muted)!important}
+
+/* A persistent reading guide for long case studies: quiet enough to sit beside
+   the story, but always available when someone wants to jump between sections. */
+.case-toc{position:fixed!important;z-index:30;top:clamp(142px,20vh,220px);left:max(22px,calc((100vw - 1420px)/2));display:block!important;width:176px;padding:0!important;border:0!important;border-radius:0!important;background:transparent!important;color:var(--ink)!important;box-shadow:none!important;backdrop-filter:none!important}
+.case-toc nav{position:static!important;width:auto!important;display:flex!important;flex-direction:column;gap:8px;padding:0!important;border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;backdrop-filter:none!important}
+.case-toc nav strong{margin:0 0 9px!important;padding:0!important;color:var(--muted)!important;font-size:10px!important;font-weight:750!important;letter-spacing:.12em!important;text-transform:uppercase!important}
+.case-toc a{position:relative;display:block;padding:8px 0 8px 14px!important;border-radius:0!important;background:transparent!important;color:var(--muted)!important;font-size:13px!important;font-weight:500!important;line-height:1.25!important;transition:color .2s ease,transform .2s ease!important}
+.case-toc a::before{content:"";position:absolute;left:0;top:50%;width:4px;height:4px;border-radius:50%;background:currentColor;transform:translateY(-50%);opacity:.45;transition:height .2s ease,opacity .2s ease}
+.case-toc a[aria-current="location"]{color:var(--ink)!important;font-weight:700!important}
+.case-toc a[aria-current="location"]::before{width:2px;height:18px;border-radius:2px;opacity:1}
+.case-toc a:hover,.case-toc a:focus-visible{background:transparent!important;color:var(--ink)!important;transform:translateX(3px);outline:none!important}
+.case-toc a:hover::before,.case-toc a:focus-visible::before{opacity:1}
+@media (max-width:760px){.case-toc{display:none!important}}

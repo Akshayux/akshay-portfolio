@@ -7,10 +7,9 @@ import ArrowIcon from './arrow-icon';
 export function Arrow(){return <ArrowIcon/>}
 
 export function CaseToc({items}:{items:readonly (readonly [string,string])[]}){
-  return <details className="case-toc">
-    <summary aria-label="Open case study contents"><span aria-hidden="true" className="case-toc-icon"><i/><i/><i/></span><span>Contents</span></summary>
-    <nav aria-label="Case study contents"><strong>On this page</strong>{items.map(([href,label])=><a key={href} href={href} data-cursor-label="Jump">{label}</a>)}</nav>
-  </details>;
+  return <aside className="case-toc" aria-label="Case study contents">
+    <nav aria-label="Case study contents"><strong>On this page</strong>{items.map(([href,label],index)=><a key={href} href={href} data-cursor-label="Jump" aria-current={index===0?'location':undefined}>{label}</a>)}</nav>
+  </aside>;
 }
 
 export function SiteHeader(){
