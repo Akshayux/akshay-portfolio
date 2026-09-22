@@ -372,14 +372,20 @@ body{overflow-x:hidden}
 /* Keep the supporting story at the same readable contrast on every viewport. */
 .hero-centered .hero-support,.hero-centered .hero-support p{color:#54544f!important;opacity:1!important;filter:none!important}
 
-/* Keep the case-study index in the outer gutter. It stays lightweight and uses
-   difference blending so the labels remain readable over light and dark sections. */
-.case-toc{width:108px;padding:0 0 0 12px;border:0;border-left:1px solid currentColor;border-radius:0;background:transparent;color:#fff;box-shadow:none;backdrop-filter:none;mix-blend-mode:difference;opacity:.82}
-.case-toc span{color:inherit;font-weight:700}
-.case-toc a{color:inherit;font-size:10px;font-weight:600}
-.case-toc a:hover,.case-toc a:focus-visible{color:inherit;opacity:1;outline:none}
-@media (max-width:1799px){.case-toc{display:none}}
-@media (min-width:1800px){.case-toc{left:calc((100vw - 1500px)/2 - 126px)}}
+/* Keep the case-study index available without laying it over the work. The
+   sticky horizontal rail works at every viewport and scrolls on small screens. */
+.case-toc{position:sticky;z-index:90;top:64px;left:auto;width:100%;min-height:48px;display:flex;flex-direction:row;align-items:center;gap:6px;padding:7px max(20px,calc((100vw - 1500px)/2));overflow-x:auto;overscroll-behavior-inline:contain;border:0;border-bottom:1px solid var(--line);border-radius:0;background:color-mix(in srgb,var(--paper) 94%,transparent);color:var(--ink);box-shadow:0 8px 24px rgba(20,25,17,.05);backdrop-filter:blur(16px);mix-blend-mode:normal;opacity:1;scrollbar-width:none}
+.case-toc::-webkit-scrollbar{display:none}
+.case-toc span{flex:0 0 auto;margin:0 12px 0 0;color:var(--muted);font-size:9px;font-weight:750;letter-spacing:.12em;text-transform:uppercase;white-space:nowrap}
+.case-toc a{flex:0 0 auto;padding:7px 11px;border:1px solid transparent;border-radius:999px;color:var(--ink);font-size:10px;font-weight:650;line-height:1;white-space:nowrap;transition:background-color .2s ease,border-color .2s ease,color .2s ease}
+.case-toc a:hover,.case-toc a:focus-visible{border-color:var(--line);background:var(--paper-2);color:var(--ink);outline:none}
+.case-page section[id]{scroll-margin-top:126px}
+@media (max-width:760px){
+  .case-toc{top:56px;min-height:46px;padding:6px 16px;gap:4px}
+  .case-toc span{margin-right:7px}
+  .case-toc a{padding:7px 9px}
+  .case-page section[id]{scroll-margin-top:112px}
+}
 
 /* A recruiter brief should open as a concise dossier, not a second long-form page. */
 .recruiter-overlay{place-items:center;background:rgba(14,18,12,.82)}
