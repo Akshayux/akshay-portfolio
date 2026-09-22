@@ -546,3 +546,20 @@ body{overflow-x:hidden}
 .simpo-hero-media{padding:28px;background:var(--paper-2)}
 .simpo-hero-media img{width:min(100%,1040px);max-height:620px;object-fit:contain}
 @media (max-width:760px){.simpo-hero-media{padding:14px}.simpo-hero-media img{max-height:none}}
+
+/* The showreel remains the visual opening; LUXTJ is the green lead case. */
+.hero-centered .hero-preview{margin:0 auto 72px}
+.case-study-stack-bento>.case-study-feature{background:var(--accent);border-color:var(--accent);color:var(--white)}
+.case-study-stack-bento>.case-study-feature .case-study-copy{color:var(--white)}
+.case-study-stack-bento>.case-study-feature .case-study-copy header,
+.case-study-stack-bento>.case-study-feature .case-study-copy header small,
+.case-study-stack-bento>.case-study-feature .case-study-copy h3,
+.case-study-stack-bento>.case-study-feature .case-study-lead-metric span,
+.case-study-stack-bento>.case-study-feature .case-study-metrics dd,
+.case-study-stack-bento>.case-study-feature .case-study-copy footer{color:var(--white)}
+.case-study-stack-bento>.case-study-feature .case-study-copy header{opacity:.76}
+.case-study-stack-bento>.case-study-feature .case-study-metrics{border-color:color-mix(in srgb,var(--white) 28%,transparent)}
+.case-study-stack-bento>.case-study-feature .case-study-metrics>div+div{border-color:color-mix(in srgb,var(--white) 28%,transparent)}
+.case-study-stack-bento>.case-study-feature .case-study-copy footer{border-color:color-mix(in srgb,var(--white) 44%,transparent)}
+.case-study-stack-bento>.case-study-feature .case-study-copy footer .arrow-icon{background:var(--paper);color:var(--accent)}
+@media (max-width:760px){.hero-centered .hero-preview{margin-bottom:48px}}

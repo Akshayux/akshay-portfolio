@@ -1,10 +1,12 @@
 import Link from 'next/link';
 import {Arrow,CaseStudyStack,PageFrame,TestimonialsSection} from './components';
+import HeroPreview from './hero-preview';
 import LanguageGreeting from './language-greeting';
 
 export default function Home(){return <PageFrame>
   <section className="hero hero-centered shell" aria-labelledby="hero-title">
     <div className="hero-stage">
+      <HeroPreview/>
       <div className="hero-introduction">
         <LanguageGreeting className="reveal"/>
         <div className="hero-copy hero-copy-body reveal">
