@@ -1,5 +1,6 @@
 import type {Metadata} from 'next';
 import Motion from './motion';
+import CustomCursor from './custom-cursor';
 import './globals.css';
 import './refinements.css';
 
@@ -31,5 +32,5 @@ export default function RootLayout({children}:Readonly<{children:React.ReactNode
     sameAs:['https://linkedin.com/in/akshayproductdesigner','https://www.behance.net/akshayv7','https://medium.com/@akshayv2310','https://github.com/Akshayux'],
     knowsAbout:['Product design','UX design','UX research','Interaction design','Information architecture','Prototyping','Figma','Design systems'],
   };
-  return <html lang="en" data-theme="dark"><head><script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(personSchema)}}/></head><body><Motion>{children}</Motion></body></html>;
+  return <html lang="en" data-theme="dark"><head><script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(personSchema)}}/></head><body><Motion>{children}</Motion><CustomCursor/></body></html>;
 }

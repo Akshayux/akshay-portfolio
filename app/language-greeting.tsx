@@ -4,15 +4,13 @@ import {useEffect,useState} from 'react';
 
 const greetings = [
   {text:'Hello',lang:'en'},
-  {text:'నమస్తే',lang:'te',label:'Telugu'},
-  {text:'Hello',lang:'en'},
-  {text:'ನಮಸ್ಕಾರ',lang:'kn',label:'Kannada'},
-  {text:'नमस्ते',lang:'hi',label:'Hindi'},
-  {text:'வணக்கம்',lang:'ta',label:'Tamil'},
   {text:'Hola',lang:'es'},
+  {text:'नमस्ते',lang:'hi',label:'Hindi'},
+  {text:'నమస్తే',lang:'te',label:'Telugu'},
+  {text:'ನಮಸ್ಕಾರ',lang:'kn',label:'Kannada'},
 ] as const;
 
-const spokenLanguages = 'I speak Kannada · Hindi · Telugu · English · Tamil · Español';
+const spokenLanguages = 'English, Spanish, Hindi, Telugu and Kannada';
 
 export default function LanguageGreeting({className=''}:{className?:string}){
   const [phraseIndex,setPhraseIndex] = useState(0);
@@ -53,9 +51,10 @@ export default function LanguageGreeting({className=''}:{className?:string}){
 
   const greeting = greetings[phraseIndex];
 
-  return <div className={`hero-label hero-language-greeting${className ? ` ${className}` : ''}`} tabIndex={0} aria-label="Namasté in Kannada, Hindi, Telugu, English, Tamil and Spanish" data-tooltip={spokenLanguages}>
+  return <div className={`hero-label hero-language-greeting${className ? ` ${className}` : ''}`} tabIndex={0} aria-label={`Greeting cycling through ${spokenLanguages}`}>
     <span className="hero-language-word" lang={greeting.lang} aria-hidden="true">{displayText}</span>
     {('label' in greeting) && <span className="hero-language-name" aria-hidden="true">{greeting.label}</span>}
     <span className="hero-language-caret" aria-hidden="true">|</span>
+    <span className="hero-language-tooltip" role="tooltip"><strong>These are the languages that I speak</strong><span>English · Español · Hindi · Telugu · Kannada</span><em>“Knowledge of languages is the doorway to wisdom.”</em></span>
   </div>;
 }
