@@ -503,6 +503,12 @@ body{overflow-x:hidden}
   color:var(--white);
 }
 
+/* The home hero CTA is intentionally high contrast on the bright first fold. */
+.hero-centered .hero-primary-button{background:#1d2519;border-color:#1d2519;color:#fffbea}
+.hero-centered .hero-primary-button .button-icon{background:#d19866;color:#1d2519}
+.hero-centered .hero-primary-button:hover,.hero-centered .hero-primary-button:focus-visible{background:#d19866;border-color:#d19866;color:#1d2519}
+.hero-centered .hero-primary-button:hover .button-icon,.hero-centered .hero-primary-button:focus-visible .button-icon{background:#1d2519;color:#fffbea}
+
 /* Use the actual Simpo product interface as the case-study visual anchor. */
 .simpo-hero-media{padding:28px;background:#dfe5ff}
 .simpo-hero-media img{width:min(100%,1040px);max-height:620px;object-fit:contain}

@@ -10,9 +10,9 @@ export default function Home(){return <PageFrame>
       <div className="hero-introduction">
         <LanguageGreeting className="reveal"/>
         <div className="hero-copy hero-copy-body reveal">
-          <h1 id="hero-title" className="hero-statement">I fix products that shipped but <span>aren&apos;t working.</span></h1>
-          <div className="hero-support"><p>I turn messy checkout, onboarding and operational workflows into paths people can actually finish.</p><p>One LUXTJ redesign cut checkout drop-off from 60% to 22%.</p></div>
-          <div className="hero-cta-row"><Link className="button hero-primary-button" href="/work" data-cursor-label="View"><span>See the proof</span><span className="button-icon" aria-hidden="true"><Arrow/></span></Link></div>
+          <h1 id="hero-title" className="hero-statement">I make complex digital products <span>easier to use.</span></h1>
+          <div className="hero-support"><p>I bring clarity to checkout, onboarding and operational workflows, so people can make confident decisions and finish what they came to do.</p><p>One LUXTJ redesign cut checkout drop-off from 60% to 22%.</p></div>
+          <div className="hero-cta-row"><Link className="button hero-primary-button" href="/work" data-cursor-label="View"><span>Explore the work</span><span className="button-icon" aria-hidden="true"><Arrow/></span></Link></div>
         </div>
       </div>
     </div>
