@@ -36,7 +36,8 @@ export default function HeroPreview(){
       const fullScale=Math.max(1,window.innerWidth/compactWidth);
       const scale=1+(fullScale-1)*progress;
       element.style.setProperty('--scroll-scale',String(scale));
-      element.style.setProperty('--scroll-drop',`${(270*(scale-1))/2+40*progress}px`);
+      // Keep the expanding reel clear of the fixed navigation as the hero scrolls.
+      element.style.setProperty('--scroll-drop',`${(270*(scale-1))/2+64*progress}px`);
       if(progress>0)element.style.setProperty('--pointer-shift-x','0px');
     };
     const onScroll=()=>{

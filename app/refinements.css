@@ -383,6 +383,7 @@ body{overflow-x:hidden}
 /* The desktop hero follows a clear editorial rhythm: the reel introduces the
    work, then the statement and supporting copy read as one balanced spread. */
 @media (min-width:761px){
+  .hero-centered{padding-top:clamp(36px,4vw,56px)}
   .hero-centered .reveal{opacity:1!important;transform:none!important}
   .hero-centered .hero-stage{justify-content:flex-start;gap:68px;padding:32px 32px 72px}
   .hero-centered .hero-preview{flex:0 0 270px;width:539px;height:270px;max-width:88vw}
@@ -620,3 +621,10 @@ html[data-theme="dark"] .work-menu-panel a:hover small,html[data-theme="dark"] .
 .case-toc a:hover,.case-toc a:focus-visible{background:transparent!important;color:var(--ink)!important;transform:translateX(3px);outline:none!important}
 .case-toc a:hover::before,.case-toc a:focus-visible::before{opacity:1}
 @media (max-width:760px){.case-toc{display:none!important}}
+
+/* Recommendation cards keep a light hover surface in this theme, so every
+   supporting label must stay in the ink palette rather than inherit dark-card text. */
+html[data-theme="dark"] .recommendation-card:hover,html[data-theme="dark"] .recommendation-card:focus-within{background:var(--paper)!important;border-color:var(--line)!important;color:var(--ink)!important}
+html[data-theme="dark"] .recommendation-card:hover>header,html[data-theme="dark"] .recommendation-card:focus-within>header,html[data-theme="dark"] .recommendation-card:hover footer span,html[data-theme="dark"] .recommendation-card:focus-within footer span{color:var(--muted)!important}
+html[data-theme="dark"] .recommendation-card:hover footer,html[data-theme="dark"] .recommendation-card:focus-within footer{border-color:var(--line)!important}
+html[data-theme="dark"] .recommendation-card:hover .recommendation-link-trigger,html[data-theme="dark"] .recommendation-card:focus-within .recommendation-link-trigger{background:var(--ink)!important;color:var(--white)!important}
