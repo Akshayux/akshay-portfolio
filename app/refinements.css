@@ -372,6 +372,47 @@ body{overflow-x:hidden}
 /* Keep the supporting story at the same readable contrast on every viewport. */
 .hero-centered .hero-support,.hero-centered .hero-support p{color:#54544f!important;opacity:1!important;filter:none!important}
 
+/* Keep the fixed case-study index readable over the deliberately light case heroes.
+   Giving it its own surface also means it stays clear as the document scrolls. */
+.case-toc{width:146px;padding:15px 16px;border:1px solid rgba(29,37,25,.18);border-radius:12px;background:rgba(241,239,233,.96);color:#50584d;box-shadow:0 12px 28px rgba(29,37,25,.1);backdrop-filter:blur(10px)}
+.case-toc span{color:#7b806e;font-weight:700}
+.case-toc a{color:#50584d;font-size:11px;font-weight:600}
+.case-toc a:hover,.case-toc a:focus-visible{color:#1d2519;outline:none}
+
+/* A recruiter brief should open as a concise dossier, not a second long-form page. */
+.recruiter-dialog{width:min(940px,calc(100vw - 48px));border-radius:20px}
+.recruiter-brief-head{min-height:0;padding:42px 48px 44px}
+.recruiter-brief-head>div{max-width:620px}
+.recruiter-brief-head h2{font-size:clamp(46px,5vw,64px);line-height:.98;margin:14px 0 16px}
+.recruiter-brief-head p{max-width:590px;font-size:16px;line-height:1.5}
+.recruiter-rationale{grid-template-columns:145px minmax(0,1fr);padding:38px 48px;gap:30px}
+.recruiter-rationale h3{font-size:clamp(26px,3vw,34px);line-height:1.08}
+.recruiter-rationale p{font-size:15px;line-height:1.55}
+.recruiter-intro,.recruiter-contribution,.recruiter-difference,.recruiter-table{padding:64px 48px}
+.recruiter-actions{padding:42px 48px}
+@media (max-width:1020px){
+  .recruiter-dialog{width:min(760px,calc(100vw - 32px))}
+  .recruiter-brief-head{padding:38px 36px 40px}
+  .recruiter-brief-head h2{font-size:clamp(44px,8vw,58px)}
+  .recruiter-rationale{grid-template-columns:1fr;padding:34px 36px;gap:16px}
+  .recruiter-rationale>span{padding-top:0}
+  .recruiter-intro,.recruiter-contribution,.recruiter-difference,.recruiter-table{padding:56px 36px}
+  .recruiter-actions{padding:36px}
+}
+@media (max-width:760px){
+  .recruiter-dialog{width:calc(100vw - 16px);border-radius:16px}
+  .recruiter-brief-head{padding:72px 24px 30px}
+  .recruiter-brief-head h2{font-size:clamp(42px,12vw,52px)}
+  .recruiter-rationale{padding:30px 24px}
+  .recruiter-intro,.recruiter-contribution,.recruiter-difference,.recruiter-table{padding:52px 24px}
+  .recruiter-actions{padding:32px 24px}
+}
+
+/* Reuse the Simpo case-card visual as the evidence anchor for its project snapshot. */
+.simpo-snapshot-media{margin:0 0 42px;padding:20px;border:1px solid var(--line);border-radius:20px;background:var(--paper-2);overflow:hidden}
+.simpo-snapshot-media img{width:100%;height:auto;max-height:480px;object-fit:contain}
+@media (max-width:760px){.simpo-snapshot-media{margin-bottom:30px;padding:12px;border-radius:14px}.simpo-snapshot-media img{max-height:none}}
+
 /* Keep every page's opening hero in the same calm, light visual language as
    the home hero. The full-bleed layer preserves each page's existing layout
    while giving the first viewport one consistent colour story. */

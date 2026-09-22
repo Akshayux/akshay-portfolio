@@ -22,6 +22,7 @@ export default function SimpoAIPage(){return <main id="top" className="case-page
 
   <section className="simpo-snapshot case-wide reveal" aria-label="Simpo AI mini case study snapshot">
     <div className="simpo-snapshot-intro"><Kicker>Mini case study</Kicker><h2>From “where do I start?” to a first useful website.</h2><p>A quick, scannable view of the design work behind the Simpo AI onboarding reset.</p></div>
+    <figure className="simpo-snapshot-media"><img src="/simpo-ai-dashboard.png" alt="Simpo AI dashboard showing the product workspace"/></figure>
     <div className="simpo-snapshot-grid">
       <article><span>01 · Problem</span><h3>People were leaving before seeing value.</h3><p>Too many unfamiliar choices arrived before the first useful result.</p></article>
       <article><span>02 · Ownership</span><h3>Mapped the first session end to end.</h3><p>Aligned product and engineering around a clearer path to the first website.</p></article>
