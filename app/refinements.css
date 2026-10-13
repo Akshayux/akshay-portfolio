@@ -1,172 +1,134 @@
-/* Readability and layout refinements shared by the full portfolio. */
-:root{--shell:min(1240px,calc(100vw - 64px))}
+/* Shared layout, type and interaction refinements for the whole site.
+   The design favours a calm, legible, single-accent system: neutral paper
+   and ink tones throughout, with one warm colour reserved for emphasis. */
 html{scroll-padding-top:96px}
 body{overflow-x:hidden}
 :is(a,button,summary):focus-visible{outline:2px solid var(--accent);outline-offset:4px}
-@media (pointer:fine){body,a,button,input,textarea,select{cursor:auto}a,button,summary{cursor:pointer}}
+a,button,summary{cursor:pointer}
 
-/* Let the work arrive naturally, without an overlapping sticky stack. */
-.case-study-stack,.case-study-stack-static{gap:24px}
-.case-study-stack>.case-study-card{position:relative;top:auto;z-index:auto;height:auto;min-height:0}
-.case-study-stack>.case-study-card>.case-study-link{min-height:520px;height:auto}
-.case-study-card{border-radius:24px;padding:16px;box-shadow:none}
-.case-study-card:hover,.case-study-card:focus-within{z-index:2}
-.case-study-media,.case-study-feature .case-study-media{min-height:0;border-radius:16px}
-.case-study-copy,.case-study-feature .case-study-copy{padding:36px 24px 36px 0}
-.case-study-copy header,.case-study-feature .case-study-copy header{font-size:11px;line-height:1.35}
-.case-study-copy h3,.case-study-feature .case-study-copy h3{font-size:clamp(30px,3.2vw,46px);line-height:1.08}
-.case-study-lead-metric span{font-size:12px}
-.case-study-metrics dd{font-size:10px;line-height:1.35}
-.case-study-copy footer{font-size:12px}
-.case-study-card-progress:hover,.case-study-card-progress:focus-within{transform:translateY(-5px);box-shadow:0 28px 64px rgba(0,0,0,.16)}
-.case-study-card-progress:hover .case-study-media img,.case-study-card-progress:focus-within .case-study-media img{transform:scale(1.035)}
-.case-study-media>span,.case-study-feature .case-study-media::before{font-size:11px}
+@media (max-width:760px){:root{--shell:calc(100vw - 32px)}}
 
-/* Navigation, labels and supporting copy should remain legible at a glance. */
-.primary-nav a,.header-action{font-size:14px}
-.work-menu-panel small{font-size:11px}
-.work-menu-disabled em{font-size:10px}
-.work-menu-panel a em{display:block;margin-top:2px;color:var(--muted);font-size:10px;font-style:normal;line-height:1.2}
-.work-menu-panel a:hover em,.work-menu-panel a:focus-visible em{color:inherit}
-.eyebrow{font-size:12px}
-.page-hero{padding:64px 0 36px}
-.page-hero h1{font-size:clamp(52px,6.2vw,86px)}
-.page-hero p{font-size:18px;line-height:1.5}
-.section{padding-block:96px}
-.work-feature{padding-top:0}
-.work-snapshot>p,.work-snapshot dl{font-size:15px}
-.work-snapshot strong{font-size:13px}
-.site-footer,.site-footer p{font-size:13px}
-.contact-details p{font-size:14px}
-.testimonial-heading p{font-size:16px}
-.featured-work{padding-top:44px}
-@media (min-width:761px){
-  .hero{display:block;min-height:0;padding-top:clamp(56px,7vh,80px);padding-bottom:30px}
-}
-
-/* Centered, type-led hero inspired by Cyze's calm index: a short introduction,
-   one clear action, then a tactile preview that invites exploration. */
-.hero-centered{display:flex;flex-direction:column;align-items:center;gap:64px;min-height:0;padding-top:clamp(72px,9vh,108px);padding-bottom:62px;text-align:center}
-.hero-centered .hero-copy{width:100%;max-width:920px;display:flex;flex-direction:column;align-items:center}
-.hero-centered .hero-label{margin:0 0 26px;font-size:14px;letter-spacing:.14em}
-.hero-centered .hero-language-greeting{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:4px;margin-bottom:26px;padding:5px 10px;color:var(--accent);letter-spacing:.02em;text-transform:none;cursor:help}
-.hero-language-word{display:inline-block;min-width:0;line-height:1;text-align:left}
-.hero-language-name{display:inline-block;margin-left:6px;font-size:.67em;font-weight:700;letter-spacing:.1em;line-height:1;text-transform:uppercase;opacity:.74}
-.hero-language-caret{display:inline-block;width:1px;line-height:1;color:var(--accent);animation:hero-language-caret-blink 1s steps(1,end) infinite}
-.hero-language-greeting::after{content:attr(data-tooltip);position:absolute;z-index:5;left:50%;top:calc(100% + 12px);max-width:min(92vw,420px);padding:9px 13px;border:1px solid var(--line);border-radius:999px;background:var(--paper-2);color:var(--ink);box-shadow:0 14px 30px rgba(0,0,0,.2);font-size:11px;font-weight:650;letter-spacing:.02em;line-height:1.2;white-space:nowrap;opacity:0;pointer-events:none;transform:translate(-50%,-5px);transition:opacity .25s ease,transform .35s cubic-bezier(.22,1,.36,1)}
-.hero-language-greeting:hover::after,.hero-language-greeting:focus-visible::after{opacity:1;transform:translate(-50%,0)}
-@keyframes hero-language-caret-blink{0%,45%{opacity:1}46%,100%{opacity:0}}
-.hero-centered .hero-statement{max-width:920px;margin:0;font-size:clamp(26px,3.05vw,42px);font-weight:500;line-height:1.22;letter-spacing:-.045em}
-.hero-centered .hero-statement strong{font-weight:750}
-.hero-centered .hero-statement span{color:var(--accent)}
-.hero-centered .hero-support{max-width:680px;margin-top:22px;color:var(--muted);font-size:17px;line-height:1.5}
-.hero-centered .hero-cta-row{justify-content:center;margin-top:30px}
-.hero-centered .hero-primary-button{background:var(--white);border-color:var(--white);color:var(--ink);font-size:14px}
-.hero-centered .hero-primary-button .button-icon{background:var(--accent);color:var(--ink)}
-.hero-centered .hero-primary-button:hover{background:var(--accent);border-color:var(--accent);color:var(--ink)}
-.hero-preview{position:relative;left:var(--scroll-left,0vw);width:var(--scroll-width,72vw);max-width:none;display:block;color:var(--ink);text-align:left;transition:left .7s cubic-bezier(.22,1,.36,1),width .7s cubic-bezier(.22,1,.36,1)}
-.hero-preview-frame{position:relative;aspect-ratio:2.08;display:grid;place-items:center;overflow:hidden;border:1px solid var(--line);border-radius:22px;background:var(--paper-2);box-shadow:0 22px 60px rgba(0,0,0,.2);isolation:isolate;transform:translate3d(var(--pointer-shift-x,0px),0,0);transition:transform .5s cubic-bezier(.22,1,.36,1),box-shadow .5s ease,border-radius .7s cubic-bezier(.22,1,.36,1)}
-.hero-preview-frame::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:radial-gradient(260px circle at 50% 50%,rgba(211,154,106,.2),transparent 70%);opacity:0;transition:opacity .35s ease}
-.hero-preview-frame img{position:relative;z-index:0;width:92%;height:92%;object-fit:contain;filter:drop-shadow(0 18px 24px rgba(0,0,0,.22));transition:transform .7s cubic-bezier(.22,1,.36,1),filter .5s ease}
-.hero-preview-kicker,.hero-preview-hint{position:absolute;z-index:2;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
-.hero-preview-kicker{top:24px;left:26px;color:var(--muted)}
-.hero-preview-hint{right:26px;bottom:24px;color:var(--ink);opacity:.72}
-.hero-preview-play{position:absolute;z-index:2;width:62px;height:62px;display:grid;place-items:center;border-radius:50%;background:var(--accent);color:var(--ink);box-shadow:0 12px 30px rgba(0,0,0,.22);animation:hero-pulse 3.6s ease-in-out infinite;transition:transform .5s cubic-bezier(.22,1,.36,1),background .3s ease}
-.hero-preview-play svg{width:22px;height:22px;fill:currentColor;transform:translateX(2px)}
-@media (hover:hover) and (pointer:fine){.hero-preview:hover .hero-preview-frame,.hero-preview:focus-visible .hero-preview-frame{transform:translate3d(var(--pointer-shift-x,0px),0,0);box-shadow:0 32px 78px rgba(0,0,0,.28)}.hero-preview:hover .hero-preview-frame::before,.hero-preview:focus-visible .hero-preview-frame::before{opacity:1}.hero-preview:hover .hero-preview-frame img,.hero-preview:focus-visible .hero-preview-frame img{transform:scale(1.025);filter:drop-shadow(0 24px 32px rgba(0,0,0,.3))}.hero-preview:hover .hero-preview-play,.hero-preview:focus-visible .hero-preview-play{transform:scale(1.1) rotate(5deg);background:var(--white)}}
-@keyframes hero-pulse{0%,100%{box-shadow:0 12px 30px rgba(0,0,0,.22)}50%{box-shadow:0 16px 34px rgba(211,154,106,.34)}}
+/* ---------- Header ---------- */
+.site-header{height:72px;background:color-mix(in srgb,var(--paper) 92%,transparent);color:var(--ink);border-bottom:1px solid var(--line);backdrop-filter:blur(20px)}
+.site-header .brand img{width:32px;height:32px;filter:none}
+.site-header .primary-nav{gap:32px}
+.site-header .primary-nav a,.site-header .header-action{color:var(--ink);font-weight:600;letter-spacing:.01em;font-size:14px}
+.site-header .primary-nav a::after{background:var(--warm)}
+.site-header .primary-nav a:hover{color:var(--ink)}
 @media (max-width:760px){
-  .hero-centered{gap:40px;padding-top:64px;padding-bottom:46px}
-  .hero-centered .hero-label{margin-bottom:20px;font-size:12px}
-  .hero-centered .hero-language-greeting{gap:3px;margin-bottom:20px;padding:0;font-size:11px;letter-spacing:0}
-  .hero-language-greeting::after{font-size:10px}
-  .hero-centered .hero-statement{font-size:clamp(25px,7.2vw,34px);line-height:1.2}
-  .hero-centered .hero-support{margin-top:18px;font-size:16px}
-  .hero-centered .hero-cta-row{margin-top:24px}
-  .hero-preview{left:var(--scroll-left,0vw);width:var(--scroll-width,90vw)}
-  .hero-preview-frame{aspect-ratio:1.35;border-radius:16px}
-  .hero-preview-frame img{width:96%;height:80%}
-  .hero-preview-kicker{top:16px;left:18px;font-size:10px}
-  .hero-preview-hint{right:18px;bottom:16px;font-size:10px}
-  .hero-preview-play{width:52px;height:52px}
+  .site-header{height:60px}
+  .site-header .header-inner{height:60px;gap:8px}
+  .site-header .brand img{width:28px;height:28px}
+  .site-header .primary-nav{gap:14px;white-space:nowrap}
+  .site-header .primary-nav a{font-size:12px}
+  .work-menu-panel{position:fixed;top:66px;left:16px;right:16px;width:auto}
 }
-@media (prefers-reduced-motion:reduce){.hero-preview-play{animation:none}}
-@media (prefers-reduced-motion:reduce){.hero-preview{left:0!important;width:min(100%,1040px)!important;transition:none!important}.hero-preview-frame{transform:none!important}.hero-preview-frame img{transform:none!important}}
-@media (prefers-reduced-motion:reduce){.hero-language-caret{animation:none}}
 
-/* The hero is a single pinned viewport while its video expands on scroll. */
-.site-header{height:64px;background:var(--accent);color:var(--white);border-color:color-mix(in srgb,var(--white) 18%,transparent)}
-.site-header .brand img{width:34px;height:34px;filter:brightness(0) invert(1)!important}
-.site-header .primary-nav{gap:28px}
-.hero-centered{display:block;position:relative;width:100vw;margin-left:calc(50% - 50vw);min-height:calc(190svh - 64px);padding:0;background:#f1efe9;color:#5d5d58;overflow:visible}
-.hero-centered .hero-stage{position:sticky;top:64px;height:calc(100svh - 64px);min-height:680px;display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:40px 32px 52px;overflow:hidden}
-.hero-centered .hero-introduction{position:relative;z-index:1;width:min(100%,1112px);margin:0 auto;padding:22px 24px 0;border-radius:20px 20px 0 0;background:transparent}
-.hero-centered .hero-language-greeting{position:relative;z-index:1;display:flex;margin:0 auto 18px;color:#d39a6a;font-size:18px;font-weight:700;letter-spacing:.08em;justify-content:center}
-.hero-centered .hero-preview{display:block;margin:0 auto}
-.hero-centered .hero-copy-body{position:relative;z-index:1;max-width:1040px;margin:0 auto;display:grid;grid-template-columns:minmax(280px,.8fr) minmax(360px,1.2fr);align-items:start;column-gap:74px;text-align:left}
-.hero-centered .hero-statement{max-width:430px;color:#5d5d58;font-size:clamp(38px,4.15vw,58px);font-weight:650;line-height:1.18;letter-spacing:-.045em}
-.hero-centered .hero-statement strong{font-weight:650}
-.hero-centered .hero-statement span{color:#c98d5c}
-.hero-centered .hero-support{max-width:660px;margin:12px 0 0;color:#686862;font-size:17px;line-height:1.55;text-align:right}
-.hero-centered .hero-cta-row{grid-column:2;justify-content:flex-end;margin-top:34px}
-.hero-centered .hero-primary-button{min-height:40px;padding:4px 5px 4px 14px;background:#1d2519;border-color:#1d2519;color:#f7f1d9;font-size:12px;box-shadow:none}
-.hero-centered .hero-primary-button .button-icon{width:30px;height:30px;background:#d39a6a;color:#1d2519}
-.hero-centered .hero-primary-button:hover{background:#2d3828;border-color:#2d3828;color:#f7f1d9}
-.hero-centered .hero-preview{position:relative;top:auto;z-index:4;left:auto;flex:0 0 270px;width:539px;height:270px;max-width:88vw}
-.hero-centered .hero-preview-frame{width:100%;height:100%;aspect-ratio:auto;border:0;border-radius:14px;background:#172014;box-shadow:none;transform:translate3d(var(--pointer-shift-x,0px),var(--scroll-drop,0px),0) scale(var(--scroll-scale,1));transform-origin:center center}
-.hero-centered .hero-preview-frame img{animation:hero-preview-running 9s ease-in-out infinite alternate}
-.hero-centered .hero-preview-video{position:relative;z-index:0;width:100%;height:100%;object-fit:contain;background:#172014}
-.hero-centered .hero-preview-kicker,.hero-centered .hero-preview-hint{display:none}
-.hero-centered .hero-preview-play{display:none}
-@media (hover:hover) and (pointer:fine){.hero-centered .hero-preview:hover .hero-preview-frame,.hero-centered .hero-preview:focus-visible .hero-preview-frame{transform:translate3d(var(--pointer-shift-x,0px),var(--scroll-drop,0px),0) scale(var(--scroll-scale,1))}}
-.featured-work{position:relative;z-index:4;margin-top:0}
-@media (max-width:760px){
-  .hero-centered{width:100%;margin-left:0;min-height:calc(185svh - 64px);padding:0}
-  .hero-centered .hero-stage{height:calc(100svh - 64px);min-height:0;padding:32px 16px 44px}
-  .hero-centered .hero-introduction{width:100%;padding:18px 0 0;border-radius:12px 12px 0 0}
-  .hero-centered .hero-language-greeting{margin:0 auto 16px;padding:0;font-size:15px;justify-content:flex-start;text-align:left}
-  .hero-centered .hero-copy-body{margin:0;display:flex;flex-direction:column;gap:0;text-align:left}
-  .hero-centered .hero-statement{max-width:100%;font-size:clamp(34px,10vw,48px)}
-  .hero-centered .hero-support{max-width:100%;margin-top:20px;text-align:left;font-size:16px}
-  .hero-centered .hero-cta-row{justify-content:flex-start;margin-top:26px}
-  .hero-centered .hero-preview{position:relative;top:auto;flex:0 0 auto;width:min(539px,88vw);height:auto;aspect-ratio:539/270;margin:0 auto}
-}
-@media (max-height:700px){.hero-centered .hero-stage{min-height:0;padding-block:18px 20px}.hero-centered .hero-preview{width:min(420px,75vw);height:auto;aspect-ratio:539/270;flex-basis:auto}.hero-centered .hero-statement{font-size:clamp(28px,3.5vw,42px)}.hero-centered .hero-support{font-size:14px}}
-@keyframes hero-preview-running{0%{transform:scale(1.01) translate3d(-.7%,0,0)}100%{transform:scale(1.05) translate3d(.7%,-.5%,0)}}
-@media (prefers-reduced-motion:reduce){.hero-centered .hero-preview-frame img,.hero-centered .hero-preview-video{animation:none}}
-
-/* Keep the homepage introduction calm and editorial: the message leads, the
-   work follows below instead of competing with it in the first fold. */
-.hero-centered{display:block;width:auto;margin-left:0;min-height:0;padding:clamp(76px,10vw,140px) 0 92px;background:var(--paper);color:var(--ink);overflow:visible}
+/* ---------- Hero: calm, static, type-led, nothing pinned or scroll-jacked ---------- */
+.hero-centered{display:block;width:auto;margin-left:0;min-height:0;padding:clamp(72px,9vw,124px) 0 96px;background:var(--paper);color:var(--ink);overflow:visible}
 .hero-centered .hero-stage{position:relative;top:auto;height:auto;min-height:0;display:block;padding:0;overflow:visible}
-.hero-centered .hero-introduction{width:min(100%,1112px);padding:0;margin:0 auto;border-radius:0}
-.hero-centered .hero-language-greeting{justify-content:flex-start;margin:0 0 42px;padding:0;color:var(--warm);font-size:18px;letter-spacing:.08em}
-.hero-centered .hero-copy-body{max-width:none;margin:0;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:96px;align-items:start;text-align:left}
-.hero-centered .hero-statement{max-width:600px;color:var(--ink);font-size:clamp(44px,5vw,72px);font-weight:650;line-height:.98;letter-spacing:-.065em}
+.hero-centered .hero-introduction{width:min(100%,1080px);margin:0 auto;padding:0}
+.hero-centered .hero-language-greeting{position:relative;justify-content:flex-start;margin:0 0 36px;padding:0;color:var(--warm);font-size:16px;font-weight:600;letter-spacing:.04em;text-transform:none}
+.hero-language-word{display:inline-block;min-width:0;line-height:1;text-align:left}
+.hero-language-name{display:inline-block;margin-left:6px;font-size:.65em;font-weight:700;letter-spacing:.1em;line-height:1;text-transform:uppercase;opacity:.7}
+.hero-language-caret{display:inline-block;width:1px;line-height:1;color:var(--warm);animation:hero-language-caret-blink 1s steps(1,end) infinite}
+@keyframes hero-language-caret-blink{0%,45%{opacity:1}46%,100%{opacity:0}}
+.hero-language-tooltip{position:absolute;z-index:8;top:calc(100% + 14px);left:0;width:max-content;max-width:min(88vw,370px);display:flex;flex-direction:column;gap:6px;padding:13px 15px;border:1px solid var(--line);border-radius:14px;background:var(--white);color:var(--ink);box-shadow:var(--shadow);font-size:11px;line-height:1.35;letter-spacing:normal;text-align:left;text-transform:none;white-space:normal;opacity:0;pointer-events:none;transform:translateY(-6px);transition:opacity .2s ease,transform .3s cubic-bezier(.22,1,.36,1)}
+.hero-language-tooltip strong{font-size:11px;font-weight:750}
+.hero-language-tooltip>span{color:var(--muted)}
+.hero-language-tooltip em{color:var(--warm-deep);font-family:var(--accent-font);font-size:12px;font-style:normal;line-height:1.3}
+.hero-language-greeting:hover .hero-language-tooltip,.hero-language-greeting:focus-visible .hero-language-tooltip{opacity:1;transform:translateY(0)}
+
+.hero-centered .hero-preview{position:static;left:auto;width:min(100%,720px);max-width:100%;margin:0 auto 64px;display:block;color:var(--ink);text-align:left}
+.hero-preview-frame{position:relative;aspect-ratio:16/9;display:block;overflow:hidden;border:1px solid var(--line);border-radius:20px;background:var(--paper-2);box-shadow:var(--shadow)}
+.hero-preview-video{position:relative;z-index:0;display:block;width:100%;height:100%;object-fit:cover}
+.hero-preview-kicker{position:absolute;z-index:2;left:18px;bottom:16px;padding:7px 13px;border-radius:999px;background:color-mix(in srgb,var(--ink) 80%,transparent);color:var(--white);font-size:11px;font-weight:650;letter-spacing:.04em}
+
+.hero-centered .hero-copy-body{max-width:none;margin:0;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.85fr);column-gap:88px;align-items:start;text-align:left}
+.hero-centered .hero-statement{max-width:580px;margin:0;color:var(--ink);font-family:var(--accent-font);font-weight:400;font-size:clamp(40px,4.3vw,62px);line-height:1.06;letter-spacing:-.02em}
+.hero-centered .hero-statement em{font-family:var(--accent-font);font-style:italic;font-weight:400;color:var(--warm)}
 .hero-centered .hero-statement span{color:var(--warm)}
-.hero-centered .hero-support{max-width:620px;margin:0;color:var(--muted);font-size:18px;line-height:1.55;text-align:left}
-.hero-centered .hero-support p+p{margin-top:32px}
-.hero-centered .hero-cta-row{grid-column:2;justify-content:flex-start;margin-top:34px}
-.hero-centered .hero-primary-button{min-height:52px;padding:6px 7px 6px 20px;background:var(--accent);border-color:var(--accent);color:var(--white);font-size:13px;box-shadow:0 8px 24px rgba(20,20,20,.12)}
-.hero-centered .hero-primary-button .button-icon{background:var(--paper);color:var(--accent)}
-.hero-centered .hero-primary-button:hover{background:var(--ink);border-color:var(--ink);color:var(--white)}
-.hero-centered .hero-primary-button:hover .button-icon{background:var(--paper);color:var(--ink)}
+.hero-centered .hero-support{max-width:460px;margin:4px 0 0;color:var(--muted);font-size:17px;line-height:1.65;text-align:left}
+.hero-centered .hero-support p+p{margin-top:24px}
+.hero-centered .hero-cta-row{grid-column:2;justify-content:flex-start;margin-top:36px}
+.hero-centered .hero-primary-button{background:var(--ink)!important;border-color:var(--ink)!important;color:var(--white)!important;min-height:52px;padding:6px 7px 6px 22px;font-size:13px}
+.hero-centered .hero-primary-button .button-icon{background:var(--warm);color:var(--ink)}
+.hero-centered .hero-primary-button:hover,.hero-centered .hero-primary-button:focus-visible{background:var(--accent-deep)!important;border-color:var(--accent-deep)!important;color:var(--white)!important}
+.hero-centered .hero-primary-button:hover .button-icon,.hero-centered .hero-primary-button:focus-visible .button-icon{background:var(--warm);color:var(--ink)}
 .hero-centered + .featured-work{margin-top:0}
+@media (max-width:1020px){
+  .hero-centered .hero-copy-body{grid-template-columns:1fr;gap:0}
+  .hero-centered .hero-statement{max-width:100%}
+  .hero-centered .hero-support{max-width:100%;margin-top:26px}
+  .hero-centered .hero-cta-row{grid-column:1;margin-top:30px}
+}
 @media (max-width:760px){
-  .hero-centered{padding:64px 0 72px}
-  .hero-centered .hero-language-greeting{margin-bottom:28px;font-size:15px}
-  .hero-centered .hero-copy-body{display:flex;flex-direction:column;gap:0}
-  .hero-centered .hero-statement{max-width:100%;font-size:clamp(42px,12vw,62px)}
-  .hero-centered .hero-support{max-width:100%;margin-top:30px;font-size:16px}
-  .hero-centered .hero-support p+p{margin-top:22px}
+  .hero-centered{padding:56px 0 68px}
+  .hero-centered .hero-preview{margin-bottom:44px}
+  .hero-preview-frame{aspect-ratio:4/3;border-radius:16px}
+  .hero-centered .hero-language-greeting{margin-bottom:26px;font-size:14px}
+  .hero-centered .hero-statement{font-size:clamp(34px,10vw,46px);line-height:1.1}
+  .hero-centered .hero-support{margin-top:20px;font-size:16px}
   .hero-centered .hero-cta-row{margin-top:28px}
 }
+@media (prefers-reduced-motion:reduce){.hero-language-caret{animation:none}}
 
-/* Long-form projects: use readable body type without diluting the hierarchy. */
+/* ---------- Featured work: one simple scannable grid ---------- */
+.featured-work{padding-top:56px}
+
+/* ---------- Case study cards: one consistent, elegant treatment
+   for every card. Hierarchy comes from size and position, not colour
+   blocking, so the pattern stays easy to read at a glance. ---------- */
+.case-study-stack,.case-study-stack-static,.case-study-stack-bento{display:grid;grid-template-columns:1fr;gap:20px}
+.case-study-stack>.case-study-card,.case-study-stack-bento>.case-study-card{position:relative!important;top:auto!important;z-index:auto!important;height:auto!important;min-height:0;grid-column:1/-1;grid-row:auto;padding:14px;border:1px solid var(--line);border-radius:22px;background:var(--paper-2);color:var(--ink);box-shadow:none;transition:transform .35s var(--ease-out),border-color .3s ease,box-shadow .35s ease}
+.case-study-stack>.case-study-card>.case-study-link,.case-study-stack-bento>.case-study-card>.case-study-link{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.92fr);gap:28px;min-height:360px;height:auto!important;color:inherit}
+.case-study-media,.case-study-feature .case-study-media{position:relative;min-height:320px;height:auto;padding:26px;border-radius:16px;background:var(--paper)}
+.case-study-media img,.case-study-feature .case-study-media img{width:88%;height:auto;max-height:290px;object-fit:contain;filter:drop-shadow(0 14px 20px rgba(20,19,16,.1))}
+.case-study-media-video{padding:0;background:var(--ink)}
+.case-study-media-video video{display:block;width:100%;height:100%;max-height:420px;object-fit:contain}
+.case-study-media>span,.case-study-feature .case-study-media::before{position:absolute;top:18px;left:18px;width:38px;height:38px;display:grid;place-items:center;border-radius:50%;background:var(--ink);color:var(--white);font-size:10px;font-weight:700}
+.case-study-copy,.case-study-feature .case-study-copy{min-width:0;padding:28px 20px 24px 4px;display:flex;flex-direction:column;background:transparent;color:var(--ink)}
+.case-study-copy header,.case-study-feature .case-study-copy header{display:flex;align-items:center;justify-content:space-between;gap:12px;color:var(--muted);font-size:11px;letter-spacing:.04em;text-transform:uppercase}
+.case-study-lead-metric{margin-top:18px}
+.case-study-lead-metric strong{display:block;font-family:var(--accent-font);font-weight:400;font-size:clamp(22px,2vw,30px);color:var(--ink)}
+.case-study-lead-metric span{display:block;margin-top:4px;font-size:11px;color:var(--muted)}
+.case-study-copy h3,.case-study-feature .case-study-copy h3{margin-top:18px;color:var(--ink);font-family:var(--accent-font);font-weight:400;letter-spacing:-.015em;font-size:clamp(26px,2.6vw,38px);line-height:1.1}
+.case-study-hook,.case-study-feature .case-study-hook{margin-top:16px;color:var(--muted);font-size:clamp(15px,1.3vw,17px);line-height:1.4}
+.case-study-metrics{margin-top:auto;padding-top:22px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border-top:1px solid var(--line)}
+.case-study-metrics>div{padding:14px 10px 0 0}
+.case-study-metrics dt{font-size:clamp(13px,1.2vw,16px);font-weight:700;color:var(--ink)}
+.case-study-metrics dd{margin-top:4px;font-size:10px;line-height:1.3;color:var(--muted)}
+.case-study-copy footer{width:max-content;min-height:42px;margin-top:22px;padding:5px 6px 5px 15px;display:inline-flex;align-items:center;gap:12px;border:1px solid var(--line);border-radius:999px;color:var(--ink);font-size:11px;font-weight:650;transition:background .3s ease,border-color .3s ease,color .3s ease}
+.case-study-copy footer .arrow-icon{width:30px;height:30px;display:grid;place-items:center;border-radius:50%;background:var(--warm);color:var(--ink);transition:transform .35s var(--ease-out)}
+@media (hover:hover) and (pointer:fine){
+  .case-study-stack>.case-study-card:hover,.case-study-stack-bento>.case-study-card:hover,
+  .case-study-stack>.case-study-card:focus-within,.case-study-stack-bento>.case-study-card:focus-within{transform:translateY(-4px);border-color:var(--ink);box-shadow:0 20px 44px rgba(20,19,16,.1)}
+  .case-study-stack>.case-study-card:hover .case-study-copy footer,.case-study-stack-bento>.case-study-card:hover .case-study-copy footer,
+  .case-study-stack>.case-study-card:focus-within .case-study-copy footer,.case-study-stack-bento>.case-study-card:focus-within .case-study-copy footer{background:var(--ink);border-color:var(--ink);color:var(--white)}
+  .case-study-stack>.case-study-card:hover .case-study-copy footer .arrow-icon,.case-study-stack-bento>.case-study-card:hover .case-study-copy footer .arrow-icon,
+  .case-study-stack>.case-study-card:focus-within .case-study-copy footer .arrow-icon,.case-study-stack-bento>.case-study-card:focus-within .case-study-copy footer .arrow-icon{transform:rotate(45deg)}
+  .case-study-stack>.case-study-card:hover .case-study-media img,.case-study-stack-bento>.case-study-card:hover .case-study-media img{transform:scale(1.025)}
+}
+@media (max-width:1020px){
+  .case-study-stack>.case-study-card>.case-study-link,.case-study-stack-bento>.case-study-card>.case-study-link{grid-template-columns:1fr;gap:0;min-height:0}
+  .case-study-media,.case-study-feature .case-study-media{min-height:280px}
+  .case-study-copy,.case-study-feature .case-study-copy{padding:26px 16px 22px}
+}
+@media (max-width:760px){
+  .case-study-stack,.case-study-stack-static,.case-study-stack-bento{gap:14px}
+  .case-study-stack>.case-study-card,.case-study-stack-bento>.case-study-card{padding:10px;border-radius:18px}
+  .case-study-media,.case-study-feature .case-study-media{min-height:220px;padding:18px;border-radius:12px}
+  .case-study-media img,.case-study-feature .case-study-media img{max-height:190px}
+  .case-study-copy,.case-study-feature .case-study-copy{padding:22px 10px 18px}
+  .case-study-copy h3,.case-study-feature .case-study-copy h3{font-size:clamp(25px,8vw,32px)}
+  .case-study-metrics{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+
+/* Long-form projects: readable body type without diluting the hierarchy. */
 .case-three p,.ecosystem-cards p,.responsibility-grid p,.principle-grid p,
 .support-grid p,.module-grid p,.research-step-list p,.lux-skim li p,
 .lux-process-list p,.lux-story-steps section p,.lux-learning-list p,
-.simpo-snapshot-grid p{font-size:15px;line-height:1.55}
+.simpo-snapshot-grid p{font-size:15px;line-height:1.6}
 .case-summary dt,.case-three span,.ecosystem-cards article>span,
 .responsibility-grid span,.principle-grid span,.module-grid span,
 .research-step-list span,.lux-assumption-grid span,.lux-story-steps small,
@@ -176,270 +138,70 @@ body{overflow-x:hidden}
 
 /* Animations never determine whether text can be read. */
 .text-reveal-word{color:inherit!important;transition:none}
-.reveal.is-visible{animation:quiet-entrance .45s cubic-bezier(.22,1,.36,1) both}
-@keyframes quiet-entrance{from{opacity:.72;transform:translateY(10px)}to{opacity:1;transform:none}}
+.reveal.is-visible{animation:quiet-entrance .7s cubic-bezier(.16,1,.3,1) both}
+@keyframes quiet-entrance{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
 @media (prefers-reduced-motion:reduce){.reveal.is-visible{animation:none}}
 
-@media (max-width:1020px){
-  .case-study-stack>.case-study-card>.case-study-link{grid-template-columns:1fr;gap:0;min-height:0}
-  .case-study-media,.case-study-feature .case-study-media{min-height:320px}
-  .case-study-media img{max-height:310px}
-  .case-study-copy,.case-study-feature .case-study-copy{padding:28px 20px 24px}
-  .case-study-copy footer{margin-top:28px}
-}
+.page-hero{padding:68px 0 40px}
+.page-hero h1{font-family:var(--accent-font);font-weight:400;letter-spacing:-.02em;font-size:clamp(46px,5.6vw,76px)}
+.page-hero p{font-size:18px;line-height:1.6}
+.section{padding-block:120px}
+.work-feature{padding-top:0}
+.work-snapshot>p,.work-snapshot dl{font-size:15px}
+.work-snapshot strong{font-size:13px}
+.site-footer,.site-footer p{font-size:13px}
+.contact-details p{font-size:14px}
+.testimonial-heading p{font-size:16px}
+
 @media (max-width:760px){
-  :root{--shell:calc(100vw - 32px)}
   .primary-nav{gap:18px}
   .primary-nav a{font-size:12px}
-  .case-study-stack,.case-study-stack-static{gap:16px}
-  .case-study-card{border-radius:20px;padding:10px}
-  .case-study-media,.case-study-feature .case-study-media{border-radius:12px;min-height:250px}
-  .case-study-copy,.case-study-feature .case-study-copy{padding:26px 12px 24px}
-  .case-study-copy h3,.case-study-feature .case-study-copy h3{font-size:clamp(29px,8vw,36px)}
-  .case-study-copy header,.case-study-feature .case-study-copy header{font-size:10px}
-  .case-study-metrics{gap:0}
-  .case-study-metrics dt{font-size:14px}
-  .case-study-metrics dd{font-size:9px}
-  .page-hero{padding:60px 0 45px}
-  .page-hero h1{font-size:clamp(42px,11vw,58px)}
-  .section{padding-block:78px}
+  .page-hero{padding:56px 0 40px}
+  .page-hero h1{font-size:clamp(38px,10vw,52px)}
+  .section{padding-block:76px}
 }
 
-/* Bento work grid: give each project a clear visual weight while keeping one
-   rhythm, one corner language and one obvious path into the case study. */
-.case-study-stack-bento{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));grid-template-rows:minmax(300px,auto) minmax(300px,auto) minmax(250px,auto);gap:18px;align-items:stretch}
-.case-study-stack-bento>.case-study-card{position:relative!important;top:auto!important;height:auto!important;min-height:0;display:flex;padding:12px;border-radius:24px;background:var(--paper-2);border:1px solid var(--line);box-shadow:none;overflow:hidden;transition:transform .45s cubic-bezier(.22,1,.36,1),box-shadow .45s ease,background .3s ease}
-.case-study-stack-bento>.case-study-card>.case-study-link{display:flex;flex-direction:column;width:100%;height:100%;min-height:0;gap:0}
-.case-study-stack-bento>.case-study-feature{grid-column:span 7;grid-row:span 2;background:var(--paper-2);border-color:var(--line);color:var(--ink)}
-.case-study-stack-bento>.project-card-02,.case-study-stack-bento>.project-card-03{grid-column:span 5;grid-row:span 1}
-.case-study-stack-bento>.project-card-04{grid-column:1/-1;grid-row:span 1}
-.case-study-stack-bento .case-study-media,.case-study-stack-bento .case-study-feature .case-study-media{position:relative;flex:1 1 auto;min-height:0;height:auto;padding:22px;border-radius:16px;background:color-mix(in srgb,var(--paper) 84%,var(--accent) 16%)}
-.case-study-stack-bento .case-study-media img{width:90%;height:90%;max-height:none;object-fit:contain;filter:drop-shadow(0 14px 20px rgba(0,0,0,.18));transition:transform .65s cubic-bezier(.22,1,.36,1),filter .5s ease}
-.case-study-stack-bento .case-study-media>span,.case-study-stack-bento .case-study-feature .case-study-media::before{top:16px;left:16px;width:34px;height:34px;font-size:10px}
-.case-study-stack-bento .case-study-copy,.case-study-stack-bento .case-study-feature .case-study-copy{flex:0 0 auto;min-height:0;padding:20px 12px 12px;background:transparent;color:var(--ink)}
-.case-study-stack-bento .case-study-copy header,.case-study-stack-bento .case-study-feature .case-study-copy header{font-size:9px;line-height:1.3;color:var(--muted)}
-.case-study-stack-bento .case-study-copy h3,.case-study-stack-bento .case-study-feature .case-study-copy h3{margin:14px 0 0;font-size:clamp(24px,2.4vw,37px);line-height:1.02;letter-spacing:-.06em;color:var(--ink)}
-.case-study-stack-bento .case-study-feature .case-study-copy h3{font-size:clamp(28px,2.7vw,43px);font-weight:650;text-transform:none;color:var(--ink)}
-.case-study-stack-bento .case-study-lead-metric{margin-top:15px}
-.case-study-stack-bento .case-study-lead-metric strong{font-size:clamp(25px,2.2vw,34px)}
-.case-study-stack-bento .case-study-lead-metric span{font-size:10px;color:var(--muted)}
-.case-study-stack-bento .case-study-metrics{margin-top:18px}
-.case-study-stack-bento .case-study-metrics>div{padding:10px 8px 10px 0}
-.case-study-stack-bento .case-study-metrics dt{font-size:clamp(13px,1.35vw,18px)}
-.case-study-stack-bento .case-study-metrics dd{font-size:8px}
-.case-study-stack-bento .case-study-copy footer{width:max-content;min-height:42px;margin-top:18px;padding:5px 6px 5px 14px;font-size:10px;border-color:var(--line);color:var(--ink)}
-.case-study-stack-bento .case-study-copy footer .arrow-icon{width:30px;height:30px;font-size:13px}
-.case-study-stack-bento>.project-card-02 .case-study-media{background:color-mix(in srgb,var(--paper-2) 78%,var(--accent) 22%)}
-.case-study-stack-bento>.project-card-03 .case-study-media{background:color-mix(in srgb,var(--paper-2) 88%,var(--accent) 12%)}
-.case-study-stack-bento>.project-card-04 .case-study-link{display:grid;grid-template-columns:minmax(280px,.72fr) minmax(0,1.28fr);align-items:stretch}
-.case-study-stack-bento>.project-card-04 .case-study-media{height:auto;min-height:210px}
-.case-study-stack-bento>.project-card-04 .case-study-copy{padding:28px 28px 22px}
-.case-study-stack-bento>.project-card-04 .case-study-copy h3{max-width:720px;font-size:clamp(27px,2.7vw,42px)}
-.case-study-stack-bento>.project-card-04 .case-study-media img{width:86%;height:86%}
-@media (hover:hover) and (pointer:fine){
-  .case-study-stack-bento>.case-study-card:hover,.case-study-stack-bento>.case-study-card:focus-within{transform:translateY(-5px);box-shadow:0 24px 50px rgba(0,0,0,.2);z-index:3}
-  .case-study-stack-bento>.case-study-card:hover .case-study-media img,.case-study-stack-bento>.case-study-card:focus-within .case-study-media img{transform:scale(1.04);filter:drop-shadow(0 22px 28px rgba(0,0,0,.25))}
-  .case-study-stack-bento>.case-study-card:hover .case-study-copy footer .arrow-icon,.case-study-stack-bento>.case-study-card:focus-within .case-study-copy footer .arrow-icon{transform:translate(0,0) rotate(45deg)}
-}
-
-/* Keep the portfolio bento airy: one clear lead tile, then three equal paths. */
+/* ---------- Bento grid: a simple three-up rhythm on wide screens ---------- */
 @media (min-width:1021px){
-  .case-study-stack-bento{
-    grid-template-columns:repeat(3,minmax(0,1fr));
-    grid-template-rows:minmax(360px,auto) minmax(320px,auto);
-    gap:24px;
-  }
-  .case-study-stack-bento>.case-study-feature{
-    grid-column:1/-1;
-    grid-row:1;
-  }
-  .case-study-stack-bento>.case-study-feature>.case-study-link{
-    display:grid;
-    grid-template-columns:minmax(0,1.2fr) minmax(320px,.8fr);
-    align-items:stretch;
-  }
-  .case-study-stack-bento>.case-study-feature .case-study-media{min-height:360px}
-  .case-study-stack-bento>.project-card-02,
-  .case-study-stack-bento>.project-card-03,
-  .case-study-stack-bento>.project-card-04{
-    grid-column:span 1;
-    grid-row:2;
-  }
-  .case-study-stack-bento>.project-card-04 .case-study-link{display:flex;flex-direction:column}
-  .case-study-stack-bento>.project-card-04 .case-study-media{min-height:220px}
-  .case-study-stack-bento>.project-card-04 .case-study-copy{padding:20px 12px 12px}
+  .case-study-stack-bento{grid-template-columns:repeat(3,minmax(0,1fr));grid-auto-rows:auto;gap:24px}
+  .case-study-stack-bento>.case-study-feature{grid-column:1/-1}
+  .case-study-stack-bento>.case-study-feature>.case-study-link{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(320px,.85fr)}
+  .case-study-stack-bento>.case-study-feature .case-study-media{min-height:380px}
+  .case-study-stack-bento>.project-card-02,.case-study-stack-bento>.project-card-03,.case-study-stack-bento>.project-card-04{grid-column:span 1}
+  .case-study-stack-bento>.project-card-02 .case-study-link,.case-study-stack-bento>.project-card-03 .case-study-link,.case-study-stack-bento>.project-card-04 .case-study-link{display:flex;flex-direction:column}
+  .case-study-stack-bento>.project-card-02 .case-study-media,.case-study-stack-bento>.project-card-03 .case-study-media,.case-study-stack-bento>.project-card-04 .case-study-media{min-height:230px}
 }
 @media (max-width:1020px) and (min-width:761px){
-  .case-study-stack-bento{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:minmax(280px,auto) minmax(280px,auto) minmax(240px,auto);gap:16px}
+  .case-study-stack-bento{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
   .case-study-stack-bento>.case-study-feature,.case-study-stack-bento>.project-card-04{grid-column:1/-1}
-  .case-study-stack-bento>.case-study-feature{grid-row:span 1}
-  .case-study-stack-bento>.case-study-feature>.case-study-link{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr)}
-  .case-study-stack-bento>.case-study-feature .case-study-media{height:auto}
-  .case-study-stack-bento>.project-card-04 .case-study-copy{padding:22px 24px 20px}
-}
-@media (max-width:760px){
-  .case-study-stack-bento{grid-template-columns:1fr;grid-template-rows:none;grid-auto-rows:auto;gap:14px}
-  .case-study-stack-bento>.case-study-card,.case-study-stack-bento>.case-study-feature,.case-study-stack-bento>.project-card-02,.case-study-stack-bento>.project-card-03,.case-study-stack-bento>.project-card-04{grid-column:auto;grid-row:auto;padding:10px;border-radius:20px}
-  .case-study-stack-bento>.case-study-feature>.case-study-link,.case-study-stack-bento>.project-card-04 .case-study-link{display:flex;flex-direction:column}
-  .case-study-stack-bento .case-study-media,.case-study-stack-bento .case-study-feature .case-study-media{flex:0 0 260px;min-height:260px;padding:20px;border-radius:14px}
-  .case-study-stack-bento>.case-study-feature .case-study-media{flex-basis:280px}
-  .case-study-stack-bento .case-study-copy,.case-study-stack-bento .case-study-feature .case-study-copy,.case-study-stack-bento>.project-card-04 .case-study-copy{padding:22px 10px 16px}
-  .case-study-stack-bento .case-study-copy h3,.case-study-stack-bento .case-study-feature .case-study-copy h3,.case-study-stack-bento>.project-card-04 .case-study-copy h3{font-size:clamp(26px,8vw,36px)}
-  .case-study-stack-bento .case-study-lead-metric strong{font-size:27px}
-  .case-study-stack-bento .case-study-metrics{margin-top:22px}
-  .case-study-stack-bento .case-study-copy footer{margin-top:24px}
-  .case-study-stack-bento>.project-card-04 .case-study-media{min-height:240px}
-}
-.case-study-stack-bento>.project-card-04 .case-study-media-video{padding:0;background:#1d2519}
-.case-study-media-video video{display:block;width:100%;height:100%;max-height:420px;object-fit:contain}
-
-/* Work cards should feel responsive without inverting their reading contrast. */
-@media (hover:hover) and (pointer:fine){
-  .case-study-stack-bento>.case-study-card:hover,
-  .case-study-stack-bento>.case-study-card:focus-within{
-    background:color-mix(in srgb,var(--paper-2) 88%,var(--accent) 12%);
-    border-color:color-mix(in srgb,var(--accent) 72%,var(--line));
-    color:var(--ink);
-    transform:translateY(-6px);
-    box-shadow:0 24px 48px rgba(0,0,0,.24);
-  }
-  .case-study-stack-bento>.case-study-card:hover .case-study-copy h3,
-  .case-study-stack-bento>.case-study-card:focus-within .case-study-copy h3,
-  .case-study-stack-bento>.case-study-card:hover .case-study-copy footer,
-  .case-study-stack-bento>.case-study-card:focus-within .case-study-copy footer{color:var(--ink)}
-  .case-study-stack-bento>.case-study-card:hover .case-study-copy header,
-  .case-study-stack-bento>.case-study-card:focus-within .case-study-copy header,
-  .case-study-stack-bento>.case-study-card:hover .case-study-lead-metric span,
-  .case-study-stack-bento>.case-study-card:focus-within .case-study-lead-metric span,
-  .case-study-stack-bento>.case-study-card:hover .case-study-metrics dd,
-  .case-study-stack-bento>.case-study-card:focus-within .case-study-metrics dd{color:var(--muted)}
-  .case-study-stack-bento>.case-study-card:hover .case-study-copy footer,
-  .case-study-stack-bento>.case-study-card:focus-within .case-study-copy footer{border-color:color-mix(in srgb,var(--accent) 58%,var(--line))}
-  .case-study-stack-bento>.case-study-card:hover .case-study-media,
-  .case-study-stack-bento>.case-study-card:focus-within .case-study-media{background:color-mix(in srgb,var(--paper) 78%,var(--accent) 22%)}
-  .case-study-stack-bento>.case-study-card:hover .case-study-media img,
-  .case-study-stack-bento>.case-study-card:focus-within .case-study-media img{transform:scale(1.025)}
-  .case-study-stack-bento>.case-study-card:hover .case-study-media video,
-  .case-study-stack-bento>.case-study-card:focus-within .case-study-media video{transform:scale(1.04);transition:transform .65s cubic-bezier(.22,1,.36,1)}
 }
 
-/* Mobile is a distinct reading mode: no pinned desktop media, no clipped card
-   copy, and a compact navigation that still keeps every destination available. */
+/* ---------- Mobile is a distinct, compact reading mode ---------- */
 @media (max-width:760px){
   html{scroll-padding-top:56px}
   body{overflow-x:clip}
   main,.shell,.header-inner,.case-narrow,.case-wide,.case-study-card,.case-study-link,.case-study-copy{min-width:0}
   h1,h2,h3,p,blockquote,dd{overflow-wrap:break-word}
-
-  .site-header{height:56px}
-  .site-header .header-inner{height:56px;gap:8px}
-  .site-header .brand img{width:28px;height:28px}
-  .site-header .primary-nav{gap:11px;white-space:nowrap}
-  .site-header .primary-nav a{font-size:11px;line-height:1}
-  .site-header .work-menu{gap:4px}
-  .site-header .work-menu summary{padding:5px 0}
-  .site-header .work-menu-panel{top:62px;left:12px;right:12px}
-
-  .hero-centered{width:100%;margin-left:0;min-height:0;padding:0}
-  .hero-centered .hero-stage{position:relative;top:auto;height:auto;min-height:0;display:flex;justify-content:flex-start;gap:32px;padding:24px 16px 48px;overflow:visible}
-  .hero-centered .hero-preview{order:0;flex:none;width:min(100%,539px);height:auto;max-width:100%;margin:0 auto;aspect-ratio:539/270}
-  .hero-centered .hero-preview-frame{border-radius:14px;transform:translate3d(0,0,0) scale(1)!important}
-  .hero-centered .hero-preview-video{object-fit:contain}
-  .hero-centered .hero-introduction{order:1;width:100%;padding:0}
-  .hero-centered .hero-language-greeting{margin:0 auto 20px;padding:0;font-size:15px;justify-content:flex-start;text-align:left}
-  .hero-centered .hero-copy-body{display:flex;flex-direction:column;gap:0;margin:0;text-align:left}
-  .hero-centered .hero-statement{max-width:18ch;font-size:clamp(34px,10.5vw,44px);line-height:1.08}
-  .hero-centered .hero-support{max-width:100%;margin-top:18px;font-size:16px;line-height:1.52;text-align:left}
-  .hero-centered .hero-cta-row{justify-content:center;margin-top:28px}
-  .hero-centered .hero-primary-button{min-height:44px;font-size:12px}
-
-  .featured-work{padding-top:64px}
   .editorial-heading{grid-template-columns:28px minmax(0,1fr);gap:10px;margin-bottom:32px}
-  .editorial-heading h2{font-size:clamp(34px,10vw,43px);line-height:1.04}
-
-  .case-study-stack-bento{gap:16px}
-  .case-study-stack-bento>.case-study-card{padding:10px;border-radius:20px}
-  .case-study-stack-bento .case-study-media,.case-study-stack-bento .case-study-feature .case-study-media{flex-basis:clamp(220px,68vw,280px);min-height:clamp(220px,68vw,280px);padding:16px}
-  .case-study-stack-bento>.case-study-feature .case-study-media{flex-basis:clamp(240px,72vw,300px)}
-  .case-study-stack-bento>.project-card-04 .case-study-media{min-height:220px}
-  .case-study-stack-bento .case-study-copy,.case-study-stack-bento .case-study-feature .case-study-copy,.case-study-stack-bento>.project-card-04 .case-study-copy{display:block;height:auto;padding:20px 8px 12px}
-  .case-study-stack-bento .case-study-copy header,.case-study-stack-bento .case-study-feature .case-study-copy header{gap:8px;font-size:10px}
-  .case-study-stack-bento .case-study-copy h3,.case-study-stack-bento .case-study-feature .case-study-copy h3,.case-study-stack-bento>.project-card-04 .case-study-copy h3{font-size:clamp(27px,8.5vw,34px);line-height:1.04}
-  .case-study-stack-bento .case-study-metrics{grid-template-columns:repeat(2,minmax(0,1fr));gap:0;margin-top:18px}
-  .case-study-stack-bento .case-study-metrics>div:last-child{grid-column:1/-1}
-  .case-study-stack-bento .case-study-copy footer{margin-top:20px}
-  .case-study-media-video video{max-height:none;object-fit:contain}
+  .editorial-heading h2{font-size:clamp(32px,9vw,42px);line-height:1.06}
 }
 
-@media (max-width:370px){
-  .site-header .primary-nav{gap:8px}
-  .site-header .primary-nav a{font-size:10px}
-  .hero-centered .hero-stage{padding-inline:14px}
-  .hero-centered .hero-statement{font-size:33px}
-  .hero-centered .hero-support{font-size:15px}
-  .case-study-stack-bento .case-study-media,.case-study-stack-bento .case-study-feature .case-study-media{flex-basis:220px;min-height:220px}
-}
-
-/* The desktop hero follows a clear editorial rhythm: the reel introduces the
-   work, then the statement and supporting copy read as one balanced spread. */
-@media (min-width:761px){
-  .hero-centered{padding-top:clamp(36px,4vw,56px)}
-  .hero-centered .reveal{opacity:1!important;transform:none!important}
-  .hero-centered .hero-stage{justify-content:flex-start;gap:68px;padding:32px 32px 72px}
-  .hero-centered .hero-preview{flex:0 0 270px;width:539px;height:270px;max-width:88vw}
-  .hero-centered .hero-introduction{width:min(100%,1150px);padding:0 22px}
-  .hero-centered .hero-language-greeting{justify-content:flex-start;margin:0 0 28px;padding:0;font-size:17px;text-align:left}
-  .hero-centered .hero-copy-body{max-width:1150px;grid-template-columns:minmax(300px,.95fr) minmax(390px,1.05fr);column-gap:100px;row-gap:0}
-  .hero-centered .hero-statement{max-width:560px;font-size:clamp(38px,4vw,52px);line-height:1.2}
-  .hero-centered .hero-support{max-width:610px;margin:0;color:#54544f;font-size:17px;line-height:1.75;text-align:left}
-  .hero-centered .hero-support p{margin:0;color:#54544f!important;opacity:1!important;filter:none!important}
-  .hero-centered .hero-support p+p{margin-top:30px}
-  .hero-centered .hero-cta-row{grid-column:2;justify-content:flex-start;margin-top:34px}
-}
-
-/* Keep the supporting story at the same readable contrast on every viewport. */
-.hero-centered .hero-support,.hero-centered .hero-support p{color:#54544f!important;opacity:1!important;filter:none!important}
-
-/* A small left-side contents menu keeps navigation close without permanently
-   covering the case-study canvas. */
-.case-toc{position:fixed;z-index:90;top:80px;left:16px;width:auto;min-height:0;display:block;padding:0;overflow:visible;border:0;border-radius:0;background:transparent;color:var(--ink);box-shadow:none;backdrop-filter:none;mix-blend-mode:normal;opacity:1;transform:none}
-.case-toc summary{position:relative;display:flex;width:42px;height:42px;align-items:center;justify-content:center;gap:9px;padding:0;border:1px solid color-mix(in srgb,var(--ink) 22%,transparent);border-radius:50%;background:color-mix(in srgb,var(--paper) 95%,transparent);box-shadow:0 10px 30px rgba(20,25,17,.12);color:var(--ink);cursor:pointer;list-style:none;backdrop-filter:blur(16px);transition:background-color .2s ease,border-color .2s ease,color .2s ease}
-.case-toc summary::-webkit-details-marker{display:none}
-.case-toc summary>span:last-child{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap}
-.case-toc-icon{display:grid;width:14px;gap:3px}
-.case-toc-icon i{display:block;width:14px;height:1px;background:currentColor;transition:transform .2s ease,opacity .2s ease}
-.case-toc[open] summary{border-color:#1d2519;background:#1d2519;color:#f7f1d9}
-.case-toc[open] .case-toc-icon i:first-child{transform:translateY(4px) rotate(45deg)}
-.case-toc[open] .case-toc-icon i:nth-child(2){opacity:0}
-.case-toc[open] .case-toc-icon i:last-child{transform:translateY(-4px) rotate(-45deg)}
-.case-toc nav{position:absolute;top:50px;left:0;width:190px;display:flex;flex-direction:column;gap:3px;padding:14px;border:1px solid color-mix(in srgb,var(--ink) 18%,transparent);border-radius:16px;background:color-mix(in srgb,var(--paper) 97%,transparent);box-shadow:0 20px 50px rgba(20,25,17,.18);backdrop-filter:blur(18px)}
-.case-toc nav strong{margin:2px 8px 8px;color:var(--muted);font-size:9px;font-weight:750;letter-spacing:.12em;text-transform:uppercase}
-.case-toc a{padding:9px 10px;border-radius:9px;color:var(--ink);font-size:11px;font-weight:650;line-height:1.15;transition:background-color .2s ease,color .2s ease}
-.case-toc a:hover,.case-toc a:focus-visible{background:var(--paper-2);color:var(--ink);outline:none}
-.case-page section[id]{scroll-margin-top:82px}
-@media (max-width:760px){
-  .case-toc{top:auto;bottom:16px;left:12px;transform:none}
-  .case-toc summary{width:40px;height:40px}
-  .case-toc nav{top:auto;bottom:48px;max-height:calc(100vh - 140px);overflow-y:auto}
-  .case-page section[id]{scroll-margin-top:70px}
-}
-
-/* A recruiter brief should open as a concise dossier, not a second long-form page. */
-.recruiter-overlay{place-items:center;background:rgba(14,18,12,.82)}
+/* ---------- Recruiter brief: a concise dossier, not a second long page ---------- */
+.recruiter-overlay{place-items:center;background:rgba(32,31,28,.78)}
 .recruiter-dialog{width:min(880px,calc(100vw - 48px));border-radius:20px}
 .recruiter-brief-head{min-height:0;padding:42px 48px 44px}
 .recruiter-brief-head>div{max-width:620px}
-.recruiter-brief-head h2{font-size:clamp(46px,5vw,64px);line-height:.98;margin:14px 0 16px}
+.recruiter-brief-head h2{font-size:clamp(42px,4.6vw,58px);line-height:1.04;margin:14px 0 16px}
 .recruiter-brief-head p{max-width:590px;font-size:16px;line-height:1.5}
 .recruiter-rationale{grid-template-columns:145px minmax(0,1fr);padding:38px 48px;gap:30px}
-.recruiter-rationale h3{font-size:clamp(26px,3vw,34px);line-height:1.08}
+.recruiter-rationale h3{font-size:clamp(24px,2.8vw,32px);line-height:1.12}
 .recruiter-rationale p{font-size:15px;line-height:1.55}
 .recruiter-intro,.recruiter-contribution,.recruiter-difference,.recruiter-table{padding:64px 48px}
 .recruiter-actions{padding:42px 48px}
 @media (max-width:1020px){
   .recruiter-dialog{width:min(760px,calc(100vw - 32px))}
   .recruiter-brief-head{padding:38px 36px 40px}
-  .recruiter-brief-head h2{font-size:clamp(44px,8vw,58px)}
+  .recruiter-brief-head h2{font-size:clamp(38px,7vw,52px)}
   .recruiter-rationale{grid-template-columns:1fr;padding:34px 36px;gap:16px}
   .recruiter-rationale>span{padding-top:0}
   .recruiter-intro,.recruiter-contribution,.recruiter-difference,.recruiter-table{padding:56px 36px}
@@ -448,23 +210,29 @@ body{overflow-x:hidden}
 @media (max-width:760px){
   .recruiter-dialog{width:calc(100vw - 16px);border-radius:16px}
   .recruiter-brief-head{padding:72px 24px 30px}
-  .recruiter-brief-head h2{font-size:clamp(42px,12vw,52px)}
+  .recruiter-brief-head h2{font-size:clamp(36px,11vw,46px)}
   .recruiter-rationale{padding:30px 24px}
   .recruiter-intro,.recruiter-contribution,.recruiter-difference,.recruiter-table{padding:52px 24px}
   .recruiter-actions{padding:32px 24px}
 }
 
-/* Reuse the Simpo case-card visual as the evidence anchor for its project snapshot. */
+/* ---------- Simpo evidence anchor ---------- */
 .simpo-snapshot-top{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(300px,.8fr);gap:42px;align-items:end;margin-bottom:42px}
 .simpo-snapshot-top .simpo-snapshot-intro{display:block;margin:0}
 .simpo-snapshot-top .simpo-snapshot-intro h2{margin:18px 0 14px}
 .simpo-snapshot-media{margin:0;padding:14px;border:1px solid var(--line);border-radius:16px;background:var(--paper-2);overflow:hidden}
 .simpo-snapshot-media img{width:100%;height:auto;max-height:280px;object-fit:contain}
-@media (max-width:760px){.simpo-snapshot-top{grid-template-columns:1fr;gap:24px;margin-bottom:30px}.simpo-snapshot-media{padding:10px;border-radius:12px}.simpo-snapshot-media img{max-height:none}}
+.simpo-hero-media{padding:28px;background:var(--paper-2)}
+.simpo-hero-media img{width:min(100%,1040px);max-height:620px;object-fit:contain}
+@media (max-width:760px){
+  .simpo-snapshot-top{grid-template-columns:1fr;gap:24px;margin-bottom:30px}
+  .simpo-snapshot-media{padding:10px;border-radius:12px}
+  .simpo-snapshot-media img{max-height:none}
+  .simpo-hero-media{padding:14px}
+  .simpo-hero-media img{max-height:none}
+}
 
-/* Keep every page's opening hero in the same calm, light visual language as
-   the home hero. The full-bleed layer preserves each page's existing layout
-   while giving the first viewport one consistent colour story. */
+/* ---------- Every opening hero shares the same calm, light surface ---------- */
 :is(.page-hero,.about-canvas,.contact-hero,.resume-heading,.case-page .case-hero){position:relative;isolation:isolate;color:var(--ink)}
 :is(.page-hero,.about-canvas,.contact-hero,.resume-heading,.case-page .case-hero)::before{content:"";position:absolute;z-index:-1;inset:0 calc(50% - 50vw);background:var(--paper)}
 :is(.page-hero,.about-canvas,.contact-hero,.resume-heading,.case-page .case-hero) h1,
@@ -472,8 +240,8 @@ body{overflow-x:hidden}
 :is(.page-hero,.about-canvas,.contact-hero,.resume-heading,.case-page .case-hero) strong{color:var(--ink)}
 :is(.page-hero,.about-canvas,.contact-hero,.resume-heading,.case-page .case-hero) p{color:var(--muted)}
 :is(.page-hero,.about-canvas,.contact-hero,.resume-heading,.case-page .case-hero) .eyebrow,
-:is(.page-hero,.about-canvas,.contact-hero,.resume-heading,.case-page .case-hero) .case-eyebrow{color:var(--accent-deep)}
-.about-canvas-board{background:radial-gradient(circle at 50% 46%,color-mix(in srgb,var(--accent) 12%,transparent),transparent 38%),var(--paper-2);border-color:var(--line)}
+:is(.page-hero,.about-canvas,.contact-hero,.resume-heading,.case-page .case-hero) .case-eyebrow{color:var(--accent)}
+.about-canvas-board{background:var(--paper-2);border-color:var(--line)}
 .about-canvas-callout{color:var(--ink)}
 .about-canvas-callout small,.about-canvas-callout span{color:var(--muted)}
 .about-canvas-portrait span{background:var(--paper);color:var(--ink)}
@@ -484,222 +252,46 @@ body{overflow-x:hidden}
 .case-summary dt{color:var(--muted)}
 .case-summary dd{color:var(--ink)}
 .resume-heading{border-color:var(--line)}
-.resume-heading>div:first-child>span{color:var(--accent-deep)}
+.resume-heading>div:first-child>span{color:var(--accent)}
 .resume-heading>div:first-child>p{color:var(--ink)}
 
-/* Buttons on the intentionally light hero surfaces keep a dark readable
-   treatment in their default and hover states, even though the document
-   theme remains dark for the rest of the portfolio. */
-:is(.hero-centered,.page-hero,.about-canvas,.contact-hero,.resume-heading,.case-page .case-hero) .button-secondary{
-  background:transparent;
-  border-color:var(--line);
-  color:var(--ink);
-}
-:is(.hero-centered,.page-hero,.about-canvas,.contact-hero,.resume-heading,.case-page .case-hero) .button-secondary .button-icon{
-  background:var(--ink);
-  color:var(--white);
-}
+/* Buttons on light hero surfaces keep a dark, readable treatment. */
+:is(.hero-centered,.page-hero,.about-canvas,.contact-hero,.resume-heading,.case-page .case-hero) .button-secondary{background:transparent;border-color:var(--line);color:var(--ink)}
+:is(.hero-centered,.page-hero,.about-canvas,.contact-hero,.resume-heading,.case-page .case-hero) .button-secondary .button-icon{background:var(--ink);color:var(--white)}
 :is(.hero-centered,.page-hero,.about-canvas,.contact-hero,.resume-heading,.case-page .case-hero) .button-secondary:hover,
-:is(.hero-centered,.page-hero,.about-canvas,.contact-hero,.resume-heading,.case-page .case-hero) .button-secondary:focus-visible{
-  background:var(--ink);
-  border-color:var(--ink);
-  color:var(--white);
-}
+:is(.hero-centered,.page-hero,.about-canvas,.contact-hero,.resume-heading,.case-page .case-hero) .button-secondary:focus-visible{background:var(--ink);border-color:var(--ink);color:var(--white)}
 :is(.hero-centered,.page-hero,.about-canvas,.contact-hero,.resume-heading,.case-page .case-hero) .button-secondary:hover .button-icon,
-:is(.hero-centered,.page-hero,.about-canvas,.contact-hero,.resume-heading,.case-page .case-hero) .button-secondary:focus-visible .button-icon{
-  background:var(--accent);
-  color:var(--ink);
-}
-:is(.hero-centered,.page-hero,.about-canvas,.contact-hero,.resume-heading,.case-page .case-hero) .button:not(.button-secondary){
-  background:var(--ink);
-  border-color:var(--ink);
-  color:var(--white);
-}
-:is(.hero-centered,.page-hero,.about-canvas,.contact-hero,.resume-heading,.case-page .case-hero) .button:not(.button-secondary) .button-icon{
-  background:var(--white);
-  color:var(--ink);
-}
+:is(.hero-centered,.page-hero,.about-canvas,.contact-hero,.resume-heading,.case-page .case-hero) .button-secondary:focus-visible .button-icon{background:var(--warm);color:var(--ink)}
+:is(.hero-centered,.page-hero,.about-canvas,.contact-hero,.resume-heading,.case-page .case-hero) .button:not(.button-secondary){background:var(--ink);border-color:var(--ink);color:var(--white)}
+:is(.hero-centered,.page-hero,.about-canvas,.contact-hero,.resume-heading,.case-page .case-hero) .button:not(.button-secondary) .button-icon{background:var(--warm);color:var(--ink)}
 :is(.hero-centered,.page-hero,.about-canvas,.contact-hero,.resume-heading,.case-page .case-hero) .button:not(.button-secondary):hover,
-:is(.hero-centered,.page-hero,.about-canvas,.contact-hero,.resume-heading,.case-page .case-hero) .button:not(.button-secondary):focus-visible{
-  background:var(--accent);
-  border-color:var(--accent);
-  color:var(--ink);
-}
-:is(.hero-centered,.page-hero,.about-canvas,.contact-hero,.resume-heading,.case-page .case-hero) .button:not(.button-secondary):hover .button-icon,
-:is(.hero-centered,.page-hero,.about-canvas,.contact-hero,.resume-heading,.case-page .case-hero) .button:not(.button-secondary):focus-visible .button-icon{
-  background:var(--ink);
-  color:var(--white);
-}
+:is(.hero-centered,.page-hero,.about-canvas,.contact-hero,.resume-heading,.case-page .case-hero) .button:not(.button-secondary):focus-visible{background:var(--accent-deep);border-color:var(--accent-deep);color:var(--white)}
 
-/* The home hero CTA is intentionally high contrast on the bright first fold. */
-.hero-centered .hero-primary-button{background:var(--ink)!important;border-color:var(--ink)!important;color:var(--white)!important}
-.hero-centered .hero-primary-button .button-icon{background:var(--warm);color:var(--ink)}
-.hero-centered .hero-primary-button:hover,.hero-centered .hero-primary-button:focus-visible{background:var(--accent-deep);border-color:var(--accent-deep);color:var(--white)}
-.hero-centered .hero-primary-button:hover .button-icon,.hero-centered .hero-primary-button:focus-visible .button-icon{background:var(--warm);color:var(--ink)}
-
-/* Green is reserved for interaction and emphasis; broad surfaces remain paper. */
-.site-header .primary-nav a::after{background:var(--warm)}
-.site-header .primary-nav a:hover{color:var(--white)}
-.case-toc[open] summary{border-color:var(--accent);background:var(--accent);color:var(--white)}
-.case-study-stack-bento>.project-card-04 .case-study-media-video{background:#292a27}
-
-/* Use the actual Simpo product interface as the case-study visual anchor. */
-.simpo-hero-media{padding:28px;background:var(--paper-2)}
-.simpo-hero-media img{width:min(100%,1040px);max-height:620px;object-fit:contain}
-@media (max-width:760px){.simpo-hero-media{padding:14px}.simpo-hero-media img{max-height:none}}
-
-/* The showreel remains the visual opening; LUXTJ is the green lead case. */
-.hero-centered .hero-preview{margin:0 auto 72px}
-.case-study-stack-bento>.case-study-feature{background:var(--accent);border-color:var(--accent);color:var(--white)}
-.case-study-stack-bento>.case-study-feature .case-study-copy{color:var(--white)}
-.case-study-stack-bento>.case-study-feature .case-study-copy header,
-.case-study-stack-bento>.case-study-feature .case-study-copy header small,
-.case-study-stack-bento>.case-study-feature .case-study-copy h3,
-.case-study-stack-bento>.case-study-feature .case-study-lead-metric span,
-.case-study-stack-bento>.case-study-feature .case-study-metrics dd,
-.case-study-stack-bento>.case-study-feature .case-study-copy footer{color:var(--white)}
-.case-study-stack-bento>.case-study-feature .case-study-copy header{opacity:.76}
-.case-study-stack-bento>.case-study-feature .case-study-metrics{border-color:color-mix(in srgb,var(--white) 28%,transparent)}
-.case-study-stack-bento>.case-study-feature .case-study-metrics>div+div{border-color:color-mix(in srgb,var(--white) 28%,transparent)}
-.case-study-stack-bento>.case-study-feature .case-study-copy footer{border-color:color-mix(in srgb,var(--white) 44%,transparent)}
-.case-study-stack-bento>.case-study-feature .case-study-copy footer .arrow-icon{background:var(--paper);color:var(--accent)}
-@media (max-width:760px){.hero-centered .hero-preview{margin-bottom:48px}}
-
-/* Homepage work: one calm, readable stack rather than competing bento tiles.
-   Each case uses the same proof-left / story-right rhythm from the supplied reference. */
-.case-study-stack-bento{display:grid;grid-template-columns:1fr;gap:18px}
-.case-study-stack-bento>.case-study-card{position:relative;top:auto!important;z-index:auto!important;grid-column:1/-1!important;grid-row:auto!important;height:auto!important;min-height:0;padding:12px;border-color:var(--accent);border-radius:26px;background:var(--accent);color:var(--white);box-shadow:0 18px 40px rgba(24,42,31,.14)}
-.case-study-stack-bento>.case-study-card>.case-study-link{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:22px;min-height:350px;height:auto!important;color:inherit}
-.case-study-stack-bento .case-study-media,.case-study-stack-bento .case-study-feature .case-study-media{min-height:326px;height:auto;padding:28px;border-radius:18px;background:#1d2a1e}
-.case-study-stack-bento .case-study-media>span,.case-study-stack-bento .case-study-feature .case-study-media::before{top:18px;left:18px;width:42px;height:42px;background:var(--white);color:var(--ink);font-size:10px}
-.case-study-stack-bento .case-study-media img,.case-study-stack-bento .case-study-feature .case-study-media img{width:88%;height:auto;max-height:278px;object-fit:contain;filter:none}
-.case-study-stack-bento .case-study-copy,.case-study-stack-bento .case-study-feature .case-study-copy{min-width:0;padding:30px 24px 28px 4px;align-items:stretch;background:transparent;color:var(--white)}
-.case-study-stack-bento .case-study-copy header,.case-study-stack-bento .case-study-feature .case-study-copy header{color:color-mix(in srgb,var(--white) 70%,transparent);font-size:10px}
-.case-study-stack-bento .case-study-copy h3,.case-study-stack-bento .case-study-feature .case-study-copy h3{margin-top:26px;color:var(--white);font-size:clamp(31px,3.25vw,49px);line-height:.99}
-.case-study-stack-bento .case-study-hook,.case-study-stack-bento .case-study-feature .case-study-hook{margin-top:20px;color:var(--white);font-size:clamp(18px,1.6vw,22px);line-height:1.22}
-.case-study-stack-bento .project-role-pill,.case-study-stack-bento .case-study-feature .project-role-pill{color:var(--white);border-color:color-mix(in srgb,var(--white) 48%,transparent)}
-.case-study-stack-bento .case-study-lead-metric span,.case-study-stack-bento .case-study-metrics dt,.case-study-stack-bento .case-study-metrics dd{color:var(--white)}
-.case-study-stack-bento .case-study-metrics,.case-study-stack-bento .case-study-feature .case-study-metrics{margin-top:26px;border-color:color-mix(in srgb,var(--white) 30%,transparent)}
-.case-study-stack-bento .case-study-metrics>div+div,.case-study-stack-bento .case-study-feature .case-study-metrics>div+div{border-color:color-mix(in srgb,var(--white) 30%,transparent)}
-.case-study-stack-bento .case-study-metrics dd,.case-study-stack-bento .case-study-feature .case-study-metrics dd{color:color-mix(in srgb,var(--white) 70%,transparent)}
-.case-study-stack-bento .case-study-copy footer,.case-study-stack-bento .case-study-feature .case-study-copy footer{min-height:44px;margin-top:22px;padding:5px 6px 5px 17px;border-color:color-mix(in srgb,var(--white) 60%,transparent);color:var(--white);font-size:10px}
-.case-study-stack-bento .case-study-copy footer .arrow-icon,.case-study-stack-bento .case-study-feature .case-study-copy footer .arrow-icon{width:32px;height:32px;background:var(--warm);color:var(--ink)}
-@media (hover:hover) and (pointer:fine){.case-study-stack-bento>.case-study-card:hover,.case-study-stack-bento>.case-study-card:focus-within{background:var(--accent-deep);border-color:var(--accent-deep);box-shadow:0 25px 56px rgba(24,42,31,.22)}.case-study-stack-bento>.case-study-card:hover .case-study-media,.case-study-stack-bento>.case-study-card:focus-within .case-study-media{background:#182419}}
-@media (max-width:760px){.case-study-stack-bento{gap:14px}.case-study-stack-bento>.case-study-card{padding:9px;border-radius:20px}.case-study-stack-bento>.case-study-card>.case-study-link{grid-template-columns:1fr;gap:0;min-height:0}.case-study-stack-bento .case-study-media,.case-study-stack-bento .case-study-feature .case-study-media{min-height:230px;padding:20px;border-radius:13px}.case-study-stack-bento .case-study-media img,.case-study-stack-bento .case-study-feature .case-study-media img{max-height:190px}.case-study-stack-bento .case-study-copy,.case-study-stack-bento .case-study-feature .case-study-copy{padding:24px 14px 20px}.case-study-stack-bento .case-study-copy h3,.case-study-stack-bento .case-study-feature .case-study-copy h3{margin-top:20px;font-size:32px}.case-study-stack-bento .case-study-metrics{grid-template-columns:repeat(3,minmax(0,1fr));margin-top:22px}.case-study-stack-bento .case-study-copy footer{margin-top:20px}.case-study-stack-bento .case-study-media>span,.case-study-stack-bento .case-study-feature .case-study-media::before{top:12px;left:12px;width:34px;height:34px}}
-
-/* One CTA language everywhere: dark pill, warm circular arrow, clear contrast. */
+/* One CTA language everywhere: dark pill, warm circular arrow. */
 .button,.button.button-secondary,.contact-cta .button{background:var(--ink)!important;border-color:var(--ink)!important;color:var(--white)!important}
 .button .button-icon,.button.button-secondary .button-icon,.contact-cta .button .button-icon{background:var(--warm)!important;color:var(--ink)!important}
 .button:hover,.button:focus-visible,.button.button-secondary:hover,.button.button-secondary:focus-visible,.contact-cta .button:hover,.contact-cta .button:focus-visible{background:var(--accent-deep)!important;border-color:var(--accent-deep)!important;color:var(--white)!important}
 .button:hover .button-icon,.button:focus-visible .button-icon{background:var(--warm)!important;color:var(--ink)!important}
 
-/* The document keeps a light-token dark mode, so explicitly protect the work
-   stack from its broad light-card fallback. */
-html[data-theme="dark"] .case-study-stack-bento>.case-study-card{background:var(--accent)!important;border-color:var(--accent)!important;color:var(--white)!important}
-html[data-theme="dark"] .case-study-stack-bento .case-study-media,html[data-theme="dark"] .case-study-stack-bento .case-study-feature .case-study-media{background:#1d2a1e!important}
-html[data-theme="dark"] .case-study-stack-bento .case-study-copy,html[data-theme="dark"] .case-study-stack-bento .case-study-feature .case-study-copy{background:transparent!important;color:var(--white)!important}
-html[data-theme="dark"] .case-study-stack-bento .case-study-copy h3,html[data-theme="dark"] .case-study-stack-bento .case-study-hook,html[data-theme="dark"] .case-study-stack-bento .case-study-copy footer,html[data-theme="dark"] .case-study-stack-bento .case-study-metrics dt{color:var(--white)!important}
-html[data-theme="dark"] .case-study-stack-bento .case-study-copy header,html[data-theme="dark"] .case-study-stack-bento .case-study-metrics dd{color:color-mix(in srgb,var(--white) 70%,transparent)!important}
-@media (hover:hover) and (pointer:fine){html[data-theme="dark"] .case-study-stack-bento>.case-study-card:hover,html[data-theme="dark"] .case-study-stack-bento>.case-study-card:focus-within{background:var(--accent-deep)!important;border-color:var(--accent-deep)!important}}
+/* Work menu panel keeps the same readable dark-on-paper logic in every state. */
+.work-menu-panel{background:var(--ink)}
+.work-menu-panel a:hover,.work-menu-panel a:focus-visible{background:var(--accent)}
 
-/* Work navigation opens on paper: use the dark text palette in every state. */
-html[data-theme="dark"] .work-menu-panel{background:var(--paper)!important;color:var(--ink)!important}
-html[data-theme="dark"] .work-menu-panel a,html[data-theme="dark"] .work-menu-panel .work-menu-disabled{color:var(--ink)!important}
-html[data-theme="dark"] .work-menu-panel small,html[data-theme="dark"] .work-menu-panel a em,html[data-theme="dark"] .work-menu-panel .work-menu-disabled em{color:var(--muted)!important}
-html[data-theme="dark"] .work-menu-panel a:hover,html[data-theme="dark"] .work-menu-panel a:focus-visible{background:var(--paper-2)!important;color:var(--ink)!important}
-html[data-theme="dark"] .work-menu-panel a:hover small,html[data-theme="dark"] .work-menu-panel a:hover em,html[data-theme="dark"] .work-menu-panel a:focus-visible small,html[data-theme="dark"] .work-menu-panel a:focus-visible em{color:var(--muted)!important}
-
-/* A persistent reading guide for long case studies: quiet enough to sit beside
-   the story, but always available when someone wants to jump between sections. */
-.case-toc{position:fixed!important;z-index:30;top:clamp(142px,20vh,220px);left:max(22px,calc((100vw - 1420px)/2));display:block!important;width:176px;padding:0!important;border:0!important;border-radius:0!important;background:transparent!important;color:var(--ink)!important;box-shadow:none!important;backdrop-filter:none!important}
-.case-toc nav{position:static!important;width:auto!important;display:flex!important;flex-direction:column;gap:8px;padding:0!important;border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;backdrop-filter:none!important}
-.case-toc nav strong{margin:0 0 9px!important;padding:0!important;color:var(--muted)!important;font-size:10px!important;font-weight:750!important;letter-spacing:.12em!important;text-transform:uppercase!important}
-.case-toc a{position:relative;display:block;padding:8px 0 8px 14px!important;border-radius:0!important;background:transparent!important;color:var(--muted)!important;font-size:13px!important;font-weight:500!important;line-height:1.25!important;transition:color .2s ease,transform .2s ease!important}
+/* ---------- A quiet reading guide for long case studies ---------- */
+.case-toc{position:fixed;z-index:30;top:50%;left:max(22px,calc((100vw - 1320px)/2));display:block;width:176px;padding:0;border:0;border-radius:0;background:transparent;color:var(--ink);box-shadow:none;backdrop-filter:none;transform:translateY(-50%)}
+.case-toc nav{position:static;width:auto;display:flex;flex-direction:column;gap:8px;padding:0;border:0;border-radius:0;background:transparent;box-shadow:none;backdrop-filter:none}
+.case-toc nav strong{margin:0 0 9px;padding:0;color:var(--muted);font-size:10px;font-weight:750;letter-spacing:.12em;text-transform:uppercase}
+.case-toc a{position:relative;display:block;padding:8px 0 8px 14px;border-radius:0;background:transparent;color:var(--muted);font-size:13px;font-weight:500;line-height:1.25;transition:color .2s ease,transform .2s ease}
 .case-toc a::before{content:"";position:absolute;left:0;top:50%;width:4px;height:4px;border-radius:50%;background:currentColor;transform:translateY(-50%);opacity:.45;transition:height .2s ease,opacity .2s ease}
-.case-toc a[aria-current="location"]{color:var(--ink)!important;font-weight:700!important}
+.case-toc a[aria-current="location"]{color:var(--ink);font-weight:700}
 .case-toc a[aria-current="location"]::before{width:2px;height:18px;border-radius:2px;opacity:1}
-.case-toc a:hover,.case-toc a:focus-visible{background:transparent!important;color:var(--ink)!important;transform:translateX(3px);outline:none!important}
+.case-toc a:hover,.case-toc a:focus-visible{background:transparent;color:var(--ink);transform:translateX(3px);outline:none}
 .case-toc a:hover::before,.case-toc a:focus-visible::before{opacity:1}
-@media (max-width:760px){.case-toc{display:none!important}}
+.case-page section[id]{scroll-margin-top:82px}
+@media (max-width:1320px){.case-toc{display:none}}
 
-/* Recommendation cards keep a light hover surface in this theme, so every
-   supporting label must stay in the ink palette rather than inherit dark-card text. */
-html[data-theme="dark"] .recommendation-card:hover,html[data-theme="dark"] .recommendation-card:focus-within{background:var(--paper)!important;border-color:var(--line)!important;color:var(--ink)!important}
-html[data-theme="dark"] .recommendation-card:hover>header,html[data-theme="dark"] .recommendation-card:focus-within>header,html[data-theme="dark"] .recommendation-card:hover footer span,html[data-theme="dark"] .recommendation-card:focus-within footer span{color:var(--muted)!important}
-html[data-theme="dark"] .recommendation-card:hover footer,html[data-theme="dark"] .recommendation-card:focus-within footer{border-color:var(--line)!important}
-html[data-theme="dark"] .recommendation-card:hover .recommendation-link-trigger,html[data-theme="dark"] .recommendation-card:focus-within .recommendation-link-trigger{background:var(--ink)!important;color:var(--white)!important}
-
-/* Restore the portfolio cursor on desktop pointers only; touch and keyboard
-   interaction retain their native affordances. */
-@media (pointer:fine){body,a,button,input,textarea,select,summary{cursor:none!important}}
-
-/* A premium paper-plane pointer inspired by Telegram's visual language. Its
-   upper-left nose is the click hotspot, so it still behaves like a real cursor. */
-.custom-cursor-plane{width:30px;height:30px;transition:opacity .16s ease}
-.cursor-plane{position:absolute;left:-1px;top:-1px;width:26px;height:26px;display:block;filter:drop-shadow(0 2px 2px rgba(255,255,255,.75));transform-origin:3px 3px;transition:transform .22s cubic-bezier(.22,1,.36,1)}
-.cursor-plane svg{display:block;width:100%;height:100%;overflow:visible}
-.cursor-plane-body{fill:#111;stroke:#111;stroke-width:1.6;stroke-linejoin:round}
-.cursor-plane-fold{fill:none;stroke:#fff;stroke-width:1.25;stroke-linecap:round;stroke-linejoin:round;opacity:.9}
-.custom-cursor-plane.is-interactive .cursor-plane{transform:scale(1.08)}
-.custom-cursor-plane.is-pressed .cursor-plane{transform:scale(.88)}
-.custom-cursor-plane .cursor-label{left:26px;top:22px;background:#111;color:#fff;box-shadow:none}
-
-/* The lead case carries the green visual weight. Supporting projects stay
-   bright and editorial, so the hierarchy is obvious at a glance. */
-.case-study-stack-bento>.case-study-card:not(.case-study-feature){background:var(--paper)!important;border-color:var(--line)!important;color:var(--ink)!important}
-.case-study-stack-bento>.case-study-card:not(.case-study-feature) .case-study-media{background:var(--paper-2)!important}
-.case-study-stack-bento>.case-study-card:not(.case-study-feature) .case-study-copy{background:transparent!important;color:var(--ink)!important}
-.case-study-stack-bento>.case-study-card:not(.case-study-feature) .case-study-copy header,.case-study-stack-bento>.case-study-card:not(.case-study-feature) .case-study-metrics dd{color:var(--muted)!important}
-.case-study-stack-bento>.case-study-card:not(.case-study-feature) .case-study-copy h3,.case-study-stack-bento>.case-study-card:not(.case-study-feature) .case-study-hook,.case-study-stack-bento>.case-study-card:not(.case-study-feature) .case-study-metrics dt,.case-study-stack-bento>.case-study-card:not(.case-study-feature) .case-study-copy footer{color:var(--ink)!important}
-.case-study-stack-bento>.case-study-card:not(.case-study-feature) .case-study-metrics,.case-study-stack-bento>.case-study-card:not(.case-study-feature) .case-study-metrics>div+div{border-color:var(--line)!important}
-.case-study-stack-bento>.case-study-card:not(.case-study-feature) .case-study-copy footer{border-color:var(--line)!important}
-.case-study-stack-bento>.case-study-card:not(.case-study-feature) .case-study-copy footer .arrow-icon{background:var(--warm)!important;color:var(--ink)!important}
-@media (hover:hover) and (pointer:fine){.case-study-stack-bento>.case-study-card:not(.case-study-feature):hover,.case-study-stack-bento>.case-study-card:not(.case-study-feature):focus-within{background:var(--white)!important;border-color:var(--line)!important}.case-study-stack-bento>.case-study-card:not(.case-study-feature):hover .case-study-media,.case-study-stack-bento>.case-study-card:not(.case-study-feature):focus-within .case-study-media{background:color-mix(in srgb,var(--paper-2) 84%,var(--warm) 16%)!important}}
-html[data-theme="dark"] .case-study-stack-bento>.case-study-card:not(.case-study-feature){background:var(--paper)!important;border-color:var(--line)!important;color:var(--ink)!important}
-html[data-theme="dark"] .case-study-stack-bento>.case-study-card:not(.case-study-feature) .case-study-media{background:var(--paper-2)!important}
-html[data-theme="dark"] .case-study-stack-bento>.case-study-card:not(.case-study-feature) .case-study-copy{color:var(--ink)!important}
-html[data-theme="dark"] .case-study-stack-bento>.case-study-card:not(.case-study-feature) .case-study-copy h3,html[data-theme="dark"] .case-study-stack-bento>.case-study-card:not(.case-study-feature) .case-study-hook,html[data-theme="dark"] .case-study-stack-bento>.case-study-card:not(.case-study-feature) .case-study-metrics dt,html[data-theme="dark"] .case-study-stack-bento>.case-study-card:not(.case-study-feature) .case-study-copy footer{color:var(--ink)!important}
-html[data-theme="dark"] .case-study-stack-bento>.case-study-card:not(.case-study-feature) .case-study-copy header,html[data-theme="dark"] .case-study-stack-bento>.case-study-card:not(.case-study-feature) .case-study-metrics dd{color:var(--muted)!important}
-html[data-theme="dark"] .case-study-stack-bento>.case-study-card:not(.case-study-feature) .case-study-metrics,html[data-theme="dark"] .case-study-stack-bento>.case-study-card:not(.case-study-feature) .case-study-metrics>div+div,html[data-theme="dark"] .case-study-stack-bento>.case-study-card:not(.case-study-feature) .case-study-copy footer{border-color:var(--line)!important}
-@media (hover:hover) and (pointer:fine){html[data-theme="dark"] .case-study-stack-bento>.case-study-card:not(.case-study-feature):hover,html[data-theme="dark"] .case-study-stack-bento>.case-study-card:not(.case-study-feature):focus-within{background:var(--white)!important;border-color:var(--line)!important}html[data-theme="dark"] .case-study-stack-bento>.case-study-card:not(.case-study-feature):hover .case-study-media,html[data-theme="dark"] .case-study-stack-bento>.case-study-card:not(.case-study-feature):focus-within .case-study-media{background:color-mix(in srgb,var(--paper-2) 84%,var(--warm) 16%)!important}}
-
-/* The greeting explains itself above the word, without interrupting the hero. */
-.hero-language-greeting{z-index:12!important}
-.hero-language-greeting::after{display:none!important}
-.hero-language-tooltip{position:absolute;z-index:8;top:calc(100% + 14px);left:0;width:max-content;max-width:min(88vw,370px);display:flex;flex-direction:column;gap:6px;padding:13px 15px;border:1px solid var(--line);border-radius:14px;background:var(--white);color:var(--ink);box-shadow:0 16px 40px rgba(20,20,20,.14);font-size:11px;line-height:1.35;letter-spacing:normal;text-align:left;text-transform:none;white-space:normal;opacity:0;pointer-events:none;transform:translateY(-6px);transition:opacity .2s ease,transform .3s cubic-bezier(.22,1,.36,1)}
-.hero-language-tooltip strong{font-size:11px;font-weight:750}.hero-language-tooltip>span{color:var(--muted)}.hero-language-tooltip em{color:var(--accent-deep);font-family:var(--accent-font);font-size:12px;font-style:normal;line-height:1.3}
-.hero-language-greeting:hover .hero-language-tooltip,.hero-language-greeting:focus-visible .hero-language-tooltip{opacity:1;transform:translateY(0)}
-@media (max-width:760px){.hero-language-tooltip{left:0;max-width:calc(100vw - 32px)}}
-
-/* Restore the original showreel choreography on desktop: the hero remains a
-   pinned viewport while the compact reel expands, then releases into the work
-   section. Later homepage layout refinements had unintentionally disabled the
-   sticky stage and made the video move like a normal block. */
-@media (min-width:761px){
-  .hero-centered{
-    width:100vw;
-    margin-left:calc(50% - 50vw);
-    min-height:calc(190svh - 64px);
-    padding:0;
-  }
-  .hero-centered .hero-stage{
-    position:sticky;
-    top:64px;
-    height:calc(100svh - 64px);
-    min-height:680px;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:flex-start;
-    gap:68px;
-    padding:32px 32px 72px;
-    overflow:hidden;
-  }
-  .hero-centered .hero-preview{
-    flex:0 0 270px;
-    width:539px;
-    height:270px;
-    max-width:88vw;
-    margin:0 auto;
-  }
-}
+/* Recommendation cards keep readable ink-palette text on hover. */
+.recommendation-card:hover,.recommendation-card:focus-within{background:var(--paper);border-color:var(--line);color:var(--ink)}
+.recommendation-card:hover>header,.recommendation-card:focus-within>header,.recommendation-card:hover footer span,.recommendation-card:focus-within footer span{color:var(--muted)}
+.recommendation-card:hover footer,.recommendation-card:focus-within footer{border-color:var(--line)}
+.recommendation-card:hover .recommendation-link-trigger,.recommendation-card:focus-within .recommendation-link-trigger{background:var(--ink);color:var(--white)}

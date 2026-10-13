@@ -10,8 +10,8 @@ export default function Home(){return <PageFrame>
       <div className="hero-introduction">
         <LanguageGreeting className="reveal"/>
         <div className="hero-copy hero-copy-body reveal">
-          <h1 id="hero-title" className="hero-statement">Hi, I&apos;m Akshay. I design <span>impactful</span> solutions.</h1>
-          <div className="hero-support"><p>I&apos;m a Product Designer with 5+ years of experience, a Computer Science background, and an MA in Digital Design (HCI) from Heriot-Watt University. I use human-centred research and storytelling to turn complex workflows into clear, useful products that people trust.</p></div>
+          <h1 id="hero-title" className="hero-statement">I design products that people <em>actually</em> understand.</h1>
+          <div className="hero-support"><p>Product Designer with 5+ years turning complex workflows into clear, useful systems. Computer Science background, MA in Digital Design (HCI) from Heriot-Watt University.</p><p>I use human-centred research and storytelling to find the real problem — then design the simplest thing that solves it.</p></div>
           <div className="hero-cta-row"><Link className="button hero-primary-button" href="/work" data-cursor-label="View"><span>See my work</span><span className="button-icon" aria-hidden="true"><Arrow/></span></Link></div>
         </div>
       </div>
