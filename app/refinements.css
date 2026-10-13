@@ -56,13 +56,14 @@ a,button,summary{cursor:pointer}
 .hero-preview-video{position:relative;z-index:0;display:block;width:100%;height:100%;object-fit:cover}
 .hero-preview-kicker{position:absolute;z-index:2;left:18px;bottom:16px;padding:7px 13px;border-radius:999px;background:color-mix(in srgb,var(--ink) 80%,transparent);color:var(--white);font-size:11px;font-weight:650;letter-spacing:.04em}
 
-.hero-centered .hero-copy-body{max-width:none;margin:0;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.85fr);column-gap:88px;align-items:start;text-align:left}
-.hero-centered .hero-statement{max-width:580px;margin:0;color:var(--ink);font-family:var(--accent-font);font-weight:400;font-size:clamp(40px,4.3vw,62px);line-height:1.06;letter-spacing:-.02em}
+.hero-centered .hero-copy-body{max-width:none;margin:0;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.85fr);column-gap:96px;align-items:start;text-align:left}
+.hero-centered .hero-statement{max-width:600px;margin:0;color:var(--ink);font-family:var(--accent-font);font-weight:400;font-size:clamp(42px,4.5vw,68px);line-height:1.08;letter-spacing:-.02em}
 .hero-centered .hero-statement em{font-family:var(--accent-font);font-style:italic;font-weight:400;color:var(--warm)}
 .hero-centered .hero-statement span{color:var(--warm)}
-.hero-centered .hero-support{max-width:460px;margin:4px 0 0;color:var(--muted);font-size:17px;line-height:1.65;text-align:left}
-.hero-centered .hero-support p+p{margin-top:24px}
-.hero-centered .hero-cta-row{grid-column:2;justify-content:flex-start;margin-top:36px}
+.hero-centered .hero-support{max-width:480px;margin:12px 0 0;color:var(--muted);font-size:16px;line-height:1.7;text-align:left}
+.hero-centered .hero-support p{margin:0}
+.hero-centered .hero-support p+p{margin-top:16px}
+.hero-centered .hero-cta-row{grid-column:2;justify-content:flex-start;margin-top:44px;display:flex;gap:12px;flex-wrap:wrap}
 .hero-centered .hero-primary-button{background:var(--ink)!important;border-color:var(--ink)!important;color:var(--white)!important;min-height:52px;padding:6px 7px 6px 22px;font-size:13px}
 .hero-centered .hero-primary-button .button-icon{background:var(--warm);color:var(--ink)}
 .hero-centered .hero-primary-button:hover,.hero-centered .hero-primary-button:focus-visible{background:var(--accent-deep)!important;border-color:var(--accent-deep)!important;color:var(--white)!important}
@@ -157,8 +158,9 @@ a,button,summary{cursor:pointer}
 .page-hero{padding:68px 0 40px}
 .page-hero h1{font-family:var(--accent-font);font-weight:400;letter-spacing:-.02em;font-size:clamp(46px,5.6vw,76px)}
 .page-hero p{font-size:18px;line-height:1.6}
-.section{padding-block:120px}
-.work-feature{padding-top:0}
+.section{padding-block:140px}
+.work-feature{padding-top:0;padding-bottom:160px}
+.featured-work{padding-top:64px}
 .work-snapshot>p,.work-snapshot dl{font-size:15px}
 .work-snapshot strong{font-size:13px}
 .site-footer,.site-footer p{font-size:13px}
@@ -189,6 +191,13 @@ a,button,summary{cursor:pointer}
 }
 
 /* ---------- Mobile is a distinct, compact reading mode ---------- */
+/* Editorial headings for section introductions */
+.editorial-heading{display:grid;grid-template-columns:80px minmax(0,1fr);gap:40px;margin-bottom:72px;align-items:start}
+.editorial-heading>span{font-size:13px;font-weight:700;color:var(--muted);padding-top:6px;letter-spacing:.05em}
+.editorial-heading small{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.13em;color:var(--warm);margin-bottom:16px;font-weight:600}
+.editorial-heading h2{font-size:clamp(44px,5vw,72px);max-width:900px;line-height:1.12;color:var(--ink)}
+.editorial-heading p{font-size:16px;color:var(--muted);max-width:700px;margin-top:16px;line-height:1.65}
+
 @media (max-width:760px){
   html{scroll-padding-top:56px}
   body{overflow-x:clip}

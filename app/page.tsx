@@ -10,27 +10,27 @@ export default function Home(){return <PageFrame>
       <div className="hero-introduction">
         <LanguageGreeting className="reveal"/>
         <div className="hero-copy hero-copy-body reveal">
-          <h1 id="hero-title" className="hero-statement">I design products that people <em>actually</em> understand.</h1>
-          <div className="hero-support"><p>Product Designer with 5+ years turning complex workflows into clear, useful systems. Computer Science background, MA in Digital Design (HCI) from Heriot-Watt University.</p><p>I use human-centred research and storytelling to find the real problem — then design the simplest thing that solves it.</p></div>
-          <div className="hero-cta-row"><Link className="button hero-primary-button" href="/work" data-cursor-label="View"><span>See my work</span><span className="button-icon" aria-hidden="true"><Arrow/></span></Link></div>
+          <h1 id="hero-title" className="hero-statement">I find the real problem, then design the <em>simplest</em> solution.</h1>
+          <div className="hero-support"><p>Product Designer with 5+ years shipping clarity. I start with research, not screens. Most design problems aren't design problems.</p><p>CS background · MA in Digital Design (HCI) · Built for travel, SaaS, AI, and teams that care about usable products.</p></div>
+          <div className="hero-cta-row"><Link className="button hero-primary-button" href="/work" data-cursor-label="View"><span>See my work</span><span className="button-icon" aria-hidden="true"><Arrow/></span></Link><Link className="button hero-primary-button" href="/contact" data-cursor-label="Open" style={{background: 'transparent', color: 'var(--ink)', border: '1px solid var(--ink)'}}><span>Let's talk</span><span className="button-icon" aria-hidden="true"><Arrow/></span></Link></div>
         </div>
       </div>
     </div>
   </section>
 
   <section className="featured-work shell reveal" id="selected-work">
-    <div className="editorial-heading reveal"><span>01</span><div><small>Work</small><h2>A few products I&apos;ve helped make clearer.</h2></div></div>
+    <div className="editorial-heading reveal"><span>01</span><div><small>Recent work</small><h2>Where I found the real problem (and fixed it).</h2><p>Four products across travel, AI, and healthcare. Each started with the same pattern: the reported problem wasn't the actual problem.</p></div></div>
     <CaseStudyStack bento/>
-    <div className="more-work-heading reveal"><span>More selected work</span><Link className="text-link" href="/work" data-cursor-label="View">See all work <Arrow/></Link></div>
+    <div className="more-work-heading reveal"><span>Earlier projects</span><Link className="text-link" href="/work" data-cursor-label="View">See all projects <Arrow/></Link></div>
   </section>
 
   <section className="systems-thinking shell">
     <div className="systems-thinking-prose reveal">
-      <small>How I actually find the problem</small>
+      <small>Why your redesign might be solving the wrong problem</small>
       <div>
-        <p>I don&apos;t start with the screen. I start with whoever&apos;s frustrated by it — a user stuck mid-task, a support team fielding the same complaint, a metric that won&apos;t move no matter what gets redesigned.</p>
-        <p>By the time I open Figma, I usually already know which three screens are actually involved.</p>
-        <div className="systems-thinking-proof">On LUXTJ, a &ldquo;checkout problem&rdquo; turned out to start on the calendar screen, two steps earlier. <Link href="/work/luxtj" data-cursor-label="Read">See how that unfolded <Arrow/></Link></div>
+        <p>Most design problems aren't design problems. A slow checkout flow isn't actually about the checkout screen. A confusing dashboard isn't about the dashboard. I start by finding where the frustration actually comes from — the user stuck mid-task, the support team fielding the same complaint for the tenth time, the metric that won't move.</p>
+        <p>The screen is usually just the symptom.</p>
+        <div className="systems-thinking-proof">On LUXTJ: "checkout drop-off" → traced it to a calendar screen two steps earlier. Fixing the wrong problem would've wasted weeks. <Link href="/work/luxtj" data-cursor-label="Read">Read the full case <Arrow/></Link></div>
       </div>
     </div>
   </section>
