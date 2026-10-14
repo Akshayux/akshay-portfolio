@@ -1,17 +1,22 @@
-/* Clean & Aesthetic Homepage - Blue/Teal Palette Throughout */
+/* Personal Brand Portfolio - Blue/Teal Palette */
 
-/* Hero Section - Minimal & Refined */
-.hero-creative{min-height:calc(100vh - 84px);padding:120px 0;display:flex;align-items:center;background:linear-gradient(135deg,rgba(190,233,232,.12),rgba(98,182,203,.08))}
-.hero-creative-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:100px;align-items:center}
-.hero-creative-content{max-width:700px}
+/* Personal Hero - Brand Focus */
+.personal-hero{min-height:calc(100vh - 84px);padding:120px 0;display:flex;align-items:center;background:linear-gradient(135deg,rgba(190,233,232,.12),rgba(98,182,203,.08))}
+.personal-hero-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:100px;align-items:center}
+.personal-hero-content{max-width:700px}
 
-.hero-creative-title{font-size:clamp(56px,5.5vw,72px);line-height:1.2;letter-spacing:-.02em;margin:0 0 28px;color:var(--ink);font-weight:500}
-.hero-creative-title .color-accent-1{color:var(--yale-blue);font-weight:600}
-.hero-creative-title .color-accent-2{color:var(--pacific-blue);font-weight:600}
+.personal-hero-title{font-size:clamp(48px,5.2vw,68px);line-height:1.15;letter-spacing:-.025em;margin:0 0 12px;color:var(--yale-blue);font-weight:500}
+.personal-hero-role{font-size:24px;color:var(--pacific-blue);font-weight:600;margin:0 0 24px;letter-spacing:-.01em}
+.personal-hero-description{font-size:18px;line-height:1.8;color:var(--ink);max-width:620px;margin:0 0 40px;font-weight:400}
+.personal-hero-cta{display:flex;gap:20px;flex-wrap:wrap;margin-top:40px}
+.personal-hero-image{position:relative;width:100%;max-width:450px}
+.personal-hero-image .portrait{width:100%;height:auto;border-radius:20px;box-shadow:0 40px 80px rgba(27,73,101,.15);display:block}
 
-.hero-creative-subtitle{font-size:18px;line-height:1.8;color:var(--muted);max-width:600px;margin:0 0 44px;font-weight:400}
-.hero-creative-cta{display:flex;gap:20px;flex-wrap:wrap;margin-top:44px}
-.hero-creative-visual{position:relative;width:100%;max-width:500px;aspect-ratio:1;border-radius:16px;overflow:hidden;background:linear-gradient(135deg,var(--pale-sky),var(--frozen-water));border:2px solid var(--fresh-sky)}
+/* About Brief Section */
+.about-brief{padding:100px 0;border-top:2px solid rgba(190,233,232,.3);background:linear-gradient(180deg,rgba(98,182,203,.04),transparent)}
+.about-brief-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:60px;text-align:center}
+.about-brief-item h3{font-size:32px;color:var(--yale-blue);font-weight:600;margin:0 0 12px;letter-spacing:-.01em}
+.about-brief-item p{font-size:16px;color:var(--muted);margin:0;line-height:1.6;font-weight:400}
 
 /* Approach Section - Cohesive Styling */
 .approach-section{padding:140px 0;border-top:2px solid var(--yale-blue);background:linear-gradient(180deg,rgba(190,233,232,.12),rgba(98,182,203,.06))}

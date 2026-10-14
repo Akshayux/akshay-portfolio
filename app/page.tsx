@@ -1,51 +1,73 @@
 import Link from 'next/link';
 import {Arrow,PageFrame,TestimonialsSection} from './components';
-import HeroPreview from './hero-preview';
+import Image from 'next/image';
 
 export default function Home(){return <PageFrame>
-  {/* HERO: Bold, Narrative-Driven */}
-  <section className="hero-creative shell reveal" aria-labelledby="hero-title">
-    <div className="hero-creative-grid">
-      <div className="hero-creative-content">
-        <h1 id="hero-title" className="hero-creative-title reveal">
-          I turn <span className="color-accent-1">messy problems</span> into <span className="color-accent-2">simple systems</span>.
-        </h1>
-        <p className="hero-creative-subtitle reveal">
-          Product Designer. 5+ years. I start with real people, not Figma. Most design problems aren't design problems.
+  {/* Hero: Personal Brand */}
+  <section className="personal-hero shell reveal">
+    <div className="personal-hero-grid">
+      <div className="personal-hero-content">
+        <h1 className="personal-hero-title">Akshay Venkata Narayana</h1>
+        <p className="personal-hero-role">Product Designer</p>
+        <p className="personal-hero-description">
+          I design for clarity. 5+ years crafting digital products that users actually understand.
+          I start with research, solve real problems, and ship solutions that stick.
         </p>
-        <div className="hero-creative-cta reveal">
-          <Link className="button-primary" href="/work">View work <Arrow/></Link>
-          <Link className="button-secondary" href="/contact">Get in touch <Arrow/></Link>
+        <div className="personal-hero-cta">
+          <Link className="button-primary" href="/work">View my work <Arrow/></Link>
+          <Link className="button-secondary" href="/contact">Let's talk <Arrow/></Link>
         </div>
       </div>
-      <div className="hero-creative-visual reveal">
-        <HeroPreview/>
+      <div className="personal-hero-image reveal">
+        <Image
+          src="/akshay-portrait.jpg"
+          alt="Akshay Venkata Narayana"
+          width={400}
+          height={400}
+          priority
+          className="portrait"
+        />
       </div>
     </div>
   </section>
 
-  {/* APPROACH: Storytelling with Color */}
+  {/* About Brief */}
+  <section className="about-brief shell reveal">
+    <div className="about-brief-grid">
+      <div className="about-brief-item">
+        <h3>5+ years</h3>
+        <p>Designing products at scale</p>
+      </div>
+      <div className="about-brief-item">
+        <h3>Research-first</h3>
+        <p>Problems solved through user understanding</p>
+      </div>
+      <div className="about-brief-item">
+        <h3>Travel → SaaS → AI</h3>
+        <p>Across industries and complexity</p>
+      </div>
+    </div>
+  </section>
+
+  {/* Approach */}
   <section className="approach-section approach-1">
     <div className="approach-content shell reveal">
-      <div className="approach-label">01. My Approach</div>
+      <div className="approach-label">How I work</div>
       <div>
-        <h2>Research first. Pixels later.</h2>
-        <p>I don't start with the screen. I start with the person frustrated in front of it. A user mid-task. A support team hearing the same complaint. A metric that won't budge.</p>
-        <p>By the time I open Figma, I already know which three screens matter.</p>
-        <div className="approach-highlight">
-          On LUXTJ: "checkout problem" → traced to calendar screen two steps earlier. Fixing the wrong thing would've wasted weeks.
-        </div>
+        <h2>Research first. Design later.</h2>
+        <p>I don't jump to solutions. Every project starts with understanding—the user, the problem, the constraints. Real research beats assumptions every time.</p>
+        <p className="approach-highlight-text">The best design feels inevitable because it solves what people actually need.</p>
       </div>
     </div>
   </section>
 
-  {/* WORK: Horizontal Scroll with Parallax */}
+  {/* Featured Work */}
   <section className="work-showcase shell reveal" id="selected-work">
     <div className="work-intro reveal">
-      <div className="work-label">02. Selected Work</div>
+      <div className="work-label">Featured Projects</div>
       <div>
-        <h2>Where clarity changed things.</h2>
-        <p>Four projects. Same pattern: the reported problem wasn't the real one. Here's how I found each.</p>
+        <h2>Where I've made an impact.</h2>
+        <p>Four products. Four distinct problems. One approach: find the real issue, design the simplest solution.</p>
       </div>
     </div>
 
@@ -57,9 +79,9 @@ export default function Home(){return <PageFrame>
         <div className="work-card-content">
           <h3>LUXTJ Checkout</h3>
           <p className="work-metric">60% → 22%</p>
-          <p className="work-description">Checkout drop-off</p>
-          <p className="work-insight">The problem wasn't the checkout screen—it started two steps earlier on the calendar.</p>
-          <Link href="/work/luxtj" className="work-link">Read case <Arrow/></Link>
+          <p className="work-description">Drop-off reduction</p>
+          <p className="work-insight">Checkout wasn't the problem. Two steps earlier was. Fixed the real issue.</p>
+          <Link href="/work/luxtj" className="work-link">Read the case <Arrow/></Link>
         </div>
       </div>
 
@@ -71,8 +93,8 @@ export default function Home(){return <PageFrame>
           <h3>Simpo AI Onboarding</h3>
           <p className="work-metric">8 → 4</p>
           <p className="work-description">Setup steps</p>
-          <p className="work-insight">Users bailed mid-onboarding. Clearer progression made the difference.</p>
-          <Link href="/work/simpo-ai" className="work-link">View work <Arrow/></Link>
+          <p className="work-insight">Clearer progression meant users stayed. Complexity wasn't the issue—clarity was.</p>
+          <Link href="/work/simpo-ai" className="work-link">View project <Arrow/></Link>
         </div>
       </div>
 
@@ -81,10 +103,10 @@ export default function Home(){return <PageFrame>
           <div className="work-placeholder luxtj-extranet">LUXTJ Extranet</div>
         </div>
         <div className="work-card-content">
-          <h3>LUXTJ Extranet</h3>
-          <p className="work-metric">3</p>
-          <p className="work-description">Connected products</p>
-          <p className="work-insight">Five scattered workflows became one connected workspace.</p>
+          <h3>LUXTJ Extranet Platform</h3>
+          <p className="work-metric">3 products unified</p>
+          <p className="work-description">Connected system</p>
+          <p className="work-insight">Scattered workflows became one coherent platform. System thinking solved it.</p>
           <Link href="/work/luxtj-extranet" className="work-link">Explore <Arrow/></Link>
         </div>
       </div>
@@ -94,36 +116,36 @@ export default function Home(){return <PageFrame>
           <div className="work-placeholder scotcare">ScotCare</div>
         </div>
         <div className="work-card-content">
-          <h3>ScotCare</h3>
+          <h3>ScotCare Healthcare</h3>
           <p className="work-metric">WCAG 2.2 AA</p>
-          <p className="work-description">Healthcare clarity</p>
-          <p className="work-insight">Safety and clarity matter most when someone feels unwell.</p>
-          <Link href="/work/scotcare" className="work-link">Read study <Arrow/></Link>
+          <p className="work-description">Accessibility standard</p>
+          <p className="work-insight">Healthcare needs clarity more than anywhere. Designed for everyone.</p>
+          <Link href="/work/scotcare" className="work-link">Study <Arrow/></Link>
         </div>
       </div>
     </div>
   </section>
 
-  {/* WHY: Philosophy Section */}
+  {/* Philosophy */}
   <section className="philosophy-section reveal">
     <div className="philosophy-content shell">
-      <div className="philosophy-label">03. Philosophy</div>
+      <div className="philosophy-label">My Philosophy</div>
       <div>
-        <h2>Design isn't decoration.</h2>
-        <p>It's the bridge between what someone needs and what they can actually use. Most design problems are really research problems. Most redesigns solve the wrong thing.</p>
-        <p className="philosophy-bold">I find the real problem. Then I make it simple.</p>
+        <h2>Design solves problems. Beautiful ones are bonuses.</h2>
+        <p>I design for people. Real people with real constraints. If it doesn't solve their problem, it doesn't matter how it looks.</p>
+        <p className="philosophy-bold">Clear design is kind design.</p>
       </div>
     </div>
   </section>
 
-  {/* NEXT STEPS: Clear Conversion */}
+  {/* CTA */}
   <section className="cta-section shell reveal">
     <div className="cta-content">
-      <h2>Ready for clarity?</h2>
-      <p>Let's talk about your problem.</p>
+      <h2>Let's work together</h2>
+      <p>Got a design challenge? Let's talk about it.</p>
       <div className="cta-buttons">
         <Link className="button-primary button-large" href="/work">See all work <Arrow/></Link>
-        <Link className="button-secondary button-large" href="/contact">Start a conversation <Arrow/></Link>
+        <Link className="button-secondary button-large" href="/contact">Get in touch <Arrow/></Link>
       </div>
     </div>
   </section>
