@@ -1,19 +1,22 @@
 /* Personal Brand Portfolio - Blue/Teal Palette */
 
-/* Personal Hero - Brand Focus */
-.personal-hero{min-height:calc(100vh - 84px);padding:120px 0;display:flex;align-items:center;background:linear-gradient(135deg,rgba(190,233,232,.12),rgba(98,182,203,.08))}
-.personal-hero-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:100px;align-items:center}
-.personal-hero-content{max-width:700px}
+/* Personal Hero - Centered Layout */
+.personal-hero{min-height:100vh;padding:80px 0 60px;display:flex;flex-direction:column;justify-content:center;align-items:center;background:#f2f2f2;position:relative}
+.personal-hero-centered{text-align:center;max-width:900px;width:100%;padding:0 40px}
 
-.personal-hero-logo{margin-bottom:32px}
-.personal-hero-logo img{width:57px;height:45px;display:block}
+.personal-hero-badge{display:inline-block;background:var(--pacific-blue);color:var(--white);padding:8px 20px;border-radius:24px;font-size:14px;font-weight:600;margin-bottom:40px;letter-spacing:.05em}
 
-.personal-hero-title{font-size:clamp(48px,5.2vw,68px);line-height:1.15;letter-spacing:-.025em;margin:0 0 12px;color:var(--yale-blue);font-weight:500}
-.personal-hero-role{font-size:24px;color:var(--pacific-blue);font-weight:600;margin:0 0 24px;letter-spacing:-.01em}
-.personal-hero-description{font-size:18px;line-height:1.8;color:var(--ink);max-width:620px;margin:0 0 40px;font-weight:400}
-.personal-hero-cta{display:flex;gap:20px;flex-wrap:wrap;margin-top:40px}
-.personal-hero-image{position:relative;width:100%;max-width:450px}
-.personal-hero-image .portrait{width:100%;height:auto;border-radius:20px;box-shadow:0 40px 80px rgba(27,73,101,.15);display:block}
+.personal-hero-title-inline{font-size:clamp(52px,6.5vw,84px);line-height:1.1;letter-spacing:-.02em;margin:0 0 32px;color:var(--ink);font-weight:700}
+.personal-hero-image-inline{display:inline-block;margin:0 20px;position:relative;top:6px}
+.personal-hero-image-inline .portrait-inline{width:140px;height:140px;border-radius:16px;box-shadow:0 16px 40px rgba(0,0,0,.15);object-fit:cover;display:block}
+
+.personal-hero-description{font-size:18px;line-height:1.8;color:var(--muted);max-width:700px;margin:0 auto 48px;font-weight:400}
+.personal-hero-description .highlight{color:var(--pacific-blue);font-style:italic;font-weight:500}
+
+.personal-hero-cta{display:flex;gap:20px;justify-content:center;flex-wrap:wrap;margin-top:20px}
+
+.scroll-indicator{display:flex;justify-content:center;position:absolute;bottom:40px;left:50%;transform:translateX(-50%);color:var(--muted);opacity:.6;animation:bounce 2s infinite}
+@keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0);}50%{transform:translateX(-50%) translateY(8px)}}
 
 /* About Brief Section */
 .about-brief{padding:100px 0;border-top:2px solid rgba(190,233,232,.3);background:linear-gradient(180deg,rgba(98,182,203,.04),transparent)}
