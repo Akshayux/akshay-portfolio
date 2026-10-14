@@ -13,8 +13,9 @@
   --yale-blue:#1b4965;
   --pale-sky:#cae9ff;
   --fresh-sky:#5fa8d3;
-  --accent-font:"DM Serif Display",Georgia,"Times New Roman",serif;
-  --body-font:Inter,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  --primary-blue:#4d80d1;
+  --accent-font:"Lily Script One",cursive;
+  --body-font:Geist,"Segoe UI","Helvetica Neue",Helvetica,Arial,sans-serif;
   --white:#ffffff;
   --radius:8px;
   --shadow:0 24px 60px rgba(20,19,16,.06);

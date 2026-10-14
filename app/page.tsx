@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import {Arrow,PageFrame,TestimonialsSection} from './components';
-import Image from 'next/image';
 
 export default function Home(){return <PageFrame>
   {/* Hero: Personal Brand - Centered Layout */}
@@ -8,16 +7,7 @@ export default function Home(){return <PageFrame>
     <div className="personal-hero-centered">
       <div className="personal-hero-badge">Product & UX Designer</div>
       <h1 className="personal-hero-title-inline">
-        Hi, <span className="personal-hero-image-inline">
-          <Image
-            src="/akshay-portrait.jpg"
-            alt="Akshay Venkata Narayana"
-            width={140}
-            height={140}
-            priority
-            className="portrait-inline"
-          />
-        </span> I'm Akshay
+        Hi, <img src="/akshay-portrait.jpg" alt="Akshay Venkata Narayana" width="140" height="140" className="portrait-inline"/> I'm Akshay
       </h1>
       <p className="personal-hero-description">
         I design for clarity. <span className="highlight">5+ years crafting digital products</span> that users actually understand. I start with research, solve real problems, and ship solutions that stick.
