@@ -74,8 +74,8 @@
 
 .personal-hero-image-inline {
   flex: 0 0 auto;
-  width: 218px;
-  height: 232px;
+  width: 169px;
+  height: 176px;
   padding: 7px;
   border: 1px solid rgba(20, 20, 20, 0.05);
   border-radius: 17px;
@@ -158,8 +158,8 @@
   }
 
   .personal-hero-image-inline {
-    width: 170px;
-    height: 184px;
+    width: 135px;
+    height: 140px;
   }
 
   .personal-hero-description {
@@ -204,8 +204,8 @@
   }
 
   .personal-hero-image-inline {
-    width: 112px;
-    height: 124px;
+    width: 95px;
+    height: 100px;
     padding: 5px;
     border-radius: 12px;
   }
