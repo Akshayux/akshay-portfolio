@@ -94,7 +94,7 @@ p{color:var(--muted)}
 .reduce-motion *{scroll-behavior:auto!important;animation:none!important;transition:none!important}
 
 /* Navigation */
-.site-header{position:sticky;z-index:100;top:0;height:84px;background:color-mix(in srgb,var(--paper) 90%,transparent);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+.site-header{position:sticky;z-index:100;top:0;height:84px;background:color-mix(in srgb,var(--paper) 90%,transparent);backdrop-filter:blur(18px)}
 .header-inner{height:100%;display:grid;grid-template-columns:auto 1fr;align-items:center}
 .brand{display:block;width:max-content;line-height:0}
 .brand img{display:block;width:42px;height:42px;object-fit:contain;transition:transform .35s cubic-bezier(.22,1,.36,1)}
