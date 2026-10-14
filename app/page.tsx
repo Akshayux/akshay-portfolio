@@ -1,9 +1,11 @@
 import Link from 'next/link';
 import {Arrow,PageFrame,TestimonialsSection} from './components';
+import HeroCanvas from './hero-canvas';
 
 export default function Home(){return <PageFrame>
   {/* Hero: Personal Brand - Centered Layout */}
   <section className="personal-hero reveal">
+    <HeroCanvas/>
     <div className="personal-hero-centered">
       <div className="personal-hero-badge">Product & UX Designer</div>
       <h1 className="personal-hero-title-inline">
@@ -12,10 +14,6 @@ export default function Home(){return <PageFrame>
       <p className="personal-hero-description">
         I design for clarity. <span className="highlight">5+ years crafting digital products</span> that users actually understand. I start with research, solve real problems, and ship solutions that stick.
       </p>
-      <div className="personal-hero-cta">
-        <Link className="button-primary" href="/work">View my work <Arrow/></Link>
-        <Link className="button-secondary" href="/contact">Let's talk <Arrow/></Link>
-      </div>
     </div>
     <div className="scroll-indicator">
       <svg viewBox="0 0 24 24" width="24" height="24">
