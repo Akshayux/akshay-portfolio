@@ -2,7 +2,7 @@
 
 /* Hero Section */
 .personal-hero {
-  min-height: 100vh;
+  height: 100vh;
   position: relative;
   overflow: hidden;
   border-radius: 58px;
@@ -11,7 +11,7 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 100px 28px 112px;
+  padding: 80px 28px 80px;
   margin: 34px;
 }
 
@@ -115,7 +115,7 @@
 
 .scroll-indicator {
   position: absolute;
-  bottom: 66px;
+  bottom: 40px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -125,7 +125,6 @@
   text-decoration: none;
   padding: 10px;
   z-index: 2;
-  gap: -9px;
 }
 
 .scroll-indicator:hover {
