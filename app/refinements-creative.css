@@ -140,6 +140,29 @@
   border-bottom: 2px solid currentColor;
   transform: rotate(45deg);
   margin-top: -9px;
+  animation: bounce-arrow 2s infinite;
+}
+
+.scroll-indicator svg:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.scroll-indicator svg:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+@keyframes bounce-arrow {
+  0% {
+    opacity: 1;
+    transform: rotate(45deg) translateY(0);
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(45deg) translateY(8px);
+  }
 }
 
 /* Tablets and smaller laptops */
