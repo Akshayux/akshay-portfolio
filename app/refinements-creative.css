@@ -4,13 +4,13 @@
 .personal-hero{min-height:100vh;padding:80px 0 60px;display:flex;flex-direction:column;justify-content:center;align-items:center;background:url(/hero-bg.svg) center/cover no-repeat;background-clip:border-box;position:relative;margin:20px;border-radius:40px;overflow:hidden}
 
 .hero-pixel-canvas{position:absolute;top:0;left:0;width:100%;height:100%;cursor:crosshair;z-index:1}
-.personal-hero-centered{text-align:center;max-width:900px;width:100%;padding:0 40px;position:relative;z-index:2}
+.personal-hero-centered{text-align:center;max-width:1100px;width:100%;padding:0 40px;position:relative;z-index:2}
 
 .personal-hero-badge{display:inline-block;background:var(--primary-blue);color:var(--white);padding:8px 20px;border-radius:24px;font-size:14px;font-weight:600;margin-bottom:40px;letter-spacing:.05em}
 
-.personal-hero-title-inline{font-size:clamp(52px,6.5vw,84px);line-height:1.1;letter-spacing:-.02em;margin:0 0 32px;color:var(--ink);font-weight:700}
-.personal-hero-image-inline{display:inline-block;margin:0 20px;position:relative;top:6px}
-.personal-hero-image-inline .portrait-inline{width:140px;height:140px;border-radius:16px;box-shadow:0 16px 40px rgba(0,0,0,.15);object-fit:cover;display:block}
+.personal-hero-title-inline{font-size:clamp(52px,6.5vw,84px);line-height:1.3;letter-spacing:-.02em;margin:0 0 32px;color:var(--ink);font-weight:700;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:12px}
+.personal-hero-image-inline{display:inline-block;margin:0 16px;vertical-align:middle;flex-shrink:0}
+.personal-hero-image-inline .portrait-inline{width:120px;height:120px;border-radius:14px;box-shadow:0 12px 32px rgba(0,0,0,.12);object-fit:cover;display:block}
 
 .personal-hero-description{font-size:18px;line-height:1.8;color:var(--muted);max-width:700px;margin:0 auto 48px;font-weight:400}
 .personal-hero-description .highlight{color:var(--pacific-blue);font-style:italic;font-weight:500}
