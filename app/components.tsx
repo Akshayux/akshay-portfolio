@@ -16,7 +16,7 @@ export function SiteHeader(){
   return <header className="site-header">
     <div className="shell header-inner">
       <Link className="brand" href="/" aria-label="Akshay Venkata Narayana, home" data-cursor-label="Home">
-        <img src="/akshay-logo.png" alt="" width="420" height="420"/>
+        <img src="/logo.svg" alt="" width="50" height="45"/>
       </Link>
       <nav className="primary-nav" aria-label="Primary navigation">
         <div className="work-menu">

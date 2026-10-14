@@ -7,6 +7,9 @@ export default function Home(){return <PageFrame>
   <section className="personal-hero shell reveal">
     <div className="personal-hero-grid">
       <div className="personal-hero-content">
+        <div className="personal-hero-logo">
+          <img src="/logo.svg" alt="Akshay Logo" width="57" height="45"/>
+        </div>
         <h1 className="personal-hero-title">Akshay Venkata Narayana</h1>
         <p className="personal-hero-role">Product Designer</p>
         <p className="personal-hero-description">

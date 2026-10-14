@@ -5,6 +5,9 @@
 .personal-hero-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:100px;align-items:center}
 .personal-hero-content{max-width:700px}
 
+.personal-hero-logo{margin-bottom:32px}
+.personal-hero-logo img{width:57px;height:45px;display:block}
+
 .personal-hero-title{font-size:clamp(48px,5.2vw,68px);line-height:1.15;letter-spacing:-.025em;margin:0 0 12px;color:var(--yale-blue);font-weight:500}
 .personal-hero-role{font-size:24px;color:var(--pacific-blue);font-weight:600;margin:0 0 24px;letter-spacing:-.01em}
 .personal-hero-description{font-size:18px;line-height:1.8;color:var(--ink);max-width:620px;margin:0 0 40px;font-weight:400}
