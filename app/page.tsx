@@ -22,6 +22,36 @@ export default function Home(){return <PageFrame>
     </div>
   </section>
 
+  {/* Selected Work */}
+  <section className="selected-work shell reveal">
+    <div className="selected-work-header">
+      <div className="selected-work-label">Selected work</div>
+      <h2 className="selected-work-title">Curated work that sells the shelf</h2>
+    </div>
+
+    <div className="selected-work-card">
+      <div className="selected-work-visual">
+        <div className="selected-work-placeholder">LUXTJ</div>
+      </div>
+      <div className="selected-work-content">
+        <div className="selected-work-meta">
+          <div className="selected-work-number">01</div>
+          <div>
+            <p className="selected-work-category">Luxury travel · Customer experience</p>
+            <p className="selected-work-readtime">9 MIN READ</p>
+          </div>
+        </div>
+        <div className="selected-work-metric">60% → 22% <span>CHECKOUT DROP-OFF</span></div>
+        <h3>The leak wasn't on the checkout screen</h3>
+        <p className="selected-work-description">I redesigned the booking journey to address the friction behind abandoned bookings</p>
+        <Link href="/work/luxtj" className="selected-work-cta">
+          VIEW CASE STUDY
+          <span className="cta-arrow">→</span>
+        </Link>
+      </div>
+    </div>
+  </section>
+
   {/* About Brief */}
   <section className="about-brief shell reveal">
     <div className="about-brief-grid">
