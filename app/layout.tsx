@@ -31,5 +31,5 @@ export default function RootLayout({children}:Readonly<{children:React.ReactNode
     sameAs:['https://linkedin.com/in/akshayproductdesigner','https://www.behance.net/akshayv7','https://medium.com/@akshayv2310','https://github.com/Akshayux'],
     knowsAbout:['Product design','UX design','UX research','Interaction design','Information architecture','Prototyping','Figma','Design systems'],
   };
-  return <html lang="en" data-theme="dark"><head><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous"/><link href="https://fonts.googleapis.com/css2?family=Lily+Script+One&family=Geist:wght@400;500;600;700;800&display=swap" rel="stylesheet"/><script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(personSchema)}}/></head><body><Motion>{children}</Motion></body></html>;
+  return <html lang="en" data-theme="dark"><head><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous"/><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Pacifico&display=swap" rel="stylesheet"/><script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(personSchema)}}/></head><body><Motion>{children}</Motion></body></html>;
 }
