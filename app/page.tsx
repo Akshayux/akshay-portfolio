@@ -1,14 +1,12 @@
 import Link from 'next/link';
 import {Arrow,PageFrame,TestimonialsSection} from './components';
 import HeroPreview from './hero-preview';
-import LanguageGreeting from './language-greeting';
 
 export default function Home(){return <PageFrame>
   {/* HERO: Bold, Narrative-Driven */}
   <section className="hero-creative shell reveal" aria-labelledby="hero-title">
     <div className="hero-creative-grid">
       <div className="hero-creative-content">
-        <LanguageGreeting className="reveal"/>
         <h1 id="hero-title" className="hero-creative-title reveal">
           I turn <span className="color-accent-1">messy problems</span> into <span className="color-accent-2">simple systems</span>.
         </h1>
