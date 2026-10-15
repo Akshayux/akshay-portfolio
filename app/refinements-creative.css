@@ -305,23 +305,13 @@
 .selected-work-visual {
   border-radius: 16px;
   overflow: hidden;
-  background: linear-gradient(135deg, #e0e7ff 0%, #f0f4ff 100%);
-  aspect-ratio: 4/3;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .selected-work-visual img {
   width: 100%;
   height: auto;
   display: block;
-}
-
-.selected-work-placeholder {
-  font-size: 48px;
-  font-weight: 700;
-  color: #4e83d8;
+  border-radius: 16px;
 }
 
 .selected-work-content {
@@ -392,26 +382,48 @@
   font-weight: 400;
 }
 
-.selected-work-cta {
-  display: inline-flex;
+.selected-work-cta-wrapper {
+  display: flex;
   align-items: center;
-  gap: 8px;
-  color: #4e83d8;
-  text-decoration: none;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.selected-work-cta-text {
   font-size: 14px;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  transition: gap 0.3s ease;
-  width: fit-content;
+  letter-spacing: 0.08em;
+  color: #191c20;
+  margin: 0;
 }
 
-.selected-work-cta:hover {
-  gap: 14px;
+.selected-work-cta-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #4e83d8;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+  text-decoration: none;
 }
 
-.cta-arrow {
-  font-size: 16px;
+.selected-work-cta-button:hover {
+  background: #3d70c1;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(78, 131, 216, 0.3);
+}
+
+.selected-work-cta-button svg {
+  width: 20px;
+  height: 20px;
+  stroke: currentColor;
 }
 
 /* Responsive */
