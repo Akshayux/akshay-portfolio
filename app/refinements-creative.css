@@ -550,3 +550,39 @@
 /* Reveal animation */
 .reveal{opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.22,1,.36,1),transform .8s cubic-bezier(.22,1,.36,1)}
 .reveal.is-visible{opacity:1;transform:translateY(0)}
+
+/* Work Showcase - Horizontal Scroll Carousel */
+.work-showcase{padding:120px 0;background:#ffffff}
+.work-intro{margin-bottom:80px}
+.work-label{font-size:14px;color:#191c20;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:16px}
+.work-intro h2{font-size:clamp(48px,5vw,72px);line-height:1.15;margin:0 0 24px;color:#191c20;font-weight:800;letter-spacing:-0.02em}
+.work-intro p{font-size:16px;color:#65676c;line-height:1.7;margin:0;max-width:780px}
+
+.work-scroll-container{display:flex;overflow-x:auto;gap:40px;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:40px 0;margin:0 -20px;padding-left:20px;padding-right:20px}
+.work-scroll-container::-webkit-scrollbar{height:6px}
+.work-scroll-container::-webkit-scrollbar-track{background:#f0f0f0;border-radius:10px}
+.work-scroll-container::-webkit-scrollbar-thumb{background:#4e83d8;border-radius:10px}
+
+.work-card{flex:0 0 calc(100% - 80px);min-width:calc(100vw - 120px);scroll-snap-align:center;scroll-snap-stop:always;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;background:#f2f2f2;border-radius:24px;padding:60px;transition:all 0.3s ease}
+.work-card:hover{background:#4d80d1;transform:translateY(-4px);box-shadow:0 12px 40px rgba(77,128,209,0.2)}
+
+.work-card-visual{border-radius:16px;overflow:hidden}
+.work-placeholder{width:100%;height:300px;background:#e0e0e0;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:600;color:#999}
+
+.work-card-content{display:flex;flex-direction:column;gap:20px}
+.work-card h3{font-size:32px;line-height:1.3;margin:0;color:#191c20;font-weight:700;letter-spacing:-0.01em}
+.work-card h3:hover{color:#191c20}
+.work-card:hover h3{color:#ffffff}
+
+.work-metric{font-size:28px;font-weight:800;color:#191c20;margin:0}
+.work-card:hover .work-metric{color:#ffffff}
+
+.work-description{font-size:14px;color:#79766e;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;margin:0}
+.work-card:hover .work-description{color:#e8e8e8}
+
+.work-insight{font-size:16px;color:#65676c;line-height:1.7;margin:0;font-weight:400}
+.work-card:hover .work-insight{color:#e8e8e8}
+
+.work-link{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#4e83d8;text-decoration:none;transition:all 0.3s ease;margin-top:12px}
+.work-link:hover{color:#3d70c1;transform:translateX(4px)}
+.work-card:hover .work-link{color:#ffffff}
