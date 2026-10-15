@@ -552,18 +552,19 @@
 .reveal.is-visible{opacity:1;transform:translateY(0)}
 
 /* Work Showcase - Horizontal Scroll Carousel */
-.work-showcase{padding:120px 0;background:#ffffff}
-.work-intro{margin-bottom:80px}
+.work-showcase{padding:120px 0;background:#ffffff;width:100%}
+.work-showcase.shell{max-width:100%;padding-left:0;padding-right:0}
+.work-intro{margin-bottom:80px;padding:0 var(--shell);max-width:var(--shell)}
 .work-label{font-size:14px;color:#191c20;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:16px}
 .work-intro h2{font-size:clamp(48px,5vw,72px);line-height:1.15;margin:0 0 24px;color:#191c20;font-weight:800;letter-spacing:-0.02em}
 .work-intro p{font-size:16px;color:#65676c;line-height:1.7;margin:0;max-width:780px}
 
-.work-scroll-container{display:flex;overflow-x:auto;gap:40px;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:40px 0;margin:0 -20px;padding-left:20px;padding-right:20px}
+.work-scroll-container{display:flex;overflow-x:auto;gap:40px;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:40px 20px;margin:0 -20px;width:calc(100% + 40px);min-height:500px}
 .work-scroll-container::-webkit-scrollbar{height:6px}
 .work-scroll-container::-webkit-scrollbar-track{background:#f0f0f0;border-radius:10px}
 .work-scroll-container::-webkit-scrollbar-thumb{background:#4e83d8;border-radius:10px}
 
-.work-card{flex:0 0 calc(100% - 80px);min-width:calc(100vw - 120px);scroll-snap-align:center;scroll-snap-stop:always;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;background:#f2f2f2;border-radius:24px;padding:60px;transition:all 0.3s ease}
+.work-card{flex:0 0 calc(100vw - 120px);scroll-snap-align:center;scroll-snap-stop:always;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;background:#f2f2f2;border-radius:24px;padding:60px;transition:all 0.3s ease;min-height:400px}
 .work-card:hover{background:#4d80d1;transform:translateY(-4px);box-shadow:0 12px 40px rgba(77,128,209,0.2)}
 
 .work-card-visual{border-radius:16px;overflow:hidden}
