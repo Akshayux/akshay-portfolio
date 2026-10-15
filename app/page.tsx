@@ -31,25 +31,20 @@ export default function Home(){return <PageFrame>
 
     <div className="selected-work-card">
       <div className="selected-work-number">01</div>
+      <div className="selected-work-category">Luxury travel · Customer experience</div>
+      <div className="selected-work-readtime">9 MIN READ</div>
+
       <div className="selected-work-visual">
         <img src="/luxtj.png" alt="LUXTJ project" />
       </div>
       <div className="selected-work-content">
-        <div className="selected-work-meta">
-          <div>
-            <p className="selected-work-category">Luxury travel · Customer experience</p>
-            <p className="selected-work-readtime">9 MIN READ</p>
-          </div>
-        </div>
         <div className="selected-work-metric">60% → 22% <span>CHECKOUT DROP-OFF</span></div>
         <h3>The leak wasn't on the checkout screen</h3>
         <p className="selected-work-description">I redesigned the booking journey to address the friction behind abandoned bookings</p>
-        <div className="selected-work-cta-wrapper">
-          <p className="selected-work-cta-text">VIEW CASE STUDY</p>
-          <Link href="/work/luxtj" className="selected-work-cta-button">
-            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M7 17L17 7M17 7H7M17 7V17"/>
-            </svg>
+        <div className="selected-work-footer">
+          <Link href="/work/luxtj" className="selected-work-cta-link">
+            VIEW CASE STUDY
+            <span className="selected-work-arrow">↗</span>
           </Link>
         </div>
       </div>
