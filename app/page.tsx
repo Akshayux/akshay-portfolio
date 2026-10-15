@@ -30,12 +30,12 @@ export default function Home(){return <PageFrame>
     </div>
 
     <div className="selected-work-card">
+      <div className="selected-work-number">01</div>
       <div className="selected-work-visual">
         <img src="/luxtj.png" alt="LUXTJ project" />
       </div>
       <div className="selected-work-content">
         <div className="selected-work-meta">
-          <div className="selected-work-number">01</div>
           <div>
             <p className="selected-work-category">Luxury travel · Customer experience</p>
             <p className="selected-work-readtime">9 MIN READ</p>

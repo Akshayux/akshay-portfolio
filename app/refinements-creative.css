@@ -293,6 +293,7 @@
 }
 
 .selected-work-card {
+  position: relative;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 80px;
@@ -300,6 +301,40 @@
   background: #F2F2F2;
   border-radius: 24px;
   padding: 60px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.selected-work-card:hover {
+  background: #4D80D1;
+}
+
+.selected-work-number {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  font-size: 32px;
+  font-weight: 700;
+  color: #191c20;
+  transition: all 0.3s ease;
+  background: #e8e8e8;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.selected-work-card:hover .selected-work-number {
+  background: #ffffff;
+  color: #4D80D1;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .selected-work-visual {
@@ -325,18 +360,16 @@
   gap: 24px;
 }
 
-.selected-work-number {
-  font-size: 32px;
-  font-weight: 700;
-  color: #191c20;
-  min-width: 60px;
-}
-
 .selected-work-category {
   font-size: 14px;
   color: #4e83d8;
   font-weight: 500;
   margin: 0;
+  transition: color 0.3s ease;
+}
+
+.selected-work-card:hover .selected-work-category {
+  color: #ffffff;
 }
 
 .selected-work-readtime {
@@ -346,6 +379,11 @@
   text-transform: uppercase;
   letter-spacing: 0.1em;
   margin: 4px 0 0 0;
+  transition: color 0.3s ease;
+}
+
+.selected-work-card:hover .selected-work-readtime {
+  color: #ffd699;
 }
 
 .selected-work-metric {
@@ -353,6 +391,11 @@
   font-weight: 800;
   color: #191c20;
   margin: 0;
+  transition: color 0.3s ease;
+}
+
+.selected-work-card:hover .selected-work-metric {
+  color: #ffffff;
 }
 
 .selected-work-metric span {
@@ -363,6 +406,11 @@
   text-transform: uppercase;
   letter-spacing: 0.08em;
   margin-top: 4px;
+  transition: color 0.3s ease;
+}
+
+.selected-work-card:hover .selected-work-metric span {
+  color: #d4d3cf;
 }
 
 .selected-work-content h3 {
@@ -372,6 +420,11 @@
   color: #191c20;
   font-weight: 700;
   letter-spacing: -0.01em;
+  transition: color 0.3s ease;
+}
+
+.selected-work-card:hover .selected-work-content h3 {
+  color: #ffffff;
 }
 
 .selected-work-description {
@@ -380,6 +433,11 @@
   line-height: 1.7;
   margin: 0;
   font-weight: 400;
+  transition: color 0.3s ease;
+}
+
+.selected-work-card:hover .selected-work-description {
+  color: #e8e8e8;
 }
 
 .selected-work-cta-wrapper {
@@ -396,6 +454,11 @@
   letter-spacing: 0.08em;
   color: #191c20;
   margin: 0;
+  transition: color 0.3s ease;
+}
+
+.selected-work-card:hover .selected-work-cta-text {
+  color: #ffffff;
 }
 
 .selected-work-cta-button {
@@ -418,6 +481,12 @@
   background: #3d70c1;
   transform: translateY(-3px);
   box-shadow: 0 8px 24px rgba(78, 131, 216, 0.3);
+}
+
+.selected-work-card:hover .selected-work-cta-button {
+  background: transparent;
+  border: 2px solid #ffffff;
+  color: #ffffff;
 }
 
 .selected-work-cta-button svg {
