@@ -267,7 +267,7 @@
 /* Selected Work Section */
 .selected-work {
   padding: 120px 0;
-  background: #ffffff;
+  background: #FFFFFF;
 }
 
 .selected-work-header {
@@ -297,7 +297,7 @@
   grid-template-columns: 1fr 1fr;
   gap: 80px;
   align-items: center;
-  background: #f8f8f8;
+  background: #F2F2F2;
   border-radius: 24px;
   padding: 60px;
 }
