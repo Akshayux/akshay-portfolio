@@ -74,25 +74,7 @@ export default function Home(){return <PageFrame>
     </div>
   </section>
 
-  {/* About Brief */}
-  <section className="about-brief shell reveal">
-    <div className="about-brief-grid">
-      <div className="about-brief-item">
-        <h3>5+ years</h3>
-        <p>Designing products at scale</p>
-      </div>
-      <div className="about-brief-item">
-        <h3>Research-first</h3>
-        <p>Problems solved through user understanding</p>
-      </div>
-      <div className="about-brief-item">
-        <h3>Travel → SaaS → AI</h3>
-        <p>Across industries and complexity</p>
-      </div>
-    </div>
-  </section>
-
-  {/* Approach */}
+{/* Approach */}
   <section className="approach-section approach-1">
     <div className="approach-content shell reveal">
       <div className="approach-label">How I work</div>
