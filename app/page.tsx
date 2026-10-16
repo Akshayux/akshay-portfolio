@@ -109,6 +109,68 @@ export default function Home(){return <PageFrame>
     </div>
   </section>
 
+  {/* Results + Recommendations */}
+  <section className="results-recommendations shell reveal">
+    <div className="results-recommendations-grid">
+      <div className="results-card-primary">
+        <div className="results-metric">
+          <div className="results-metric-value">60%</div>
+          <div className="results-metric-label">Improvement</div>
+        </div>
+
+        <div className="results-divider"></div>
+
+        <div className="results-testimonial">
+          <p className="results-quote">
+            "Akshay brought clarity to our product. His designs didn't just look good—they solved real problems our users faced every day."
+          </p>
+          <div>
+            <div className="results-author">Sarah Anderson</div>
+            <div className="results-author-title">Head of Product, LUXTJ</div>
+          </div>
+        </div>
+      </div>
+
+      <div className="results-secondary-grid">
+        <div className="results-card-secondary">
+          <div className="results-card-label">Key Outcome</div>
+          <h3 className="results-card-title">Checkout Redesign</h3>
+          <p className="results-card-description">
+            Reduced friction in the booking process by restructuring the entire checkout flow based on user research.
+          </p>
+          <div className="results-card-highlight">+40% Conversion</div>
+        </div>
+
+        <div className="results-card-secondary">
+          <div className="results-card-label">Implementation</div>
+          <h3 className="results-card-title">Cross-Platform</h3>
+          <p className="results-card-description">
+            Delivered designs that worked seamlessly across web and mobile platforms with consistent user experience.
+          </p>
+          <div className="results-card-highlight">3 Products Unified</div>
+        </div>
+
+        <div className="results-card-secondary">
+          <div className="results-card-label">Accessibility</div>
+          <h3 className="results-card-title">WCAG Compliant</h3>
+          <p className="results-card-description">
+            Ensured all designs met accessibility standards without compromising on visual design or user experience.
+          </p>
+          <div className="results-card-highlight">WCAG 2.2 AA</div>
+        </div>
+
+        <div className="results-card-secondary">
+          <div className="results-card-label">Strategy</div>
+          <h3 className="results-card-title">User-Focused</h3>
+          <p className="results-card-description">
+            Every design decision was grounded in research, usability testing, and real user feedback throughout.
+          </p>
+          <div className="results-card-highlight">Data-Driven</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
 <TestimonialsSection index="04"/>
 
 </PageFrame>}
