@@ -983,7 +983,7 @@
 .work-card-content{display:flex;flex-direction:column;justify-content:center;padding:42px 0 22px 8px;gap:20px}
 
 .work-metric{display:flex;align-items:center;gap:12px;margin-bottom:25px}
-.work-metric span{font-family:"Playfair Display",serif;font-size:clamp(25px,3vw,38px);font-weight:700;letter-spacing:-1.7px;white-space:nowrap;color:#191c20}
+.work-metric span{font-family:"DM Sans",sans-serif;font-size:clamp(25px,3vw,38px);font-weight:700;letter-spacing:-1.7px;white-space:nowrap;color:#191c20}
 .work-card:hover .work-metric span{color:#ffffff}
 
 .work-metric-label{padding-top:7px;font-size:9px;font-weight:500;letter-spacing:0.65px;white-space:nowrap;color:#79766e}
