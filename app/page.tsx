@@ -86,58 +86,88 @@ export default function Home(){return <PageFrame>
     </div>
   </section>
 
-  {/* All Projects Grid */}
-  <section className="projects-grid shell reveal">
-    <div className="projects-grid-container">
-      <div className="project-card project-card-1">
-        <div className="project-card-visual">
-          <div className="project-placeholder luxtj">LUXTJ</div>
-        </div>
-        <div className="project-card-content">
-          <p className="project-category">Luxury Travel · Design</p>
-          <h3>LUXTJ Checkout</h3>
-          <p className="project-metric">60% → 22%</p>
-          <p className="project-description">Drop-off reduction through journey redesign</p>
-          <Link href="/work/luxtj" className="project-link">Read case <Arrow/></Link>
+  {/* All Projects - Case Studies */}
+  <section className="projects-showcase shell reveal">
+    <div className="project-showcase-card project-showcase-1">
+      <div className="project-showcase-number">01</div>
+      <div className="project-showcase-category">Luxury travel · Customer experience</div>
+      <div className="project-showcase-readtime">9 MIN READ</div>
+
+      <div className="project-showcase-visual">
+        <div className="project-placeholder luxtj">LUXTJ</div>
+      </div>
+      <div className="project-showcase-content">
+        <div className="project-showcase-metric">60% → 22% <span>CHECKOUT DROP-OFF</span></div>
+        <h3>The leak wasn't on the checkout screen</h3>
+        <p className="project-showcase-description">I redesigned the booking journey to address the friction behind abandoned bookings</p>
+        <div className="project-showcase-footer">
+          <Link href="/work/luxtj" className="project-showcase-cta-link">
+            VIEW CASE STUDY
+            <span className="project-showcase-arrow">↗</span>
+          </Link>
         </div>
       </div>
+    </div>
 
-      <div className="project-card project-card-2">
-        <div className="project-card-visual">
-          <div className="project-placeholder simpo">Simpo</div>
-        </div>
-        <div className="project-card-content">
-          <p className="project-category">AI · Onboarding</p>
-          <h3>Simpo AI Onboarding</h3>
-          <p className="project-metric">8 → 4</p>
-          <p className="project-description">Simplified setup for clarity and adoption</p>
-          <Link href="/work/simpo-ai" className="project-link">View project <Arrow/></Link>
+    <div className="project-showcase-card project-showcase-2">
+      <div className="project-showcase-number">02</div>
+      <div className="project-showcase-category">Luxury travel · Partner operations</div>
+      <div className="project-showcase-readtime">6 MIN READ</div>
+
+      <div className="project-showcase-visual">
+        <div className="project-placeholder luxtj-extranet">LUXTJ Extranet</div>
+      </div>
+      <div className="project-showcase-content">
+        <div className="project-showcase-metric">3 <span>PRODUCTS UNIFIED</span></div>
+        <h3>What happens after a luxury trip is booked?</h3>
+        <p className="project-showcase-description">Unified workflows across customer and operational platforms</p>
+        <div className="project-showcase-footer">
+          <Link href="/work/luxtj-extranet" className="project-showcase-cta-link">
+            VIEW CASE STUDY
+            <span className="project-showcase-arrow">↗</span>
+          </Link>
         </div>
       </div>
+    </div>
 
-      <div className="project-card project-card-3">
-        <div className="project-card-visual">
-          <div className="project-placeholder luxtj-extranet">LUXTJ Extranet</div>
-        </div>
-        <div className="project-card-content">
-          <p className="project-category">SaaS · Systems</p>
-          <h3>LUXTJ Extranet Platform</h3>
-          <p className="project-metric">3 products unified</p>
-          <p className="project-description">Connected system for scattered workflows</p>
-          <Link href="/work/luxtj-extranet" className="project-link">Explore <Arrow/></Link>
+    <div className="project-showcase-card project-showcase-3">
+      <div className="project-showcase-number">03</div>
+      <div className="project-showcase-category">AI product · Website creation</div>
+      <div className="project-showcase-readtime">6 MIN READ</div>
+
+      <div className="project-showcase-visual">
+        <div className="project-placeholder simpo">Simpo</div>
+      </div>
+      <div className="project-showcase-content">
+        <div className="project-showcase-metric">8 → 4 <span>ONBOARDING STEPS</span></div>
+        <h3>Why were people leaving an AI website builder before they made their first choice?</h3>
+        <p className="project-showcase-description">Clearer progression meant users stayed. Complexity wasn't the issue—clarity was.</p>
+        <div className="project-showcase-footer">
+          <Link href="/work/simpo-ai" className="project-showcase-cta-link">
+            VIEW CASE STUDY
+            <span className="project-showcase-arrow">↗</span>
+          </Link>
         </div>
       </div>
+    </div>
 
-      <div className="project-card project-card-4">
-        <div className="project-card-visual">
-          <div className="project-placeholder scotcare">ScotCare</div>
-        </div>
-        <div className="project-card-content">
-          <p className="project-category">Healthcare · Accessibility</p>
-          <h3>ScotCare Healthcare</h3>
-          <p className="project-metric">WCAG 2.2 AA</p>
-          <p className="project-description">Accessible design for universal clarity</p>
-          <Link href="/work/scotcare" className="project-link">Study <Arrow/></Link>
+    <div className="project-showcase-card project-showcase-4">
+      <div className="project-showcase-number">04</div>
+      <div className="project-showcase-category">Healthcare · Partner operations</div>
+      <div className="project-showcase-readtime">6 MIN READ</div>
+
+      <div className="project-showcase-visual">
+        <div className="project-placeholder scotcare">ScotCare</div>
+      </div>
+      <div className="project-showcase-content">
+        <div className="project-showcase-metric">WCAG 2.2 AA <span>ACCESSIBILITY STANDARD</span></div>
+        <h3>When someone feels unwell, the hardest question is often: what happens next?</h3>
+        <p className="project-showcase-description">Healthcare needs clarity more than anywhere. Designed for everyone.</p>
+        <div className="project-showcase-footer">
+          <Link href="/work/scotcare" className="project-showcase-cta-link">
+            VIEW CASE STUDY
+            <span className="project-showcase-arrow">↗</span>
+          </Link>
         </div>
       </div>
     </div>
