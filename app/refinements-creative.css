@@ -670,12 +670,11 @@
   overflow: hidden;
 }
 
-.project-showcase-visual .project-placeholder {
+.project-showcase-visual img {
   width: 100%;
   height: auto;
   display: block;
   border-radius: 16px;
-  aspect-ratio: 1.2/1;
 }
 
 .project-showcase-content {

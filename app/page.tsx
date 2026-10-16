@@ -82,7 +82,7 @@ export default function Home(){return <PageFrame>
       <div className="project-showcase-readtime">9 MIN READ</div>
 
       <div className="project-showcase-visual">
-        <div className="project-placeholder luxtj">LUXTJ</div>
+        <img src="/casestudy1.png" alt="LUXTJ Checkout case study" />
       </div>
       <div className="project-showcase-content">
         <div className="project-showcase-metric">60% → 22% <span>CHECKOUT DROP-OFF</span></div>
@@ -103,7 +103,7 @@ export default function Home(){return <PageFrame>
       <div className="project-showcase-readtime">6 MIN READ</div>
 
       <div className="project-showcase-visual">
-        <div className="project-placeholder luxtj-extranet">LUXTJ Extranet</div>
+        <img src="/casestudy2.png" alt="LUXTJ Extranet case study" />
       </div>
       <div className="project-showcase-content">
         <div className="project-showcase-metric">3 <span>PRODUCTS UNIFIED</span></div>
@@ -124,7 +124,7 @@ export default function Home(){return <PageFrame>
       <div className="project-showcase-readtime">6 MIN READ</div>
 
       <div className="project-showcase-visual">
-        <div className="project-placeholder simpo">Simpo</div>
+        <img src="/casestudy3.png" alt="Simpo AI case study" />
       </div>
       <div className="project-showcase-content">
         <div className="project-showcase-metric">8 → 4 <span>ONBOARDING STEPS</span></div>
@@ -145,7 +145,7 @@ export default function Home(){return <PageFrame>
       <div className="project-showcase-readtime">6 MIN READ</div>
 
       <div className="project-showcase-visual">
-        <div className="project-placeholder scotcare">ScotCare</div>
+        <img src="/casestudy4.png" alt="ScotCare case study" />
       </div>
       <div className="project-showcase-content">
         <div className="project-showcase-metric">WCAG 2.2 AA <span>ACCESSIBILITY STANDARD</span></div>
