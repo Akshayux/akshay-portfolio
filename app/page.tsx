@@ -109,31 +109,6 @@ export default function Home(){return <PageFrame>
     </div>
   </section>
 
-  {/* Philosophy */}
-  <section className="philosophy-section reveal">
-    <div className="philosophy-content shell">
-      <div className="philosophy-label">My Philosophy</div>
-      <div>
-        <h2>Design solves problems. Beautiful ones are bonuses.</h2>
-        <p>I design for people. Real people with real constraints. If it doesn't solve their problem, it doesn't matter how it looks.</p>
-        <p className="philosophy-bold">Clear design is kind design.</p>
-      </div>
-    </div>
-  </section>
-
-  {/* CTA */}
-  <section className="cta-section reveal">
-    <div className="cta-content shell">
-      <div className="cta-label">Get in touch</div>
-      <h2>Let's make something clear.</h2>
-      <p>Have a Product or UX role, a complex workflow or an interesting idea? I'd like to hear about it.</p>
-      <Link href="/contact" className="cta-button-primary">
-        Say hello
-        <span className="cta-button-arrow">↗</span>
-      </Link>
-    </div>
-  </section>
-
-  <TestimonialsSection index="04"/>
+<TestimonialsSection index="04"/>
 
 </PageFrame>}
