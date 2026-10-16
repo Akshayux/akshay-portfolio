@@ -74,18 +74,6 @@ export default function Home(){return <PageFrame>
     </div>
   </section>
 
-{/* Approach */}
-  <section className="approach-section approach-1">
-    <div className="approach-content shell reveal">
-      <div className="approach-label">How I work</div>
-      <div>
-        <h2>Research first. Design later.</h2>
-        <p>I don't jump to solutions. Every project starts with understanding—the user, the problem, the constraints. Real research beats assumptions every time.</p>
-        <p className="approach-highlight-text">The best design feels inevitable because it solves what people actually need.</p>
-      </div>
-    </div>
-  </section>
-
   {/* All Projects - Case Studies */}
   <section className="projects-showcase shell reveal">
     <div className="project-showcase-card project-showcase-1">
