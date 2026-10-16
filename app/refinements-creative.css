@@ -1004,3 +1004,98 @@
 .work-link svg{width:29px;height:29px;display:grid;place-items:center;border-radius:50%;background:#4e80d0;color:#fff;transition:all 0.2s ease}
 .work-link:hover svg{transform:translate(2px,-2px);background:#3267b8}
 .work-card:hover .work-link svg{background:#fff;color:#4d80d1}
+
+/* CTA Section - New Design */
+.cta-section {
+  background: #4D80D1;
+  padding: 100px 0;
+}
+
+.cta-section .cta-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 24px;
+}
+
+.cta-label {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
+}
+
+.cta-section h2 {
+  font-size: clamp(48px, 6vw, 80px);
+  line-height: 1.15;
+  margin: 0;
+  color: #ffffff;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  max-width: 900px;
+}
+
+.cta-section p {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.7;
+  max-width: 700px;
+  margin: 0;
+  margin-top: 12px;
+}
+
+.cta-button-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 40px;
+  margin-top: 40px;
+  background: #ffffff;
+  color: #4D80D1;
+  border-radius: 999px;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.cta-button-primary:hover {
+  background: #f0f0f0;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.cta-button-arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #FF9500;
+  color: #ffffff;
+  font-size: 16px;
+}
+
+/* Responsive CTA */
+@media (max-width: 768px) {
+  .cta-section {
+    padding: 80px 0;
+  }
+
+  .cta-section h2 {
+    font-size: 48px;
+  }
+
+  .cta-section p {
+    font-size: 16px;
+  }
+
+  .cta-button-primary {
+    padding: 12px 32px;
+    font-size: 14px;
+  }
+}

@@ -52,29 +52,7 @@ export default function Home(){return <PageFrame>
     </div>
   </section>
 
-  {/* Services */}
-  <section className="services shell reveal">
-    <div className="services-header">
-      <div className="services-label">What I offer</div>
-      <h2>How I can help you.</h2>
-    </div>
-    <div className="services-grid">
-      <div className="service-card">
-        <h3>UX Research & Strategy</h3>
-        <p>Deep user understanding through research. I find the real problems before designing solutions.</p>
-      </div>
-      <div className="service-card">
-        <h3>Product Design</h3>
-        <p>Clean, intuitive interfaces built on research. Design that solves problems and feels effortless.</p>
-      </div>
-      <div className="service-card">
-        <h3>Design Systems</h3>
-        <p>Scalable design frameworks. Consistency, clarity, and speed across your entire product.</p>
-      </div>
-    </div>
-  </section>
-
-  {/* All Projects - Case Studies */}
+{/* All Projects - Case Studies */}
   <section className="projects-showcase shell reveal">
     <div className="project-showcase-card project-showcase-1">
       <div className="project-showcase-number">01</div>
@@ -174,14 +152,15 @@ export default function Home(){return <PageFrame>
   </section>
 
   {/* CTA */}
-  <section className="cta-section shell reveal">
-    <div className="cta-content">
-      <h2>Let's work together</h2>
-      <p>Got a design challenge? Let's talk about it.</p>
-      <div className="cta-buttons">
-        <Link className="button-primary button-large" href="/work">See all work <Arrow/></Link>
-        <Link className="button-secondary button-large" href="/contact">Get in touch <Arrow/></Link>
-      </div>
+  <section className="cta-section reveal">
+    <div className="cta-content shell">
+      <div className="cta-label">Get in touch</div>
+      <h2>Let's make something clear.</h2>
+      <p>Have a Product or UX role, a complex workflow or an interesting idea? I'd like to hear about it.</p>
+      <Link href="/contact" className="cta-button-primary">
+        Say hello
+        <span className="cta-button-arrow">↗</span>
+      </Link>
     </div>
   </section>
 
