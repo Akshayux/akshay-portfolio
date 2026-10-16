@@ -22,37 +22,7 @@ export default function Home(){return <PageFrame>
     </div>
   </section>
 
-  {/* Featured Work - Primary */}
-  <section className="featured-work-primary shell reveal">
-    <div className="featured-work-header">
-      <div className="featured-work-label">Featured Work</div>
-      <h2>Where design solves real problems.</h2>
-      <p>Four distinct challenges. Four solutions that moved the needle. Each one started with research, not assumptions.</p>
-    </div>
-
-    <div className="featured-work-card-primary">
-      <div className="featured-work-card-number">01</div>
-      <div className="featured-work-card-category">Luxury travel · Customer experience</div>
-      <div className="featured-work-card-readtime">9 MIN READ</div>
-
-      <div className="featured-work-card-visual">
-        <img src="/luxtj.png" alt="LUXTJ project" />
-      </div>
-      <div className="featured-work-card-content">
-        <div className="featured-work-card-metric">60% → 22% <span>CHECKOUT DROP-OFF</span></div>
-        <h3>The leak wasn't on the checkout screen</h3>
-        <p className="featured-work-card-description">I redesigned the booking journey to address the friction behind abandoned bookings</p>
-        <div className="featured-work-card-footer">
-          <Link href="/work/luxtj" className="featured-work-card-cta-link">
-            VIEW CASE STUDY
-            <span className="featured-work-card-arrow">↗</span>
-          </Link>
-        </div>
-      </div>
-    </div>
-  </section>
-
-{/* All Projects - Case Studies */}
+  {/* All Projects - Case Studies */}
   <section className="projects-showcase shell reveal">
     <div className="project-showcase-card project-showcase-1">
       <div className="project-showcase-number">01</div>
