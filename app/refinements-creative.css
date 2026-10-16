@@ -584,7 +584,7 @@
 
 /* Projects Showcase - Full-Width Case Study Cards */
 .projects-showcase {
-  padding: 120px 0;
+  padding: 180px 0 120px 0;
   background: #ffffff;
 }
 
@@ -596,12 +596,12 @@
   align-items: center;
   background: #f3f3f3;
   border-radius: 21px;
-  padding: 38px 48px;
+  padding: 48px 60px;
   transition: all 0.3s ease;
   cursor: pointer;
   box-shadow: 0 18px 30px rgba(0, 0, 0, 0.17);
-  min-height: 360px;
-  margin-bottom: 48px;
+  min-height: 380px;
+  margin-bottom: 80px;
 }
 
 .project-showcase-card:last-child {
