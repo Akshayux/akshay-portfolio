@@ -315,7 +315,7 @@
   min-height: 360px;
 }
 
-.featured-work-card-card:hover {
+.featured-work-card-primary:hover {
   background: #4D80D1;
   transform: translateY(-2px);
   box-shadow: 0 24px 40px rgba(77, 128, 209, 0.25);
@@ -338,7 +338,7 @@
   justify-content: center;
 }
 
-.featured-work-card-card:hover .featured-work-card-number {
+.featured-work-card-primary:hover .featured-work-card-number {
   background: #ffffff;
   color: #4D80D1;
 }
@@ -353,7 +353,7 @@
   transition: color 0.3s ease;
 }
 
-.featured-work-card-card:hover .featured-work-card-category {
+.featured-work-card-primary:hover .featured-work-card-category {
   color: #ffffff;
 }
 
@@ -368,7 +368,7 @@
   transition: color 0.3s ease;
 }
 
-.featured-work-card-card:hover .featured-work-card-readtime {
+.featured-work-card-primary:hover .featured-work-card-readtime {
   color: #ffd699;
 }
 
@@ -403,7 +403,7 @@
   transition: color 0.3s ease;
 }
 
-.featured-work-card-card:hover .featured-work-card-category {
+.featured-work-card-primary:hover .featured-work-card-category {
   color: #ffffff;
 }
 
@@ -417,7 +417,7 @@
   transition: color 0.3s ease;
 }
 
-.featured-work-card-card:hover .featured-work-card-readtime {
+.featured-work-card-primary:hover .featured-work-card-readtime {
   color: #ffd699;
 }
 
@@ -429,7 +429,7 @@
   transition: color 0.3s ease;
 }
 
-.featured-work-card-card:hover .featured-work-card-metric {
+.featured-work-card-primary:hover .featured-work-card-metric {
   color: #ffffff;
 }
 
@@ -444,7 +444,7 @@
   transition: color 0.3s ease;
 }
 
-.featured-work-card-card:hover .featured-work-card-metric span {
+.featured-work-card-primary:hover .featured-work-card-metric span {
   color: #d4d3cf;
 }
 
@@ -458,7 +458,7 @@
   transition: color 0.3s ease;
 }
 
-.featured-work-card-card:hover .featured-work-card-content h3 {
+.featured-work-card-primary:hover .featured-work-card-content h3 {
   color: #ffffff;
 }
 
@@ -471,7 +471,7 @@
   transition: color 0.3s ease;
 }
 
-.featured-work-card-card:hover .featured-work-card-description {
+.featured-work-card-primary:hover .featured-work-card-description {
   color: #e8e8e8;
 }
 
@@ -492,7 +492,7 @@
   transition: color 0.3s ease;
 }
 
-.featured-work-card-card:hover .featured-work-card-cta-text {
+.featured-work-card-primary:hover .featured-work-card-cta-text {
   color: #ffffff;
 }
 
@@ -518,7 +518,7 @@
   box-shadow: 0 8px 24px rgba(78, 131, 216, 0.3);
 }
 
-.featured-work-card-card:hover .featured-work-card-cta-button {
+.featured-work-card-primary:hover .featured-work-card-cta-button {
   background: transparent;
   border: 2px solid #ffffff;
   color: #ffffff;
