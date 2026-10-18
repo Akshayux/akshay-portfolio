@@ -15,9 +15,7 @@ export default function Home(){return <PageFrame>
         I design for clarity. <span className="highlight">5+ years crafting digital products</span> that users actually understand. I start with research, solve real problems, and ship solutions that stick.
       </p>
     </div>
-    <div className="scroll-indicator">
-      <img src="/down-arrow.svg" alt="Scroll down" className="scroll-arrow-icon" />
-    </div>
+    <div className="scroll-indicator"></div>
   </section>
 
   {/* All Projects - Case Studies */}
