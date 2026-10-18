@@ -125,35 +125,27 @@
   text-decoration: none;
   padding: 0;
   z-index: 2;
-  width: 30px;
-  height: 50px;
-  gap: 2px;
+  gap: -2px;
 }
 
-.scroll-indicator::before,
-.scroll-indicator::after {
-  content: '';
-  display: block;
-  width: 12px;
-  height: 12px;
-  border-left: 2.5px solid #999999;
-  border-bottom: 2.5px solid #999999;
-  transform: rotate(-45deg);
+.scroll-indicator span {
+  font-size: 28px;
+  color: #999999;
+  line-height: 0.8;
   animation: bounce-arrow 2s infinite;
+  transition: color 0.3s ease;
 }
 
-.scroll-indicator::before {
+.scroll-indicator span:nth-child(1) {
   animation-delay: 0s;
 }
 
-.scroll-indicator::after {
+.scroll-indicator span:nth-child(2) {
   animation-delay: 0.3s;
-  margin-top: -8px;
 }
 
-.scroll-indicator:hover::before,
-.scroll-indicator:hover::after {
-  border-color: #4e83d8;
+.scroll-indicator:hover span {
+  color: #4e83d8;
 }
 
 @keyframes bounce-arrow {

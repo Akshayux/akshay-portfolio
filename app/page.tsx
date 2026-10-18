@@ -15,7 +15,10 @@ export default function Home(){return <PageFrame>
         I design for clarity. <span className="highlight">5+ years crafting digital products</span> that users actually understand. I start with research, solve real problems, and ship solutions that stick.
       </p>
     </div>
-    <div className="scroll-indicator"></div>
+    <div className="scroll-indicator">
+      <span>⌄</span>
+      <span>⌄</span>
+    </div>
   </section>
 
   {/* All Projects - Case Studies */}
