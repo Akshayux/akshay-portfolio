@@ -110,7 +110,7 @@ export default function Home(){return <PageFrame>
   </section>
 
   {/* Results + Recommendations */}
-  <section className="results-recommendations shell reveal" style={{position: 'relative', paddingBottom: '120px'}}>
+  <section className="results-recommendations shell reveal">
     <div className="results-recommendations-grid">
       <div className="results-card-primary">
         <div className="results-metric">
@@ -168,15 +168,6 @@ export default function Home(){return <PageFrame>
           <div className="results-card-highlight">Data-Driven</div>
         </div>
       </div>
-    </div>
-
-    <div className="results-scroll-indicator">
-      <svg viewBox="0 0 24 24" width="24" height="24">
-        <path d="M7 10l5 5 5-5" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
-      </svg>
-      <svg viewBox="0 0 24 24" width="24" height="24">
-        <path d="M7 10l5 5 5-5" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
-      </svg>
     </div>
   </section>
 
