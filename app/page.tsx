@@ -113,58 +113,58 @@ export default function Home(){return <PageFrame>
     <div className="results-recommendations-grid">
       <div className="results-card-primary">
         <div className="results-metric">
-          <div className="results-metric-value">60%</div>
-          <div className="results-metric-label">Improvement</div>
+          <div className="results-metric-value">5+</div>
+          <div className="results-metric-label">Years Experience</div>
         </div>
 
         <div className="results-divider"></div>
 
         <div className="results-testimonial">
           <p className="results-quote">
-            "Akshay brought clarity to our product. His designs didn't just look good—they solved real problems our users faced every day."
+            "Working with Akshay transformed how we think about user experience. Every design decision is backed by research and real user feedback."
           </p>
           <div>
-            <div className="results-author">Sarah Anderson</div>
-            <div className="results-author-title">Head of Product, LUXTJ</div>
+            <div className="results-author">Trusted by startups & enterprises</div>
+            <div className="results-author-title">LUXTJ, Simpo AI, ScotCare & more</div>
           </div>
         </div>
       </div>
 
       <div className="results-secondary-grid">
         <div className="results-card-secondary">
-          <div className="results-card-label">Key Outcome</div>
-          <h3 className="results-card-title">Checkout Redesign</h3>
+          <div className="results-card-label">Design Philosophy</div>
+          <h3 className="results-card-title">Clarity First</h3>
           <p className="results-card-description">
-            Reduced friction in the booking process by restructuring the entire checkout flow based on user research.
+            Every pixel has a purpose. I design for real users solving real problems, not for aesthetics alone.
           </p>
-          <div className="results-card-highlight">+40% Conversion</div>
+          <div className="results-card-highlight">Problem-Driven</div>
         </div>
 
         <div className="results-card-secondary">
-          <div className="results-card-label">Implementation</div>
-          <h3 className="results-card-title">Cross-Platform</h3>
+          <div className="results-card-label">Approach</div>
+          <h3 className="results-card-title">Research-Led</h3>
           <p className="results-card-description">
-            Delivered designs that worked seamlessly across web and mobile platforms with consistent user experience.
+            I start with discovery. Understanding user behavior, pain points, and context shapes every decision.
           </p>
-          <div className="results-card-highlight">3 Products Unified</div>
+          <div className="results-card-highlight">User Research</div>
         </div>
 
         <div className="results-card-secondary">
-          <div className="results-card-label">Accessibility</div>
-          <h3 className="results-card-title">WCAG Compliant</h3>
+          <div className="results-card-label">Execution</div>
+          <h3 className="results-card-title">Pixel Perfect</h3>
           <p className="results-card-description">
-            Ensured all designs met accessibility standards without compromising on visual design or user experience.
+            From concept to handoff, I ensure designs are precise, accessible, and production-ready.
           </p>
-          <div className="results-card-highlight">WCAG 2.2 AA</div>
+          <div className="results-card-highlight">Quality Obsessed</div>
         </div>
 
         <div className="results-card-secondary">
-          <div className="results-card-label">Strategy</div>
-          <h3 className="results-card-title">User-Focused</h3>
+          <div className="results-card-label">Impact</div>
+          <h3 className="results-card-title">Results Matter</h3>
           <p className="results-card-description">
-            Every design decision was grounded in research, usability testing, and real user feedback throughout.
+            Design isn't done until it moves metrics. I measure success by real user outcomes and business impact.
           </p>
-          <div className="results-card-highlight">Data-Driven</div>
+          <div className="results-card-highlight">Measurable Impact</div>
         </div>
       </div>
     </div>
