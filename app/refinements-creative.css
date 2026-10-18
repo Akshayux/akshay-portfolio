@@ -49,7 +49,7 @@
   align-items: center;
   justify-content: center;
   padding: 10px 25px 11px;
-  margin-bottom: 24px;
+  margin-bottom: 12px;
   background: #4e83d8;
   color: #fff;
   border-radius: 999px;
@@ -136,6 +136,7 @@
   animation: bounce-arrow 2s infinite;
   opacity: 0.85;
   transition: opacity 0.3s ease;
+  transform: rotate(90deg);
 }
 
 .scroll-indicator:hover .scroll-arrow-icon {
