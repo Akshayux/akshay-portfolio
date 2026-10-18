@@ -121,36 +121,21 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: #b6b7b9;
   text-decoration: none;
   padding: 10px;
   z-index: 2;
-  gap: 6px;
 }
 
-.scroll-indicator:hover {
-  color: #4e83d8;
+.scroll-indicator:hover .scroll-arrow-icon {
+  filter: brightness(0.6) sepia(0.5) saturate(1.5) hue-rotate(210deg);
 }
 
-.scroll-indicator::before,
-.scroll-indicator::after {
-  content: '';
+.scroll-arrow-icon {
   display: block;
-  width: 12px;
-  height: 12px;
-  border-right: 2.5px solid currentColor;
-  border-bottom: 2.5px solid currentColor;
-  transform: rotate(45deg);
+  width: 22px;
+  height: 27px;
   animation: bounce-arrow 2s infinite;
-}
-
-.scroll-indicator::before {
-  animation-delay: 0s;
-}
-
-.scroll-indicator::after {
-  animation-delay: 0.3s;
-  margin-top: -6px;
+  transition: filter 0.3s ease;
 }
 
 @keyframes bounce-arrow {
