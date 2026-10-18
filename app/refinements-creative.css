@@ -125,29 +125,32 @@
   text-decoration: none;
   padding: 10px;
   z-index: 2;
+  gap: 6px;
 }
 
 .scroll-indicator:hover {
   color: #4e83d8;
 }
 
-.scroll-indicator svg {
+.scroll-indicator::before,
+.scroll-indicator::after {
+  content: '';
   display: block;
-  width: 20px;
-  height: 20px;
-  border-right: 2px solid currentColor;
-  border-bottom: 2px solid currentColor;
+  width: 12px;
+  height: 12px;
+  border-right: 2.5px solid currentColor;
+  border-bottom: 2.5px solid currentColor;
   transform: rotate(45deg);
-  margin-top: -9px;
   animation: bounce-arrow 2s infinite;
 }
 
-.scroll-indicator svg:nth-child(1) {
+.scroll-indicator::before {
   animation-delay: 0s;
 }
 
-.scroll-indicator svg:nth-child(2) {
+.scroll-indicator::after {
   animation-delay: 0.3s;
+  margin-top: -6px;
 }
 
 @keyframes bounce-arrow {

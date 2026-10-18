@@ -15,11 +15,7 @@ export default function Home(){return <PageFrame>
         I design for clarity. <span className="highlight">5+ years crafting digital products</span> that users actually understand. I start with research, solve real problems, and ship solutions that stick.
       </p>
     </div>
-    <div className="scroll-indicator">
-      <svg viewBox="0 0 24 24" width="24" height="24">
-        <path d="M7 10l5 5 5-5" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
-      </svg>
-    </div>
+    <div className="scroll-indicator"></div>
   </section>
 
   {/* All Projects - Case Studies */}
