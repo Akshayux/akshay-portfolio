@@ -49,7 +49,7 @@
   align-items: center;
   justify-content: center;
   padding: 10px 25px 11px;
-  margin-bottom: 12px;
+  margin-bottom: 4px;
   background: #4e83d8;
   color: #fff;
   border-radius: 999px;
@@ -126,19 +126,19 @@
   padding: 0;
   z-index: 2;
   width: 30px;
-  height: 40px;
-  gap: 4px;
+  height: 50px;
+  gap: 2px;
 }
 
 .scroll-indicator::before,
 .scroll-indicator::after {
   content: '';
   display: block;
-  width: 10px;
-  height: 10px;
-  border-right: 2px solid #999999;
-  border-bottom: 2px solid #999999;
-  transform: rotate(45deg);
+  width: 12px;
+  height: 12px;
+  border-left: 2.5px solid #999999;
+  border-bottom: 2.5px solid #999999;
+  transform: rotate(-45deg);
   animation: bounce-arrow 2s infinite;
 }
 
@@ -148,7 +148,7 @@
 
 .scroll-indicator::after {
   animation-delay: 0.3s;
-  margin-top: -6px;
+  margin-top: -8px;
 }
 
 .scroll-indicator:hover::before,
