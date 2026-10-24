@@ -126,5 +126,5 @@ export function SiteFooter(){
 }
 
 export function PageFrame({children}:{children:ReactNode}){
-  return <main id="top"><SiteHeader/>{children}<ContactPanel/><SiteFooter/></main>;
+  return <main id="top"><SiteHeader/>{children}<ContactPanel/></main>;
 }
