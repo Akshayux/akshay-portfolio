@@ -1,4 +1,6 @@
+'use client';
 import type {ReactNode} from 'react';
+import {useState} from 'react';
 import Link from 'next/link';
 import {featuredProjects,profile,socials} from './data';
 import TestimonialsReveal from './testimonials-reveal';
@@ -13,12 +15,26 @@ export function CaseToc({items}:{items:readonly (readonly [string,string])[]}){
 }
 
 export function SiteHeader(){
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [workMenuOpen, setWorkMenuOpen] = useState(false);
+
+  const closeMenu = () => {
+    setMenuOpen(false);
+    setWorkMenuOpen(false);
+  };
+
+  const handleNavClick = () => {
+    setTimeout(() => closeMenu(), 100);
+  };
+
   return <header className="site-header">
     <div className="shell header-inner">
-      <Link className="brand" href="/" aria-label="Akshay Venkata Narayana, home" data-cursor-label="Home">
+      <Link className="brand" href="/" aria-label="Akshay Venkata Narayana, home" data-cursor-label="Home" onClick={closeMenu}>
         <img src="/logo.svg" alt="" width="50" height="45"/>
       </Link>
-      <nav className="primary-nav" aria-label="Primary navigation">
+
+      {/* Desktop Navigation */}
+      <nav className="primary-nav desktop-nav" aria-label="Primary navigation">
         <div className="work-menu">
           <Link className="work-menu-link" href="/work" data-cursor-label="Jump">Work</Link>
           <details>
@@ -35,6 +51,58 @@ export function SiteHeader(){
         <Link href="/about" data-cursor-label="Jump">About</Link>
         <Link href="/contact" data-cursor-label="Jump">Contact</Link>
       </nav>
+
+      {/* Mobile Hamburger Menu */}
+      <button
+        className={`hamburger-menu ${menuOpen ? 'active' : ''}`}
+        aria-label="Toggle navigation menu"
+        aria-expanded={menuOpen}
+        onClick={() => setMenuOpen(!menuOpen)}
+      >
+        <span className="hamburger-line"></span>
+        <span className="hamburger-line"></span>
+        <span className="hamburger-line"></span>
+      </button>
+
+      {/* Mobile Navigation */}
+      <nav className={`mobile-nav ${menuOpen ? 'open' : ''}`} aria-label="Mobile navigation">
+        <div className="mobile-nav-content">
+          <div className="mobile-nav-section">
+            <button
+              className={`mobile-nav-item work-toggle ${workMenuOpen ? 'active' : ''}`}
+              onClick={() => setWorkMenuOpen(!workMenuOpen)}
+            >
+              <span>Work</span>
+              <svg viewBox="0 0 12 8" aria-hidden="true"><path d="m1 1 5 5 5-5"/></svg>
+            </button>
+
+            {workMenuOpen && (
+              <div className="mobile-nav-submenu">
+                <Link href="/work" className="mobile-nav-subitem" onClick={handleNavClick}>
+                  <small>00</small><span>All work</span>
+                </Link>
+                <Link href="/work/luxtj" className="mobile-nav-subitem" onClick={handleNavClick}>
+                  <small>01</small><span>LUXTJ</span>
+                </Link>
+                <Link href="/work/luxtj-extranet" className="mobile-nav-subitem" onClick={handleNavClick}>
+                  <small>02</small><span>LUXTJ Extranet</span>
+                </Link>
+                <Link href="/work/simpo-ai" className="mobile-nav-subitem" onClick={handleNavClick}>
+                  <small>03</small><span>Simpo AI</span>
+                </Link>
+                <Link href="/work/scotcare" className="mobile-nav-subitem" onClick={handleNavClick}>
+                  <small>04</small><span>ScotCare</span>
+                </Link>
+              </div>
+            )}
+          </div>
+
+          <Link href="/about" className="mobile-nav-item" onClick={handleNavClick}>About</Link>
+          <Link href="/contact" className="mobile-nav-item" onClick={handleNavClick}>Contact</Link>
+        </div>
+      </nav>
+
+      {menuOpen && <div className="mobile-nav-overlay" onClick={closeMenu}></div>}
     </div>
   </header>;
 }
