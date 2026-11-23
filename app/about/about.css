@@ -1,0 +1,133 @@
+/* The About page uses the same soft surfaces, blue accent, and rounded cards as Home. */
+.about-intro{
+  width:min(1480px,calc(100% - 48px));
+  min-height:660px;
+  margin:48px auto 0;
+  padding:clamp(36px,5vw,80px);
+  display:grid;
+  grid-template-columns:minmax(0,1.15fr) minmax(310px,.85fr);
+  align-items:center;
+  gap:clamp(40px,6vw,100px);
+  border-radius:58px;
+  background:#f2f2f2;
+  overflow:hidden;
+}
+.about-intro-copy{max-width:680px}
+.about-intro-badge{display:inline-flex;align-items:center;min-height:46px;padding:8px 22px;border-radius:999px;background:#4d80d1;color:#fff;font-size:15px;font-weight:600;letter-spacing:.05em}
+.about-intro-kicker{margin:72px 0 18px;color:#4d80d1;font-size:12px;font-weight:750;letter-spacing:.14em;text-transform:uppercase}
+.about-intro h1{font-size:clamp(54px,5.7vw,88px);font-weight:800;line-height:1.04;letter-spacing:-.065em;color:#191c20}
+.about-intro h1 span{color:#4d80d1}
+.about-intro-lede{max-width:560px;margin:30px 0 36px;color:#60646b;font-size:clamp(17px,1.45vw,21px);line-height:1.55}
+.about-intro .button{background:#191c20;border-color:#191c20}
+.about-intro .button-icon{background:#4d80d1;color:#fff}
+.about-intro .button-secondary{background:transparent;color:#191c20;border-color:#c9cbd0}
+.about-intro .button-secondary:hover{background:#fff;color:#191c20}
+.about-intro-portrait{position:relative;width:100%;max-width:450px;aspect-ratio:4/5;justify-self:end;margin:0;padding:10px;border-radius:32px;background:#fff;box-shadow:0 24px 60px rgba(25,28,32,.13);transform:rotate(2deg)}
+.about-intro-portrait img{width:100%;height:100%;object-fit:cover;object-position:18% center;border-radius:23px}
+.about-intro-portrait figcaption{position:absolute;left:26px;bottom:26px;padding:9px 13px;border-radius:999px;background:#fff;color:#191c20;font-size:10px;font-weight:700;letter-spacing:.07em;text-transform:uppercase}
+
+.about-facts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;padding-top:30px}
+.about-fact{min-height:178px;padding:28px;border:1px solid #e3e0da;border-radius:24px;background:#fff}
+.about-fact>span{display:block;margin-bottom:30px;color:#4d80d1;font-size:11px;font-weight:750;letter-spacing:.1em;text-transform:uppercase}
+.about-fact strong{display:block;color:#191c20;font-size:clamp(17px,1.45vw,22px);line-height:1.15;letter-spacing:-.035em}
+.about-fact p{margin-top:12px;color:#666a70;font-size:13px;line-height:1.45}
+.about-proof{padding:32px 0 0}
+.about-proof .proof-strip{gap:16px;border:0}
+.about-proof .proof-strip>div{padding:26px 30px;border:0;border-radius:22px;background:#f2f2f2}
+.about-proof .proof-strip dt{color:#4d80d1;font-size:40px;font-weight:800}
+.about-proof .proof-strip dd{color:#60646b;font-size:11px}
+
+.about-dual-section{margin-top:112px;padding-block:0 110px;border:0}
+.about-dual-section>.eyebrow,.belief-section>.eyebrow,.reflection-section>.eyebrow,.about-next>.eyebrow{color:#4d80d1}
+.about-dual-grid{grid-template-columns:1fr 1fr;gap:20px;margin-top:28px}
+.about-dual-section .about-dual-card{min-height:520px;padding:clamp(30px,3.5vw,50px);border-radius:30px;box-shadow:none}
+.about-dual-section .about-designer,html[data-theme="dark"] .about-dual-section .about-designer{border-color:#4d80d1;background:#4d80d1;color:#fff}
+.about-dual-section .about-designer>span,.about-dual-section .about-designer p{color:rgba(255,255,255,.86)}
+.about-dual-section .about-designer strong{border-color:rgba(255,255,255,.32);color:#fff}
+.about-dual-section .about-person,html[data-theme="dark"] .about-dual-section .about-person{border-color:#e3e0da;background:#f2f2f2;color:#191c20}
+.about-dual-section .about-person>span{color:#4d80d1}
+.about-dual-section .about-person p{color:#60646b}
+.about-dual-section .about-person>div span{border-color:#c7ccd4;border-radius:999px;color:#4d80d1;font-weight:750}
+.about-dual-section .about-dual-card h2{margin:52px 0 28px;font-size:clamp(39px,3.9vw,58px);font-weight:700;line-height:1.07}
+.about-dual-section .about-dual-card p{font-size:15px;line-height:1.6}
+@media (hover:hover) and (pointer:fine){
+  .about-dual-section .about-designer:hover,html[data-theme="dark"] .about-dual-section .about-designer:hover{background:#4d80d1;color:#fff}
+  .about-dual-section .about-designer:hover p{color:rgba(255,255,255,.86)}
+  .about-dual-section .about-person:hover,html[data-theme="dark"] .about-dual-section .about-person:hover{background:#f2f2f2;color:#191c20}
+  .about-dual-section .about-dual-card:hover{box-shadow:0 24px 48px rgba(31,43,67,.14)}
+}
+
+.belief-section{display:grid;grid-template-columns:190px 1fr;gap:35px;padding:58px;border:0;border-radius:30px;background:#f2f2f2}
+.belief-layout{display:grid;grid-template-columns:1fr 1fr;gap:54px;margin:0}
+.belief-layout h2{font-size:clamp(38px,3.8vw,56px);font-weight:700;line-height:1.08}
+.belief-layout>div>p{font-size:16px;line-height:1.6}
+.belief-layout ul{margin-top:28px;border-color:#d8d9db}
+.belief-layout li{border-color:#d8d9db;color:#252a31;font-size:13px}
+.belief-layout li::before{content:'↗';margin-right:14px;color:#4d80d1;font-weight:800}
+
+#experience,.capability-section{padding-block:110px;border:0}
+#experience .section-head h2,.capability-section .section-head h2{max-width:850px;font-weight:700}
+#experience .section-head .eyebrow,.capability-section .section-head .eyebrow{color:#4d80d1}
+.timeline{display:grid;gap:16px;border:0}
+.timeline-item{grid-template-columns:50px minmax(200px,.8fr) minmax(0,1.2fr);gap:24px;padding:30px;border:1px solid #e3e0da;border-radius:24px;background:#fff}
+.timeline-item>span{display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:#edf3fc;color:#4d80d1;font-size:12px;font-weight:750}
+.timeline-title h3{font-size:25px;font-weight:700}
+.timeline-title strong{color:#4d80d1}
+.timeline-copy li{color:#60646b}
+.capability-section{padding-top:10px}
+.capability-list{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;border:0}
+.capability-list>div,.capability-list>div:nth-child(odd),.capability-list>div:nth-child(even){min-height:88px;align-items:center;gap:10px;padding:20px 24px;border:1px solid #e3e0da;border-radius:20px;background:#f2f2f2}
+.capability-list span{color:#4d80d1;font-weight:750}
+.capability-list strong{font-size:17px;font-weight:700}
+
+.reflection-section,.about-next{grid-template-columns:190px 1fr;gap:35px;margin-bottom:18px;padding:58px;border:0;border-radius:30px}
+.reflection-section{background:#4d80d1;color:#fff}
+.reflection-section>.eyebrow,.reflection-section p{color:rgba(255,255,255,.86)}
+.reflection-section h2,.about-next h2{max-width:800px;font-size:clamp(38px,3.9vw,58px);font-weight:700;line-height:1.08}
+.reflection-section p,.about-next p{max-width:720px;margin-top:22px;font-size:16px;line-height:1.6}
+.about-next{display:grid;background:#f2f2f2}
+.about-next p{color:#60646b}
+
+@media(max-width:1050px){
+  .about-intro{grid-template-columns:1.1fr .9fr;min-height:570px;padding:48px;gap:30px}
+  .about-intro-kicker{margin-top:42px}
+  .about-intro h1{font-size:clamp(48px,6vw,70px)}
+  .about-facts{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .belief-section,.reflection-section,.about-next{grid-template-columns:1fr;gap:24px}
+}
+@media(max-width:760px){
+  .about-intro{width:calc(100% - 24px);min-height:0;margin-top:12px;padding:30px 22px 22px;grid-template-columns:1fr;gap:38px;border-radius:30px}
+  .about-intro-badge{min-height:38px;padding:7px 17px;font-size:12px}
+  .about-intro-kicker{margin:42px 0 14px;font-size:10px}
+  .about-intro h1{font-size:clamp(43px,11vw,66px)}
+  .about-intro-lede{margin:23px 0 27px;font-size:16px}
+  .about-intro-portrait{max-width:none;aspect-ratio:5/4;padding:7px;border-radius:22px;transform:none}
+  .about-intro-portrait img{border-radius:16px;object-position:20% 30%}
+  .about-intro-portrait figcaption{left:16px;bottom:16px;font-size:9px}
+  .about-facts{gap:12px;padding-top:20px}
+  .about-fact{min-height:0;padding:22px;border-radius:20px}
+  .about-fact>span{margin-bottom:22px}
+  .about-proof{padding-top:20px}
+  .about-proof .proof-strip>div{padding:20px;border-radius:18px}
+  .about-dual-section{margin-top:80px;padding-bottom:80px}
+  .about-dual-grid{grid-template-columns:1fr;gap:14px}
+  .about-dual-section .about-dual-card{min-height:0;padding:30px 26px;border-radius:24px}
+  .about-dual-section .about-dual-card h2{margin:38px 0 24px;font-size:clamp(36px,9vw,48px)}
+  .about-dual-section .about-designer strong,.about-dual-section .about-person>div{margin-top:35px}
+  .belief-section,.reflection-section,.about-next{padding:30px 25px;border-radius:24px}
+  .belief-layout{grid-template-columns:1fr;gap:25px}
+  .belief-layout h2,.reflection-section h2,.about-next h2{font-size:clamp(36px,9vw,48px)}
+  #experience,.capability-section{padding-block:80px}
+  .timeline-item{grid-template-columns:40px 1fr;gap:12px;padding:24px;border-radius:20px}
+  .timeline-copy{grid-column:2}
+  .capability-section{padding-top:0}
+}
+@media(max-width:520px){
+  .about-facts,.capability-list{grid-template-columns:1fr}
+  .about-fact>span{margin-bottom:16px}
+  .about-proof .proof-strip{gap:10px}
+  .about-proof .proof-strip dt{font-size:31px}
+  .about-proof .proof-strip dd{font-size:9px}
+  .about-intro .hero-actions{align-items:stretch}
+  .about-intro .button{min-height:50px}
+}

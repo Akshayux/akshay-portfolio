@@ -1,19 +1,27 @@
 import type {Metadata} from 'next';
 import {Button,PageFrame,ProofStrip,SectionHead,TestimonialsSection} from '../components';
 import {capabilities,experience} from '../data';
+import './about.css';
 
 export const metadata:Metadata={title:'About',description:'About Akshay Venkata Narayana, Product and UX Designer working across complex digital systems, currently based in the UK.'};
 
 export default function AboutPage(){return <PageFrame>
-  <section className="about-canvas shell">
-    <div className="about-canvas-top reveal"><span className="eyebrow">About Akshay Venkata Narayana</span><h1 data-parallax-layer data-parallax-speed="10">Designer first,<br/><em>product thinker always.</em></h1><p>I design digital products by following the people, rules and decisions behind the interface.</p><div className="hero-actions"><Button href="/work" cursorLabel="View">View work</Button><Button href="/contact" secondary cursorLabel="Open">Get in touch</Button></div></div>
-    <div className="about-canvas-board reveal">
-      <div className="about-canvas-callout about-callout-location"><span>Based in</span><strong>London, UK</strong><small>Currently designing across the UK and beyond.</small></div>
-      <div className="about-canvas-callout about-callout-focus"><span>Designs for</span><strong>B2B SaaS · AI · Travel</strong><small>Also insurance, banking and public-interest services.</small></div>
-      <div className="about-canvas-portrait" data-parallax><img src="/optimized/about-london.jpg" alt="Akshay in London with Tower Bridge in the background"/><span>Outside the screen / London</span></div>
-      <div className="about-canvas-callout about-callout-practice"><span>How I work</span><strong>I research before I redesign.</strong><small>When a stakeholder asks for a visual fix, I trace the friction and explain what actually needs to change.</small></div>
-      <div className="about-canvas-callout about-callout-tools"><span>Works with</span><strong>Figma · FigJam · Prototypes</strong><small>Close to engineering, from first question to shipped detail.</small></div>
+  <section className="about-intro reveal" aria-labelledby="about-title">
+    <div className="about-intro-copy">
+      <span className="about-intro-badge">Product &amp; UX Designer</span>
+      <p className="about-intro-kicker">A little more about me</p>
+      <h1 id="about-title">Designer first.<br/><span>Product thinker always.</span></h1>
+      <p className="about-intro-lede">I design digital products by following the people, rules and decisions behind the interface.</p>
+      <div className="hero-actions"><Button href="/work" cursorLabel="View">View work</Button><Button href="/contact" secondary cursorLabel="Open">Get in touch</Button></div>
     </div>
+    <figure className="about-intro-portrait"><img src="/optimized/about-london.jpg" alt="Akshay in London with Tower Bridge in the background"/><figcaption>Outside the screen / London</figcaption></figure>
+  </section>
+
+  <section className="shell about-facts" aria-label="At a glance">
+    <div className="about-fact"><span>01 / Based in</span><strong>London, UK</strong><p>Designing across the UK and beyond.</p></div>
+    <div className="about-fact"><span>02 / Designs for</span><strong>B2B SaaS · AI · Travel</strong><p>Also insurance, banking and public-interest services.</p></div>
+    <div className="about-fact"><span>03 / How I work</span><strong>Research before redesign.</strong><p>I trace the friction before shaping the visual fix.</p></div>
+    <div className="about-fact"><span>04 / Works with</span><strong>Figma · FigJam · Prototypes</strong><p>Close to engineering, from question to shipped detail.</p></div>
   </section>
 
   <section className="shell about-proof"><ProofStrip/></section>
