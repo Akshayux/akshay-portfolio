@@ -9,20 +9,19 @@ export default function Home(){return <PageFrame>
     <div className="personal-hero-centered">
       <div className="personal-hero-badge">Product & UX Designer</div>
       <h1 className="personal-hero-title-inline">
-        Hi, <img src="/akshay-portrait.jpg" alt="Akshay Venkata Narayana" width="140" height="140" className="portrait-inline"/> I'm Akshay
+        <span>Hi,</span><span className="personal-hero-image-inline"><img src="/akshay-portrait.jpg" alt="Akshay Venkata Narayana" width="140" height="140" className="portrait-inline"/></span><span>I&apos;m Akshay</span>
       </h1>
       <p className="personal-hero-description">
         I design for clarity. <span className="highlight">5+ years crafting digital products</span> that users actually understand. I start with research, solve real problems, and ship solutions that stick.
       </p>
     </div>
-    <div className="scroll-indicator">
-      <span>⌄</span>
-      <span>⌄</span>
-    </div>
+    <a className="scroll-indicator" href="#selected-work" aria-label="Scroll to selected work">
+      <svg viewBox="0 0 28 52" width="20" height="38" fill="none" aria-hidden="true"><path d="m2 8 12 9 12-9" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/><path d="m2 34 12 9 12-9" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+    </a>
   </section>
 
   {/* All Projects - Case Studies */}
-  <section className="projects-showcase shell reveal">
+  <section id="selected-work" className="projects-showcase shell reveal">
     <div className="project-showcase-card project-showcase-1">
       <div className="project-showcase-number">01</div>
       <div className="project-showcase-category">Luxury travel · Customer experience</div>
@@ -108,7 +107,8 @@ export default function Home(){return <PageFrame>
     </div>
   </section>
 
-  {/* Results + Recommendations */}
+  {/* Results + Recommendations are presented inside the unified proof section below. */}
+  {/*
   <section className="results-recommendations shell reveal">
     <div className="results-recommendations-grid">
       <div className="results-card-primary">
@@ -168,7 +168,7 @@ export default function Home(){return <PageFrame>
         </div>
       </div>
     </div>
-  </section>
+  </section>*/}
 
 <TestimonialsSection index="04"/>
 

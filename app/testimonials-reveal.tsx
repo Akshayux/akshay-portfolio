@@ -5,6 +5,12 @@ import ArrowIcon from './arrow-icon';
 
 const recommendations = [
   {
+    name: 'Hooma Roy Choudhury',
+    role: 'Founder · Travel Jaunts & LUXTJ',
+    perspective: 'Client perspective',
+    quote: 'You need people who care, adapt, take ownership and go beyond what was expected. Akshay is one of those people. Across the LUXTJ website, app and extranet, he approached every rethink with patience, openness and a genuine willingness to make the product better.',
+  },
+  {
     name: 'Gaurav Sharma',
     role: 'Founder & Product Builder · Simpo.ai',
     perspective: 'Product leadership',
@@ -89,7 +95,7 @@ export default function TestimonialsReveal() {
       <div className="recommendation-heading reveal">
         <span>Recommendations</span>
         <h3>People who worked closely with me.</h3>
-        <p>Four perspectives on ownership, collaboration and getting design into production.</p>
+        <p>Five perspectives on ownership, collaboration and getting design into production.</p>
       </div>
 
       <div className="recommendation-grid" aria-label="Recommendations from collaborators">
@@ -98,7 +104,7 @@ export default function TestimonialsReveal() {
             <header><span>{String(index + 1).padStart(2, '0')}</span><small>{item.perspective}</small></header>
             <blockquote>“{item.quote}”</blockquote>
             <footer><strong>{item.name}</strong><span>{item.role}</span></footer>
-            <button className="recommendation-link-trigger" type="button" onClick={() => setLinkedInRedirect(item.name)} aria-label={`View ${item.name}'s recommendation on LinkedIn`}><ArrowIcon/></button>
+            {item.name !== 'Hooma Roy Choudhury' && <button className="recommendation-link-trigger" type="button" onClick={() => setLinkedInRedirect(item.name)} aria-label={`View ${item.name}'s recommendation on LinkedIn`}><ArrowIcon/></button>}
           </article>
         ))}
       </div>
