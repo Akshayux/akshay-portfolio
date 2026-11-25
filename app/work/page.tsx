@@ -8,7 +8,7 @@ export const metadata:Metadata={title:'Work',description:'Selected Product and U
 export default function WorkPage(){return <PageFrame>
   <section className="page-hero shell reveal">
     <span className="eyebrow">Work / 2022-2026</span>
-    <h1 data-parallax-layer data-parallax-speed="10">A few problems I followed past the screen.</h1>
+    <h1 data-parallax-layer data-parallax-speed="10">A few problems I followed <span>past the screen.</span></h1>
     <p>Four case studies across customer travel, partner operations, AI onboarding and digital health — each focused on the decisions that changed what happened next.</p>
   </section>
 
@@ -16,7 +16,7 @@ export default function WorkPage(){return <PageFrame>
     <CaseStudyStack compact bento/>
   </section>
 
-  <section className="section shell">
+  <section className="section shell work-archive">
     <SectionHead eyebrow="Project archive" title="Other product contexts I've worked in." copy="Enterprise software, editorial products and mobile experiences across full-time, contract and freelance roles."/>
     <div className="work-snapshot-list">
       {experience.filter(item=>!item.company.startsWith('LUXTJ')).map((item,index)=><article className="work-snapshot reveal" id={item.company==='Proficonlabs'?'proficon-labs':undefined} key={`${item.company}-${item.date}`}>

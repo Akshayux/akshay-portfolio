@@ -2,6 +2,7 @@ import type {Metadata} from 'next';
 import Motion from './motion';
 import './globals.css';
 import './refinements-creative.css';
+import './interior-pages.css';
 
 const siteUrl = 'https://www.akshayvenkat.com';
 
